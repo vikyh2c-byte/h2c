@@ -473,139 +473,223 @@
         </a>
       </div>
 
-      <!-- Feed Grid (6 Cards linking directly to Instagram) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Card 1 -->
-        <a href="https://www.instagram.com/h2c_wisata_mandiri" target="_blank" rel="noopener noreferrer" class="feed-card bg-[#083820] rounded-3xl p-6 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl group cursor-pointer">
-          <div class="flex justify-between items-center">
-            <span class="bg-red-600 text-white font-black text-[10px] uppercase px-2.5 py-1 rounded-md">PROMO SPESIAL</span>
-            <span class="text-xs text-emerald-300 flex items-center gap-1">🎥 Video ↗</span>
+      <!-- Feed Grid (Instagram Video Reels Mockup with Contextual Thumbnails) -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+        
+        <!-- Reel 1: DISKON RP 2,5 JUTA -->
+        <a href="https://www.instagram.com/h2c_wisata_mandiri" target="_blank" rel="noopener noreferrer" class="group relative aspect-[9/16] sm:aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border-2 border-emerald-800/80 hover:border-amber-400 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
+          <!-- Background Image (Ka'bah Night / Promo) -->
+          <img src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800&auto=format&fit=crop&q=80" alt="Promo Diskon Umroh" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 brightness-75">
+          <!-- Dark Gradient Overlays -->
+          <div class="absolute inset-0 bg-gradient-to-t from-[#042010] via-black/40 to-black/60"></div>
+          
+          <!-- Top Reel Header -->
+          <div class="relative z-10 p-3 sm:p-4 flex justify-between items-center">
+            <span class="bg-red-600 text-white font-black text-[9px] sm:text-[10px] uppercase px-2 py-0.5 rounded shadow">
+              PROMO TERBARU
+            </span>
+            <div class="w-7 h-7 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white text-xs">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
           </div>
-          <div class="text-center my-auto">
-            <div class="w-16 h-16 rounded-full bg-amber-400/20 text-amber-400 border border-amber-400 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-emerald-950 transition-all duration-300 shadow-lg">
+
+          <!-- Center Play Button Overlay on Hover -->
+          <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-amber-400/90 text-emerald-950 flex items-center justify-center text-xl font-black shadow-xl group-hover:scale-125 transition-transform duration-300">
               ▶
             </div>
-            <div class="mt-4 text-xl font-black text-amber-300 leading-tight">
+          </div>
+
+          <!-- Bottom Contextual Reel Banner (Feed IG Style) -->
+          <div class="relative z-10 p-3 sm:p-4 mt-auto">
+            <div class="inline-block bg-[#0a4d2e]/90 backdrop-blur-sm border border-amber-400/50 text-amber-300 font-black text-[11px] sm:text-xs px-2.5 py-1 rounded-lg mb-1 shadow">
               DISKON RP 2,5 JUTA!
             </div>
-            <div class="text-xs font-semibold text-emerald-100 mt-1">Pendaftaran Kloter Baru Dibuka</div>
-            <div class="text-[11px] text-emerald-300/70 mt-2">Dapatkan diskon khusus pendaftaran rombongan keluarga 3 orang ke atas.</div>
-          </div>
-          <div class="border-t border-emerald-800/80 pt-3 flex justify-between text-[11px] text-emerald-300/80 font-medium">
-            <span class="group-hover:text-amber-300 transition">@h2c_wisata_mandiri</span>
-            <span class="text-amber-300 font-bold">Buka di Instagram ↗</span>
+            <h4 class="text-xs sm:text-sm font-extrabold text-white leading-snug drop-shadow">
+              Pemberangkatan Kloter Baru
+            </h4>
+            <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-emerald-200/90 font-medium mt-2 pt-2 border-t border-white/15">
+              <span class="flex items-center gap-1">▶ 4.8K tayangan</span>
+              <span class="text-amber-300 font-semibold group-hover:underline">Tonton di IG ↗</span>
+            </div>
           </div>
         </a>
 
-        <!-- Card 2 -->
-        <a href="https://www.instagram.com/h2c_wisata_mandiri" target="_blank" rel="noopener noreferrer" class="feed-card bg-[#083820] rounded-3xl p-6 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl group cursor-pointer">
-          <div class="flex justify-between items-center">
-            <span class="bg-amber-400 text-emerald-950 font-black text-[10px] uppercase px-2.5 py-1 rounded-md">KLOTER 35</span>
-            <span class="text-xs text-emerald-300 flex items-center gap-1">🎥 Video ↗</span>
+        <!-- Reel 2: PROSESI UMROH (KLOTER 35) -->
+        <a href="https://www.instagram.com/h2c_wisata_mandiri" target="_blank" rel="noopener noreferrer" class="group relative aspect-[9/16] sm:aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border-2 border-emerald-800/80 hover:border-amber-400 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
+          <!-- Background Image (Pilgrims Thawaf Ka'bah) -->
+          <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=800&auto=format&fit=crop&q=80" alt="Prosesi Umroh Kloter 35" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 brightness-75">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#042010] via-black/40 to-black/60"></div>
+          
+          <div class="relative z-10 p-3 sm:p-4 flex justify-between items-center">
+            <span class="bg-amber-400 text-emerald-950 font-black text-[9px] sm:text-[10px] uppercase px-2 py-0.5 rounded shadow">
+              KLOTER 35
+            </span>
+            <div class="w-7 h-7 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white text-xs">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
           </div>
-          <div class="text-center my-auto">
-            <div class="w-16 h-16 rounded-full bg-white/10 text-amber-300 border border-white/20 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-emerald-950 transition-all duration-300 shadow-lg">
+
+          <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/90 text-emerald-950 flex items-center justify-center text-xl font-black shadow-xl group-hover:scale-125 transition-transform duration-300">
               ▶
             </div>
-            <div class="mt-4 text-xl font-black text-white leading-tight">
+          </div>
+
+          <div class="relative z-10 p-3 sm:p-4 mt-auto">
+            <div class="inline-block bg-[#0a4d2e]/90 backdrop-blur-sm border border-emerald-400/50 text-white font-black text-[11px] sm:text-xs px-2.5 py-1 rounded-lg mb-1 shadow">
               PROSESI UMROH
             </div>
-            <div class="text-xs font-semibold text-emerald-200 mt-1">Thawaf & Sa'i Berjamaah</div>
-            <div class="text-[11px] text-emerald-300/70 mt-2">Didampingi Muthawif hingga selesai tahallul dengan khusyuk dan tertib.</div>
-          </div>
-          <div class="border-t border-emerald-800/80 pt-3 flex justify-between text-[11px] text-emerald-300/80 font-medium">
-            <span class="group-hover:text-amber-300 transition">Pelataran Ka'bah</span>
-            <span class="text-amber-300 font-bold">Buka di Instagram ↗</span>
+            <h4 class="text-xs sm:text-sm font-extrabold text-white leading-snug drop-shadow">
+              Thawaf & Sa'i Berjamaah di Masjidil Haram
+            </h4>
+            <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-emerald-200/90 font-medium mt-2 pt-2 border-t border-white/15">
+              <span class="flex items-center gap-1">▶ 6.2K tayangan</span>
+              <span class="text-amber-300 font-semibold group-hover:underline">Tonton di IG ↗</span>
+            </div>
           </div>
         </a>
 
-        <!-- Card 3 -->
-        <a href="https://www.instagram.com/h2c_wisata_mandiri" target="_blank" rel="noopener noreferrer" class="feed-card bg-[#083820] rounded-3xl p-6 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl group cursor-pointer">
-          <div class="flex justify-between items-center">
-            <span class="bg-amber-400 text-emerald-950 font-black text-[10px] uppercase px-2.5 py-1 rounded-md">INI KATA JAMAAH</span>
-            <span class="text-xs text-emerald-300 flex items-center gap-1">💬 Review ↗</span>
+        <!-- Reel 3: INI KATA JAMAAH -->
+        <a href="https://www.instagram.com/h2c_wisata_mandiri" target="_blank" rel="noopener noreferrer" class="group relative aspect-[9/16] sm:aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border-2 border-emerald-800/80 hover:border-amber-400 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
+          <!-- Background Image (Pilgrim Family / Hotel) -->
+          <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=800&auto=format&fit=crop&q=80" alt="Testimoni Jamaah Umroh" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 brightness-75">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#042010] via-black/40 to-black/60"></div>
+          
+          <div class="relative z-10 p-3 sm:p-4 flex justify-between items-center">
+            <span class="bg-amber-400 text-emerald-950 font-black text-[9px] sm:text-[10px] uppercase px-2 py-0.5 rounded shadow">
+              INI KATA JAMAAH
+            </span>
+            <div class="w-7 h-7 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white text-xs">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
           </div>
-          <div class="text-center my-auto">
-            <div class="w-16 h-16 rounded-full bg-white/10 text-amber-300 border border-white/20 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-emerald-950 transition-all duration-300 shadow-lg">
+
+          <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/90 text-emerald-950 flex items-center justify-center text-xl font-black shadow-xl group-hover:scale-125 transition-transform duration-300">
               ▶
             </div>
-            <div class="mt-4 text-lg font-black text-white leading-tight">
-              "HOTEL BENARAN DEPAN MASJID!"
-            </div>
-            <div class="text-xs font-semibold text-emerald-200 mt-1">Keluarga Bpk. H. Agus & Ibu</div>
-            <div class="text-[11px] text-emerald-300/70 mt-2">"Orang tua ga kecapekan jalan ke pelataran, makanan pas di lidah, pembimbingnya sabar banget."</div>
           </div>
-          <div class="border-t border-emerald-800/80 pt-3 flex justify-between text-[11px] text-emerald-300/80 font-medium">
-            <span class="group-hover:text-amber-300 transition">Pullman Zamzam Makkah</span>
-            <span class="text-amber-300 font-bold">Buka di Instagram ↗</span>
+
+          <div class="relative z-10 p-3 sm:p-4 mt-auto">
+            <div class="inline-block bg-[#0a4d2e]/90 backdrop-blur-sm border border-emerald-400/50 text-white font-black text-[11px] sm:text-xs px-2.5 py-1 rounded-lg mb-1 shadow">
+              "HOTEL DEPAN MASJID"
+            </div>
+            <h4 class="text-xs sm:text-sm font-extrabold text-white leading-snug drop-shadow">
+              Keluarga Bpk. H. Agus (Kloter 34)
+            </h4>
+            <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-emerald-200/90 font-medium mt-2 pt-2 border-t border-white/15">
+              <span class="flex items-center gap-1">▶ 5.1K tayangan</span>
+              <span class="text-amber-300 font-semibold group-hover:underline">Tonton di IG ↗</span>
+            </div>
           </div>
         </a>
 
-        <!-- Card 4 -->
-        <a href="https://www.instagram.com/h2c_wisata_mandiri" target="_blank" rel="noopener noreferrer" class="feed-card bg-[#083820] rounded-3xl p-6 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl group cursor-pointer">
-          <div class="flex justify-between items-center">
-            <span class="bg-amber-400 text-emerald-950 font-black text-[10px] uppercase px-2.5 py-1 rounded-md">CITY TOUR</span>
-            <span class="text-xs text-emerald-300 flex items-center gap-1">📸 Ziarah ↗</span>
+        <!-- Reel 4: CITY TOUR MASJID QUBA & NABAWI -->
+        <a href="https://www.instagram.com/h2c_wisata_mandiri" target="_blank" rel="noopener noreferrer" class="group relative aspect-[9/16] sm:aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border-2 border-emerald-800/80 hover:border-amber-400 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
+          <!-- Background Image (Masjid Nabawi Medina) -->
+          <img src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?w=800&auto=format&fit=crop&q=80" alt="City Tour Masjid Quba dan Nabawi" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 brightness-75">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#042010] via-black/40 to-black/60"></div>
+          
+          <div class="relative z-10 p-3 sm:p-4 flex justify-between items-center">
+            <span class="bg-amber-400 text-emerald-950 font-black text-[9px] sm:text-[10px] uppercase px-2 py-0.5 rounded shadow">
+              CITY TOUR
+            </span>
+            <div class="w-7 h-7 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white text-xs">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
           </div>
-          <div class="text-center my-auto">
-            <div class="w-16 h-16 rounded-full bg-white/10 text-amber-300 border border-white/20 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-emerald-950 transition-all duration-300 shadow-lg">
+
+          <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/90 text-emerald-950 flex items-center justify-center text-xl font-black shadow-xl group-hover:scale-125 transition-transform duration-300">
               ▶
             </div>
-            <div class="mt-4 text-xl font-black text-white leading-tight">
+          </div>
+
+          <div class="relative z-10 p-3 sm:p-4 mt-auto">
+            <div class="inline-block bg-[#0a4d2e]/90 backdrop-blur-sm border border-emerald-400/50 text-white font-black text-[11px] sm:text-xs px-2.5 py-1 rounded-lg mb-1 shadow">
               MASJID QUBA & NABAWI
             </div>
-            <div class="text-xs font-semibold text-emerald-200 mt-1">Ziarah Penuh Makna Sejarah</div>
-            <div class="text-[11px] text-emerald-300/70 mt-2">Shalat 2 rakaat di Quba setara pahala umroh, lanjut ziarah Jabal Uhud & Kebun Kurma.</div>
-          </div>
-          <div class="border-t border-emerald-800/80 pt-3 flex justify-between text-[11px] text-emerald-300/80 font-medium">
-            <span class="group-hover:text-amber-300 transition">Madinah Munawwarah</span>
-            <span class="text-amber-300 font-bold">Buka di Instagram ↗</span>
+            <h4 class="text-xs sm:text-sm font-extrabold text-white leading-snug drop-shadow">
+              Ziarah Sejarah & Shalat 2 Rakaat di Quba
+            </h4>
+            <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-emerald-200/90 font-medium mt-2 pt-2 border-t border-white/15">
+              <span class="flex items-center gap-1">▶ 4.2K tayangan</span>
+              <span class="text-amber-300 font-semibold group-hover:underline">Tonton di IG ↗</span>
+            </div>
           </div>
         </a>
 
-        <!-- Card 5 -->
-        <a href="https://www.instagram.com/h2c_wisata_mandiri" target="_blank" rel="noopener noreferrer" class="feed-card bg-[#083820] rounded-3xl p-6 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl group cursor-pointer">
-          <div class="flex justify-between items-center">
-            <span class="bg-amber-400 text-emerald-950 font-black text-[10px] uppercase px-2.5 py-1 rounded-md">KEBERANGKATAN</span>
-            <span class="text-xs text-emerald-300 flex items-center gap-1">✈️ Airport ↗</span>
+        <!-- Reel 5: PELEPASAN KLOTER 35 (BANDARA) -->
+        <a href="https://www.instagram.com/h2c_wisata_mandiri" target="_blank" rel="noopener noreferrer" class="group relative aspect-[9/16] sm:aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border-2 border-emerald-800/80 hover:border-amber-400 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
+          <!-- Background Image (Airport Departure) -->
+          <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=800&auto=format&fit=crop&q=80" alt="Pelepasan Kloter Bandara" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 brightness-75">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#042010] via-black/40 to-black/60"></div>
+          
+          <div class="relative z-10 p-3 sm:p-4 flex justify-between items-center">
+            <span class="bg-amber-400 text-emerald-950 font-black text-[9px] sm:text-[10px] uppercase px-2 py-0.5 rounded shadow">
+              KEBERANGKATAN
+            </span>
+            <div class="w-7 h-7 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white text-xs">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
           </div>
-          <div class="text-center my-auto">
-            <div class="w-16 h-16 rounded-full bg-white/10 text-amber-300 border border-white/20 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-emerald-950 transition-all duration-300 shadow-lg">
+
+          <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/90 text-emerald-950 flex items-center justify-center text-xl font-black shadow-xl group-hover:scale-125 transition-transform duration-300">
               ▶
             </div>
-            <div class="mt-4 text-xl font-black text-white leading-tight">
+          </div>
+
+          <div class="relative z-10 p-3 sm:p-4 mt-auto">
+            <div class="inline-block bg-[#0a4d2e]/90 backdrop-blur-sm border border-emerald-400/50 text-white font-black text-[11px] sm:text-xs px-2.5 py-1 rounded-lg mb-1 shadow">
               PELEPASAN KLOTER 35
             </div>
-            <div class="text-xs font-semibold text-emerald-200 mt-1">Terminal 3 Soekarno-Hatta</div>
-            <div class="text-[11px] text-emerald-300/70 mt-2">Handling check-in bagasi dan pengarahan paspor langsung oleh tim H2C.</div>
-          </div>
-          <div class="border-t border-emerald-800/80 pt-3 flex justify-between text-[11px] text-emerald-300/80 font-medium">
-            <span class="group-hover:text-amber-300 transition">Direct Jeddah</span>
-            <span class="text-amber-300 font-bold">Buka di Instagram ↗</span>
+            <h4 class="text-xs sm:text-sm font-extrabold text-white leading-snug drop-shadow">
+              Terminal 3 Soetta Direct Jeddah Saudia
+            </h4>
+            <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-emerald-200/90 font-medium mt-2 pt-2 border-t border-white/15">
+              <span class="flex items-center gap-1">▶ 3.7K tayangan</span>
+              <span class="text-amber-300 font-semibold group-hover:underline">Tonton di IG ↗</span>
+            </div>
           </div>
         </a>
 
-        <!-- Card 6 -->
-        <a href="https://www.instagram.com/h2c_wisata_mandiri" target="_blank" rel="noopener noreferrer" class="feed-card bg-[#083820] rounded-3xl p-6 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl group cursor-pointer">
-          <div class="flex justify-between items-center">
-            <span class="bg-amber-400 text-emerald-950 font-black text-[10px] uppercase px-2.5 py-1 rounded-md">MANASIK UMROH</span>
-            <span class="text-xs text-emerald-300 flex items-center gap-1">📖 Edukasi ↗</span>
+        <!-- Reel 6: MANASIK PRA KEBERANGKATAN -->
+        <a href="https://www.instagram.com/h2c_wisata_mandiri" target="_blank" rel="noopener noreferrer" class="group relative aspect-[9/16] sm:aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border-2 border-emerald-800/80 hover:border-amber-400 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
+          <!-- Background Image (Islamic Guidance / Study) -->
+          <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=800&auto=format&fit=crop&q=80" alt="Manasik Umroh Sunnah" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 brightness-75">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#042010] via-black/40 to-black/60"></div>
+          
+          <div class="relative z-10 p-3 sm:p-4 flex justify-between items-center">
+            <span class="bg-amber-400 text-emerald-950 font-black text-[9px] sm:text-[10px] uppercase px-2 py-0.5 rounded shadow">
+              MANASIK UMROH
+            </span>
+            <div class="w-7 h-7 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white text-xs">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
           </div>
-          <div class="text-center my-auto">
-            <div class="w-16 h-16 rounded-full bg-white/10 text-amber-300 border border-white/20 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-emerald-950 transition-all duration-300 shadow-lg">
+
+          <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/90 text-emerald-950 flex items-center justify-center text-xl font-black shadow-xl group-hover:scale-125 transition-transform duration-300">
               ▶
             </div>
-            <div class="mt-4 text-lg font-black text-white leading-tight">
+          </div>
+
+          <div class="relative z-10 p-3 sm:p-4 mt-auto">
+            <div class="inline-block bg-[#0a4d2e]/90 backdrop-blur-sm border border-emerald-400/50 text-white font-black text-[11px] sm:text-xs px-2.5 py-1 rounded-lg mb-1 shadow">
               BIMBINGAN TEORI & PRAKTIK
             </div>
-            <div class="text-xs font-semibold text-emerald-200 mt-1">Bersama Asatidz Berilmu</div>
-            <div class="text-[11px] text-emerald-300/70 mt-2">Simulasi thawaf miniatur Ka'bah, pemakaian ihram yang benar, dan doa-doa ma'tsur.</div>
-          </div>
-          <div class="border-t border-emerald-800/80 pt-3 flex justify-between text-[11px] text-emerald-300/80 font-medium">
-            <span class="group-hover:text-amber-300 transition">Hotel Grand Sahid</span>
-            <span class="text-amber-300 font-bold">Buka di Instagram ↗</span>
+            <h4 class="text-xs sm:text-sm font-extrabold text-white leading-snug drop-shadow">
+              Simulasi Thawaf & Sa'i Bersama Asatidz
+            </h4>
+            <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-emerald-200/90 font-medium mt-2 pt-2 border-t border-white/15">
+              <span class="flex items-center gap-1">▶ 2.9K tayangan</span>
+              <span class="text-amber-300 font-semibold group-hover:underline">Tonton di IG ↗</span>
+            </div>
           </div>
         </a>
+
       </div>
     </div>
   </section>
