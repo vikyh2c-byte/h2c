@@ -1,30 +1,91 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1200, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>H2C Wisata Mandiri - Paket Umroh Berizin Resmi & Sesuai Sunnah</title>
+  
+  <!-- Tailwind CSS & Google Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    .font-serif-luxury { font-family: 'Playfair Display', serif; }
-    .bg-h2c-dark { background-color: #052e16; }
-    .bg-h2c-primary { background-color: #0a4d2e; }
-    .bg-h2c-light { background-color: #12633c; }
-    .text-h2c-gold { color: #f59e0b; }
-    .bg-h2c-gold { background-color: #eab308; }
-    .border-h2c-gold { border-color: #d97706; }
+    
+    /* Keyframe Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 0.2; }
+      100% { transform: scale(1.3); opacity: 0; }
+    }
+    @keyframes shimmer {
+      100% { transform: translateX(100%); }
+    }
+    @keyframes spin-slow {
+      100% { transform: rotate(360deg); }
+    }
+
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+    .animate-pulse-ring {
+      animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+    }
+    
+    /* Shimmer Effect on Golden Buttons */
+    .btn-shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-shimmer::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transform: skewX(-20deg);
+      animation: shimmer 2.5s infinite;
+    }
+
+    /* Card Glow on Hover */
+    .card-glow {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-glow:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px -10px rgba(10, 77, 46, 0.2);
+    }
+
+    /* Video Feed Card Glow */
+    .feed-card {
+      transition: all 0.35s ease;
+    }
+    .feed-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 20px 30px -10px rgba(234, 179, 8, 0.25);
+    }
   </style>
 </head>
-<body class="bg-[#F8FAFC] text-slate-800 antialiased">
+<body class="bg-[#F8FAFC] text-slate-800 antialiased selection:bg-emerald-700 selection:text-amber-300">
 
   <!-- TOP ANNOUNCEMENT BAR -->
-  <div class="bg-[#042010] text-emerald-200 text-xs py-2 px-8 flex justify-between items-center border-b border-emerald-900/80">
+  <div class="bg-[#031b0d] text-emerald-200 text-xs py-2 px-6 sm:px-8 flex justify-between items-center border-b border-emerald-900/80">
     <div class="flex items-center gap-6">
-      <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Pendaftaran Kloter 36 & 37 Resmi Dibuka</span>
-      <span class="hidden md:inline text-emerald-400/50">|</span>
-      <span class="hidden md:inline">📍 Layanan Konsultasi Tatap Muka & Online se-Jabodetabek</span>
+      <span class="flex items-center gap-2">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+        </span>
+        Pendaftaran Kloter 36 & 37 Resmi Dibuka
+      </span>
+      <span class="hidden md:inline text-emerald-500/40">|</span>
+      <span class="hidden md:inline text-emerald-300/80">📍 Layanan Konsultasi Tatap Muka & Online se-Indonesia</span>
     </div>
     <div class="flex items-center gap-4 text-[11px]">
       <span class="bg-amber-400/10 text-amber-300 px-3 py-0.5 rounded-full border border-amber-400/30 font-bold tracking-wide">
@@ -33,174 +94,184 @@
     </div>
   </div>
 
-  <!-- MAIN HEADER / NAVIGATION -->
-  <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200 shadow-sm px-8 py-3.5 flex justify-between items-center">
+  <!-- MAIN NAVIGATION BAR -->
+  <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/80 shadow-sm px-6 sm:px-8 py-3.5 flex justify-between items-center transition-all">
     <!-- Brand Logo -->
-    <div class="flex items-center gap-3">
-      <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#0a4d2e] to-[#042010] flex items-center justify-center text-amber-400 font-black text-2xl shadow-md border border-amber-400/30">
+    <a href="#" class="flex items-center gap-3 group">
+      <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#0a4d2e] to-[#042010] flex items-center justify-center text-amber-400 font-black text-2xl shadow-md border border-amber-400/40 group-hover:scale-105 transition-transform">
         ☪
       </div>
       <div>
         <div class="flex items-center gap-2">
           <span class="text-xl font-black tracking-tight text-[#0a4d2e]">H2C WISATA MANDIRI</span>
-          <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded">Resmi</span>
+          <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full">Resmi</span>
         </div>
-        <p class="text-[11px] font-semibold text-slate-500 tracking-wide uppercase">Biro Perjalanan Umroh Khusus & Haji Mandiri</p>
+        <p class="text-[10px] font-semibold text-slate-500 tracking-wider uppercase">Biro Perjalanan Umroh Khusus & Haji Mandiri</p>
       </div>
-    </div>
+    </a>
 
     <!-- Nav Links -->
-    <nav class="flex items-center gap-7 text-sm font-semibold text-slate-600">
-      <a href="#paket" class="text-emerald-800 hover:text-emerald-600 transition">Pilihan Paket</a>
+    <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
+      <a href="#paket" class="hover:text-emerald-700 transition">Pilihan Paket</a>
       <a href="#jadwal" class="hover:text-emerald-700 transition">Jadwal Kloter</a>
       <a href="#feed" class="hover:text-emerald-700 transition flex items-center gap-1.5">
         <span>Dokumentasi</span>
-        <span class="bg-red-500 text-white text-[9px] font-black px-1.5 py-0.2 rounded-full">Feed</span>
+        <span class="bg-red-500 text-white text-[9px] font-black px-1.5 py-0.2 rounded-full animate-pulse">Feed</span>
       </a>
-      <a href="#fasilitas" class="hover:text-emerald-700 transition">Fasilitas Hotel</a>
+      <a href="#fasilitas" class="hover:text-emerald-700 transition">Fasilitas</a>
       <a href="#testimoni" class="hover:text-emerald-700 transition">Kata Jamaah</a>
       <a href="#faq" class="hover:text-emerald-700 transition">FAQ</a>
     </nav>
 
-    <!-- Header Action -->
+    <!-- Actions -->
     <div class="flex items-center gap-3">
-      <a href="https://instagram.com/h2c_wisata_mandiri" target="_blank" class="w-9 h-9 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-50 text-xs font-bold shadow-sm">
+      <a href="https://instagram.com/h2c_wisata_mandiri" target="_blank" class="w-9 h-9 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:text-emerald-700 hover:border-emerald-500 hover:bg-emerald-50 text-xs font-bold shadow-sm transition">
         IG
       </a>
-      <button class="bg-gradient-to-r from-[#0a4d2e] to-[#12633c] hover:from-[#06331e] hover:to-[#0a4d2e] text-white text-xs font-bold px-5 py-2.5 rounded-full shadow-lg shadow-emerald-900/20 flex items-center gap-2">
-        <span class="text-amber-300">💬</span> Chat Admin WhatsApp
-      </button>
+      <a href="https://wa.me/6281234567890?text=Halo%20Admin%20H2C%2C%20saya%20mau%20konsultasi%20paket%20umroh" target="_blank" class="btn-shimmer bg-gradient-to-r from-[#0a4d2e] to-[#12633c] hover:from-[#06331e] hover:to-[#0a4d2e] text-white text-xs font-bold px-5 py-2.5 rounded-full shadow-lg shadow-emerald-900/20 flex items-center gap-2 transition transform active:scale-95">
+        <span class="text-amber-300">💬</span> Chat Konsultan
+      </a>
     </div>
   </header>
 
-  <!-- INSTAGRAM-STYLE STORY HIGHLIGHTS BAR -->
-  <div class="bg-white border-b border-slate-100 py-3 px-8">
-    <div class="max-w-6xl mx-auto flex items-center gap-6 overflow-x-auto text-center">
-      <div class="flex flex-col items-center gap-1 cursor-pointer group">
-        <div class="w-14 h-14 rounded-full p-[2px] bg-gradient-to-tr from-amber-400 via-emerald-600 to-[#0a4d2e]">
+  <!-- INSTAGRAM STORY REELS BAR -->
+  <div class="bg-white border-b border-slate-100 py-3.5 px-6 sm:px-8">
+    <div class="max-w-6xl mx-auto flex items-center gap-6 overflow-x-auto text-center scrollbar-none py-1">
+      <!-- Story 1 -->
+      <a href="#feed" class="flex flex-col items-center gap-1.5 group cursor-pointer flex-shrink-0">
+        <div class="w-14 h-14 rounded-full p-[2.5px] bg-gradient-to-tr from-amber-400 via-emerald-600 to-[#0a4d2e] group-hover:rotate-180 transition-transform duration-700">
           <div class="w-full h-full rounded-full bg-white p-[2px]">
-            <div class="w-full h-full rounded-full bg-[#0a4d2e] flex items-center justify-center text-white text-base font-bold">
+            <div class="w-full h-full rounded-full bg-[#0a4d2e] flex items-center justify-center text-white text-base">
               🕋
             </div>
           </div>
         </div>
-        <span class="text-[11px] font-semibold text-slate-700 group-hover:text-emerald-700">Kloter 35</span>
-      </div>
+        <span class="text-[11px] font-semibold text-slate-700 group-hover:text-emerald-700 transition">Kloter 35</span>
+      </a>
 
-      <div class="flex flex-col items-center gap-1 cursor-pointer group">
-        <div class="w-14 h-14 rounded-full p-[2px] bg-gradient-to-tr from-amber-400 via-emerald-600 to-[#0a4d2e]">
+      <!-- Story 2 -->
+      <a href="#feed" class="flex flex-col items-center gap-1.5 group cursor-pointer flex-shrink-0">
+        <div class="w-14 h-14 rounded-full p-[2.5px] bg-gradient-to-tr from-amber-400 via-emerald-600 to-[#0a4d2e] group-hover:rotate-180 transition-transform duration-700">
           <div class="w-full h-full rounded-full bg-white p-[2px]">
-            <div class="w-full h-full rounded-full bg-[#0a4d2e] flex items-center justify-center text-white text-base font-bold">
+            <div class="w-full h-full rounded-full bg-[#0a4d2e] flex items-center justify-center text-white text-base">
               ⭐
             </div>
           </div>
         </div>
-        <span class="text-[11px] font-semibold text-slate-700 group-hover:text-emerald-700">Testimoni</span>
-      </div>
+        <span class="text-[11px] font-semibold text-slate-700 group-hover:text-emerald-700 transition">Testimoni</span>
+      </a>
 
-      <div class="flex flex-col items-center gap-1 cursor-pointer group">
-        <div class="w-14 h-14 rounded-full p-[2px] bg-gradient-to-tr from-amber-400 via-emerald-600 to-[#0a4d2e]">
+      <!-- Story 3 -->
+      <a href="#feed" class="flex flex-col items-center gap-1.5 group cursor-pointer flex-shrink-0">
+        <div class="w-14 h-14 rounded-full p-[2.5px] bg-gradient-to-tr from-amber-400 via-emerald-600 to-[#0a4d2e] group-hover:rotate-180 transition-transform duration-700">
           <div class="w-full h-full rounded-full bg-white p-[2px]">
-            <div class="w-full h-full rounded-full bg-[#0a4d2e] flex items-center justify-center text-white text-base font-bold">
+            <div class="w-full h-full rounded-full bg-[#0a4d2e] flex items-center justify-center text-white text-base">
               🕌
             </div>
           </div>
         </div>
-        <span class="text-[11px] font-semibold text-slate-700 group-hover:text-emerald-700">City Tour</span>
-      </div>
+        <span class="text-[11px] font-semibold text-slate-700 group-hover:text-emerald-700 transition">City Tour</span>
+      </a>
 
-      <div class="flex flex-col items-center gap-1 cursor-pointer group">
-        <div class="w-14 h-14 rounded-full p-[2px] bg-gradient-to-tr from-amber-400 via-emerald-600 to-[#0a4d2e]">
+      <!-- Story 4 -->
+      <a href="#feed" class="flex flex-col items-center gap-1.5 group cursor-pointer flex-shrink-0">
+        <div class="w-14 h-14 rounded-full p-[2.5px] bg-gradient-to-tr from-amber-400 via-emerald-600 to-[#0a4d2e] group-hover:rotate-180 transition-transform duration-700">
           <div class="w-full h-full rounded-full bg-white p-[2px]">
-            <div class="w-full h-full rounded-full bg-[#0a4d2e] flex items-center justify-center text-white text-base font-bold">
+            <div class="w-full h-full rounded-full bg-[#0a4d2e] flex items-center justify-center text-white text-base">
               📖
             </div>
           </div>
         </div>
-        <span class="text-[11px] font-semibold text-slate-700 group-hover:text-emerald-700">Manasik Sunnah</span>
-      </div>
+        <span class="text-[11px] font-semibold text-slate-700 group-hover:text-emerald-700 transition">Manasik Sunnah</span>
+      </a>
 
-      <div class="flex flex-col items-center gap-1 cursor-pointer group">
-        <div class="w-14 h-14 rounded-full p-[2px] bg-gradient-to-tr from-amber-400 via-emerald-600 to-[#0a4d2e]">
+      <!-- Story 5 -->
+      <a href="#fasilitas" class="flex flex-col items-center gap-1.5 group cursor-pointer flex-shrink-0">
+        <div class="w-14 h-14 rounded-full p-[2.5px] bg-gradient-to-tr from-amber-400 via-emerald-600 to-[#0a4d2e] group-hover:rotate-180 transition-transform duration-700">
           <div class="w-full h-full rounded-full bg-white p-[2px]">
-            <div class="w-full h-full rounded-full bg-[#0a4d2e] flex items-center justify-center text-white text-base font-bold">
+            <div class="w-full h-full rounded-full bg-[#0a4d2e] flex items-center justify-center text-white text-base">
               🏨
             </div>
           </div>
         </div>
-        <span class="text-[11px] font-semibold text-slate-700 group-hover:text-emerald-700">Hotel Pelataran</span>
-      </div>
+        <span class="text-[11px] font-semibold text-slate-700 group-hover:text-emerald-700 transition">Hotel Pelataran</span>
+      </a>
 
-      <div class="flex flex-col items-center gap-1 cursor-pointer group">
-        <div class="w-14 h-14 rounded-full p-[2px] bg-gradient-to-tr from-amber-400 via-emerald-600 to-[#0a4d2e]">
+      <!-- Story 6 -->
+      <a href="#fasilitas" class="flex flex-col items-center gap-1.5 group cursor-pointer flex-shrink-0">
+        <div class="w-14 h-14 rounded-full p-[2.5px] bg-gradient-to-tr from-amber-400 via-emerald-600 to-[#0a4d2e] group-hover:rotate-180 transition-transform duration-700">
           <div class="w-full h-full rounded-full bg-white p-[2px]">
-            <div class="w-full h-full rounded-full bg-[#0a4d2e] flex items-center justify-center text-white text-base font-bold">
+            <div class="w-full h-full rounded-full bg-[#0a4d2e] flex items-center justify-center text-white text-base">
               🚄
             </div>
           </div>
         </div>
-        <span class="text-[11px] font-semibold text-slate-700 group-hover:text-emerald-700">Kereta Cepat</span>
-      </div>
+        <span class="text-[11px] font-semibold text-slate-700 group-hover:text-emerald-700 transition">Kereta Cepat</span>
+      </a>
     </div>
   </div>
 
-  <!-- HERO SECTION WITH RICH VISUAL BANNER -->
-  <section class="relative bg-gradient-to-b from-[#052e16] via-[#0a4d2e] to-[#042010] text-white py-16 px-8 overflow-hidden">
-    <!-- Geometric decorative backdrop -->
-    <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#fbbf24_1px,transparent_1px)] [background-size:24px_24px]"></div>
-    
-    <div class="max-w-6xl mx-auto grid grid-cols-12 gap-10 items-center relative z-10">
-      <div class="col-span-7 space-y-6">
-        <!-- Promo Badge -->
-        <div class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-amber-500 text-emerald-950 font-black text-xs uppercase px-3.5 py-1.5 rounded-full shadow-lg border border-amber-300">
-          <span class="bg-emerald-950 text-amber-300 text-[10px] px-2 py-0.5 rounded-full">PROMO TERBATAS</span>
-          <span>DISKON RP 2,5 JUTA UNTUK KLOTER BARU!</span>
+  <!-- HERO SECTION WITH ANIMATED BADGES & CARDS -->
+  <section class="relative bg-gradient-to-b from-[#042010] via-[#0a4d2e] to-[#042010] text-white py-16 lg:py-24 px-6 sm:px-8 overflow-hidden">
+    <!-- Animated Light Blobs -->
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -right-24 w-96 h-96 bg-amber-400/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <!-- Hero Left Column -->
+      <div class="lg:col-span-7 space-y-6">
+        <!-- Floating Promo Badge -->
+        <div class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-amber-500 text-emerald-950 font-black text-xs uppercase px-4 py-2 rounded-full shadow-lg border border-amber-300">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+          </span>
+          <span>DISKON SPESIAL RP 2,5 JUTA KLOTER BARU!</span>
         </div>
 
-        <!-- Headline -->
-        <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.18]">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15]">
           Ibadah Khusyuk Sesuai Sunnah, <br>
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-300 to-yellow-400">
             Fasilitas Nyaman & Terpercaya.
           </span>
         </h1>
 
-        <!-- Subtitle -->
-        <p class="text-emerald-100/90 text-sm md:text-base leading-relaxed max-w-xl">
-          Bersama <strong>H2C Wisata Mandiri</strong>, nikmati kemudahan ibadah ke Baitullah dengan bimbingan muthawif bersertifikasi resmi, hotel ring 1 dekat pelataran masjid, dan penerbangan direct tanpa transit membingungkan.
+        <p class="text-emerald-100/90 text-sm sm:text-base leading-relaxed max-w-xl">
+          Bersama <strong>H2C Wisata Mandiri</strong>, nikmati kemudahan ibadah ke Tanah Suci dengan bimbingan muthawif bersertifikasi, hotel ring 1 dekat pelataran masjid, dan penerbangan direct tanpa transit membingungkan.
         </p>
 
-        <!-- CTA Buttons -->
-        <div class="flex items-center gap-4 pt-2">
-          <button class="bg-amber-400 hover:bg-amber-300 text-emerald-950 font-extrabold px-8 py-3.5 rounded-xl shadow-xl shadow-amber-400/25 text-sm flex items-center gap-2.5 transition">
+        <!-- CTA Buttons with Shimmer & Scale -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="#paket" class="btn-shimmer bg-amber-400 hover:bg-amber-300 text-emerald-950 font-extrabold px-8 py-4 rounded-xl shadow-xl shadow-amber-400/25 text-sm flex items-center gap-2.5 transition transform hover:-translate-y-0.5">
             <span>Daftar Sekarang & Klaim Diskon</span>
             <span>➔</span>
-          </button>
-          <button class="border border-emerald-400/40 hover:bg-emerald-900/50 text-white font-semibold px-6 py-3.5 rounded-xl text-sm backdrop-blur-sm transition">
-            Unduh Jadwal & Rincian PDF
-          </button>
+          </a>
+          <a href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20minta%20brosur%20PDF%20paket%20umroh%20H2C" target="_blank" class="border border-emerald-400/40 hover:bg-emerald-900/60 text-white font-semibold px-7 py-4 rounded-xl text-sm backdrop-blur-sm transition">
+            Unduh Brosur Jadwal (PDF)
+          </a>
         </div>
 
-        <!-- Metric highlights -->
+        <!-- Metrics Row -->
         <div class="grid grid-cols-3 gap-6 pt-6 border-t border-emerald-700/50">
           <div>
-            <div class="text-amber-300 font-extrabold text-2xl">35+</div>
-            <div class="text-xs text-emerald-200/80 mt-0.5">Kloter Sukses Diberangkatkan</div>
+            <div class="text-amber-300 font-extrabold text-2xl sm:text-3xl">35+</div>
+            <div class="text-xs text-emerald-200/80 mt-0.5 font-medium">Kloter Sukses Berangkat</div>
           </div>
           <div>
-            <div class="text-amber-300 font-extrabold text-2xl">100%</div>
-            <div class="text-xs text-emerald-200/80 mt-0.5">Garansi Keberangkatan & Visa</div>
+            <div class="text-amber-300 font-extrabold text-2xl sm:text-3xl">100%</div>
+            <div class="text-xs text-emerald-200/80 mt-0.5 font-medium">Garansi Visa & Tiket PP</div>
           </div>
           <div>
-            <div class="text-amber-300 font-extrabold text-2xl">0 Meter</div>
-            <div class="text-xs text-emerald-200/80 mt-0.5">Opsi Hotel Depan Pelataran</div>
+            <div class="text-amber-300 font-extrabold text-2xl sm:text-3xl">0 Meter</div>
+            <div class="text-xs text-emerald-200/80 mt-0.5 font-medium">Hotel Depan Pelataran</div>
           </div>
         </div>
       </div>
 
-      <!-- Hero Card: Flash Booking Promo -->
-      <div class="col-span-5">
-        <div class="bg-white text-slate-900 rounded-3xl p-6 shadow-2xl border-4 border-amber-400/60 relative">
+      <!-- Hero Right Column: Animated Floating Card -->
+      <div class="lg:col-span-5">
+        <div class="animate-float bg-white text-slate-900 rounded-3xl p-6 sm:p-7 shadow-2xl border-4 border-amber-400/60 relative">
           <div class="flex justify-between items-start mb-4">
             <div>
               <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">
@@ -216,7 +287,7 @@
             </div>
           </div>
 
-          <!-- Price tag -->
+          <!-- Price box -->
           <div class="bg-gradient-to-r from-emerald-50 to-amber-50/50 p-4 rounded-2xl border border-emerald-100 my-4">
             <div class="flex justify-between items-center">
               <div>
@@ -224,17 +295,17 @@
                 <div class="text-2xl font-black text-emerald-800">Rp 27.000.000</div>
               </div>
               <div class="bg-amber-400 text-emerald-950 text-xs font-black px-3 py-1.5 rounded-lg shadow-sm">
-                Hemat Rp 2,5 Juta
+                Hemat Rp 2,5 Jt
               </div>
             </div>
-            <p class="text-[10px] text-emerald-700 font-medium mt-1">✓ Sudah termasuk Tiket PP, Visa Umroh, Manasik, & Perlengkapan</p>
+            <p class="text-[10px] text-emerald-700 font-medium mt-1">✓ Sudah termasuk Tiket PP, Visa, Manasik & Perlengkapan</p>
           </div>
 
           <!-- Feature checklist -->
-          <div class="space-y-2 text-xs text-slate-600 mb-6">
+          <div class="space-y-2.5 text-xs text-slate-600 mb-6">
             <div class="flex items-center gap-2">
               <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-[10px]">✓</span>
-              <span><strong>Makkah:</strong> Hotel Bintang 4/5 (Jalan Kaki ke Masjidil Haram)</span>
+              <span><strong>Makkah:</strong> Hotel Bintang 4/5 (Jalan Kaki ke Pelataran)</span>
             </div>
             <div class="flex items-center gap-2">
               <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-[10px]">✓</span>
@@ -246,65 +317,65 @@
             </div>
             <div class="flex items-center gap-2">
               <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-[10px]">✓</span>
-              <span><strong>Free Fasilitas:</strong> Kereta Cepat Haramain Express</span>
+              <span><strong>Bonus:</strong> Free Kereta Cepat Haramain Express</span>
             </div>
           </div>
 
-          <!-- Direct action -->
-          <button class="w-full bg-[#0a4d2e] hover:bg-[#06331e] text-white font-extrabold py-3.5 rounded-xl text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2">
+          <!-- Direct action button -->
+          <a href="https://wa.me/6281234567890?text=Halo%20Admin%20H2C%2C%20saya%20mau%20amankan%20kursi%20promo%20Kloter%2036" target="_blank" class="w-full btn-shimmer bg-[#0a4d2e] hover:bg-[#06331e] text-white font-extrabold py-3.5 rounded-xl text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition">
             <span>💬 Amankan Kursi via WhatsApp Sekarang</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5 PILAR PASTI H2C WISATA MANDIRI -->
+  <!-- 5 PILAR PASTI SECTION -->
   <section class="py-10 bg-white border-b border-slate-200">
-    <div class="max-w-6xl mx-auto px-8 grid grid-cols-5 gap-6 text-center">
-      <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-        <div class="text-2xl mb-1">📜</div>
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6 text-center">
+      <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 card-glow">
+        <div class="text-3xl mb-1.5">📜</div>
         <div class="text-xs font-bold text-slate-900">Pasti Izinnya</div>
         <div class="text-[11px] text-slate-500 mt-0.5">PPIU Resmi Kemenag</div>
       </div>
-      <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-        <div class="text-2xl mb-1">✈️</div>
+      <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 card-glow">
+        <div class="text-3xl mb-1.5">✈️</div>
         <div class="text-xs font-bold text-slate-900">Pasti Terbangnya</div>
         <div class="text-[11px] text-slate-500 mt-0.5">Tiket PP Terkonfirmasi</div>
       </div>
-      <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-        <div class="text-2xl mb-1">🏨</div>
+      <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 card-glow">
+        <div class="text-3xl mb-1.5">🏨</div>
         <div class="text-xs font-bold text-slate-900">Pasti Hotelnya</div>
         <div class="text-[11px] text-slate-500 mt-0.5">Ring 1 Dekat Pelataran</div>
       </div>
-      <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-        <div class="text-2xl mb-1">🛂</div>
+      <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 card-glow">
+        <div class="text-3xl mb-1.5">🛂</div>
         <div class="text-xs font-bold text-slate-900">Pasti Visanya</div>
         <div class="text-[11px] text-slate-500 mt-0.5">Proses Cepat & Resmi</div>
       </div>
-      <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-        <div class="text-2xl mb-1">📖</div>
+      <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 card-glow col-span-2 md:col-span-1">
+        <div class="text-3xl mb-1.5">📖</div>
         <div class="text-xs font-bold text-slate-900">Pasti Sunnahnya</div>
         <div class="text-[11px] text-slate-500 mt-0.5">Muthawif Berilmu & Sabar</div>
       </div>
     </div>
   </section>
 
-  <!-- KATALOG PAKET UMROH PILIHAN -->
-  <section id="paket" class="py-16 px-8 max-w-6xl mx-auto">
-    <div class="text-center max-w-2xl mx-auto mb-12">
+  <!-- KATALOG PAKET UMROH DENGAN HOVER GLOW -->
+  <section id="paket" class="py-16 sm:py-20 px-6 sm:px-8 max-w-6xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-14">
       <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Pilihan Program 2026</span>
-      <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-2">Katalog Paket Umroh H2C Wisata Mandiri</h2>
-      <p class="text-xs text-slate-500 mt-2">Pilih durasi dan jenis layanan yang paling pas untuk kenyamanan keluarga tercinta.</p>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2.5">Katalog Paket Umroh Pilihan</h2>
+      <p class="text-xs sm:text-sm text-slate-500 mt-2">Pilih durasi dan jenis kenyamanan hotel yang paling sesuai untuk Anda dan keluarga.</p>
     </div>
 
-    <div class="grid grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
       <!-- Card 1 -->
-      <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+      <div class="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm card-glow flex flex-col justify-between">
         <div>
-          <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Pilihan Ekonomis</span>
+          <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Pilihan Hemat</span>
           <h3 class="text-xl font-bold text-slate-900 mt-3">Umroh Reguler 9 Hari</h3>
-          <p class="text-xs text-slate-500 mt-0.5">Ideal bagi yang ingin ibadah padat & efektif</p>
+          <p class="text-xs text-slate-500 mt-0.5">Ideal bagi yang ingin ibadah padat & khusyuk</p>
           
           <div class="my-6">
             <div class="text-xs text-slate-400">Mulai dari</div>
@@ -313,26 +384,26 @@
           </div>
 
           <div class="border-t border-slate-100 pt-4 space-y-2.5 text-xs text-slate-600">
-            <div class="flex items-center gap-2"><span>✈️</span> Saudia Airlines / Lion Premium Direct</div>
+            <div class="flex items-center gap-2"><span>✈️</span> Saudia / Lion Premium Direct</div>
             <div class="flex items-center gap-2"><span>🏨</span> Hotel Makkah *4 (±200m ke Masjid)</div>
             <div class="flex items-center gap-2"><span>🏨</span> Hotel Madinah *4 (±100m ke Nabawi)</div>
-            <div class="flex items-center gap-2"><span>🍽️</span> Fullboard 3x Menu Khas Indonesia</div>
+            <div class="flex items-center gap-2"><span>🍽️</span> Fullboard 3x Menu Nusantara</div>
             <div class="flex items-center gap-2"><span>🧳</span> Free Koper & Seragam Eksklusif</div>
           </div>
         </div>
 
-        <button class="mt-8 w-full border border-emerald-700 text-emerald-700 hover:bg-emerald-50 font-bold py-3 rounded-xl text-xs uppercase tracking-wider">
+        <a href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20mau%20tanya%20detail%20Paket%20Reguler%209%20Hari" target="_blank" class="mt-8 w-full block text-center border border-emerald-700 text-emerald-700 hover:bg-emerald-50 font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition">
           Lihat Brosur & Jadwal
-        </button>
+        </a>
       </div>
 
-      <!-- Card 2: Featured VIP -->
-      <div class="bg-white rounded-3xl p-6 border-2 border-emerald-600 shadow-2xl relative flex flex-col justify-between transform -translate-y-2">
+      <!-- Card 2: Featured VIP with Badge -->
+      <div class="bg-white rounded-3xl p-6 sm:p-7 border-2 border-emerald-600 shadow-xl card-glow relative flex flex-col justify-between transform md:-translate-y-3">
         <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-400 text-emerald-950 font-black text-[10px] uppercase px-4 py-1 rounded-full shadow-md">
           ⭐ PALING DIREKOMENDASIKAN
         </div>
         <div>
-          <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-3 py-1 rounded-full uppercase">VIP Kenyamanan Ekstra</span>
+          <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Kenyamanan Ekstra VIP</span>
           <h3 class="text-xl font-bold text-slate-900 mt-3">Umroh VIP Plus Kereta Cepat</h3>
           <p class="text-xs text-slate-500 mt-0.5">Durasi 12 Hari • Hotel Pelataran Depan</p>
           
@@ -347,22 +418,22 @@
             <div class="flex items-center gap-2"><span>🏨</span> Hotel Makkah Bintang 5 (0 Meter Pelataran)</div>
             <div class="flex items-center gap-2"><span>🏨</span> Hotel Madinah Bintang 5 Depan Raudhah</div>
             <div class="flex items-center gap-2"><span>🚄</span> Free Tiket Kereta Cepat Haramain</div>
-            <div class="flex items-center gap-2"><span>⛰️</span> Bonus Ziarah Kota Thaif & Cable Car</div>
-            <div class="flex items-center gap-2"><span>👥</span> Muthawif Khusus (1 Muthawif 20 Jamaah)</div>
+            <div class="flex items-center gap-2"><span>⛰️</span> Bonus Ziarah Kota Thaif & Nasi Mandhi</div>
+            <div class="flex items-center gap-2"><span>👥</span> 1 Muthawif handle maks 20 Jamaah</div>
           </div>
         </div>
 
-        <button class="mt-8 w-full bg-[#0a4d2e] hover:bg-[#052e16] text-white font-extrabold py-3.5 rounded-xl text-xs uppercase tracking-wider shadow-lg">
+        <a href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20pilih%20Paket%20VIP%20Plus%20Kereta%20Cepat" target="_blank" class="mt-8 w-full block text-center btn-shimmer bg-[#0a4d2e] hover:bg-[#052e16] text-white font-extrabold py-3.5 rounded-xl text-xs uppercase tracking-wider shadow-lg transition">
           Pilih Paket VIP Ini ➔
-        </button>
+        </a>
       </div>
 
       <!-- Card 3 -->
-      <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+      <div class="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm card-glow flex flex-col justify-between">
         <div>
-          <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Wisata Religi Akbar</span>
+          <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Wisata Sejarah Islam</span>
           <h3 class="text-xl font-bold text-slate-900 mt-3">Umroh Plus Turki / Dubai</h3>
-          <p class="text-xs text-slate-500 mt-0.5">Durasi 14 Hari • Ziarah Sejarah Islam</p>
+          <p class="text-xs text-slate-500 mt-0.5">Durasi 14 Hari • Wisata Religi Bersejarah</p>
           
           <div class="my-6">
             <div class="text-xs text-slate-400">Mulai dari</div>
@@ -371,7 +442,7 @@
           </div>
 
           <div class="border-t border-slate-100 pt-4 space-y-2.5 text-xs text-slate-600">
-            <div class="flex items-center gap-2"><span>✈️</span> Turkish Airlines / Emirates Airline</div>
+            <div class="flex items-center gap-2"><span>✈️</span> Turkish Airlines / Emirates Direct</div>
             <div class="flex items-center gap-2"><span>🏨</span> Hotel Bintang 5 di Istanbul & Haram</div>
             <div class="flex items-center gap-2"><span>🕌</span> Ziarah Hagia Sophia & Bosphorus Cruise</div>
             <div class="flex items-center gap-2"><span>🍽️</span> Santap Kuliner Khas Kebab & Mandhi</div>
@@ -379,91 +450,90 @@
           </div>
         </div>
 
-        <button class="mt-8 w-full border border-emerald-700 text-emerald-700 hover:bg-emerald-50 font-bold py-3 rounded-xl text-xs uppercase tracking-wider">
+        <a href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20mau%20tanya%20detail%20Paket%20Umroh%20Plus%20Turki" target="_blank" class="mt-8 w-full block text-center border border-emerald-700 text-emerald-700 hover:bg-emerald-50 font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition">
           Lihat Brosur & Jadwal
-        </button>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- DOKUMENTASI KLOTER GAYA FEED INSTAGRAM @H2C_WISATA_MANDIRI -->
-  <section id="feed" class="py-16 bg-[#042010] text-white">
-    <div class="max-w-6xl mx-auto px-8">
-      <!-- Header Section -->
-      <div class="flex justify-between items-end mb-10">
+  <!-- FEED DOKUMENTASI KLOTER & REELS (GAYA INSTAGRAM @H2C_WISATA_MANDIRI) -->
+  <section id="feed" class="py-16 sm:py-20 bg-[#042010] text-white">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
         <div>
-          <div class="inline-flex items-center gap-2 text-amber-400 text-xs font-black uppercase tracking-widest mb-1">
+          <div class="inline-flex items-center gap-2 text-amber-400 text-xs font-black uppercase tracking-widest mb-1.5">
             <span>📷</span> DOKUMENTASI LANGSUNG DARI LAPANGAN
           </div>
-          <h2 class="text-3xl font-extrabold tracking-tight">Keseruan Kloter & Testimoni Asli</h2>
-          <p class="text-xs text-emerald-300/80 mt-1">Gaya liputan nyata seperti yang kami tayangkan di Instagram resmi <strong>@h2c_wisata_mandiri</strong></p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Keseruan Kloter & Testimoni Asli</h2>
+          <p class="text-xs sm:text-sm text-emerald-300/80 mt-1">Liputan nyata perjalanan jamaah dari tanah air hingga kembali ke Indonesia</p>
         </div>
-        <a href="https://instagram.com/h2c_wisata_mandiri" target="_blank" class="bg-emerald-900/60 hover:bg-emerald-800 text-amber-300 border border-emerald-700/60 text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-2 transition">
-          <span>Ikuti di Instagram</span> ➔
+        <a href="https://instagram.com/h2c_wisata_mandiri" target="_blank" class="bg-emerald-900/60 hover:bg-emerald-800 text-amber-300 border border-emerald-700/60 text-xs font-bold px-4 py-2.5 rounded-xl flex items-center gap-2 transition hover:scale-105">
+          <span>Kunjungi @h2c_wisata_mandiri</span> ➔
         </a>
       </div>
 
-      <!-- Feed Cards Grid (Mirroring the 6 video posts from user reference) -->
-      <div class="grid grid-cols-3 gap-6">
-        <!-- Post 1: DISKON RP 2,5 JUTA -->
-        <div class="bg-[#083820] rounded-3xl p-5 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl hover:border-amber-400 transition group cursor-pointer">
+      <!-- Feed Grid (6 Cards with video play button hover effects) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="feed-card bg-[#083820] rounded-3xl p-6 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl group cursor-pointer">
           <div class="flex justify-between items-center">
             <span class="bg-red-600 text-white font-black text-[10px] uppercase px-2.5 py-1 rounded-md">PROMO SPESIAL</span>
-            <span class="text-xs text-emerald-300">🎥 0:58</span>
+            <span class="text-xs text-emerald-300 flex items-center gap-1">🎥 Video</span>
           </div>
           <div class="text-center my-auto">
-            <div class="w-14 h-14 rounded-full bg-amber-400/20 text-amber-400 border border-amber-400 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 transition-transform">
+            <div class="w-16 h-16 rounded-full bg-amber-400/20 text-amber-400 border border-amber-400 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-emerald-950 transition-all duration-300 shadow-lg">
               ▶
             </div>
             <div class="mt-4 text-xl font-black text-amber-300 leading-tight">
               DISKON RP 2,5 JUTA!
             </div>
             <div class="text-xs font-semibold text-emerald-100 mt-1">Pendaftaran Kloter Baru Dibuka</div>
-            <div class="text-[10px] text-emerald-300/70 mt-2">Dapatkan diskon khusus pendaftaran keluarga 3 orang ke atas.</div>
+            <div class="text-[11px] text-emerald-300/70 mt-2">Dapatkan diskon khusus pendaftaran rombongan keluarga 3 orang ke atas.</div>
           </div>
           <div class="border-t border-emerald-800/80 pt-3 flex justify-between text-[11px] text-emerald-300/80 font-medium">
             <span>@h2c_wisata_mandiri</span>
-            <span>❤️ 1.2k Likes</span>
+            <span>❤️ 1.4k Likes</span>
           </div>
         </div>
 
-        <!-- Post 2: PROSESI UMROH -->
-        <div class="bg-[#083820] rounded-3xl p-5 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl hover:border-amber-400 transition group cursor-pointer">
+        <!-- Card 2 -->
+        <div class="feed-card bg-[#083820] rounded-3xl p-6 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl group cursor-pointer">
           <div class="flex justify-between items-center">
             <span class="bg-amber-400 text-emerald-950 font-black text-[10px] uppercase px-2.5 py-1 rounded-md">KLOTER 35</span>
-            <span class="text-xs text-emerald-300">🎥 1:24</span>
+            <span class="text-xs text-emerald-300 flex items-center gap-1">🎥 Video</span>
           </div>
           <div class="text-center my-auto">
-            <div class="w-14 h-14 rounded-full bg-white/10 text-amber-300 border border-white/20 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 transition-transform">
+            <div class="w-16 h-16 rounded-full bg-white/10 text-amber-300 border border-white/20 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-emerald-950 transition-all duration-300 shadow-lg">
               ▶
             </div>
-            <div class="mt-4 text-lg font-black text-white leading-tight">
+            <div class="mt-4 text-xl font-black text-white leading-tight">
               PROSESI UMROH
             </div>
             <div class="text-xs font-semibold text-emerald-200 mt-1">Thawaf & Sa'i Berjamaah</div>
-            <div class="text-[10px] text-emerald-300/70 mt-2">Didampingi Muthawif hingga selesai tahallul dengan khusyuk.</div>
+            <div class="text-[11px] text-emerald-300/70 mt-2">Didampingi Muthawif hingga selesai tahallul dengan khusyuk dan tertib.</div>
           </div>
           <div class="border-t border-emerald-800/80 pt-3 flex justify-between text-[11px] text-emerald-300/80 font-medium">
             <span>Pelataran Ka'bah</span>
-            <span>👁️ 4.8k Views</span>
+            <span>👁️ 5.2k Views</span>
           </div>
         </div>
 
-        <!-- Post 3: INI KATA JAMAAH -->
-        <div class="bg-[#083820] rounded-3xl p-5 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl hover:border-amber-400 transition group cursor-pointer">
+        <!-- Card 3 -->
+        <div class="feed-card bg-[#083820] rounded-3xl p-6 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl group cursor-pointer">
           <div class="flex justify-between items-center">
             <span class="bg-amber-400 text-emerald-950 font-black text-[10px] uppercase px-2.5 py-1 rounded-md">INI KATA JAMAAH</span>
-            <span class="text-xs text-emerald-300">💬 Review</span>
+            <span class="text-xs text-emerald-300 flex items-center gap-1">💬 Review</span>
           </div>
           <div class="text-center my-auto">
-            <div class="w-14 h-14 rounded-full bg-white/10 text-amber-300 border border-white/20 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 transition-transform">
+            <div class="w-16 h-16 rounded-full bg-white/10 text-amber-300 border border-white/20 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-emerald-950 transition-all duration-300 shadow-lg">
               ▶
             </div>
             <div class="mt-4 text-lg font-black text-white leading-tight">
               "HOTEL BENARAN DEPAN MASJID!"
             </div>
             <div class="text-xs font-semibold text-emerald-200 mt-1">Keluarga Bpk. H. Agus & Ibu</div>
-            <div class="text-[10px] text-emerald-300/70 mt-2">"Orang tua ga kecapekan jalan, makanan cocok, muthawifnya sabar banget."</div>
+            <div class="text-[11px] text-emerald-300/70 mt-2">"Orang tua ga kecapekan jalan ke pelataran, makanan pas di lidah, pembimbingnya sabar banget."</div>
           </div>
           <div class="border-t border-emerald-800/80 pt-3 flex justify-between text-[11px] text-emerald-300/80 font-medium">
             <span>Pullman Zamzam Makkah</span>
@@ -471,43 +541,43 @@
           </div>
         </div>
 
-        <!-- Post 4: CITY TOUR MASJID QUBA & NABAWI -->
-        <div class="bg-[#083820] rounded-3xl p-5 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl hover:border-amber-400 transition group cursor-pointer">
+        <!-- Card 4 -->
+        <div class="feed-card bg-[#083820] rounded-3xl p-6 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl group cursor-pointer">
           <div class="flex justify-between items-center">
             <span class="bg-amber-400 text-emerald-950 font-black text-[10px] uppercase px-2.5 py-1 rounded-md">CITY TOUR</span>
-            <span class="text-xs text-emerald-300">📸 Ziarah</span>
+            <span class="text-xs text-emerald-300 flex items-center gap-1">📸 Ziarah</span>
           </div>
           <div class="text-center my-auto">
-            <div class="w-14 h-14 rounded-full bg-white/10 text-amber-300 border border-white/20 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 transition-transform">
+            <div class="w-16 h-16 rounded-full bg-white/10 text-amber-300 border border-white/20 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-emerald-950 transition-all duration-300 shadow-lg">
               ▶
             </div>
-            <div class="mt-4 text-lg font-black text-white leading-tight">
+            <div class="mt-4 text-xl font-black text-white leading-tight">
               MASJID QUBA & NABAWI
             </div>
             <div class="text-xs font-semibold text-emerald-200 mt-1">Ziarah Penuh Makna Sejarah</div>
-            <div class="text-[10px] text-emerald-300/70 mt-2">Shalat 2 rakaat di Quba setara pahala umroh, lanjut Jabal Uhud & Kebun Kurma.</div>
+            <div class="text-[11px] text-emerald-300/70 mt-2">Shalat 2 rakaat di Quba setara pahala umroh, lanjut ziarah Jabal Uhud & Kebun Kurma.</div>
           </div>
           <div class="border-t border-emerald-800/80 pt-3 flex justify-between text-[11px] text-emerald-300/80 font-medium">
             <span>Madinah Munawwarah</span>
-            <span>👁️ 3.1k Views</span>
+            <span>👁️ 3.9k Views</span>
           </div>
         </div>
 
-        <!-- Post 5: PELEPASAN & KEPULANGAN -->
-        <div class="bg-[#083820] rounded-3xl p-5 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl hover:border-amber-400 transition group cursor-pointer">
+        <!-- Card 5 -->
+        <div class="feed-card bg-[#083820] rounded-3xl p-6 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl group cursor-pointer">
           <div class="flex justify-between items-center">
             <span class="bg-amber-400 text-emerald-950 font-black text-[10px] uppercase px-2.5 py-1 rounded-md">KEBERANGKATAN</span>
-            <span class="text-xs text-emerald-300">✈️ Airport</span>
+            <span class="text-xs text-emerald-300 flex items-center gap-1">✈️ Airport</span>
           </div>
           <div class="text-center my-auto">
-            <div class="w-14 h-14 rounded-full bg-white/10 text-amber-300 border border-white/20 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 transition-transform">
+            <div class="w-16 h-16 rounded-full bg-white/10 text-amber-300 border border-white/20 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-emerald-950 transition-all duration-300 shadow-lg">
               ▶
             </div>
-            <div class="mt-4 text-lg font-black text-white leading-tight">
+            <div class="mt-4 text-xl font-black text-white leading-tight">
               PELEPASAN KLOTER 35
             </div>
             <div class="text-xs font-semibold text-emerald-200 mt-1">Terminal 3 Soekarno-Hatta</div>
-            <div class="text-[10px] text-emerald-300/70 mt-2">Bantuan check-in bagasi dan pengarahan paspor langsung oleh tim handling.</div>
+            <div class="text-[11px] text-emerald-300/70 mt-2">Handling check-in bagasi dan pengarahan paspor langsung oleh tim H2C.</div>
           </div>
           <div class="border-t border-emerald-800/80 pt-3 flex justify-between text-[11px] text-emerald-300/80 font-medium">
             <span>Direct Jeddah</span>
@@ -515,85 +585,88 @@
           </div>
         </div>
 
-        <!-- Post 6: MANASIK PRA KEBERANGKATAN -->
-        <div class="bg-[#083820] rounded-3xl p-5 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl hover:border-amber-400 transition group cursor-pointer">
+        <!-- Card 6 -->
+        <div class="feed-card bg-[#083820] rounded-3xl p-6 border-2 border-emerald-700/80 flex flex-col justify-between aspect-[4/5] relative shadow-xl group cursor-pointer">
           <div class="flex justify-between items-center">
             <span class="bg-amber-400 text-emerald-950 font-black text-[10px] uppercase px-2.5 py-1 rounded-md">MANASIK UMROH</span>
-            <span class="text-xs text-emerald-300">📖 Edukasi</span>
+            <span class="text-xs text-emerald-300 flex items-center gap-1">📖 Edukasi</span>
           </div>
           <div class="text-center my-auto">
-            <div class="w-14 h-14 rounded-full bg-white/10 text-amber-300 border border-white/20 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 transition-transform">
+            <div class="w-16 h-16 rounded-full bg-white/10 text-amber-300 border border-white/20 flex items-center justify-center mx-auto text-2xl group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-emerald-950 transition-all duration-300 shadow-lg">
               ▶
             </div>
             <div class="mt-4 text-lg font-black text-white leading-tight">
-              BIMBINGAN TEORI & PRAKTEK
+              BIMBINGAN TEORI & PRAKTIK
             </div>
             <div class="text-xs font-semibold text-emerald-200 mt-1">Bersama Asatidz Berilmu</div>
-            <div class="text-[10px] text-emerald-300/70 mt-2">Simulasi thawaf, pemakaian kain ihram yang benar, dan doa-doa ma'tsur.</div>
+            <div class="text-[11px] text-emerald-300/70 mt-2">Simulasi thawaf miniatur Ka'bah, pemakaian ihram yang benar, dan doa-doa ma'tsur.</div>
           </div>
           <div class="border-t border-emerald-800/80 pt-3 flex justify-between text-[11px] text-emerald-300/80 font-medium">
             <span>Hotel Grand Sahid</span>
-            <span>❤️ 980 Likes</span>
+            <span>❤️ 1.1k Likes</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ SECTION ACCORDION -->
-  <section id="faq" class="py-16 px-8 max-w-4xl mx-auto">
-    <div class="text-center mb-10">
+  <!-- INTERACTIVE FAQ SECTION WITH ACCORDION -->
+  <section id="faq" class="py-16 sm:py-20 px-6 sm:px-8 max-w-4xl mx-auto">
+    <div class="text-center mb-12">
       <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest">Pertanyaan Sering Diajukan</span>
       <h2 class="text-3xl font-extrabold text-slate-900 mt-1">FAQ Seputar Umroh H2C</h2>
     </div>
 
     <div class="space-y-4">
-      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-        <h4 class="font-bold text-sm text-slate-900 flex justify-between items-center">
+      <details class="group bg-white p-5 rounded-2xl border border-slate-200 shadow-sm transition open:border-emerald-600 open:shadow-md">
+        <summary class="flex justify-between items-center font-bold text-sm text-slate-900 cursor-pointer list-none">
           <span>Apakah H2C Wisata Mandiri memiliki izin resmi Kemenag?</span>
-          <span class="text-emerald-700 font-bold text-lg">−</span>
-        </h4>
-        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+          <span class="text-emerald-700 font-bold text-lg group-open:rotate-45 transition-transform duration-200">+</span>
+        </summary>
+        <p class="text-xs text-slate-600 mt-3 leading-relaxed border-t border-slate-100 pt-3">
           Ya, kami beroperasi dengan izin resmi Penyelenggara Perjalanan Ibadah Umrah (PPIU) dari Kementerian Agama RI dengan akreditasi "A". Seluruh tiket pesawat, visa, dan reservasi hotel dijamin pasti.
         </p>
-      </div>
+      </details>
 
-      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-        <h4 class="font-bold text-sm text-slate-900 flex justify-between items-center">
+      <details class="group bg-white p-5 rounded-2xl border border-slate-200 shadow-sm transition open:border-emerald-600 open:shadow-md">
+        <summary class="flex justify-between items-center font-bold text-sm text-slate-900 cursor-pointer list-none">
           <span>Bagaimana sistem pembayaran dan pendaftaran?</span>
-          <span class="text-emerald-700 font-bold text-lg">+</span>
-        </h4>
-        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-          Pendaftaran cukup dengan mengisi formulir dan membayar DP sebesar Rp 5.000.000 untuk mengunci kuota tiket pesawat dan hotel. Pelunasan dapat dicicil hingga 30 hari sebelum tanggal keberangkatan.
+          <span class="text-emerald-700 font-bold text-lg group-open:rotate-45 transition-transform duration-200">+</span>
+        </summary>
+        <p class="text-xs text-slate-600 mt-3 leading-relaxed border-t border-slate-100 pt-3">
+          Pendaftaran cukup dengan mengisi data dan membayar DP sebesar Rp 5.000.000 untuk mengunci kuota tiket pesawat dan hotel. Pelunasan dapat dicicil hingga 30 hari sebelum tanggal keberangkatan.
         </p>
-      </div>
+      </details>
 
-      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-        <h4 class="font-bold text-sm text-slate-900 flex justify-between items-center">
-          <span>Apakah ada pendampingan khusus untuk jamaah lansia / kursi roda?</span>
-          <span class="text-emerald-700 font-bold text-lg">+</span>
-        </h4>
-        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+      <details class="group bg-white p-5 rounded-2xl border border-slate-200 shadow-sm transition open:border-emerald-600 open:shadow-md">
+        <summary class="flex justify-between items-center font-bold text-sm text-slate-900 cursor-pointer list-none">
+          <span>Apakah ada pendampingan khusus untuk lansia atau pengguna kursi roda?</span>
+          <span class="text-emerald-700 font-bold text-lg group-open:rotate-45 transition-transform duration-200">+</span>
+        </summary>
+        <p class="text-xs text-slate-600 mt-3 leading-relaxed border-t border-slate-100 pt-3">
           Tentu. Tim muthawif dan handling kami siap membantu penyediaan kursi roda, penanganan di bandara, serta pendampingan khusus saat prosesi thawaf dan sa'i agar jamaah lansia tetap nyaman dan aman.
         </p>
-      </div>
+      </details>
     </div>
   </section>
 
-  <!-- BOTTOM STICKY / FLOATING WHATSAPP CTA -->
+  <!-- FLOATING WHATSAPP BUTTON WITH PULSE EFFECT -->
   <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
-    <div class="bg-white text-slate-800 text-xs font-bold py-2 px-4 rounded-2xl shadow-xl border border-slate-200 hidden md:block">
+    <div class="bg-white text-slate-800 text-xs font-bold py-2 px-4 rounded-2xl shadow-xl border border-slate-200 hidden md:block animate-bounce">
       Konsultasi Gratis via WhatsApp 👋
     </div>
-    <a href="#" class="w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center text-3xl shadow-2xl shadow-emerald-900/40 hover:scale-105 transition-transform">
-      💬
-    </a>
+    <div class="relative">
+      <span class="animate-pulse-ring absolute inline-flex h-full w-full rounded-full bg-emerald-500"></span>
+      <a href="https://wa.me/6281234567890?text=Halo%20Admin%20H2C%2C%20saya%20mau%20konsultasi%20paket%20umroh" target="_blank" class="relative w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center text-3xl shadow-2xl shadow-emerald-900/40 hover:scale-110 transition-transform">
+        💬
+      </a>
+    </div>
   </div>
 
   <!-- FOOTER -->
-  <footer class="bg-[#03170b] text-slate-400 text-xs py-12 px-8 border-t border-emerald-950">
-    <div class="max-w-6xl mx-auto grid grid-cols-4 gap-10">
-      <div class="col-span-2 space-y-3">
+  <footer class="bg-[#03170b] text-slate-400 text-xs py-12 px-6 sm:px-8 border-t border-emerald-950">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="md:col-span-2 space-y-3">
         <div class="flex items-center gap-2 text-white font-black text-lg">
           <span class="text-amber-400">☪</span> H2C WISATA MANDIRI
         </div>
@@ -607,16 +680,16 @@
       <div>
         <h5 class="font-bold text-white mb-3 uppercase tracking-wider text-[11px]">Menu Cepat</h5>
         <ul class="space-y-2 text-[11px]">
-          <li><a href="#paket" class="hover:text-amber-300">Paket Reguler 9 Hari</a></li>
-          <li><a href="#paket" class="hover:text-amber-300">Paket VIP Kereta Cepat</a></li>
-          <li><a href="#paket" class="hover:text-amber-300">Jadwal Keberangkatan</a></li>
-          <li><a href="#feed" class="hover:text-amber-300">Galeri Video Jamaah</a></li>
+          <li><a href="#paket" class="hover:text-amber-300 transition">Paket Reguler 9 Hari</a></li>
+          <li><a href="#paket" class="hover:text-amber-300 transition">Paket VIP Kereta Cepat</a></li>
+          <li><a href="#jadwal" class="hover:text-amber-300 transition">Jadwal Keberangkatan</a></li>
+          <li><a href="#feed" class="hover:text-amber-300 transition">Galeri Video Jamaah</a></li>
         </ul>
       </div>
       <div>
         <h5 class="font-bold text-white mb-3 uppercase tracking-wider text-[11px]">Kontak & Kantor</h5>
         <p class="text-[11px] leading-relaxed">
-          Office Tower Lantai 5, Jakarta & Bekasi<br>
+          Office Tower, Jakarta & Bekasi<br>
           WhatsApp: +62 812-3456-7890<br>
           Instagram: @h2c_wisata_mandiri
         </p>
