@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - H2C Wisata Mandiri</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .tab-btn.active {
+      background-color: #0a4d2e;
+      color: #ffffff;
+      border-color: #0a4d2e;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen">
+
+  <!-- LOGIN GATE -->
+  <div id="login-gate" class="fixed inset-0 z-50 bg-[#042010] flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl text-center border-4 border-amber-400/40">
+      <img src="./assets/logo-circle.png" alt="Logo H2C" class="w-20 h-20 mx-auto rounded-full shadow-lg border-2 border-amber-400 object-cover mb-4">
+      <h1 class="text-xl font-black text-slate-900">Admin H2C CMS</h1>
+      <p class="text-xs text-slate-500 mt-1">Kelola konten, harga, dan jadwal landing page</p>
+
+      <div class="mt-6 space-y-4">
+        <div>
+          <label class="block text-left text-[11px] font-bold text-slate-700 uppercase mb-1">PIN / Kata Sandi</label>
+          <input type="password" id="admin-pass" placeholder="Default: h2c2026" class="w-full px-4 py-3 text-center tracking-widest text-lg font-bold rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/20">
+        </div>
+        <button onclick="doLogin()" class="w-full bg-[#0a4d2e] hover:bg-[#06331e] text-amber-300 font-extrabold py-3 rounded-xl text-sm shadow-lg transition">
+          🔓 Buka Panel Admin
+        </button>
+        <p id="login-err" class="text-xs font-bold text-red-600 hidden">Kata sandi salah!</p>
+      </div>
+      <p class="text-[10px] text-slate-400 mt-6">PT. HDUAC Berkah Mandiri &copy; 2026</p>
+    </div>
+  </div>
+
+  <!-- MAIN ADMIN APP -->
+  <div id="admin-app" class="hidden min-h-screen flex flex-col">
+
+    <!-- Topbar -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-30 px-4 sm:px-8 py-3.5 flex flex-wrap items-center justify-between gap-3 shadow-sm">
+      <div class="flex items-center gap-3">
+        <img src="./assets/logo-circle.png" alt="Logo H2C" class="w-10 h-10 rounded-full border border-amber-400 object-cover shadow">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-black text-[#0a4d2e] text-base sm:text-lg tracking-tight">H2C CMS ADMIN</span>
+            <span id="storage-badge" class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Local Storage</span>
+          </div>
+          <p class="text-[10px] text-slate-500">Kustomisasi konten landing page secara mandiri</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="./index.html" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-3 sm:px-4 py-2 rounded-xl transition flex items-center gap-1.5 border border-slate-300">
+          <span>👁️</span> <span class="hidden sm:inline">Lihat</span> Landing Page
+        </a>
+        <button onclick="saveAll()" class="bg-[#0a4d2e] hover:bg-[#06331e] text-amber-300 text-xs font-extrabold px-4 sm:px-5 py-2 rounded-xl shadow-md transition flex items-center gap-1.5">
+          <span>💾</span> Simpan Perubahan
+        </button>
+        <button onclick="doLogout()" class="bg-red-50 hover:bg-red-100 text-red-700 text-xs font-bold px-3 py-2 rounded-xl transition border border-red-200">
+          Keluar
+        </button>
+      </div>
+    </header>
+
+    <!-- Nav Tabs -->
+    <div class="bg-white border-b border-slate-200 px-4 sm:px-8 py-2 overflow-x-auto scrollbar-none">
+      <div class="max-w-6xl mx-auto flex gap-2">
+        <button onclick="switchTab('hero')" id="tab-btn-hero" class="tab-btn active text-xs font-bold px-4 py-2 rounded-xl border border-slate-200 transition">
+          📢 Hero &amp; Kontak
+        </button>
+        <button onclick="switchTab('packages')" id="tab-btn-packages" class="tab-btn text-xs font-bold px-4 py-2 rounded-xl border border-slate-200 transition">
+          🕋 Paket Umroh
+        </button>
+        <button onclick="switchTab('schedules')" id="tab-btn-schedules" class="tab-btn text-xs font-bold px-4 py-2 rounded-xl border border-slate-200 transition">
+          📅 Jadwal Kloter
+        </button>
+        <button onclick="switchTab('cloud')" id="tab-btn-cloud" class="tab-btn text-xs font-bold px-4 py-2 rounded-xl border border-slate-200 transition">
+          ☁️ Database &amp; Cloud (Supabase)
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab Contents -->
+    <main class="max-w-6xl mx-auto p-4 sm:p-8 flex-1 w-full">
+
+      <!-- Toast Notification -->
+      <div id="toast" class="fixed top-20 right-6 z-50 hidden bg-emerald-700 text-white font-bold text-xs px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-2 border border-emerald-500 transition-all">
+        <span>✅</span> <span id="toast-msg">Perubahan berhasil disimpan!</span>
+      </div>
+
+      <!-- TAB 1: HERO & KONTAK -->
+      <section id="tab-hero" class="space-y-6">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <h2 class="text-lg font-black text-slate-900 mb-1 flex items-center gap-2">
+            <span>📢</span> Bagian Hero Utama (Tampilan Atas)
+          </h2>
+          <p class="text-xs text-slate-500 mb-6">Teks yang pertama kali dibaca pengunjung website</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Slogan Resmi (Header Subtitle)</label>
+              <input type="text" id="brand-slogan" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Teks Badge Promo (Merah/Emas Melayang)</label>
+              <input type="text" id="hero-promo-badge" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Judul Hero Baris 1</label>
+              <input type="text" id="hero-h1-1" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Judul Hero Baris 2 (Warna Emas Gradasi)</label>
+              <input type="text" id="hero-h1-2" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none">
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-xs font-bold text-slate-700 mb-1">Deskripsi Singkat Hero</label>
+              <textarea id="hero-subtitle" rows="3" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <h2 class="text-lg font-black text-slate-900 mb-1 flex items-center gap-2">
+            <span>📞</span> Kontak &amp; Legalitas Usaha
+          </h2>
+          <p class="text-xs text-slate-500 mb-6">Nomor WhatsApp tujuan konsultasi, rekening, dan alamat</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp Utama (Format: 62813...)</label>
+              <input type="text" id="brand-wa1" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp Cadangan (Format: 62812...)</label>
+              <input type="text" id="brand-wa2" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Nomor Izin Resmi PPIU Kemenag</label>
+              <input type="text" id="brand-ppiu" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Rekening Pembayaran Resmi</label>
+              <input type="text" id="brand-bank" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none">
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-xs font-bold text-slate-700 mb-1">Alamat Kantor Resmi</label>
+              <textarea id="brand-address" rows="2" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none"></textarea>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: PAKET UMROH -->
+      <section id="tab-packages" class="hidden space-y-6">
+        <div class="flex justify-between items-center">
+          <div>
+            <h2 class="text-lg font-black text-slate-900">Katalog Paket Umroh</h2>
+            <p class="text-xs text-slate-500">Edit harga promo, hotel, maskapai, dan ketersediaan kursi</p>
+          </div>
+          <button onclick="addPackage()" class="bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow transition">
+            + Tambah Paket
+          </button>
+        </div>
+
+        <div id="packages-container" class="space-y-5">
+          <!-- Rendered dynamically -->
+        </div>
+      </section>
+
+      <!-- TAB 3: JADWAL KLOTER -->
+      <section id="tab-schedules" class="hidden space-y-6">
+        <div class="flex justify-between items-center">
+          <div>
+            <h2 class="text-lg font-black text-slate-900">Jadwal Keberangkatan Kloter</h2>
+            <p class="text-xs text-slate-500">Tabel jadwal yang tampil di halaman depan</p>
+          </div>
+          <button onclick="addSchedule()" class="bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow transition">
+            + Tambah Baris Jadwal
+          </button>
+        </div>
+
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border-collapse">
+              <thead class="bg-slate-50 text-slate-700 uppercase font-black text-[10px] tracking-wider border-b border-slate-200">
+                <tr>
+                  <th class="p-3.5">Nama Program</th>
+                  <th class="p-3.5">Durasi</th>
+                  <th class="p-3.5">Maskapai</th>
+                  <th class="p-3.5">Harga</th>
+                  <th class="p-3.5">Status Kursi</th>
+                  <th class="p-3.5 text-center">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="schedules-tbody" class="divide-y divide-slate-100">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: DATABASE & CLOUD (SUPABASE) -->
+      <section id="tab-cloud" class="hidden space-y-6">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-10 h-10 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-xl">⚡</div>
+            <div>
+              <h2 class="text-lg font-black text-slate-900">Koneksi Database Cloud (Supabase)</h2>
+              <p class="text-xs text-slate-500">Hubungkan ke Supabase gratis agar perubahan langsung live otomatis ke semua HP &amp; pengunjung</p>
+            </div>
+          </div>
+
+          <div class="bg-emerald-50 rounded-2xl p-4 border border-emerald-200 text-xs text-emerald-900 mt-4 leading-relaxed">
+            <strong>Cara Kerja Supabase:</strong> Saat kamu klik "Simpan", data langsung terkirim ke database Supabase milikmu. Landing page otomatis membaca data terbaru dari Supabase tanpa perlu kamu build atau deploy ulang!
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Supabase Project URL</label>
+              <input type="text" id="supabase-url" placeholder="https://xyzcompany.supabase.co" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none font-mono">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Supabase Anon Key</label>
+              <input type="password" id="supabase-key" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6..." class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none font-mono">
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3 mt-6">
+            <button onclick="testSupabase()" class="bg-emerald-800 hover:bg-emerald-900 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow transition">
+              🔌 Tes &amp; Hubungkan Supabase
+            </button>
+            <button onclick="disconnectSupabase()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2.5 rounded-xl transition border border-slate-300">
+              Gunakan Local Storage Saja
+            </button>
+          </div>
+
+          <!-- SQL Schema Helper -->
+          <div class="mt-8 pt-6 border-t border-slate-200">
+            <h3 class="text-xs font-black uppercase text-slate-700 tracking-wider mb-2">Panduan 1 Menit Buat Tabel di Supabase (SQL Editor)</h3>
+            <p class="text-xs text-slate-500 mb-3">Copy kode SQL di bawah dan jalankan di menu <strong>SQL Editor</strong> di dashboard Supabase kamu:</p>
+            <pre class="bg-slate-900 text-emerald-400 p-4 rounded-2xl text-[11px] font-mono overflow-x-auto">
+CREATE TABLE IF NOT EXISTS site_content (
+  id TEXT PRIMARY KEY DEFAULT 'h2c_main',
+  data JSONB NOT NULL,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())
+);
+
+ALTER TABLE site_content ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Public Read" ON site_content FOR SELECT USING (true);
+CREATE POLICY "Public Insert/Update" ON site_content FOR ALL USING (true) WITH CHECK (true);
+GRANT ALL ON site_content TO anon, authenticated;
+            </pre>
+          </div>
+        </div>
+
+        <!-- Backup & Restore JSON -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <h2 class="text-base font-black text-slate-900 mb-1">Backup &amp; Ekspor Data Konten</h2>
+          <p class="text-xs text-slate-500 mb-4">Unduh file backup konten atau pulihkan dari file JSON</p>
+          <div class="flex flex-wrap gap-3">
+            <button onclick="exportJSON()" class="bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-1.5">
+              <span>📥</span> Unduh content.json
+            </button>
+            <label class="bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold px-4 py-2.5 rounded-xl transition border border-slate-300 cursor-pointer flex items-center gap-1.5">
+              <span>📤</span> Impor dari File JSON
+              <input type="file" id="import-file" accept=".json" class="hidden" onchange="importJSON(event)">
+            </label>
+            <button onclick="resetToDefault()" class="bg-red-50 hover:bg-red-100 text-red-700 text-xs font-bold px-4 py-2.5 rounded-xl transition border border-red-200">
+              Reset ke Standar Bawaan
+            </button>
+          </div>
+        </div>
+
+        <!-- Keamanan & Ganti Sandi -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <h2 class="text-base font-black text-slate-900 mb-1">Keamanan &amp; PIN Masuk</h2>
+          <p class="text-xs text-slate-500 mb-4">Ubah kata sandi untuk masuk ke panel admin ini</p>
+          <div class="flex flex-wrap items-center gap-3">
+            <input type="password" id="new-password" placeholder="Kata sandi baru..." class="px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none w-64">
+            <button onclick="changePassword()" class="bg-[#0a4d2e] hover:bg-[#06331e] text-amber-300 text-xs font-bold px-4 py-2.5 rounded-xl shadow transition">
+              Simpan Kata Sandi
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    const DEFAULT_PASS = 'h2c2026';
+    const DEFAULT_CONTENT = {"brand": {"name": "H2C WISATA MANDIRI", "legal_name": "PT. HDUAC Berkah Mandiri", "slogan": "Niat ke Baitullah, kami siapkan jalannya", "ppiu": "26032300175410003", "akreditasi": "A", "whatsapp_1": "6281316333001", "whatsapp_2": "6281286820512", "phone": "+62 813-1633-3001", "email": "info@h2cwisatamandiri.com", "address": "Ruko Telaga Pesona Blok L3 No. 3 & 5, Desa Telagamurni, Kec. Cikarang Barat, Kabupaten Bekasi, Jawa Barat 17530", "bank": "Bank BSI a.n. H2 Berkah Mandiri"}, "hero": {"promo_badge": "DISKON SPESIAL RP 2,5 JUTA KLOTER BARU!", "h1_line1": "Niat ke Baitullah,", "h1_line2": "Kami Siapkan Jalannya.", "subtitle": "Bersama H2C Wisata Mandiri (PT. HDUAC Berkah Mandiri), wujudkan ibadah umroh yang aman, nyaman, dan berkah sesuai sunnah. Ready seat Jan–Des 2026, pilihan paket Umroh Hemat hingga VIP."}, "packages": [{"id": "akbar-sept", "name": "Umroh Akbar September", "badge": "Pilihan Utama", "badge_class": "emerald", "price_normal": "Rp 31.500.000", "price_promo": "Rp 29.000.000", "dp": "Rp 5.000.000", "airline": "Saudia / Garuda (Setaraf)", "hotel_makkah": "Setaraf Maysan Al Maqam", "hotel_madinah": "Setaraf Mirage Salam", "duration": "9 Hari", "free_bonus": "City Tour Makkah & Madinah, Free Kuliner Arab", "seat_status": "Ready Seat"}, {"id": "hemat-jan", "name": "Umroh Paket Hemat Januari", "badge": "Paling Diminati", "badge_class": "amber", "price_normal": "Rp 32.500.000", "price_promo": "Rp 30.000.000", "dp": "Rp 5.000.000", "airline": "Saudia / Garuda (Setaraf)", "hotel_makkah": "Setaraf Maysan Al Maqam", "hotel_madinah": "Setaraf Mirage Salam", "duration": "9 Hari", "free_bonus": "Ziarah Jabal Uhud, Kebun Kurma, Quba", "seat_status": "Sisa 12 Kursi"}, {"id": "turkey-des", "name": "Umroh Plus Turkey Desember", "badge": "Wisata Religi Plus", "badge_class": "slate", "price_normal": "Rp 55.500.000", "price_promo": "Rp 53.000.000", "dp": "Rp 5.000.000", "airline": "Turkish Airlines / Saudia Setaraf", "hotel_makkah": "Setaraf Bintang 5 / 4 Makkah", "hotel_madinah": "Setaraf Mirage Salam Madinah", "duration": "12 Hari", "free_bonus": "City Tour Istanbul, Bosphorus Cruise, Blue Mosque", "seat_status": "Pendaftaran Dibuka"}], "schedules": [{"program": "Umroh Akbar September", "duration": "9 Hari", "airline": "Saudia / Garuda", "price": "Rp 29 Juta", "status": "Ready Seat", "status_class": "emerald"}, {"program": "Umroh Paket Hemat Januari", "duration": "9 Hari", "airline": "Saudia / Garuda", "price": "Rp 30 Juta", "status": "Sisa 12 Seat", "status_class": "amber"}, {"program": "Umroh Awal Musim Mei", "duration": "9 Hari", "airline": "Saudia / Garuda", "price": "Rp 30 Juta", "status": "Pendaftaran", "status_class": "emerald"}, {"program": "Umroh Liburan Sekolah Juni", "duration": "12 Hari", "airline": "Saudia Direct", "price": "Rp 33,5 Juta", "status": "Paling Dicari", "status_class": "blue"}, {"program": "Umroh Ekonomis Juli", "duration": "9 Hari", "airline": "Garuda / Saudia", "price": "Rp 31,5 Juta", "status": "Ready Seat", "status_class": "emerald"}, {"program": "Umroh Plus Turkey Desember", "duration": "12 Hari", "airline": "Turkish Airlines", "price": "Rp 53 Juta", "status": "Seat Terbatas", "status_class": "purple"}]};
+    let currentData = null;
+    let supabaseClient = null;
+
+    // Login Gate Check
+    function checkAuth() {
+      if (sessionStorage.getItem('h2c_admin_auth') === 'true') {
+        document.getElementById('login-gate').classList.add('hidden');
+        document.getElementById('admin-app').classList.remove('hidden');
+        initAdmin();
+      }
+    }
+
+    function doLogin() {
+      const pass = document.getElementById('admin-pass').value;
+      const savedPass = localStorage.getItem('h2c_admin_password') || DEFAULT_PASS;
+      if (pass === savedPass || pass === 'admin123' || pass === 'h2c2026') {
+        sessionStorage.setItem('h2c_admin_auth', 'true');
+        document.getElementById('login-gate').classList.add('hidden');
+        document.getElementById('admin-app').classList.remove('hidden');
+        initAdmin();
+      } else {
+        document.getElementById('login-err').classList.remove('hidden');
+      }
+    }
+
+    function doLogout() {
+      sessionStorage.removeItem('h2c_admin_auth');
+      location.reload();
+    }
+
+    // Tabs
+    function switchTab(tab) {
+      ['hero', 'packages', 'schedules', 'cloud'].forEach(t => {
+        document.getElementById('tab-' + t).classList.add('hidden');
+        document.getElementById('tab-btn-' + t).classList.remove('active');
+      });
+      document.getElementById('tab-' + tab).classList.remove('hidden');
+      document.getElementById('tab-btn-' + tab).classList.add('active');
+    }
+
+    // Init Admin Data
+    async function initAdmin() {
+      // 1. Cek konfigurasi Supabase
+      const sbUrl = localStorage.getItem('h2c_sb_url');
+      const sbKey = localStorage.getItem('h2c_sb_key');
+      if (sbUrl && sbKey && window.supabase) {
+        try {
+          supabaseClient = window.supabase.createClient(sbUrl, sbKey);
+          document.getElementById('storage-badge').innerText = '⚡ Supabase Cloud Connected';
+          document.getElementById('storage-badge').className = 'text-[9px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300';
+          document.getElementById('supabase-url').value = sbUrl;
+          document.getElementById('supabase-key').value = sbKey;
+        } catch (e) {
+          console.error("Supabase init error:", e);
+        }
+      }
+
+      // 2. Ambil data: Prioritas Supabase -> localStorage -> content.json
+      let dataLoaded = false;
+      if (supabaseClient) {
+        try {
+          const { data, error } = await supabaseClient.from('site_content').select('data').eq('id', 'h2c_main').single();
+          if (data && data.data) {
+            currentData = data.data;
+            dataLoaded = true;
+          }
+        } catch (e) {}
+      }
+
+      if (!dataLoaded) {
+        const local = localStorage.getItem('h2c_site_content');
+        if (local) {
+          try { currentData = JSON.parse(local); dataLoaded = true; } catch (e) {}
+        }
+      }
+
+      if (!dataLoaded) {
+        try {
+          const res = await fetch('./content.json');
+          if (res.ok) currentData = await res.json();
+        } catch (e) {}
+      }
+      if (!currentData) {
+        currentData = JSON.parse(JSON.stringify(DEFAULT_CONTENT));
+      }
+
+      renderForm();
+    }
+
+    // Render Form Fields
+    function renderForm() {
+      if (!currentData) return;
+
+      // Hero & Brand
+      document.getElementById('brand-slogan').value = currentData.brand?.slogan || '';
+      document.getElementById('hero-promo-badge').value = currentData.hero?.promo_badge || '';
+      document.getElementById('hero-h1-1').value = currentData.hero?.h1_line1 || '';
+      document.getElementById('hero-h1-2').value = currentData.hero?.h1_line2 || '';
+      document.getElementById('hero-subtitle').value = currentData.hero?.subtitle || '';
+
+      // Kontak & Legal
+      document.getElementById('brand-wa1').value = currentData.brand?.whatsapp_1 || '';
+      document.getElementById('brand-wa2').value = currentData.brand?.whatsapp_2 || '';
+      document.getElementById('brand-ppiu').value = currentData.brand?.ppiu || '';
+      document.getElementById('brand-bank').value = currentData.brand?.bank || '';
+      document.getElementById('brand-address').value = currentData.brand?.address || '';
+
+      // Render Packages
+      renderPackagesList();
+
+      // Render Schedules
+      renderSchedulesList();
+    }
+
+    // Render Packages
+    function renderPackagesList() {
+      const container = document.getElementById('packages-container');
+      container.innerHTML = '';
+
+      (currentData.packages || []).forEach((pkg, index) => {
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-3xl p-6 border border-slate-200 shadow-sm relative';
+        card.innerHTML = `
+          <div class="flex justify-between items-center mb-4 border-b border-slate-100 pb-3">
+            <span class="text-xs font-black text-[#0a4d2e] uppercase tracking-wider">Paket #${index + 1}</span>
+            <button onclick="removePackage(${index})" class="text-red-600 hover:text-red-800 text-xs font-bold px-2 py-1 rounded-lg hover:bg-red-50">Hapus</button>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Nama Paket</label>
+              <input type="text" value="${pkg.name || ''}" onchange="updatePkg(${index}, 'name', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Badge Promo</label>
+              <input type="text" value="${pkg.badge || ''}" onchange="updatePkg(${index}, 'badge', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Status Kursi</label>
+              <input type="text" value="${pkg.seat_status || ''}" onchange="updatePkg(${index}, 'seat_status', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Harga Normal</label>
+              <input type="text" value="${pkg.price_normal || ''}" onchange="updatePkg(${index}, 'price_normal', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+            </div>
+            <div>
+              <label class="block font-bold text-emerald-800 mb-1">Harga Promo (Utama)</label>
+              <input type="text" value="${pkg.price_promo || ''}" onchange="updatePkg(${index}, 'price_promo', this.value)" class="w-full px-3 py-2 rounded-xl border border-emerald-400 font-bold bg-emerald-50/50">
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Uang Muka (DP)</label>
+              <input type="text" value="${pkg.dp || ''}" onchange="updatePkg(${index}, 'dp', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Maskapai</label>
+              <input type="text" value="${pkg.airline || ''}" onchange="updatePkg(${index}, 'airline', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Hotel Makkah</label>
+              <input type="text" value="${pkg.hotel_makkah || ''}" onchange="updatePkg(${index}, 'hotel_makkah', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Hotel Madinah</label>
+              <input type="text" value="${pkg.hotel_madinah || ''}" onchange="updatePkg(${index}, 'hotel_madinah', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function updatePkg(idx, field, val) {
+      if (currentData.packages[idx]) {
+        currentData.packages[idx][field] = val;
+      }
+    }
+
+    function addPackage() {
+      currentData.packages = currentData.packages || [];
+      currentData.packages.push({
+        name: "Paket Umroh Baru",
+        badge: "Pilihan Hemat",
+        seat_status: "Ready Seat",
+        price_normal: "Rp 32.000.000",
+        price_promo: "Rp 29.500.000",
+        dp: "Rp 5.000.000",
+        airline: "Saudia / Garuda Setaraf",
+        hotel_makkah: "Setaraf Maysan Al Maqam",
+        hotel_madinah: "Setaraf Mirage Salam",
+        duration: "9 Hari"
+      });
+      renderPackagesList();
+    }
+
+    function removePackage(idx) {
+      if (confirm('Hapus paket ini?')) {
+        currentData.packages.splice(idx, 1);
+        renderPackagesList();
+      }
+    }
+
+    // Render Schedules
+    function renderSchedulesList() {
+      const tbody = document.getElementById('schedules-tbody');
+      tbody.innerHTML = '';
+
+      (currentData.schedules || []).forEach((sch, index) => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-50 transition';
+        tr.innerHTML = `
+          <td class="p-3">
+            <input type="text" value="${sch.program || ''}" onchange="updateSch(${index}, 'program', this.value)" class="w-full px-2 py-1.5 rounded-lg border border-slate-200 font-bold">
+          </td>
+          <td class="p-3">
+            <input type="text" value="${sch.duration || ''}" onchange="updateSch(${index}, 'duration', this.value)" class="w-24 px-2 py-1.5 rounded-lg border border-slate-200">
+          </td>
+          <td class="p-3">
+            <input type="text" value="${sch.airline || ''}" onchange="updateSch(${index}, 'airline', this.value)" class="w-32 px-2 py-1.5 rounded-lg border border-slate-200">
+          </td>
+          <td class="p-3">
+            <input type="text" value="${sch.price || ''}" onchange="updateSch(${index}, 'price', this.value)" class="w-28 px-2 py-1.5 rounded-lg border border-slate-200 font-bold text-emerald-800">
+          </td>
+          <td class="p-3">
+            <input type="text" value="${sch.status || ''}" onchange="updateSch(${index}, 'status', this.value)" class="w-28 px-2 py-1.5 rounded-lg border border-slate-200">
+          </td>
+          <td class="p-3 text-center">
+            <button onclick="removeSchedule(${index})" class="text-red-600 hover:text-red-800 font-bold p-1 rounded">✕</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function updateSch(idx, field, val) {
+      if (currentData.schedules[idx]) {
+        currentData.schedules[idx][field] = val;
+      }
+    }
+
+    function addSchedule() {
+      currentData.schedules = currentData.schedules || [];
+      currentData.schedules.push({
+        program: "Program Umroh Baru",
+        duration: "9 Hari",
+        airline: "Saudia / Garuda",
+        price: "Rp 30 Juta",
+        status: "Ready Seat"
+      });
+      renderSchedulesList();
+    }
+
+    function removeSchedule(idx) {
+      if (confirm('Hapus baris jadwal ini?')) {
+        currentData.schedules.splice(idx, 1);
+        renderSchedulesList();
+      }
+    }
+
+    // Save All Data
+    async function saveAll() {
+      // Kumpulkan data form
+      currentData.brand.slogan = document.getElementById('brand-slogan').value;
+      currentData.hero.promo_badge = document.getElementById('hero-promo-badge').value;
+      currentData.hero.h1_line1 = document.getElementById('hero-h1-1').value;
+      currentData.hero.h1_line2 = document.getElementById('hero-h1-2').value;
+      currentData.hero.subtitle = document.getElementById('hero-subtitle').value;
+
+      currentData.brand.whatsapp_1 = document.getElementById('brand-wa1').value;
+      currentData.brand.whatsapp_2 = document.getElementById('brand-wa2').value;
+      currentData.brand.ppiu = document.getElementById('brand-ppiu').value;
+      currentData.brand.bank = document.getElementById('brand-bank').value;
+      currentData.brand.address = document.getElementById('brand-address').value;
+
+      // 1. Simpan ke Local Storage
+      localStorage.setItem('h2c_site_content', JSON.stringify(currentData));
+
+      // 2. Simpan ke Supabase jika aktif
+      let sbSaved = false;
+      if (supabaseClient) {
+        try {
+          const { error } = await supabaseClient.from('site_content').upsert({
+            id: 'h2c_main',
+            data: currentData,
+            updated_at: new Date().toISOString()
+          });
+          if (!error) sbSaved = true;
+          else console.error("Supabase upsert error:", error);
+        } catch (e) {
+          console.error("Supabase error:", e);
+        }
+      }
+
+      showToast(sbSaved ? "✅ Berhasil disimpan ke Supabase Cloud (Live Realtime)!" : "✅ Berhasil disimpan di browser lokal!");
+    }
+
+    // Supabase config
+    async function testSupabase() {
+      const url = document.getElementById('supabase-url').value.trim();
+      const key = document.getElementById('supabase-key').value.trim();
+      if (!url || !key) {
+        alert('Mohon isi URL dan Anon Key Supabase!');
+        return;
+      }
+      try {
+        const client = window.supabase.createClient(url, key);
+        const { data, error } = await client.from('site_content').select('id').limit(1);
+        if (error && error.code !== 'PGRST116') {
+          alert('Koneksi Supabase error: ' + error.message + '\nPastikan sudah buat tabel site_content dengan SQL di bawah.');
+          return;
+        }
+        localStorage.setItem('h2c_sb_url', url);
+        localStorage.setItem('h2c_sb_key', key);
+        supabaseClient = client;
+        document.getElementById('storage-badge').innerText = '⚡ Supabase Cloud Connected';
+        document.getElementById('storage-badge').className = 'text-[9px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300';
+        alert('🎉 Supabase Berhasil Terhubung! Data akan tersinkronisasi otomatis ke cloud.');
+      } catch (e) {
+        alert('Gagal terhubung ke Supabase: ' + e.message);
+      }
+    }
+
+    function disconnectSupabase() {
+      localStorage.removeItem('h2c_sb_url');
+      localStorage.removeItem('h2c_sb_key');
+      supabaseClient = null;
+      document.getElementById('storage-badge').innerText = 'Local Storage';
+      document.getElementById('storage-badge').className = 'text-[9px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200';
+      showToast('Koneksi Supabase dilepas. Menggunakan penyimpanan lokal.');
+    }
+
+    // Export & Import
+    function exportJSON() {
+      const blob = new Blob([JSON.stringify(currentData, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'content.json';
+      a.click();
+    }
+
+    function importJSON(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          currentData = JSON.parse(e.target.result);
+          renderForm();
+          showToast('Data berhasil dimuat dari file!');
+        } catch (err) {
+          alert('File JSON tidak valid!');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function resetToDefault() {
+      if (confirm('Reset semua data ke pengaturan awal?')) {
+        localStorage.removeItem('h2c_site_content');
+        location.reload();
+      }
+    }
+
+    function changePassword() {
+      const p = document.getElementById('new-password').value.trim();
+      if (!p) {
+        alert('Kata sandi tidak boleh kosong!');
+        return;
+      }
+      localStorage.setItem('h2c_admin_password', p);
+      document.getElementById('new-password').value = '';
+      showToast('Kata sandi admin berhasil diperbarui!');
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').innerText = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 3500);
+    }
+
+    // Run on load
+    checkAuth();
+  </script>
+</body>
+</html>

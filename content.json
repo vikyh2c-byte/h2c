@@ -1,0 +1,118 @@
+{
+  "brand": {
+    "name": "H2C WISATA MANDIRI",
+    "legal_name": "PT. HDUAC Berkah Mandiri",
+    "slogan": "Niat ke Baitullah, kami siapkan jalannya",
+    "ppiu": "26032300175410003",
+    "akreditasi": "A",
+    "whatsapp_1": "6281316333001",
+    "whatsapp_2": "6281286820512",
+    "phone": "+62 813-1633-3001",
+    "email": "info@h2cwisatamandiri.com",
+    "address": "Ruko Telaga Pesona Blok L3 No. 3 & 5, Desa Telagamurni, Kec. Cikarang Barat, Kabupaten Bekasi, Jawa Barat 17530",
+    "bank": "Bank BSI a.n. H2 Berkah Mandiri"
+  },
+  "hero": {
+    "promo_badge": "DISKON SPESIAL RP 2,5 JUTA KLOTER BARU!",
+    "h1_line1": "Niat ke Baitullah,",
+    "h1_line2": "Kami Siapkan Jalannya.",
+    "subtitle": "Bersama H2C Wisata Mandiri (PT. HDUAC Berkah Mandiri), wujudkan ibadah umroh yang aman, nyaman, dan berkah sesuai sunnah. Ready seat Jan–Des 2026, pilihan paket Umroh Hemat hingga VIP."
+  },
+  "packages": [
+    {
+      "id": "akbar-sept",
+      "name": "Umroh Akbar September",
+      "badge": "Pilihan Utama",
+      "badge_class": "emerald",
+      "price_normal": "Rp 31.500.000",
+      "price_promo": "Rp 29.000.000",
+      "dp": "Rp 5.000.000",
+      "airline": "Saudia / Garuda (Setaraf)",
+      "hotel_makkah": "Setaraf Maysan Al Maqam",
+      "hotel_madinah": "Setaraf Mirage Salam",
+      "duration": "9 Hari",
+      "free_bonus": "City Tour Makkah & Madinah, Free Kuliner Arab",
+      "seat_status": "Ready Seat"
+    },
+    {
+      "id": "hemat-jan",
+      "name": "Umroh Paket Hemat Januari",
+      "badge": "Paling Diminati",
+      "badge_class": "amber",
+      "price_normal": "Rp 32.500.000",
+      "price_promo": "Rp 30.000.000",
+      "dp": "Rp 5.000.000",
+      "airline": "Saudia / Garuda (Setaraf)",
+      "hotel_makkah": "Setaraf Maysan Al Maqam",
+      "hotel_madinah": "Setaraf Mirage Salam",
+      "duration": "9 Hari",
+      "free_bonus": "Ziarah Jabal Uhud, Kebun Kurma, Quba",
+      "seat_status": "Sisa 12 Kursi"
+    },
+    {
+      "id": "turkey-des",
+      "name": "Umroh Plus Turkey Desember",
+      "badge": "Wisata Religi Plus",
+      "badge_class": "slate",
+      "price_normal": "Rp 55.500.000",
+      "price_promo": "Rp 53.000.000",
+      "dp": "Rp 5.000.000",
+      "airline": "Turkish Airlines / Saudia Setaraf",
+      "hotel_makkah": "Setaraf Bintang 5 / 4 Makkah",
+      "hotel_madinah": "Setaraf Mirage Salam Madinah",
+      "duration": "12 Hari",
+      "free_bonus": "City Tour Istanbul, Bosphorus Cruise, Blue Mosque",
+      "seat_status": "Pendaftaran Dibuka"
+    }
+  ],
+  "schedules": [
+    {
+      "program": "Umroh Akbar September",
+      "duration": "9 Hari",
+      "airline": "Saudia / Garuda",
+      "price": "Rp 29 Juta",
+      "status": "Ready Seat",
+      "status_class": "emerald"
+    },
+    {
+      "program": "Umroh Paket Hemat Januari",
+      "duration": "9 Hari",
+      "airline": "Saudia / Garuda",
+      "price": "Rp 30 Juta",
+      "status": "Sisa 12 Seat",
+      "status_class": "amber"
+    },
+    {
+      "program": "Umroh Awal Musim Mei",
+      "duration": "9 Hari",
+      "airline": "Saudia / Garuda",
+      "price": "Rp 30 Juta",
+      "status": "Pendaftaran",
+      "status_class": "emerald"
+    },
+    {
+      "program": "Umroh Liburan Sekolah Juni",
+      "duration": "12 Hari",
+      "airline": "Saudia Direct",
+      "price": "Rp 33,5 Juta",
+      "status": "Paling Dicari",
+      "status_class": "blue"
+    },
+    {
+      "program": "Umroh Ekonomis Juli",
+      "duration": "9 Hari",
+      "airline": "Garuda / Saudia",
+      "price": "Rp 31,5 Juta",
+      "status": "Ready Seat",
+      "status_class": "emerald"
+    },
+    {
+      "program": "Umroh Plus Turkey Desember",
+      "duration": "12 Hari",
+      "airline": "Turkish Airlines",
+      "price": "Rp 53 Juta",
+      "status": "Seat Terbatas",
+      "status_class": "purple"
+    }
+  ]
+}
