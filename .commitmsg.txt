@@ -1,0 +1,22 @@
+feat: SEO, conversion dan trust optimization
+
+KUNING (SEO dan meta):
+- Favicon SVG, PNG 32x32, apple-touch-icon 180
+- OG image 1200x630 custom (brand, harga, nomor PPIU)
+- Open Graph tags lengkap (og:title, og:description, og:image, og:url, og:site_name)
+- Twitter Card summary_large_image
+- Canonical URL
+- Meta keywords, author, robots, theme-color
+- Schema.org JSON-LD: Organization, TravelAgency, WebSite, Service, OfferCatalog
+  (6 paket umroh dengan harga asli dari Instagram)
+- Schema.org FAQPage dari 3 pertanyaan yang ada
+
+HIJAU (conversion dan trust):
+- Section Tentang Kami (PT HDUAC Berkah Mandiri, PPIU, Ust. Ammi Kusnadi)
+- Sticky CTA mobile: tombol Telepon dan WhatsApp, muncul setelah scroll 400px
+- Link tel: untuk klik langsung dari HP
+- Lazy loading dan decoding async di semua gambar
+- aria-label pada tombol WhatsApp
+- Link nav Tentang Kami
+
+Verifikasi: HTML valid, 2 blok JSON-LD valid, tidak ada link mati.
