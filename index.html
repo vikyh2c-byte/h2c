@@ -314,7 +314,7 @@
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
         </span>
-        <span class="truncate font-medium">Ready Seat Januari–Desember 2026</span>
+        <span class="truncate font-medium">Ready Seat Musim 2026 & 2027</span>
       </span>
       <span class="hidden md:inline text-emerald-500/40">|</span>
       <span class="hidden md:inline text-emerald-300/80">📍 Layanan Tatap Muka &amp; Online se-Indonesia</span>
@@ -395,7 +395,7 @@
         </h1>
 
         <p id="hero-subtitle-text" class="text-emerald-100/90 text-sm sm:text-base leading-relaxed max-w-xl">
-          Bersama <strong>H2C Wisata Mandiri</strong> (PT. HDUAC Berkah Mandiri), wujudkan ibadah umroh yang aman, nyaman, dan berkah sesuai sunnah. Ready seat Jan–Des 2026, pilihan paket Umroh Hemat hingga VIP.
+          Bersama <strong>H2C Wisata Mandiri</strong> (PT. HDUAC Berkah Mandiri), wujudkan ibadah umroh yang aman, nyaman, dan berkah sesuai sunnah. Ready seat Musim 2026 & 2027 (1448 H), pilihan paket Umroh Hemat hingga VIP.
         </p>
 
         <!-- CTA Buttons with Shimmer & Modern Pill Style -->
@@ -413,7 +413,7 @@
         <div class="grid grid-cols-3 gap-6 pt-6 border-t border-emerald-700/50">
           <div>
             <div class="text-amber-300 font-extrabold text-2xl sm:text-3xl">Jan–Des</div>
-            <div class="text-xs text-emerald-200/80 mt-0.5 font-medium">Ready Seat 2026</div>
+            <div class="text-xs text-emerald-200/80 mt-0.5 font-medium">Musim 2026 &amp; 2027</div>
           </div>
           <div>
             <div class="text-amber-300 font-extrabold text-2xl sm:text-3xl">100%</div>
@@ -525,7 +525,7 @@
   <!-- KATALOG PAKET UMROH DENGAN HOVER GLOW -->
   <section id="paket" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
     <div class="reveal text-center max-w-2xl mx-auto mb-14">
-      <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Pilihan Program 2026</span>
+      <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Pilihan Program 2026 &amp; 2027</span>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2.5">Katalog Paket Umroh Pilihan</h2>
       <p class="text-xs sm:text-sm text-slate-500 mt-2">Pilih durasi dan jenis kenyamanan hotel yang paling sesuai untuk Anda dan keluarga.</p>
     </div>
@@ -619,66 +619,105 @@
   </section>
 
   <!-- JADWAL KEBERANGKATAN KLOTER -->
-  <section id="jadwal" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-    <div class="reveal text-center max-w-2xl mx-auto mb-12">
-      <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Jadwal Kloter</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2.5">Jadwal Keberangkatan 2026</h2>
-      <p class="text-xs sm:text-sm text-slate-500 mt-2">Kuota terbatas. Kursi diamankan setelah pembayaran DP.</p>
+  <section id="jadwal" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <div class="reveal text-center max-w-2xl mx-auto mb-8">
+      <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Jadwal Keberangkatan Resmi</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2.5">Jadwal Keberangkatan 2026 &amp; 2027</h2>
+      <p class="text-xs sm:text-sm text-slate-500 mt-2">Pilihan kloter lengkap Musim 1448 H. Kuota per kloter terbatas, amankan kursi Anda sekarang.</p>
     </div>
 
-    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-      <table class="w-full text-xs sm:text-sm text-left">
-        <thead class="bg-emerald-800 text-white">
+    <!-- FILTER TABS TAHUN -->
+    <div class="reveal flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6">
+      <button type="button" onclick="filterSchedule('all')" id="btn-sch-all" class="sch-filter-btn px-4 py-2 rounded-full text-xs font-bold transition shadow-sm bg-emerald-800 text-white">
+        Semua Kloter (6)
+      </button>
+      <button type="button" onclick="filterSchedule('2026')" id="btn-sch-2026" class="sch-filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:bg-slate-50">
+        🗓️ Musim 2026 (2 Kloter)
+      </button>
+      <button type="button" onclick="filterSchedule('2027')" id="btn-sch-2027" class="sch-filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-amber-50 border border-amber-300 text-amber-900 hover:bg-amber-100">
+        🌟 Musim 2027 (4 Kloter)
+      </button>
+    </div>
+
+    <div class="reveal bg-white rounded-2xl border border-slate-200 shadow-sm overflow-x-auto">
+      <table class="w-full text-xs sm:text-sm text-left min-w-[700px]">
+        <thead class="bg-[#0a4d2e] text-white">
           <tr>
-            <th class="py-3 px-4 sm:px-6 font-bold">Kloter</th>
-            <th class="py-3 px-3 font-bold">Keberangkatan</th>
-            <th class="py-3 px-3 font-bold">Durasi</th>
-            <th class="py-3 px-3 font-bold">Paket</th>
-            <th class="py-3 px-4 sm:px-6 font-bold">Status</th>
+            <th class="py-3.5 px-4 sm:px-6 font-bold">Program &amp; Kloter</th>
+            <th class="py-3.5 px-3 font-bold">Keberangkatan</th>
+            <th class="py-3.5 px-3 font-bold">Durasi</th>
+            <th class="py-3.5 px-3 font-bold">Maskapai</th>
+            <th class="py-3.5 px-3 font-bold">Harga Mulai</th>
+            <th class="py-3.5 px-4 sm:px-6 font-bold text-center">Status Seat</th>
+            <th class="py-3.5 px-4 font-bold text-center">Aksi</th>
           </tr>
         </thead>
         <tbody id="schedules-tbody" class="text-slate-600">
-          <tr class="border-b border-slate-100">
-            <td class="py-3 px-4 sm:px-6 font-bold text-slate-900">Umroh Akbar September</td>
-            <td class="py-3 px-3">September 2026</td>
-            <td class="py-3 px-3">9 Hari</td>
-            <td class="py-3 px-3">Rp 29 Juta</td>
-            <td class="py-3 px-4 sm:px-6"><span class="bg-red-100 text-red-700 text-[10px] font-bold px-2.5 py-1 rounded-full">Segera Berangkat</span></td>
+          <tr class="border-b border-slate-100 sch-row" data-year="2026">
+            <td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900">Umroh Akbar September</td>
+            <td class="py-3.5 px-3"><span class="bg-emerald-800 text-emerald-100 text-[10px] font-bold px-2 py-0.5 rounded mr-1.5">2026</span>September 2026</td>
+            <td class="py-3.5 px-3 font-semibold">9 Hari</td>
+            <td class="py-3.5 px-3 text-slate-700">Qatar Airways</td>
+            <td class="py-3.5 px-3 font-black text-emerald-800">Rp 29 Juta</td>
+            <td class="py-3.5 px-4 sm:px-6 text-center"><span class="bg-red-100 text-red-700 text-[10px] font-bold px-2.5 py-1 rounded-full">Segera Berangkat</span></td>
+            <td class="py-3.5 px-4 text-center">
+              <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20tertarik%20booking%20Umroh%20Akbar%20September%202026" target="_blank" class="inline-block bg-emerald-50 hover:bg-emerald-700 text-emerald-800 hover:text-white font-bold text-[11px] px-3 py-1.5 rounded-lg border border-emerald-300 transition">Booking</a>
+            </td>
           </tr>
-          <tr class="border-b border-slate-100 bg-amber-50/40">
-            <td class="py-3 px-4 sm:px-6 font-bold text-slate-900">Umroh Plus Turkey</td>
-            <td class="py-3 px-3">Desember 2026</td>
-            <td class="py-3 px-3">—</td>
-            <td class="py-3 px-3">Rp 53 Juta</td>
-            <td class="py-3 px-4 sm:px-6"><span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Pendaftaran Dibuka</span></td>
+          <tr class="border-b border-slate-100 bg-amber-50/30 sch-row" data-year="2026">
+            <td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900">Umroh Plus Turkey Desember</td>
+            <td class="py-3.5 px-3"><span class="bg-emerald-800 text-emerald-100 text-[10px] font-bold px-2 py-0.5 rounded mr-1.5">2026</span>Desember 2026</td>
+            <td class="py-3.5 px-3 font-semibold">16 Hari</td>
+            <td class="py-3.5 px-3 text-slate-700">Saudia / Turkish</td>
+            <td class="py-3.5 px-3 font-black text-emerald-800">Rp 53 Juta</td>
+            <td class="py-3.5 px-4 sm:px-6 text-center"><span class="bg-purple-100 text-purple-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Seat Terbatas</span></td>
+            <td class="py-3.5 px-4 text-center">
+              <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20tertarik%20booking%20Umroh%20Plus%20Turkey%20Desember%202026" target="_blank" class="inline-block bg-emerald-50 hover:bg-emerald-700 text-emerald-800 hover:text-white font-bold text-[11px] px-3 py-1.5 rounded-lg border border-emerald-300 transition">Booking</a>
+            </td>
           </tr>
-          <tr class="border-b border-slate-100">
-            <td class="py-3 px-4 sm:px-6 font-bold text-slate-900">Umroh Paket Hemat</td>
-            <td class="py-3 px-3">Januari 2027</td>
-            <td class="py-3 px-3">9 Hari</td>
-            <td class="py-3 px-3">Rp 30 Juta</td>
-            <td class="py-3 px-4 sm:px-6"><span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Pendaftaran Dibuka</span></td>
+          <tr class="border-b border-slate-100 sch-row" data-year="2027">
+            <td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900">Umroh Paket Hemat Januari</td>
+            <td class="py-3.5 px-3"><span class="bg-amber-700 text-amber-100 text-[10px] font-bold px-2 py-0.5 rounded mr-1.5">2027</span>Januari 2027</td>
+            <td class="py-3.5 px-3 font-semibold">10 Hari</td>
+            <td class="py-3.5 px-3 text-slate-700">IndiGo / Saudia</td>
+            <td class="py-3.5 px-3 font-black text-emerald-800">Rp 30 Juta</td>
+            <td class="py-3.5 px-4 sm:px-6 text-center"><span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Sisa 12 Seat</span></td>
+            <td class="py-3.5 px-4 text-center">
+              <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20tertarik%20booking%20Umroh%20Hemat%20Januari%202027" target="_blank" class="inline-block bg-emerald-50 hover:bg-emerald-700 text-emerald-800 hover:text-white font-bold text-[11px] px-3 py-1.5 rounded-lg border border-emerald-300 transition">Booking</a>
+            </td>
           </tr>
-          <tr class="border-b border-slate-100">
-            <td class="py-3 px-4 sm:px-6 font-bold text-slate-900">Umroh Awal Musim</td>
-            <td class="py-3 px-3">Mei 2027</td>
-            <td class="py-3 px-3">9 Hari</td>
-            <td class="py-3 px-3">Rp 30 Juta</td>
-            <td class="py-3 px-4 sm:px-6"><span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Promo 20 Pertama</span></td>
+          <tr class="border-b border-slate-100 bg-amber-50/30 sch-row" data-year="2027">
+            <td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900">Umroh Awal Musim Mei</td>
+            <td class="py-3.5 px-3"><span class="bg-amber-700 text-amber-100 text-[10px] font-bold px-2 py-0.5 rounded mr-1.5">2027</span>Mei 2027</td>
+            <td class="py-3.5 px-3 font-semibold">9 Hari</td>
+            <td class="py-3.5 px-3 text-slate-700">Garuda Indonesia</td>
+            <td class="py-3.5 px-3 font-black text-emerald-800">Rp 30 Juta</td>
+            <td class="py-3.5 px-4 sm:px-6 text-center"><span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Promo 20 Pertama</span></td>
+            <td class="py-3.5 px-4 text-center">
+              <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20tertarik%20booking%20Umroh%20Awal%20Musim%20Mei%202027" target="_blank" class="inline-block bg-emerald-50 hover:bg-emerald-700 text-emerald-800 hover:text-white font-bold text-[11px] px-3 py-1.5 rounded-lg border border-emerald-300 transition">Booking</a>
+            </td>
           </tr>
-          <tr class="border-b border-slate-100">
-            <td class="py-3 px-4 sm:px-6 font-bold text-slate-900">Umroh Liburan Sekolah</td>
-            <td class="py-3 px-3">Juni 2027</td>
-            <td class="py-3 px-3">12 Hari</td>
-            <td class="py-3 px-3">Rp 33,5 Juta</td>
-            <td class="py-3 px-4 sm:px-6"><span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Pendaftaran Dibuka</span></td>
+          <tr class="border-b border-slate-100 sch-row" data-year="2027">
+            <td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900">Umroh Liburan Sekolah Juni</td>
+            <td class="py-3.5 px-3"><span class="bg-amber-700 text-amber-100 text-[10px] font-bold px-2 py-0.5 rounded mr-1.5">2027</span>Juni 2027</td>
+            <td class="py-3.5 px-3 font-semibold">9 Hari</td>
+            <td class="py-3.5 px-3 text-slate-700">Saudia Airlines</td>
+            <td class="py-3.5 px-3 font-black text-emerald-800">Rp 33,5 Juta</td>
+            <td class="py-3.5 px-4 sm:px-6 text-center"><span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Pendaftaran Dibuka</span></td>
+            <td class="py-3.5 px-4 text-center">
+              <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20tertarik%20booking%20Umroh%20Liburan%20Sekolah%20Juni%202027" target="_blank" class="inline-block bg-emerald-50 hover:bg-emerald-700 text-emerald-800 hover:text-white font-bold text-[11px] px-3 py-1.5 rounded-lg border border-emerald-300 transition">Booking</a>
+            </td>
           </tr>
-          <tr>
-            <td class="py-3 px-4 sm:px-6 font-bold text-slate-900">Umroh Ekonomis</td>
-            <td class="py-3 px-3">Juli 2027</td>
-            <td class="py-3 px-3">9 Hari</td>
-            <td class="py-3 px-3">Rp 31,5 Juta</td>
-            <td class="py-3 px-4 sm:px-6"><span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Pendaftaran Dibuka</span></td>
+          <tr class="sch-row" data-year="2027">
+            <td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900">Umroh Ekonomis Juli</td>
+            <td class="py-3.5 px-3"><span class="bg-amber-700 text-amber-100 text-[10px] font-bold px-2 py-0.5 rounded mr-1.5">2027</span>Juli 2027</td>
+            <td class="py-3.5 px-3 font-semibold">10 Hari</td>
+            <td class="py-3.5 px-3 text-slate-700">IndiGo / Saudia</td>
+            <td class="py-3.5 px-3 font-black text-emerald-800">Rp 31,5 Juta</td>
+            <td class="py-3.5 px-4 sm:px-6 text-center"><span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Pendaftaran Dibuka</span></td>
+            <td class="py-3.5 px-4 text-center">
+              <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20tertarik%20booking%20Umroh%20Ekonomis%20Juli%202027" target="_blank" class="inline-block bg-emerald-50 hover:bg-emerald-700 text-emerald-800 hover:text-white font-bold text-[11px] px-3 py-1.5 rounded-lg border border-emerald-300 transition">Booking</a>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -1284,6 +1323,27 @@
   </div>
 
   <script>
+    function filterSchedule(year) {
+      var rows = document.querySelectorAll('.sch-row');
+      rows.forEach(function(r) {
+        var rYear = r.getAttribute('data-year');
+        if (year === 'all' || rYear === year) {
+          r.style.display = '';
+        } else {
+          r.style.display = 'none';
+        }
+      });
+      ['all', '2026', '2027'].forEach(function(y) {
+        var btn = document.getElementById('btn-sch-' + y);
+        if (!btn) return;
+        if (y === year) {
+          btn.className = 'sch-filter-btn px-4 py-2 rounded-full text-xs font-bold transition shadow-sm bg-emerald-800 text-white';
+        } else {
+          btn.className = 'sch-filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:bg-slate-50';
+        }
+      });
+    }
+
     function playFeaturedVideo(id) {
       var c = document.getElementById('featured-video-container');
       if (!c) return;
@@ -1449,18 +1509,31 @@
             tbody.innerHTML = '';
             data.schedules.forEach(function(sch, i) {
               var tr = document.createElement('tr');
-              tr.className = 'border-b border-slate-100' + (i % 2 === 1 ? ' bg-amber-50/40' : '');
+              var y = sch.year || (sch.departure && sch.departure.includes('2027') ? '2027' : '2026');
+              tr.className = 'border-b border-slate-100 sch-row' + (i % 2 === 1 ? ' bg-amber-50/30' : '');
+              tr.setAttribute('data-year', y);
+              
               var badgeBg = 'bg-emerald-100 text-emerald-800';
               var st = (sch.status || '').toLowerCase();
               if (st.includes('sisa') || st.includes('terbatas')) badgeBg = 'bg-amber-100 text-amber-800';
               else if (st.includes('segera') || st.includes('penuh')) badgeBg = 'bg-red-100 text-red-700';
-              else if (st.includes('paling')) badgeBg = 'bg-blue-100 text-blue-800';
+              else if (st.includes('paling') || st.includes('liburan')) badgeBg = 'bg-blue-100 text-blue-800';
+              else if (st.includes('turkey') || st.includes('purple')) badgeBg = 'bg-purple-100 text-purple-800';
 
-              tr.innerHTML = '<td class="py-3 px-4 sm:px-6 font-bold text-slate-900">' + (sch.program || '') + '</td>'
-                + '<td class="py-3 px-3">' + (sch.airline || 'Saudia / Garuda') + '</td>'
-                + '<td class="py-3 px-3">' + (sch.duration || '9 Hari') + '</td>'
-                + '<td class="py-3 px-3 font-bold text-emerald-800">' + (sch.price || '') + '</td>'
-                + '<td class="py-3 px-4 sm:px-6"><span class="' + badgeBg + ' text-[10px] font-bold px-2.5 py-1 rounded-full">' + (sch.status || 'Tersedia') + '</span></td>';
+              var yearPill = y === '2027' 
+                ? '<span class="bg-amber-700 text-amber-100 text-[10px] font-bold px-2 py-0.5 rounded mr-1.5">2027</span>'
+                : '<span class="bg-emerald-800 text-emerald-100 text-[10px] font-bold px-2 py-0.5 rounded mr-1.5">2026</span>';
+
+              var depText = sch.departure || (sch.program.includes('September') ? 'September 2026' : (sch.program.includes('Desember') ? 'Desember 2026' : 'Musim ' + y));
+              var waText = encodeURIComponent('Halo Admin H2C, saya tertarik booking ' + (sch.program || 'Paket Umroh') + ' ' + y);
+
+              tr.innerHTML = '<td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900">' + (sch.program || '') + '</td>'
+                + '<td class="py-3.5 px-3">' + yearPill + depText + '</td>'
+                + '<td class="py-3.5 px-3 font-semibold">' + (sch.duration || '9 Hari') + '</td>'
+                + '<td class="py-3.5 px-3 text-slate-700">' + (sch.airline || 'Saudia / Garuda') + '</td>'
+                + '<td class="py-3.5 px-3 font-black text-emerald-800">' + (sch.price || '') + '</td>'
+                + '<td class="py-3.5 px-4 sm:px-6 text-center"><span class="' + badgeBg + ' text-[10px] font-bold px-2.5 py-1 rounded-full">' + (sch.status || 'Tersedia') + '</span></td>'
+                + '<td class="py-3.5 px-4 text-center"><a href="https://wa.me/6281316333001?text=' + waText + '" target="_blank" class="inline-block bg-emerald-50 hover:bg-emerald-700 text-emerald-800 hover:text-white font-bold text-[11px] px-3 py-1.5 rounded-lg border border-emerald-300 transition">Booking</a></td>';
               tbody.appendChild(tr);
             });
           }

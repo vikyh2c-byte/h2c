@@ -16,7 +16,7 @@
     "promo_badge": "DISKON SPESIAL RP 2,5 JUTA KLOTER BARU!",
     "h1_line1": "Niat ke Baitullah,",
     "h1_line2": "Kami Siapkan Jalannya.",
-    "subtitle": "Bersama H2C Wisata Mandiri (PT. HDUAC Berkah Mandiri), wujudkan ibadah umroh yang aman, nyaman, dan berkah sesuai sunnah. Ready seat Jan–Des 2026, pilihan paket Umroh Hemat hingga VIP."
+    "subtitle": "Bersama H2C Wisata Mandiri (PT. HDUAC Berkah Mandiri), wujudkan ibadah umroh yang aman, nyaman, dan berkah sesuai sunnah. Ready seat Musim 2026 & 2027 (1448 H), pilihan paket Umroh Hemat hingga VIP."
   },
   "packages": [
     {
@@ -68,51 +68,69 @@
   "schedules": [
     {
       "program": "Umroh Akbar September",
+      "departure": "September 2026",
+      "year": "2026",
       "duration": "9 Hari",
-      "airline": "Saudia / Garuda",
+      "airline": "Qatar Airways",
+      "hotel": "Maysan Al Maqam / Jawharat Al Rasheed",
       "price": "Rp 29 Juta",
-      "status": "Ready Seat",
-      "status_class": "emerald"
+      "status": "Segera Berangkat",
+      "status_class": "red"
+    },
+    {
+      "program": "Umroh Plus Turkey Desember",
+      "departure": "Desember 2026",
+      "year": "2026",
+      "duration": "16 Hari",
+      "airline": "Saudia / Turkish",
+      "hotel": "Anjum / Concorde",
+      "price": "Rp 53 Juta",
+      "status": "Seat Terbatas",
+      "status_class": "purple"
     },
     {
       "program": "Umroh Paket Hemat Januari",
-      "duration": "9 Hari",
-      "airline": "Saudia / Garuda",
+      "departure": "Januari 2027",
+      "year": "2027",
+      "duration": "10 Hari",
+      "airline": "IndiGo / Saudia",
+      "hotel": "Nada Ajyad / Mirage Al Salam",
       "price": "Rp 30 Juta",
       "status": "Sisa 12 Seat",
       "status_class": "amber"
     },
     {
       "program": "Umroh Awal Musim Mei",
+      "departure": "Mei 2027",
+      "year": "2027",
       "duration": "9 Hari",
-      "airline": "Saudia / Garuda",
+      "airline": "Garuda Indonesia",
+      "hotel": "Maysan Al Maqam / Mirage Al Salam",
       "price": "Rp 30 Juta",
-      "status": "Pendaftaran",
+      "status": "Promo 20 Pertama",
       "status_class": "emerald"
     },
     {
       "program": "Umroh Liburan Sekolah Juni",
-      "duration": "12 Hari",
-      "airline": "Saudia Direct",
+      "departure": "Juni 2027",
+      "year": "2027",
+      "duration": "9 Hari",
+      "airline": "Saudia Airlines",
+      "hotel": "Anjum / Golden Tulip",
       "price": "Rp 33,5 Juta",
-      "status": "Paling Dicari",
+      "status": "Pendaftaran Dibuka",
       "status_class": "blue"
     },
     {
       "program": "Umroh Ekonomis Juli",
-      "duration": "9 Hari",
-      "airline": "Garuda / Saudia",
+      "departure": "Juli 2027",
+      "year": "2027",
+      "duration": "10 Hari",
+      "airline": "IndiGo / Saudia",
+      "hotel": "Maysan Al Maqam / Mirage Al Salam",
       "price": "Rp 31,5 Juta",
-      "status": "Ready Seat",
+      "status": "Pendaftaran Dibuka",
       "status_class": "emerald"
-    },
-    {
-      "program": "Umroh Plus Turkey Desember",
-      "duration": "12 Hari",
-      "airline": "Turkish Airlines",
-      "price": "Rp 53 Juta",
-      "status": "Seat Terbatas",
-      "status_class": "purple"
     }
   ]
 }
