@@ -187,8 +187,8 @@
     
     /* Keyframe Animations */
     @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(0.25deg); }
     }
     @keyframes pulse-ring {
       0% { transform: scale(0.95); opacity: 0.8; }
@@ -198,13 +198,37 @@
     @keyframes shimmer {
       100% { transform: translateX(100%); }
     }
-    @keyframes spin-slow {
-      100% { transform: rotate(360deg); }
+    @keyframes text-gold-shimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes ambient-drift-1 {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.15; }
+      50% { transform: translate(25px, 20px) scale(1.12); opacity: 0.25; }
+    }
+    @keyframes ambient-drift-2 {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.12; }
+      50% { transform: translate(-25px, -18px) scale(1.15); opacity: 0.22; }
     }
 
     .animate-float {
-      animation: float 4s ease-in-out infinite;
+      animation: float 5s ease-in-out infinite;
     }
+    .animate-ambient-1 {
+      animation: ambient-drift-1 10s ease-in-out infinite;
+    }
+    .animate-ambient-2 {
+      animation: ambient-drift-2 14s ease-in-out infinite;
+    }
+    .text-gold-gradient {
+      background: linear-gradient(90deg, #fef08a, #fde047, #f59e0b, #fef08a);
+      background-size: 250% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: text-gold-shimmer 8s ease infinite;
+    }
+
     .animate-pulse-ring {
       animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
     }
@@ -221,27 +245,62 @@
       left: -100%;
       width: 50%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
       transform: skewX(-20deg);
-      animation: shimmer 2.5s infinite;
+      animation: shimmer 3s infinite;
     }
 
-    /* Card Glow on Hover */
+    /* Scroll Reveal Micro-Interactions */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger Delays */
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+    .delay-300 { transition-delay: 300ms; }
+    .delay-400 { transition-delay: 400ms; }
+
+    /* Card Glow & Smooth Hover Lift */
     .card-glow {
-      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .card-glow:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 35px -10px rgba(10, 77, 46, 0.2);
+      transform: translateY(-8px);
+      box-shadow: 0 25px 40px -12px rgba(10, 77, 46, 0.18);
     }
 
     /* Video Feed Card Glow */
     .feed-card {
-      transition: all 0.35s ease;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .feed-card:hover {
       transform: translateY(-6px) scale(1.02);
       box-shadow: 0 20px 30px -10px rgba(234, 179, 8, 0.25);
+    }
+
+    /* Accessible Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-delay: 0s !important;
+        transition-duration: 0s !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
     }
   </style>
 </head>
@@ -310,8 +369,8 @@
   <!-- HERO SECTION WITH MODERN LUXURY MESH -->
   <section class="relative bg-[#061a12] text-white pt-24 pb-24 lg:pt-28 lg:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
     <!-- Ambient Glow Mesh (Warm Muted Luxury) -->
-    <div class="absolute -top-32 -left-32 w-[30rem] h-[30rem] bg-emerald-600/15 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute top-1/3 -right-32 w-[30rem] h-[30rem] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-32 -left-32 w-[30rem] h-[30rem] bg-emerald-600/15 rounded-full blur-3xl pointer-events-none animate-ambient-1"></div>
+    <div class="absolute top-1/3 -right-32 w-[30rem] h-[30rem] bg-amber-500/10 rounded-full blur-3xl pointer-events-none animate-ambient-2"></div>
     <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-50 to-transparent pointer-events-none"></div>
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
@@ -329,7 +388,7 @@
 
         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.18] break-words">
           <span id="hero-h1-line1">Niat ke Baitullah,</span> <br>
-          <span id="hero-h1-line2" class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-300 to-yellow-400">
+          <span id="hero-h1-line2" class="text-gold-gradient">
             Kami Siapkan Jalannya.
           </span>
         </h1>
@@ -431,28 +490,28 @@
   <!-- TRUST BAR MODERN BENTO (OVERLAPPING HERO) -->
   <section class="relative z-20 -mt-10 sm:-mt-14 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="bg-white rounded-[2rem] p-4 sm:p-6 border border-slate-200/90 shadow-xl shadow-slate-900/5 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-      <div class="flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 transition-colors">
+      <div class="reveal delay-100 flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 hover:-translate-y-1 transition-all">
         <div class="w-11 h-11 rounded-xl bg-emerald-100/70 text-emerald-800 flex items-center justify-center text-xl shrink-0">📜</div>
         <div class="min-w-0">
           <div class="text-xs font-black text-slate-900 truncate">PPIU Kemenag RI</div>
           <div class="text-[10px] text-slate-500 font-mono truncate">26032300175410003</div>
         </div>
       </div>
-      <div class="flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 transition-colors">
+      <div class="reveal delay-200 flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 hover:-translate-y-1 transition-all">
         <div class="w-11 h-11 rounded-xl bg-emerald-100/70 text-emerald-800 flex items-center justify-center text-xl shrink-0">✈️</div>
         <div class="min-w-0">
           <div class="text-xs font-black text-slate-900 truncate">Tiket PP Terjamin</div>
           <div class="text-[10px] text-slate-500 truncate">Saudia / Garuda Setaraf</div>
         </div>
       </div>
-      <div class="flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 transition-colors">
+      <div class="reveal delay-300 flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 hover:-translate-y-1 transition-all">
         <div class="w-11 h-11 rounded-xl bg-emerald-100/70 text-emerald-800 flex items-center justify-center text-xl shrink-0">🏨</div>
         <div class="min-w-0">
           <div class="text-xs font-black text-slate-900 truncate">Hotel Terjadwal</div>
           <div class="text-[10px] text-slate-500 truncate">Makkah &amp; Madinah Pasti</div>
         </div>
       </div>
-      <div class="flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 transition-colors">
+      <div class="reveal delay-400 flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 hover:-translate-y-1 transition-all">
         <div class="w-11 h-11 rounded-xl bg-emerald-100/70 text-emerald-800 flex items-center justify-center text-xl shrink-0">📖</div>
         <div class="min-w-0">
           <div class="text-xs font-black text-slate-900 truncate">Bimbingan Sunnah</div>
@@ -464,7 +523,7 @@
 
   <!-- KATALOG PAKET UMROH DENGAN HOVER GLOW -->
   <section id="paket" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-    <div class="text-center max-w-2xl mx-auto mb-14">
+    <div class="reveal text-center max-w-2xl mx-auto mb-14">
       <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Pilihan Program 2026</span>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2.5">Katalog Paket Umroh Pilihan</h2>
       <p class="text-xs sm:text-sm text-slate-500 mt-2">Pilih durasi dan jenis kenyamanan hotel yang paling sesuai untuk Anda dan keluarga.</p>
@@ -472,7 +531,7 @@
 
     <div id="packages-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
       <!-- Card 1 -->
-      <div class="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm card-glow flex flex-col justify-between">
+      <div class="reveal delay-100 bg-white rounded-[2rem] p-6 sm:p-8 border border-slate-200/80 shadow-sm hover:border-emerald-300 hover:shadow-xl card-glow flex flex-col justify-between">
         <div>
           <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Pilihan Hemat</span>
           <h3 id="pkg-name-0" class="text-xl font-bold text-slate-900 mt-3">Umroh Paket Hemat Januari</h3>
@@ -499,7 +558,7 @@
       </div>
 
       <!-- Card 2: Featured VIP with Badge -->
-      <div class="bg-white rounded-[2rem] p-6 sm:p-8 border-2 border-amber-400/90 shadow-2xl ring-4 ring-amber-400/10 card-glow relative flex flex-col justify-between transform md:-translate-y-3">
+      <div class="reveal delay-200 bg-white rounded-[2rem] p-6 sm:p-8 border-2 border-amber-400/90 shadow-2xl ring-4 ring-amber-400/10 card-glow relative flex flex-col justify-between transform md:-translate-y-3">
         <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-400 to-amber-500 text-emerald-950 font-black text-[10px] uppercase px-4 py-1.5 rounded-full shadow-lg border border-amber-300">
           ⭐ PALING DIREKOMENDASIKAN
         </div>
@@ -530,7 +589,7 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm card-glow flex flex-col justify-between">
+      <div class="reveal delay-300 bg-white rounded-[2rem] p-6 sm:p-8 border border-slate-200/80 shadow-sm hover:border-emerald-300 hover:shadow-xl card-glow flex flex-col justify-between">
         <div>
           <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Wisata Religi Plus</span>
           <h3 id="pkg-name-2" class="text-xl font-bold text-slate-900 mt-3">Umroh Plus Turkey Desember</h3>
@@ -560,7 +619,7 @@
 
   <!-- JADWAL KEBERANGKATAN KLOTER -->
   <section id="jadwal" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-    <div class="text-center max-w-2xl mx-auto mb-12">
+    <div class="reveal text-center max-w-2xl mx-auto mb-12">
       <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Jadwal Kloter</span>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2.5">Jadwal Keberangkatan 2026</h2>
       <p class="text-xs sm:text-sm text-slate-500 mt-2">Kuota terbatas. Kursi diamankan setelah pembayaran DP.</p>
@@ -627,7 +686,7 @@
 
   <!-- FEED DOKUMENTASI KLOTER & REELS (GAYA INSTAGRAM @H2C_WISATA_MANDIRI) -->
   <!-- TENTANG KAMI -->
-  <section id="tentang" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white border-y border-slate-200">
+  <section id="tentang" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white border-y border-slate-200 reveal">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
       <div>
         <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Tentang Kami</span>
@@ -690,7 +749,7 @@
       </div>
 
       <!-- Feed Grid (Real Instagram Video Feed Thumbnails from @h2c_wisata_mandiri) -->
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 reveal">
         
         <!-- Reel 1: Promo Diskon 2.5 Juta -->
         <a href="https://www.instagram.com/reel/DcihcAiH0od/" target="_blank" rel="noopener noreferrer" class="feed-card group relative aspect-[9/13] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-2 border-emerald-800/90 hover:border-amber-400 transition-all duration-300 hover:scale-[1.03]">
@@ -782,7 +841,7 @@
 
   <!-- FORM KONTAK DENGAN KONSEN -->
   <section id="kontak" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white border-y border-slate-200">
-    <div class="max-w-2xl mx-auto">
+    <div class="max-w-2xl mx-auto reveal">
       <div class="text-center mb-10">
         <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest">Tanya Paket</span>
         <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Konsultasi Gratis</h2>
@@ -858,7 +917,7 @@
       <h2 class="text-3xl font-extrabold text-slate-900 mt-1">FAQ Seputar Umroh H2C</h2>
     </div>
 
-    <div class="space-y-4">
+    <div class="space-y-4 reveal">
       <details class="group bg-white p-5 rounded-2xl border border-slate-200 shadow-sm transition open:border-emerald-600 open:shadow-md">
         <summary class="flex justify-between items-center font-bold text-sm text-slate-900 cursor-pointer list-none">
           <span>Apakah H2C Wisata Mandiri memiliki izin resmi Kemenag?</span>
@@ -1041,6 +1100,26 @@
         document.getElementById('form-success').classList.remove('hidden');
         form.reset();
         window.open('https://wa.me/6281316333001?text=' + teks, '_blank');
+      });
+    })();
+
+        // Scroll Reveal Observer for Smooth Aesthetic Entrance
+    (function() {
+      if (typeof IntersectionObserver === 'undefined') {
+        document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('active'); });
+        return;
+      }
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
       });
     })();
 
