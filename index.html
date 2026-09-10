@@ -128,6 +128,9 @@
       <a href="https://instagram.com/h2c_wisata_mandiri" target="_blank" class="w-9 h-9 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:text-emerald-700 hover:border-emerald-500 hover:bg-emerald-50 text-xs font-bold shadow-sm transition">
         IG
       </a>
+      <a href="https://vt.tiktok.com/ZSqAWfBaU/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:text-emerald-700 hover:border-emerald-500 hover:bg-emerald-50 text-xs font-black shadow-sm transition">
+        TT
+      </a>
       <a href="https://wa.me/6281234567890?text=Halo%20Admin%20H2C%2C%20saya%20mau%20konsultasi%20paket%20umroh" target="_blank" class="btn-shimmer bg-gradient-to-r from-[#0a4d2e] to-[#12633c] hover:from-[#06331e] hover:to-[#0a4d2e] text-white text-xs font-bold px-5 py-2.5 rounded-full shadow-lg shadow-emerald-900/20 flex items-center gap-2 transition transform active:scale-95">
         <span class="text-amber-300">💬</span> Chat Konsultan
       </a>
@@ -564,6 +567,77 @@
     </div>
   </section>
 
+  <!-- FORM KONTAK DENGAN KONSEN -->
+  <section id="kontak" class="py-16 sm:py-20 px-6 sm:px-8 bg-white border-y border-slate-200">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest">Tanya Paket</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Konsultasi Gratis</h2>
+        <p class="text-xs text-slate-500 mt-2">Isi data di bawah, tim kami akan menghubungi Anda via WhatsApp dalam 1×24 jam kerja.</p>
+      </div>
+
+      <form id="lead-form" novalidate class="space-y-4">
+        <div>
+          <label for="nama" class="block text-xs font-bold text-slate-700 mb-1.5">Nama Lengkap <span class="text-rose-600">*</span></label>
+          <input type="text" id="nama" name="nama" required autocomplete="name"
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition">
+          <p class="text-[11px] text-rose-600 mt-1 hidden" data-error-for="nama">Nama lengkap wajib diisi.</p>
+        </div>
+
+        <div>
+          <label for="whatsapp" class="block text-xs font-bold text-slate-700 mb-1.5">Nomor WhatsApp <span class="text-rose-600">*</span></label>
+          <input type="tel" id="whatsapp" name="whatsapp" required autocomplete="tel" placeholder="08xxxxxxxxxx"
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition">
+          <p class="text-[11px] text-rose-600 mt-1 hidden" data-error-for="whatsapp">Nomor WhatsApp wajib diisi.</p>
+        </div>
+
+        <div>
+          <label for="email" class="block text-xs font-bold text-slate-700 mb-1.5">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email"
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition">
+        </div>
+
+        <div>
+          <label for="pesan" class="block text-xs font-bold text-slate-700 mb-1.5">Pertanyaan / Catatan</label>
+          <textarea id="pesan" name="pesan" rows="3"
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition"></textarea>
+        </div>
+
+        <!-- CONSENT -->
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+          <label for="consent" class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" id="consent" name="consent" required
+              class="mt-0.5 w-4 h-4 text-emerald-700 border-slate-300 rounded focus:ring-2 focus:ring-emerald-600">
+            <span class="text-[11px] text-slate-600 leading-relaxed">
+              Saya menyetujui H2C Wisata Mandiri (PT. HDUAC Berkah Mandiri) untuk mengumpulkan dan memproses
+              data pribadi saya guna keperluan konsultasi dan pendaftaran paket umroh, sesuai
+              <a href="./privacy-policy.html" target="_blank" class="text-emerald-700 font-bold underline">Kebijakan Privasi</a>
+              dan <a href="./terms-conditions.html" target="_blank" class="text-emerald-700 font-bold underline">Syarat &amp; Ketentuan</a>.
+              Saya memahami bahwa saya dapat menarik persetujuan ini sewaktu-waktu.
+              <span class="text-rose-600">*</span>
+            </span>
+          </label>
+          <p class="text-[11px] text-rose-600 mt-2 hidden" data-error-for="consent">Persetujuan wajib dicentang sebelum mengirim.</p>
+        </div>
+
+        <button type="submit"
+          class="w-full bg-gradient-to-r from-[#0a4d2e] to-[#042010] hover:from-emerald-800 hover:to-emerald-950 text-white font-black py-3.5 rounded-xl text-sm shadow-lg shadow-emerald-900/20 transition flex items-center justify-center gap-2">
+          Kirim Pertanyaan 💬
+        </button>
+
+        <p class="text-[10px] text-slate-400 text-center leading-relaxed">
+          Data Anda hanya digunakan untuk keperluan konsultasi dan tidak akan dibagikan kepada pihak ketiga
+          tanpa dasar hukum yang sah.
+        </p>
+      </form>
+
+      <div id="form-success" class="hidden mt-6 bg-emerald-50 border border-emerald-200 rounded-xl p-5 text-center">
+        <p class="text-sm font-bold text-emerald-800">Terima kasih! 🙏</p>
+        <p class="text-xs text-emerald-700 mt-1">Pertanyaan Anda telah kami terima. Tim H2C akan menghubungi Anda via WhatsApp segera.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- INTERACTIVE FAQ SECTION WITH ACCORDION -->
   <section id="faq" class="py-16 sm:py-20 px-6 sm:px-8 max-w-4xl mx-auto">
     <div class="text-center mb-12">
@@ -643,16 +717,105 @@
       <div>
         <h5 class="font-bold text-white mb-3 uppercase tracking-wider text-[11px]">Kontak & Kantor</h5>
         <p class="text-[11px] leading-relaxed">
-          Office Tower, Jakarta & Bekasi<br>
+          PT. HDUAC Berkah Mandiri<br>
+          Ruko Telaga Pesona Blok L3 No. 3 dan 5<br>
+          Desa Telagamurni, Kec. Cikarang Barat<br>
+          Kabupaten Bekasi, Jawa Barat 17530<br>
           WhatsApp: +62 812-3456-7890<br>
-          Instagram: @h2c_wisata_mandiri
+          Email: info@h2cwisatamandiri.co.id<br>
+          Instagram: @h2c_wisata_mandiri<br>
+          <a href="https://vt.tiktok.com/ZSqAWfBaU/" target="_blank" rel="noopener noreferrer" class="hover:text-amber-300 transition">TikTok: H2C Wisata Mandiri</a>
         </p>
       </div>
     </div>
-    <div class="max-w-6xl mx-auto border-t border-emerald-900/60 mt-8 pt-6 text-center text-[10px] text-slate-500">
-      © 2026 H2C Wisata Mandiri. Seluruh hak cipta dilindungi undang-undang.
+
+    <!-- LEGAL LINKS -->
+    <div class="max-w-6xl mx-auto border-t border-emerald-900/60 mt-8 pt-5">
+      <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-[10px]">
+        <a href="./privacy-policy.html" class="hover:text-amber-300 transition">Kebijakan Privasi</a>
+        <a href="./terms-conditions.html" class="hover:text-amber-300 transition">Syarat &amp; Ketentuan</a>
+        <a href="./cookie-policy.html" class="hover:text-amber-300 transition">Kebijakan Cookie</a>
+        <a href="./refund-policy.html" class="hover:text-amber-300 transition">Kebijakan Refund &amp; Pembatalan</a>
+      </nav>
+    </div>
+
+    <div class="max-w-6xl mx-auto mt-5 pt-5 border-t border-emerald-900/60 text-center text-[10px] text-slate-500 leading-relaxed">
+      © 2026 PT. HDUAC Berkah Mandiri — H2C Wisata Mandiri. Seluruh hak cipta dilindungi undang-undang.<br>
+      Akta Pendirian No. 65 tanggal 16 Maret 2023, Notaris VONNY ANASTASIA, S.H., M.Kn. | Izin PPIU Kemenag RI No. 912/2021, Terakreditasi "A".<br>
+      H2C Wisata Mandiri hadir sebagai penyelenggara perjalanan ibadah umroh yang terdaftar dan diawasi oleh Kementerian Agama Republik Indonesia.
     </div>
   </footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookie-banner" class="fixed bottom-0 inset-x-0 z-[60] bg-white border-t border-slate-200 shadow-[0_-8px_30px_rgba(0,0,0,0.12)] px-5 py-4 hidden">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-[11px] text-slate-600 leading-relaxed max-w-2xl">
+        Kami menggunakan cookie esensial agar situs ini berfungsi dengan baik. Kami <strong>tidak</strong> menggunakan
+        cookie pelacakan iklan maupun analitik pihak ketiga. Pelajari lebih lanjut di
+        <a href="./cookie-policy.html" class="text-emerald-700 font-bold underline">Kebijakan Cookie</a> dan
+        <a href="./privacy-policy.html" class="text-emerald-700 font-bold underline">Kebijakan Privasi</a> kami.
+      </p>
+      <div class="flex gap-2 shrink-0">
+        <button id="cookie-decline" type="button" class="text-[11px] font-bold text-slate-500 hover:text-slate-800 border border-slate-300 px-4 py-2.5 rounded-xl hover:bg-slate-50 transition">
+          Tolak
+        </button>
+        <button id="cookie-accept" type="button" class="text-[11px] font-bold text-white bg-emerald-700 hover:bg-emerald-800 px-5 py-2.5 rounded-xl shadow-lg shadow-emerald-900/20 transition">
+          Mengerti
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var KEY = 'h2c_cookie_consent';
+      var banner = document.getElementById('cookie-banner');
+      function setConsent(v) { try { localStorage.setItem(KEY, v); } catch (e) {} banner.classList.add('hidden'); }
+      if (banner) {
+        try { if (!localStorage.getItem(KEY)) { banner.classList.remove('hidden'); } } catch (e) { banner.classList.remove('hidden'); }
+        document.getElementById('cookie-accept').addEventListener('click', function () { setConsent('accepted'); });
+        document.getElementById('cookie-decline').addEventListener('click', function () { setConsent('declined'); });
+      }
+    })();
+
+    // Form kontak dengan validasi konsen
+    (function () {
+      var form = document.getElementById('lead-form');
+      if (!form) return;
+
+      function setError(field, show) {
+        var el = form.querySelector('[data-error-for="' + field + '"]');
+        if (el) el.classList.toggle('hidden', !show);
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var nama = document.getElementById('nama').value.trim();
+        var wa = document.getElementById('whatsapp').value.trim();
+        var consent = document.getElementById('consent').checked;
+        var ok = true;
+
+        setError('nama', !nama); if (!nama) ok = false;
+        setError('whatsapp', !wa); if (!wa) ok = false;
+        setError('consent', !consent); if (!consent) ok = false;
+
+        if (!ok) return;
+
+        // Kirim via WhatsApp (tanpa menyimpan data ke server)
+        var pesan = document.getElementById('pesan').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var teks = 'Halo Admin H2C, saya ingin konsultasi paket umroh.%0A%0A'
+          + 'Nama: ' + encodeURIComponent(nama) + '%0A'
+          + 'WhatsApp: ' + encodeURIComponent(wa) + '%0A'
+          + (email ? 'Email: ' + encodeURIComponent(email) + '%0A' : '')
+          + (pesan ? 'Pertanyaan: ' + encodeURIComponent(pesan) : '');
+
+        document.getElementById('form-success').classList.remove('hidden');
+        form.reset();
+        window.open('https://wa.me/6281234567890?text=' + teks, '_blank');
+      });
+    })();
+  </script>
 
 </body>
 </html>
