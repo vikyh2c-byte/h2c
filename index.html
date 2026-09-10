@@ -245,71 +245,74 @@
     }
   </style>
 </head>
-<body class="bg-[#F8FAFC] text-slate-800 antialiased selection:bg-emerald-700 selection:text-amber-300">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-700 selection:text-amber-300">
 
   <!-- TOP ANNOUNCEMENT BAR -->
-  <div class="bg-[#031b0d] text-emerald-200 text-xs py-2 px-4 sm:px-8 flex justify-between items-center gap-3 border-b border-emerald-900/80 overflow-hidden">
+  <div class="bg-[#04180e] text-emerald-200 text-xs py-2 px-4 sm:px-8 flex justify-between items-center gap-3 border-b border-emerald-900/60 overflow-hidden">
     <div class="flex items-center gap-3 sm:gap-6 min-w-0">
       <span class="flex items-center gap-2 shrink-0">
         <span class="relative flex h-2 w-2 shrink-0">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
         </span>
-        <span class="truncate">Ready Seat Januari–Desember 2026</span>
+        <span class="truncate font-medium">Ready Seat Januari–Desember 2026</span>
       </span>
       <span class="hidden md:inline text-emerald-500/40">|</span>
-      <span class="hidden md:inline text-emerald-300/80">📍 Layanan Konsultasi Tatap Muka &amp; Online se-Indonesia</span>
+      <span class="hidden md:inline text-emerald-300/80">📍 Layanan Tatap Muka &amp; Online se-Indonesia</span>
     </div>
     <div class="flex items-center gap-4 text-[11px] shrink-0">
-      <span class="hidden sm:inline-block bg-amber-400/10 text-amber-300 px-3 py-0.5 rounded-full border border-amber-400/30 font-bold tracking-wide whitespace-nowrap">
+      <span class="hidden sm:inline-block bg-amber-400/10 text-amber-300 px-3 py-0.5 rounded-full border border-amber-400/30 font-semibold tracking-wide whitespace-nowrap">
         Izin PPIU Kemenag RI Terakreditasi "A"
       </span>
     </div>
   </div>
 
-  <!-- MAIN NAVIGATION BAR -->
-  <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/80 shadow-sm px-4 sm:px-8 py-3 flex justify-between items-center gap-3 transition-all">
-    <!-- Brand Logo -->
-    <a href="#" class="flex items-center gap-2 sm:gap-3 group min-w-0">
-      <img src="./assets/logo-circle.png" alt="Logo Resmi H2C Wisata Mandiri" class="w-9 h-9 sm:w-11 sm:h-11 shrink-0 rounded-full object-cover shadow-md border-2 border-amber-400/70 group-hover:scale-105 transition-transform">
-      <div class="min-w-0">
-        <div class="flex items-center gap-1.5 sm:gap-2">
-          <span class="text-sm sm:text-xl font-black tracking-tight text-[#0a4d2e] truncate">H2C WISATA MANDIRI</span>
-          <span class="hidden xs:inline-block bg-emerald-100 text-emerald-800 text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded-full shrink-0">Resmi</span>
+  <!-- MAIN FLOATING NAVIGATION BAR -->
+  <header class="sticky top-3 sm:top-5 z-50 max-w-6xl mx-auto px-3 sm:px-6">
+    <div class="bg-white/90 backdrop-blur-xl border border-slate-200/90 shadow-xl shadow-slate-900/5 rounded-2xl sm:rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center gap-3 transition-all">
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 sm:gap-3 group min-w-0">
+        <img src="./assets/logo-circle.png" alt="Logo Resmi H2C Wisata Mandiri" class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-full object-cover shadow-sm border-2 border-amber-400/80 group-hover:scale-105 transition-transform">
+        <div class="min-w-0">
+          <div class="flex items-center gap-1.5 sm:gap-2">
+            <span class="text-sm sm:text-base font-black tracking-tight text-[#0a4d2e] truncate">H2C WISATA MANDIRI</span>
+            <span class="hidden xs:inline-block bg-emerald-100 text-emerald-800 text-[9px] font-bold px-2 py-0.5 rounded-full shrink-0">Resmi</span>
+          </div>
+          <p id="brand-slogan-text" class="hidden sm:block text-[10px] font-medium text-emerald-700 tracking-wide truncate">Niat ke Baitullah, kami siapkan jalannya</p>
         </div>
-        <p id="brand-slogan-text" class="hidden sm:block text-[10px] font-semibold text-emerald-700 tracking-wide truncate">Niat ke Baitullah, kami siapkan jalannya</p>
+      </a>
+
+      <!-- Nav Links -->
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-bold text-slate-600 uppercase tracking-wider">
+        <a href="#paket" class="hover:text-emerald-700 transition">Pilihan Paket</a>
+        <a href="#jadwal" class="hover:text-emerald-700 transition">Jadwal Kloter</a>
+        <a href="#feed" class="hover:text-emerald-700 transition">Dokumentasi</a>
+        <a href="#tentang" class="hover:text-emerald-700 transition">Tentang Kami</a>
+        <a href="#faq" class="hover:text-emerald-700 transition">FAQ</a>
+        <a href="#kontak" class="hover:text-emerald-700 transition">Kontak</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <a href="https://instagram.com/h2c_wisata_mandiri" target="_blank" aria-label="Instagram" class="hidden sm:flex w-8 h-8 rounded-full border border-slate-200 items-center justify-center text-slate-600 hover:text-emerald-700 hover:border-emerald-500 hover:bg-emerald-50 text-xs font-bold transition">
+          IG
+        </a>
+        <a href="https://vt.tiktok.com/ZSqAWfBaU/" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="hidden sm:flex w-8 h-8 rounded-full border border-slate-200 items-center justify-center text-slate-600 hover:text-emerald-700 hover:border-emerald-500 hover:bg-emerald-50 text-xs font-black transition">
+          TT
+        </a>
+        <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20mau%20konsultasi%20paket%20umroh" target="_blank" class="btn-shimmer bg-[#0a4d2e] hover:bg-[#06331e] text-white text-[11px] sm:text-xs font-bold px-4 sm:px-5 py-2.5 rounded-full shadow-md shadow-emerald-900/20 flex items-center gap-1.5 transition transform active:scale-95 whitespace-nowrap">
+          <span class="text-amber-300">💬</span> <span>Konsultasi WA</span>
+        </a>
       </div>
-    </a>
-
-    <!-- Nav Links -->
-    <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
-      <a href="#paket" class="hover:text-emerald-700 transition">Pilihan Paket</a>
-      <a href="#jadwal" class="hover:text-emerald-700 transition">Jadwal Kloter</a>
-      <a href="#feed" class="hover:text-emerald-700 transition">Dokumentasi</a>
-      <a href="#tentang" class="hover:text-emerald-700 transition">Tentang Kami</a>
-      <a href="#faq" class="hover:text-emerald-700 transition">FAQ</a>
-      <a href="#kontak" class="hover:text-emerald-700 transition">Kontak</a>
-    </nav>
-
-    <!-- Actions -->
-    <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
-      <a href="https://instagram.com/h2c_wisata_mandiri" target="_blank" aria-label="Instagram" class="hidden sm:flex w-9 h-9 rounded-xl border border-slate-200 items-center justify-center text-slate-600 hover:text-emerald-700 hover:border-emerald-500 hover:bg-emerald-50 text-xs font-bold shadow-sm transition">
-        IG
-      </a>
-      <a href="https://vt.tiktok.com/ZSqAWfBaU/" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="hidden sm:flex w-9 h-9 rounded-xl border border-slate-200 items-center justify-center text-slate-600 hover:text-emerald-700 hover:border-emerald-500 hover:bg-emerald-50 text-xs font-black shadow-sm transition">
-        TT
-      </a>
-      <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20mau%20konsultasi%20paket%20umroh" target="_blank" class="btn-shimmer bg-gradient-to-r from-[#0a4d2e] to-[#12633c] hover:from-[#06331e] hover:to-[#0a4d2e] text-white text-[11px] sm:text-xs font-bold px-3 sm:px-5 py-2.5 rounded-full shadow-lg shadow-emerald-900/20 flex items-center gap-1.5 sm:gap-2 transition transform active:scale-95 whitespace-nowrap">
-        <span class="text-amber-300">💬</span> <span>Chat</span><span class="hidden sm:inline"> Konsultan</span>
-      </a>
     </div>
   </header>
 
-  <!-- HERO SECTION WITH ANIMATED BADGES & CARDS -->
-  <section class="relative bg-gradient-to-b from-[#042010] via-[#0a4d2e] to-[#042010] text-white py-16 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-    <!-- Animated Light Blobs -->
-    <div class="absolute -top-24 -left-24 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute top-1/2 -right-24 w-96 h-96 bg-amber-400/15 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- HERO SECTION WITH MODERN LUXURY MESH -->
+  <section class="relative bg-[#061a12] text-white pt-24 pb-24 lg:pt-28 lg:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <!-- Ambient Glow Mesh (Warm Muted Luxury) -->
+    <div class="absolute -top-32 -left-32 w-[30rem] h-[30rem] bg-emerald-600/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/3 -right-32 w-[30rem] h-[30rem] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-50 to-transparent pointer-events-none"></div>
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
       
@@ -335,13 +338,13 @@
           Bersama <strong>H2C Wisata Mandiri</strong> (PT. HDUAC Berkah Mandiri), wujudkan ibadah umroh yang aman, nyaman, dan berkah sesuai sunnah. Ready seat Jan–Des 2026, pilihan paket Umroh Hemat hingga VIP.
         </p>
 
-        <!-- CTA Buttons with Shimmer & Scale -->
+        <!-- CTA Buttons with Shimmer & Modern Pill Style -->
         <div class="flex flex-wrap items-center gap-4 pt-2">
-          <a href="#paket" class="btn-shimmer bg-amber-400 hover:bg-amber-300 text-emerald-950 font-extrabold px-8 py-4 rounded-xl shadow-xl shadow-amber-400/25 text-sm flex items-center gap-2.5 transition transform hover:-translate-y-0.5">
-            <span>Daftar Sekarang & Klaim Diskon</span>
+          <a href="#paket" class="btn-shimmer bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 hover:from-amber-300 hover:to-yellow-300 text-emerald-950 font-black min-h-[56px] px-8 rounded-full shadow-xl shadow-amber-400/20 text-sm flex items-center justify-center gap-2.5 transition transform hover:-translate-y-0.5 active:scale-95">
+            <span>Daftar Sekarang &amp; Klaim Diskon</span>
             <span>➔</span>
           </a>
-          <a href="https://wa.me/6281316333001?text=Halo%20Admin%2C%20minta%20brosur%20PDF%20paket%20umroh%20H2C" target="_blank" class="border border-emerald-400/40 hover:bg-emerald-900/60 text-white font-semibold px-7 py-4 rounded-xl text-sm backdrop-blur-sm transition">
+          <a href="https://wa.me/6281316333001?text=Halo%20Admin%2C%20minta%20brosur%20PDF%20paket%20umroh%20H2C" target="_blank" class="border border-emerald-400/30 hover:bg-emerald-900/40 text-white font-bold min-h-[56px] px-7 rounded-full text-sm backdrop-blur-sm transition flex items-center justify-center">
             Unduh Brosur Jadwal (PDF)
           </a>
         </div>
@@ -365,7 +368,7 @@
 
       <!-- Hero Right Column: Animated Floating Card -->
       <div class="lg:col-span-5">
-        <div class="animate-float bg-white text-slate-900 rounded-3xl p-6 sm:p-7 shadow-2xl border-4 border-amber-400/60 relative">
+        <div class="animate-float bg-white/95 backdrop-blur-xl text-slate-900 rounded-[2rem] p-6 sm:p-7 shadow-2xl border border-white/80 ring-1 ring-slate-900/5 relative">
           <div class="flex justify-between items-start mb-4">
             <div>
               <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">
@@ -425,28 +428,36 @@
     </div>
   </section>
 
-  <!-- TRUST BAR RINGKAS -->
-  <section class="py-6 sm:py-8 bg-white border-b border-slate-200">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 text-center">
-      <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-50 border border-slate-100">
-        <div class="text-2xl mb-1">📜</div>
-        <div class="text-xs font-bold text-slate-900">PPIU Kemenag Resmi</div>
-        <div class="text-[10px] text-slate-500">No. 26032300175410003</div>
+  <!-- TRUST BAR MODERN BENTO (OVERLAPPING HERO) -->
+  <section class="relative z-20 -mt-10 sm:-mt-14 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-[2rem] p-4 sm:p-6 border border-slate-200/90 shadow-xl shadow-slate-900/5 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+      <div class="flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 transition-colors">
+        <div class="w-11 h-11 rounded-xl bg-emerald-100/70 text-emerald-800 flex items-center justify-center text-xl shrink-0">📜</div>
+        <div class="min-w-0">
+          <div class="text-xs font-black text-slate-900 truncate">PPIU Kemenag RI</div>
+          <div class="text-[10px] text-slate-500 font-mono truncate">26032300175410003</div>
+        </div>
       </div>
-      <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-50 border border-slate-100">
-        <div class="text-2xl mb-1">✈️</div>
-        <div class="text-xs font-bold text-slate-900">Tiket PP Terjamin</div>
-        <div class="text-[10px] text-slate-500">Saudia / Garuda Setaraf</div>
+      <div class="flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 transition-colors">
+        <div class="w-11 h-11 rounded-xl bg-emerald-100/70 text-emerald-800 flex items-center justify-center text-xl shrink-0">✈️</div>
+        <div class="min-w-0">
+          <div class="text-xs font-black text-slate-900 truncate">Tiket PP Terjamin</div>
+          <div class="text-[10px] text-slate-500 truncate">Saudia / Garuda Setaraf</div>
+        </div>
       </div>
-      <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-50 border border-slate-100">
-        <div class="text-2xl mb-1">🏨</div>
-        <div class="text-xs font-bold text-slate-900">Hotel Terjadwal</div>
-        <div class="text-[10px] text-slate-500">Makkah &amp; Madinah Pasti</div>
+      <div class="flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 transition-colors">
+        <div class="w-11 h-11 rounded-xl bg-emerald-100/70 text-emerald-800 flex items-center justify-center text-xl shrink-0">🏨</div>
+        <div class="min-w-0">
+          <div class="text-xs font-black text-slate-900 truncate">Hotel Terjadwal</div>
+          <div class="text-[10px] text-slate-500 truncate">Makkah &amp; Madinah Pasti</div>
+        </div>
       </div>
-      <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-50 border border-slate-100">
-        <div class="text-2xl mb-1">📖</div>
-        <div class="text-xs font-bold text-slate-900">Bimbingan Sunnah</div>
-        <div class="text-[10px] text-slate-500">Muthowif Berpengalaman</div>
+      <div class="flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 transition-colors">
+        <div class="w-11 h-11 rounded-xl bg-emerald-100/70 text-emerald-800 flex items-center justify-center text-xl shrink-0">📖</div>
+        <div class="min-w-0">
+          <div class="text-xs font-black text-slate-900 truncate">Bimbingan Sunnah</div>
+          <div class="text-[10px] text-slate-500 truncate">Muthowif Berpengalaman</div>
+        </div>
       </div>
     </div>
   </section>
@@ -482,14 +493,14 @@
           </div>
         </div>
 
-        <a href="https://wa.me/6281316333001?text=Halo%20Admin%2C%20mau%20tanya%20detail%20Paket%20Reguler%209%20Hari" target="_blank" class="mt-8 w-full block text-center border border-emerald-700 text-emerald-700 hover:bg-emerald-50 font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition">
-          Lihat Brosur & Jadwal
+        <a href="https://wa.me/6281316333001?text=Halo%20Admin%2C%20mau%20tanya%20detail%20Paket%20Reguler%209%20Hari" target="_blank" class="mt-8 w-full flex items-center justify-center border-2 border-emerald-700 text-emerald-700 hover:bg-emerald-50 font-black min-h-[56px] rounded-2xl text-xs uppercase tracking-wider transition">
+          Lihat Brosur &amp; Jadwal
         </a>
       </div>
 
       <!-- Card 2: Featured VIP with Badge -->
-      <div class="bg-white rounded-3xl p-6 sm:p-7 border-2 border-emerald-600 shadow-xl card-glow relative flex flex-col justify-between transform md:-translate-y-3">
-        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-400 text-emerald-950 font-black text-[10px] uppercase px-4 py-1 rounded-full shadow-md">
+      <div class="bg-white rounded-[2rem] p-6 sm:p-8 border-2 border-amber-400/90 shadow-2xl ring-4 ring-amber-400/10 card-glow relative flex flex-col justify-between transform md:-translate-y-3">
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-400 to-amber-500 text-emerald-950 font-black text-[10px] uppercase px-4 py-1.5 rounded-full shadow-lg border border-amber-300">
           ⭐ PALING DIREKOMENDASIKAN
         </div>
         <div>
@@ -513,8 +524,8 @@
           </div>
         </div>
 
-        <a href="https://wa.me/6281316333001?text=Halo%20Admin%2C%20saya%20pilih%20Paket%20VIP%20Plus%20Kereta%20Cepat" target="_blank" class="mt-8 w-full block text-center btn-shimmer bg-[#0a4d2e] hover:bg-[#052e16] text-white font-extrabold py-3.5 rounded-xl text-xs uppercase tracking-wider shadow-lg transition">
-          Pilih Paket VIP Ini ➔
+        <a href="https://wa.me/6281316333001?text=Halo%20Admin%2C%20saya%20pilih%20Paket%20Akbar%20September" target="_blank" class="mt-8 w-full flex items-center justify-center btn-shimmer bg-gradient-to-r from-emerald-800 to-[#0a4d2e] hover:from-emerald-900 hover:to-[#06331e] text-amber-300 font-black min-h-[56px] rounded-2xl text-xs uppercase tracking-wider shadow-xl shadow-emerald-900/20 transition">
+          Pilih Paket Akbar Ini ➔
         </a>
       </div>
 
@@ -540,8 +551,8 @@
           </div>
         </div>
 
-        <a href="https://wa.me/6281316333001?text=Halo%20Admin%2C%20mau%20tanya%20detail%20Paket%20Umroh%20Plus%20Turki" target="_blank" class="mt-8 w-full block text-center border border-emerald-700 text-emerald-700 hover:bg-emerald-50 font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition">
-          Lihat Brosur & Jadwal
+        <a href="https://wa.me/6281316333001?text=Halo%20Admin%2C%20mau%20tanya%20detail%20Paket%20Umroh%20Plus%20Turki" target="_blank" class="mt-8 w-full flex items-center justify-center border-2 border-emerald-700 text-emerald-700 hover:bg-emerald-50 font-black min-h-[56px] rounded-2xl text-xs uppercase tracking-wider transition">
+          Konsultasi Paket Plus ➔
         </a>
       </div>
     </div>
@@ -823,7 +834,7 @@
         </div>
 
         <button type="submit"
-          class="w-full bg-gradient-to-r from-[#0a4d2e] to-[#042010] hover:from-emerald-800 hover:to-emerald-950 text-white font-black py-3.5 rounded-xl text-sm shadow-lg shadow-emerald-900/20 transition flex items-center justify-center gap-2">
+          class="w-full bg-gradient-to-r from-[#0a4d2e] to-[#042010] hover:from-emerald-800 hover:to-emerald-950 text-white font-black min-h-[56px] rounded-2xl text-sm shadow-xl shadow-emerald-900/20 transition flex items-center justify-center gap-2">
           Kirim Pertanyaan 💬
         </button>
 
@@ -880,14 +891,14 @@
     </div>
   </section>
 
-  <!-- STICKY CTA MOBILE (muncul setelah scroll) -->
-  <div id="sticky-cta" class="fixed bottom-0 inset-x-0 z-40 md:hidden translate-y-full transition-transform duration-300 px-3 pb-3 pt-2 bg-gradient-to-t from-white via-white to-transparent">
-    <div class="flex gap-2">
-      <a href="tel:+6281316333001" class="flex-1 flex items-center justify-center gap-2 bg-white border-2 border-emerald-700 text-emerald-700 font-extrabold py-3 rounded-xl text-xs uppercase tracking-wide shadow-lg">
-        📞 Telepon
+  <!-- STICKY CTA MOBILE (MODERN FLOATING PILL) -->
+  <div id="sticky-cta" class="fixed bottom-4 inset-x-4 z-40 md:hidden translate-y-full transition-transform duration-300">
+    <div class="bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-2xl rounded-2xl p-2 flex gap-2.5 items-center">
+      <a href="tel:+6281316333001" class="flex-1 flex items-center justify-center gap-1.5 bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-black min-h-[52px] rounded-xl text-xs tracking-wide transition">
+        <span>📞</span> <span>Telepon</span>
       </a>
-      <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20mau%20konsultasi%20paket%20umroh" target="_blank" class="flex-[2] flex items-center justify-center gap-2 btn-shimmer bg-[#0a4d2e] hover:bg-[#06331e] text-white font-extrabold py-3 rounded-xl text-xs uppercase tracking-wide shadow-lg">
-        💬 Amankan Kursi Sekarang
+      <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20mau%20konsultasi%20paket%20umroh" target="_blank" class="flex-[2] flex items-center justify-center gap-2 btn-shimmer bg-[#0a4d2e] hover:bg-[#06331e] text-amber-300 font-black min-h-[52px] rounded-xl text-xs tracking-wide shadow-lg shadow-emerald-900/30 transition">
+        <span>💬</span> <span>Konsultasi WA</span>
       </a>
     </div>
   </div>
