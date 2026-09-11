@@ -1344,10 +1344,21 @@
       });
     }
 
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
     function playFeaturedVideo(id) {
       var c = document.getElementById('featured-video-container');
       if (!c) return;
-      c.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0" title="Manasik Umroh H2C" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      if (!/^[a-zA-Z0-9_-]{11}$/.test(id)) return;
+      c.innerHTML = '<iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0" title="Manasik Umroh H2C" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
     }
 
     (function () {
@@ -1527,12 +1538,19 @@
               var depText = sch.departure || (sch.program.includes('September') ? 'September 2026' : (sch.program.includes('Desember') ? 'Desember 2026' : 'Musim ' + y));
               var waText = encodeURIComponent('Halo Admin H2C, saya tertarik booking ' + (sch.program || 'Paket Umroh') + ' ' + y);
 
-              tr.innerHTML = '<td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900">' + (sch.program || '') + '</td>'
-                + '<td class="py-3.5 px-3">' + yearPill + depText + '</td>'
-                + '<td class="py-3.5 px-3 font-semibold">' + (sch.duration || '9 Hari') + '</td>'
-                + '<td class="py-3.5 px-3 text-slate-700">' + (sch.airline || 'Saudia / Garuda') + '</td>'
-                + '<td class="py-3.5 px-3 font-black text-emerald-800">' + (sch.price || '') + '</td>'
-                + '<td class="py-3.5 px-4 sm:px-6 text-center"><span class="' + badgeBg + ' text-[10px] font-bold px-2.5 py-1 rounded-full">' + (sch.status || 'Tersedia') + '</span></td>'
+              var safeProgram = escapeHtml(sch.program || '');
+              var safeDuration = escapeHtml(sch.duration || '9 Hari');
+              var safeAirline = escapeHtml(sch.airline || 'Saudia / Garuda');
+              var safePrice = escapeHtml(sch.price || '');
+              var safeStatus = escapeHtml(sch.status || 'Tersedia');
+              var safeDepText = escapeHtml(depText);
+
+              tr.innerHTML = '<td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900">' + safeProgram + '</td>'
+                + '<td class="py-3.5 px-3">' + yearPill + safeDepText + '</td>'
+                + '<td class="py-3.5 px-3 font-semibold">' + safeDuration + '</td>'
+                + '<td class="py-3.5 px-3 text-slate-700">' + safeAirline + '</td>'
+                + '<td class="py-3.5 px-3 font-black text-emerald-800">' + safePrice + '</td>'
+                + '<td class="py-3.5 px-4 sm:px-6 text-center"><span class="' + badgeBg + ' text-[10px] font-bold px-2.5 py-1 rounded-full">' + safeStatus + '</span></td>'
                 + '<td class="py-3.5 px-4 text-center"><a href="https://wa.me/6281316333001?text=' + waText + '" target="_blank" class="inline-block bg-emerald-50 hover:bg-emerald-700 text-emerald-800 hover:text-white font-bold text-[11px] px-3 py-1.5 rounded-lg border border-emerald-300 transition">Booking</a></td>';
               tbody.appendChild(tr);
             });

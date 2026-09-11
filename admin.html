@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive">
   <title>Admin Panel - H2C Wisata Mandiri</title>
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -29,9 +30,9 @@
       <div class="mt-6 space-y-4">
         <div>
           <label class="block text-left text-[11px] font-bold text-slate-700 uppercase mb-1">PIN / Kata Sandi</label>
-          <input type="password" id="admin-pass" placeholder="Default: h2c2026" class="w-full px-4 py-3 text-center tracking-widest text-lg font-bold rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/20">
+          <input type="password" id="admin-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter') doLogin()" class="w-full px-4 py-3 text-center tracking-widest text-lg font-bold rounded-xl border border-slate-300 focus:border-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/20">
         </div>
-        <button onclick="doLogin()" class="w-full bg-[#0a4d2e] hover:bg-[#06331e] text-amber-300 font-extrabold py-3 rounded-xl text-sm shadow-lg transition">
+        <button id="login-btn" onclick="doLogin()" class="w-full bg-[#0a4d2e] hover:bg-[#06331e] text-amber-300 font-extrabold py-3 rounded-xl text-sm shadow-lg transition">
           🔓 Buka Panel Admin
         </button>
         <p id="login-err" class="text-xs font-bold text-red-600 hidden">Kata sandi salah!</p>
@@ -245,19 +246,26 @@
 
           <!-- SQL Schema Helper -->
           <div class="mt-8 pt-6 border-t border-slate-200">
-            <h3 class="text-xs font-black uppercase text-slate-700 tracking-wider mb-2">Panduan 1 Menit Buat Tabel di Supabase (SQL Editor)</h3>
-            <p class="text-xs text-slate-500 mb-3">Copy kode SQL di bawah dan jalankan di menu <strong>SQL Editor</strong> di dashboard Supabase kamu:</p>
+            <h3 class="text-xs font-black uppercase text-slate-700 tracking-wider mb-2">Panduan Buat Tabel Aman di Supabase (SQL Editor)</h3>
+            <p class="text-xs text-slate-500 mb-3">Copy kode SQL di bawah dan jalankan di menu <strong>SQL Editor</strong> di dashboard Supabase kamu (RLS Aktif &amp; Aman):</p>
             <pre class="bg-slate-900 text-emerald-400 p-4 rounded-2xl text-[11px] font-mono overflow-x-auto">
+-- 1. Buat tabel penyimpanan konten
 CREATE TABLE IF NOT EXISTS site_content (
   id TEXT PRIMARY KEY DEFAULT 'h2c_main',
   data JSONB NOT NULL,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())
 );
 
+-- 2. Aktifkan Row Level Security (RLS)
 ALTER TABLE site_content ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Public Read" ON site_content FOR SELECT USING (true);
-CREATE POLICY "Public Insert/Update" ON site_content FOR ALL USING (true) WITH CHECK (true);
-GRANT ALL ON site_content TO anon, authenticated;
+
+-- 3. Kebijakan Baca: Publik (Anonim) hanya BACA (SELECT)
+CREATE POLICY "Public Read Only" ON site_content 
+  FOR SELECT USING (true);
+
+-- 4. Kebijakan Ubah/Tulis: Hanya user terotentikasi Supabase Auth
+CREATE POLICY "Authenticated Update Only" ON site_content 
+  FOR ALL TO authenticated USING (true) WITH CHECK (true);
             </pre>
           </div>
         </div>
@@ -298,35 +306,98 @@ GRANT ALL ON site_content TO anon, authenticated;
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
-    const DEFAULT_PASS = 'h2c2026';
+    // SHA-256 hash default 'h2c2026'
+    const DEFAULT_PASS_HASH = 'daca654d84f206fadc54adf86a9994f1bd28b887e018e4e95324b20f2e92a8c2';
+    const MAX_LOGIN_ATTEMPTS = 5;
+    const LOCKOUT_MS = 5 * 60 * 1000; // 5 Menit
+    const SESSION_TIMEOUT_MS = 30 * 60 * 1000; // 30 Menit
+
+    async function sha256(str) {
+      const buffer = new TextEncoder().encode(str);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+      return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+    const escapeAttr = escapeHtml;
+
+    function getRemainingLockoutSec() {
+      const lockUntil = parseInt(localStorage.getItem('h2c_admin_lockout') || '0', 10);
+      const diff = lockUntil - Date.now();
+      return diff > 0 ? Math.ceil(diff / 1000) : 0;
+    }
+
     const DEFAULT_CONTENT = {"brand": {"name": "H2C WISATA MANDIRI", "legal_name": "PT. HDUAC Berkah Mandiri", "slogan": "Niat ke Baitullah, kami siapkan jalannya", "ppiu": "26032300175410003", "akreditasi": "A", "whatsapp_1": "6281316333001", "whatsapp_2": "6281286820512", "phone": "+62 813-1633-3001", "email": "info@h2cwisatamandiri.com", "address": "Ruko Telaga Pesona Blok L3 No. 3 & 5, Desa Telagamurni, Kec. Cikarang Barat, Kabupaten Bekasi, Jawa Barat 17530", "bank": "Bank BSI a.n. H2 Berkah Mandiri"}, "hero": {"promo_badge": "DISKON SPESIAL RP 2,5 JUTA KLOTER BARU!", "h1_line1": "Niat ke Baitullah,", "h1_line2": "Kami Siapkan Jalannya.", "subtitle": "Bersama H2C Wisata Mandiri (PT. HDUAC Berkah Mandiri), wujudkan ibadah umroh yang aman, nyaman, dan berkah sesuai sunnah. Ready seat Jan–Des 2026, pilihan paket Umroh Hemat hingga VIP."}, "packages": [{"id": "akbar-sept", "name": "Umroh Akbar September", "badge": "Pilihan Utama", "badge_class": "emerald", "price_normal": "Rp 31.500.000", "price_promo": "Rp 29.000.000", "dp": "Rp 5.000.000", "airline": "Saudia / Garuda (Setaraf)", "hotel_makkah": "Setaraf Maysan Al Maqam", "hotel_madinah": "Setaraf Mirage Salam", "duration": "9 Hari", "free_bonus": "City Tour Makkah & Madinah, Free Kuliner Arab", "seat_status": "Ready Seat"}, {"id": "hemat-jan", "name": "Umroh Paket Hemat Januari", "badge": "Paling Diminati", "badge_class": "amber", "price_normal": "Rp 32.500.000", "price_promo": "Rp 30.000.000", "dp": "Rp 5.000.000", "airline": "Saudia / Garuda (Setaraf)", "hotel_makkah": "Setaraf Maysan Al Maqam", "hotel_madinah": "Setaraf Mirage Salam", "duration": "9 Hari", "free_bonus": "Ziarah Jabal Uhud, Kebun Kurma, Quba", "seat_status": "Sisa 12 Kursi"}, {"id": "turkey-des", "name": "Umroh Plus Turkey Desember", "badge": "Wisata Religi Plus", "badge_class": "slate", "price_normal": "Rp 55.500.000", "price_promo": "Rp 53.000.000", "dp": "Rp 5.000.000", "airline": "Turkish Airlines / Saudia Setaraf", "hotel_makkah": "Setaraf Bintang 5 / 4 Makkah", "hotel_madinah": "Setaraf Mirage Salam Madinah", "duration": "12 Hari", "free_bonus": "City Tour Istanbul, Bosphorus Cruise, Blue Mosque", "seat_status": "Pendaftaran Dibuka"}], "schedules": [{"program": "Umroh Akbar September", "duration": "9 Hari", "airline": "Saudia / Garuda", "price": "Rp 29 Juta", "status": "Ready Seat", "status_class": "emerald"}, {"program": "Umroh Paket Hemat Januari", "duration": "9 Hari", "airline": "Saudia / Garuda", "price": "Rp 30 Juta", "status": "Sisa 12 Seat", "status_class": "amber"}, {"program": "Umroh Awal Musim Mei", "duration": "9 Hari", "airline": "Saudia / Garuda", "price": "Rp 30 Juta", "status": "Pendaftaran", "status_class": "emerald"}, {"program": "Umroh Liburan Sekolah Juni", "duration": "12 Hari", "airline": "Saudia Direct", "price": "Rp 33,5 Juta", "status": "Paling Dicari", "status_class": "blue"}, {"program": "Umroh Ekonomis Juli", "duration": "9 Hari", "airline": "Garuda / Saudia", "price": "Rp 31,5 Juta", "status": "Ready Seat", "status_class": "emerald"}, {"program": "Umroh Plus Turkey Desember", "duration": "12 Hari", "airline": "Turkish Airlines", "price": "Rp 53 Juta", "status": "Seat Terbatas", "status_class": "purple"}]};
     let currentData = null;
     let supabaseClient = null;
 
-    // Login Gate Check
+    // Login Gate Check dengan Session Expiration
     function checkAuth() {
-      if (sessionStorage.getItem('h2c_admin_auth') === 'true') {
-        document.getElementById('login-gate').classList.add('hidden');
-        document.getElementById('admin-app').classList.remove('hidden');
-        initAdmin();
-      }
-    }
+      const isAuth = sessionStorage.getItem('h2c_admin_auth');
+      const authTime = parseInt(sessionStorage.getItem('h2c_admin_auth_time') || '0', 10);
 
-    function doLogin() {
-      const pass = document.getElementById('admin-pass').value;
-      const savedPass = localStorage.getItem('h2c_admin_password') || DEFAULT_PASS;
-      if (pass === savedPass || pass === 'admin123' || pass === 'h2c2026') {
-        sessionStorage.setItem('h2c_admin_auth', 'true');
+      if (isAuth === 'true' && (Date.now() - authTime) < SESSION_TIMEOUT_MS) {
+        sessionStorage.setItem('h2c_admin_auth_time', Date.now().toString());
         document.getElementById('login-gate').classList.add('hidden');
         document.getElementById('admin-app').classList.remove('hidden');
         initAdmin();
       } else {
-        document.getElementById('login-err').classList.remove('hidden');
+        sessionStorage.removeItem('h2c_admin_auth');
+        sessionStorage.removeItem('h2c_admin_auth_time');
+        document.getElementById('login-gate').classList.remove('hidden');
+        document.getElementById('admin-app').classList.add('hidden');
+      }
+    }
+
+    async function doLogin() {
+      const errEl = document.getElementById('login-err');
+      const remSec = getRemainingLockoutSec();
+      if (remSec > 0) {
+        errEl.textContent = `Akses terkunci! Tunggu ${remSec} detik lagi.`;
+        errEl.classList.remove('hidden');
+        return;
+      }
+
+      const pass = document.getElementById('admin-pass').value;
+      if (!pass) return;
+
+      const inputHash = await sha256(pass);
+      const storedHash = localStorage.getItem('h2c_admin_pass_hash') || DEFAULT_PASS_HASH;
+
+      if (inputHash === storedHash) {
+        localStorage.removeItem('h2c_login_failures');
+        localStorage.removeItem('h2c_admin_lockout');
+        sessionStorage.setItem('h2c_admin_auth', 'true');
+        sessionStorage.setItem('h2c_admin_auth_time', Date.now().toString());
+        document.getElementById('login-gate').classList.add('hidden');
+        document.getElementById('admin-app').classList.remove('hidden');
+        errEl.classList.add('hidden');
+        initAdmin();
+      } else {
+        const failures = (parseInt(localStorage.getItem('h2c_login_failures') || '0', 10) + 1);
+        localStorage.setItem('h2c_login_failures', failures.toString());
+
+        if (failures >= MAX_LOGIN_ATTEMPTS) {
+          localStorage.setItem('h2c_admin_lockout', (Date.now() + LOCKOUT_MS).toString());
+          errEl.textContent = 'Terlalu banyak percobaan salah! Terkunci 5 menit.';
+        } else {
+          errEl.textContent = `Kata sandi salah! Sisa percobaan: ${MAX_LOGIN_ATTEMPTS - failures}`;
+        }
+        errEl.classList.remove('hidden');
       }
     }
 
     function doLogout() {
       sessionStorage.removeItem('h2c_admin_auth');
+      sessionStorage.removeItem('h2c_admin_auth_time');
       location.reload();
     }
 
@@ -430,39 +501,39 @@ GRANT ALL ON site_content TO anon, authenticated;
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
             <div>
               <label class="block font-bold text-slate-700 mb-1">Nama Paket</label>
-              <input type="text" value="${pkg.name || ''}" onchange="updatePkg(${index}, 'name', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+              <input type="text" value="${escapeAttr(pkg.name || '')}" onchange="updatePkg(${index}, 'name', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
             </div>
             <div>
               <label class="block font-bold text-slate-700 mb-1">Badge Promo</label>
-              <input type="text" value="${pkg.badge || ''}" onchange="updatePkg(${index}, 'badge', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+              <input type="text" value="${escapeAttr(pkg.badge || '')}" onchange="updatePkg(${index}, 'badge', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
             </div>
             <div>
               <label class="block font-bold text-slate-700 mb-1">Status Kursi</label>
-              <input type="text" value="${pkg.seat_status || ''}" onchange="updatePkg(${index}, 'seat_status', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+              <input type="text" value="${escapeAttr(pkg.seat_status || '')}" onchange="updatePkg(${index}, 'seat_status', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
             </div>
             <div>
               <label class="block font-bold text-slate-700 mb-1">Harga Normal</label>
-              <input type="text" value="${pkg.price_normal || ''}" onchange="updatePkg(${index}, 'price_normal', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+              <input type="text" value="${escapeAttr(pkg.price_normal || '')}" onchange="updatePkg(${index}, 'price_normal', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
             </div>
             <div>
               <label class="block font-bold text-emerald-800 mb-1">Harga Promo (Utama)</label>
-              <input type="text" value="${pkg.price_promo || ''}" onchange="updatePkg(${index}, 'price_promo', this.value)" class="w-full px-3 py-2 rounded-xl border border-emerald-400 font-bold bg-emerald-50/50">
+              <input type="text" value="${escapeAttr(pkg.price_promo || '')}" onchange="updatePkg(${index}, 'price_promo', this.value)" class="w-full px-3 py-2 rounded-xl border border-emerald-400 font-bold bg-emerald-50/50">
             </div>
             <div>
               <label class="block font-bold text-slate-700 mb-1">Uang Muka (DP)</label>
-              <input type="text" value="${pkg.dp || ''}" onchange="updatePkg(${index}, 'dp', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+              <input type="text" value="${escapeAttr(pkg.dp || '')}" onchange="updatePkg(${index}, 'dp', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
             </div>
             <div>
               <label class="block font-bold text-slate-700 mb-1">Maskapai</label>
-              <input type="text" value="${pkg.airline || ''}" onchange="updatePkg(${index}, 'airline', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+              <input type="text" value="${escapeAttr(pkg.airline || '')}" onchange="updatePkg(${index}, 'airline', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
             </div>
             <div>
               <label class="block font-bold text-slate-700 mb-1">Hotel Makkah</label>
-              <input type="text" value="${pkg.hotel_makkah || ''}" onchange="updatePkg(${index}, 'hotel_makkah', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+              <input type="text" value="${escapeAttr(pkg.hotel_makkah || '')}" onchange="updatePkg(${index}, 'hotel_makkah', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
             </div>
             <div>
               <label class="block font-bold text-slate-700 mb-1">Hotel Madinah</label>
-              <input type="text" value="${pkg.hotel_madinah || ''}" onchange="updatePkg(${index}, 'hotel_madinah', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+              <input type="text" value="${escapeAttr(pkg.hotel_madinah || '')}" onchange="updatePkg(${index}, 'hotel_madinah', this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-300">
             </div>
           </div>
         `;
@@ -510,19 +581,19 @@ GRANT ALL ON site_content TO anon, authenticated;
         tr.className = 'hover:bg-slate-50 transition';
         tr.innerHTML = `
           <td class="p-3">
-            <input type="text" value="${sch.program || ''}" onchange="updateSch(${index}, 'program', this.value)" class="w-full px-2 py-1.5 rounded-lg border border-slate-200 font-bold">
+            <input type="text" value="${escapeAttr(sch.program || '')}" onchange="updateSch(${index}, 'program', this.value)" class="w-full px-2 py-1.5 rounded-lg border border-slate-200 font-bold">
           </td>
           <td class="p-3">
-            <input type="text" value="${sch.duration || ''}" onchange="updateSch(${index}, 'duration', this.value)" class="w-24 px-2 py-1.5 rounded-lg border border-slate-200">
+            <input type="text" value="${escapeAttr(sch.duration || '')}" onchange="updateSch(${index}, 'duration', this.value)" class="w-24 px-2 py-1.5 rounded-lg border border-slate-200">
           </td>
           <td class="p-3">
-            <input type="text" value="${sch.airline || ''}" onchange="updateSch(${index}, 'airline', this.value)" class="w-32 px-2 py-1.5 rounded-lg border border-slate-200">
+            <input type="text" value="${escapeAttr(sch.airline || '')}" onchange="updateSch(${index}, 'airline', this.value)" class="w-32 px-2 py-1.5 rounded-lg border border-slate-200">
           </td>
           <td class="p-3">
-            <input type="text" value="${sch.price || ''}" onchange="updateSch(${index}, 'price', this.value)" class="w-28 px-2 py-1.5 rounded-lg border border-slate-200 font-bold text-emerald-800">
+            <input type="text" value="${escapeAttr(sch.price || '')}" onchange="updateSch(${index}, 'price', this.value)" class="w-28 px-2 py-1.5 rounded-lg border border-slate-200 font-bold text-emerald-800">
           </td>
           <td class="p-3">
-            <input type="text" value="${sch.status || ''}" onchange="updateSch(${index}, 'status', this.value)" class="w-28 px-2 py-1.5 rounded-lg border border-slate-200">
+            <input type="text" value="${escapeAttr(sch.status || '')}" onchange="updateSch(${index}, 'status', this.value)" class="w-28 px-2 py-1.5 rounded-lg border border-slate-200">
           </td>
           <td class="p-3 text-center">
             <button onclick="removeSchedule(${index})" class="text-red-600 hover:text-red-800 font-bold p-1 rounded">✕</button>
@@ -661,15 +732,17 @@ GRANT ALL ON site_content TO anon, authenticated;
       }
     }
 
-    function changePassword() {
+    async function changePassword() {
       const p = document.getElementById('new-password').value.trim();
-      if (!p) {
-        alert('Kata sandi tidak boleh kosong!');
+      if (!p || p.length < 6) {
+        alert('Kata sandi minimal 6 karakter demi keamanan!');
         return;
       }
-      localStorage.setItem('h2c_admin_password', p);
+      const hash = await sha256(p);
+      localStorage.setItem('h2c_admin_pass_hash', hash);
+      localStorage.removeItem('h2c_admin_password'); // Hapus versi plaintext
       document.getElementById('new-password').value = '';
-      showToast('Kata sandi admin berhasil diperbarui!');
+      showToast('Kata sandi admin berhasil diperbarui (terenkripsi SHA-256)!');
     }
 
     function showToast(msg) {
