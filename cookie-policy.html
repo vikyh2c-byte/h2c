@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id" class="scroll-smooth overflow-x-hidden">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kebijakan Cookie - H2C Wisata Mandiri</title>
-  <meta name="description" content="Kebijakan penggunaan cookie pada situs web H2C Wisata Mandiri.">
+  <title>Kebijakan Cookie | H2C Wisata Mandiri - PT. HDUAC Berkah Mandiri</title>
+  <meta name="description" content="Kebijakan penggunaan cookie esensial dan perlindungan privasi pengunjung situs web resmi H2C Wisata Mandiri.">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -14,15 +17,15 @@
     .legal-content ul { list-style: disc; padding-left: 1.25rem; margin-top: 0.5rem; }
   </style>
 </head>
-<body class="bg-[#F8FAFC] text-slate-800 antialiased">
+<body class="bg-[#F8FAFC] text-slate-800 antialiased overflow-x-hidden w-full">
 
   <header class="bg-white border-b border-slate-200 px-6 sm:px-8 py-4 sticky top-0 z-50">
     <div class="max-w-3xl mx-auto flex items-center justify-between gap-4">
-      <a href="./index.html" class="flex items-center gap-2.5">
+      <a href="/" class="flex items-center gap-2.5">
         <img src="./assets/logo-circle.png" alt="Logo H2C" class="w-9 h-9 rounded-full object-cover border border-amber-400/60 shrink-0">
         <span class="font-black text-[#0a4d2e] text-sm sm:text-base tracking-tight">H2C WISATA MANDIRI</span>
       </a>
-      <a href="./index.html" class="text-xs font-bold text-emerald-700 hover:text-emerald-900 flex items-center gap-1.5 border border-emerald-200 px-3 py-2 rounded-full hover:bg-emerald-50 transition">
+      <a href="/" class="text-xs font-bold text-emerald-700 hover:text-emerald-900 flex items-center gap-1.5 border border-emerald-200 px-3 py-2 rounded-full hover:bg-emerald-50 transition">
         ← Kembali ke Beranda
       </a>
     </div>
@@ -94,9 +97,9 @@
 
   <footer class="bg-[#03170b] text-slate-400 text-xs py-8 px-6 sm:px-8 border-t border-emerald-950">
     <div class="max-w-3xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-      <div class="flex items-center gap-2 text-white font-black">
+      <a href="/" class="flex items-center gap-2 text-white font-black hover:text-amber-300 transition">
         <img src="./assets/logo-circle.png" alt="Logo H2C" class="w-6 h-6 rounded-full border border-amber-400/60 inline-block object-cover mr-1"> H2C WISATA MANDIRI
-      </div>
+      </a>
       <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-[11px]">
         <a href="./privacy-policy.html" class="hover:text-amber-300 transition">Kebijakan Privasi</a>
         <a href="./terms-conditions.html" class="hover:text-amber-300 transition">Syarat &amp; Ketentuan</a>
@@ -105,9 +108,12 @@
       </nav>
     </div>
     <div class="max-w-3xl mx-auto mt-6 pt-5 border-t border-emerald-900/60 text-center text-[10px] text-slate-500">
-      © 2026 PT. HDUAC Berkah Mandiri. Seluruh hak cipta dilindungi undang-undang.
+      © <span class="footer-year">2026</span> PT. HDUAC Berkah Mandiri. Seluruh hak cipta dilindungi undang-undang.
     </div>
   </footer>
 
+  <script>
+    document.querySelectorAll('.footer-year').forEach(function(el) { el.textContent = new Date().getFullYear(); });
+  </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id" class="scroll-smooth overflow-x-hidden">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -304,7 +304,7 @@
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-700 selection:text-amber-300">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-700 selection:text-amber-300 overflow-x-hidden w-full">
 
   <!-- TOP ANNOUNCEMENT BAR -->
   <div class="bg-[#04180e] text-emerald-200 text-xs py-2 px-4 sm:px-8 flex justify-between items-center gap-3 border-b border-emerald-900/60 overflow-hidden">
@@ -330,7 +330,7 @@
   <header class="sticky top-3 sm:top-5 z-50 max-w-6xl mx-auto px-3 sm:px-6">
     <div class="bg-white/90 backdrop-blur-xl border border-slate-200/90 shadow-xl shadow-slate-900/5 rounded-2xl sm:rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center gap-3 transition-all">
       <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-2.5 sm:gap-3.5 group min-w-0">
+      <a href="/" aria-label="Beranda H2C Wisata Mandiri" class="flex items-center gap-2.5 sm:gap-3.5 group min-w-0">
         <img src="./assets/logo-circle.png" alt="Logo Resmi H2C Wisata Mandiri" class="w-11 h-11 sm:w-14 sm:h-14 shrink-0 rounded-full object-cover shadow-md border-2 border-amber-400 group-hover:scale-105 transition-transform">
         <div class="min-w-0">
           <div class="flex items-center gap-1.5 sm:gap-2">
@@ -362,6 +362,36 @@
         </a>
         <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20mau%20konsultasi%20paket%20umroh" target="_blank" class="btn-shimmer bg-[#0a4d2e] hover:bg-[#06331e] text-white text-[11px] sm:text-xs font-bold px-3 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-md shadow-emerald-900/20 flex items-center gap-1 sm:gap-1.5 transition transform active:scale-95 whitespace-nowrap">
           <span class="text-amber-300">💬</span> <span class="hidden sm:inline">Konsultasi</span><span> WA</span>
+        </a>
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" type="button" aria-label="Buka Menu Navigasi" aria-expanded="false" class="xl:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-700 hover:text-emerald-800 hover:bg-emerald-50 transition cursor-pointer">
+          <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden xl:hidden mt-2 bg-white/95 backdrop-blur-xl border border-slate-200 shadow-2xl rounded-2xl p-4 transition-all">
+      <nav class="flex flex-col space-y-1 text-xs font-bold text-slate-700 uppercase tracking-wider">
+        <a href="#paket" class="mobile-nav-link px-3 py-2.5 rounded-xl hover:bg-emerald-50 hover:text-emerald-800 transition">Paket Umroh</a>
+        <a href="#feed" class="mobile-nav-link px-3 py-2.5 rounded-xl hover:bg-emerald-50 hover:text-emerald-800 transition">Testimoni &amp; Video</a>
+        <a href="#jadwal" class="mobile-nav-link px-3 py-2.5 rounded-xl hover:bg-emerald-50 hover:text-emerald-800 transition">Jadwal Keberangkatan</a>
+        <a href="#fasilitas" class="mobile-nav-link px-3 py-2.5 rounded-xl hover:bg-emerald-50 hover:text-emerald-800 transition">Fasilitas Jamaah</a>
+        <a href="#pembimbing" class="mobile-nav-link px-3 py-2.5 rounded-xl hover:bg-emerald-50 hover:text-emerald-800 transition">Asatidzah Pembimbing</a>
+        <a href="#tentang" class="mobile-nav-link px-3 py-2.5 rounded-xl hover:bg-emerald-50 hover:text-emerald-800 transition">Tentang Kami</a>
+        <a href="#faq" class="mobile-nav-link px-3 py-2.5 rounded-xl hover:bg-emerald-50 hover:text-emerald-800 transition">FAQ &amp; Bantuan</a>
+      </nav>
+      <div class="pt-3 mt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+        <a href="tel:+6281316333001" class="text-emerald-800 font-extrabold flex items-center gap-1.5 py-1">
+          <span>📞</span> +62 813-1633-3001
+        </a>
+        <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20mau%20konsultasi%20paket%20umroh" target="_blank" class="bg-emerald-800 text-amber-300 font-bold px-3 py-1.5 rounded-lg text-[11px] hover:bg-emerald-900 transition">
+          Chat WhatsApp 💬
         </a>
       </div>
     </div>
@@ -1120,27 +1150,29 @@
       <form id="lead-form" novalidate class="space-y-4">
         <div>
           <label for="nama" class="block text-xs font-bold text-slate-700 mb-1.5">Nama Lengkap <span class="text-rose-600">*</span></label>
-          <input type="text" id="nama" name="nama" required autocomplete="name"
+          <input type="text" id="nama" name="nama" required autocomplete="name" placeholder="Contoh: H. Ahmad Fauzi"
             class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition">
           <p class="text-[11px] text-rose-600 mt-1 hidden" data-error-for="nama">Nama lengkap wajib diisi.</p>
         </div>
 
         <div>
           <label for="whatsapp" class="block text-xs font-bold text-slate-700 mb-1.5">Nomor WhatsApp <span class="text-rose-600">*</span></label>
-          <input type="tel" id="whatsapp" name="whatsapp" required autocomplete="tel" placeholder="08xxxxxxxxxx"
+          <input type="tel" id="whatsapp" name="whatsapp" required autocomplete="tel" placeholder="Contoh: 081234567890"
             class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition">
           <p class="text-[11px] text-rose-600 mt-1 hidden" data-error-for="whatsapp">Nomor WhatsApp wajib diisi.</p>
+          <p class="text-[11px] text-rose-600 mt-1 hidden" data-error-for="whatsapp-format">Nomor WhatsApp tidak valid (minimal 10 digit, contoh: 081234567890).</p>
         </div>
 
         <div>
           <label for="email" class="block text-xs font-bold text-slate-700 mb-1.5">Email</label>
-          <input type="email" id="email" name="email" autocomplete="email"
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="nama@email.com (opsional)"
             class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition">
+          <p class="text-[11px] text-rose-600 mt-1 hidden" data-error-for="email-format">Format alamat email tidak valid (contoh: nama@domain.com).</p>
         </div>
 
         <div>
           <label for="pesan" class="block text-xs font-bold text-slate-700 mb-1.5">Pertanyaan / Catatan</label>
-          <textarea id="pesan" name="pesan" rows="3"
+          <textarea id="pesan" name="pesan" rows="3" placeholder="Tuliskan pertanyaan Anda mengenai paket, jadwal, atau fasilitas umroh..."
             class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition"></textarea>
         </div>
 
@@ -1162,9 +1194,13 @@
         </div>
 
         <button type="submit"
-          class="w-full bg-gradient-to-r from-[#0a4d2e] to-[#042010] hover:from-emerald-800 hover:to-emerald-950 text-white font-black min-h-[56px] rounded-2xl text-sm shadow-xl shadow-emerald-900/20 transition flex items-center justify-center gap-2">
+          class="w-full bg-gradient-to-r from-[#0a4d2e] to-[#042010] hover:from-emerald-800 hover:to-emerald-950 text-white font-black min-h-[56px] rounded-2xl text-sm shadow-xl shadow-emerald-900/20 transition flex items-center justify-center gap-2 cursor-pointer">
           Kirim Pertanyaan 💬
         </button>
+
+        <div id="form-error" class="hidden bg-rose-50 border border-rose-200 text-rose-700 text-xs p-3.5 rounded-xl font-semibold text-center">
+          Mohon periksa kembali kolom formulir di atas yang belum terisi dengan benar.
+        </div>
 
         <p class="text-[10px] text-slate-400 text-center leading-relaxed">
           Data Anda hanya digunakan untuk keperluan konsultasi dan tidak akan dibagikan kepada pihak ketiga
@@ -1172,9 +1208,10 @@
         </p>
       </form>
 
-      <div id="form-success" class="hidden mt-6 bg-emerald-50 border border-emerald-200 rounded-xl p-5 text-center">
-        <p class="text-sm font-bold text-emerald-800">Terima kasih! 🙏</p>
-        <p class="text-xs text-emerald-700 mt-1">Pertanyaan Anda telah kami terima. Tim H2C akan menghubungi Anda via WhatsApp segera.</p>
+      <div id="form-success" class="hidden mt-6 bg-emerald-50 border border-emerald-300 rounded-2xl p-6 text-center shadow-sm">
+        <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 mx-auto flex items-center justify-center text-xl font-black mb-2">✓</div>
+        <p class="text-base font-bold text-emerald-900">Terima kasih! Permintaan Berhasil Terkirim</p>
+        <p class="text-xs text-emerald-700 mt-1 max-w-md mx-auto leading-relaxed">Pertanyaan Anda telah kami terima. Tim konsultan resmi H2C Wisata Mandiri akan menghubungi nomor WhatsApp Anda dalam 1×24 jam kerja.</p>
       </div>
     </div>
   </section>
@@ -1248,10 +1285,10 @@
   <footer class="bg-[#03170b] text-slate-400 text-xs py-12 px-4 sm:px-6 lg:px-8 border-t border-emerald-950">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
       <div class="md:col-span-2 space-y-3">
-        <div class="flex items-center gap-2.5 text-white font-black text-lg">
-          <img src="./assets/logo-circle.png" alt="Logo H2C" class="w-8 h-8 rounded-full border border-amber-400/70 object-cover shrink-0">
+        <a href="/" class="flex items-center gap-2.5 text-white font-black text-lg hover:text-amber-300 transition group w-fit">
+          <img src="./assets/logo-circle.png" alt="Logo H2C" class="w-8 h-8 rounded-full border border-amber-400/70 object-cover shrink-0 group-hover:scale-105 transition-transform">
           <span>H2C WISATA MANDIRI</span>
-        </div>
+        </a>
         <p class="text-slate-400 text-xs leading-relaxed max-w-md">
           <em>&ldquo;Niat ke Baitullah, kami siapkan jalannya.&rdquo;</em> InsyaAllah aman &amp; amanah melayani tamu Allah dengan sepenuh hati sesuai Al-Qur'an dan Sunnah.
         </p>
@@ -1276,8 +1313,10 @@
           Ruko Telaga Pesona Blok L3 No. 3 &amp; 5<br>
           Desa Telagamurni, Kec. Cikarang Barat<br>
           Kabupaten Bekasi, Jawa Barat 17530<br>
-          WhatsApp: <a href="tel:+6281316333001" class="hover:text-amber-300 transition">+62 813-1633-3001</a> &middot; Chat: <a href="https://wa.me/6281316333001" class="hover:text-amber-300 transition">+62 813-1633-3001</a><br>
-          WhatsApp 2: <a href="https://wa.me/6281286820512" class="hover:text-amber-300 transition">+62 812-8682-0512</a><br>
+          Telepon: <a href="tel:+6281316333001" class="hover:text-amber-300 transition">+62 813-1633-3001</a><br>
+          WhatsApp: <a href="https://wa.me/6281316333001" target="_blank" class="hover:text-amber-300 transition">+62 813-1633-3001</a><br>
+          WhatsApp 2: <a href="https://wa.me/6281286820512" target="_blank" class="hover:text-amber-300 transition">+62 812-8682-0512</a><br>
+          Email: <a href="mailto:info@h2cwisatamandiri.com" class="hover:text-amber-300 transition">info@h2cwisatamandiri.com</a><br>
           Instagram: <a href="https://instagram.com/h2c_wisata_mandiri" target="_blank" class="hover:text-amber-300 transition">@h2c_wisata_mandiri</a><br>
           <a href="https://vt.tiktok.com/ZSqAWfBaU/" target="_blank" rel="noopener noreferrer" class="hover:text-amber-300 transition">TikTok: H2C Wisata Mandiri</a><br>
           Pembayaran: Bank BSI a.n. H2 Berkah Mandiri
@@ -1296,7 +1335,7 @@
     </div>
 
     <div class="max-w-6xl mx-auto mt-5 pt-5 border-t border-emerald-900/60 text-center text-[10px] text-slate-500 leading-relaxed">
-      © 2026 PT. HDUAC Berkah Mandiri — H2C Wisata Mandiri. Seluruh hak cipta dilindungi undang-undang.<br>
+      © <span class="footer-year">2026</span> PT. HDUAC Berkah Mandiri — H2C Wisata Mandiri. Seluruh hak cipta dilindungi undang-undang.<br>
       Akta Pendirian No. 65 tanggal 16 Maret 2023, Notaris VONNY ANASTASIA, S.H., M.Kn. | Izin PPIU Kemenag RI No. 26032300175410003, Terakreditasi "A".<br>
       H2C Wisata Mandiri hadir sebagai penyelenggara perjalanan ibadah umroh yang terdaftar dan diawasi oleh Kementerian Agama Republik Indonesia.
     </div>
@@ -1372,7 +1411,43 @@
       }
     })();
 
-    // Form kontak dengan validasi konsen
+    // Mobile Menu Drawer Handler
+    (function () {
+      var btn = document.getElementById('mobile-menu-btn');
+      var menu = document.getElementById('mobile-menu');
+      var iconHam = document.getElementById('hamburger-icon');
+      var iconClose = document.getElementById('close-icon');
+      if (!btn || !menu) return;
+
+      function toggleMenu() {
+        var isOpen = !menu.classList.contains('hidden');
+        menu.classList.toggle('hidden', isOpen);
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        if (iconHam) iconHam.classList.toggle('hidden', !isOpen);
+        if (iconClose) iconClose.classList.toggle('hidden', isOpen);
+      }
+
+      btn.addEventListener('click', toggleMenu);
+
+      menu.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+        link.addEventListener('click', function () {
+          menu.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          if (iconHam) iconHam.classList.remove('hidden');
+          if (iconClose) iconClose.classList.add('hidden');
+        });
+      });
+    })();
+
+    // Dynamic Footer Year
+    (function () {
+      var year = new Date().getFullYear();
+      document.querySelectorAll('.footer-year').forEach(function (el) {
+        el.textContent = year;
+      });
+    })();
+
+    // Form kontak dengan validasi konsen & format
     (function () {
       var form = document.getElementById('lead-form');
       if (!form) return;
@@ -1386,25 +1461,52 @@
         e.preventDefault();
         var nama = document.getElementById('nama').value.trim();
         var wa = document.getElementById('whatsapp').value.trim();
+        var email = document.getElementById('email').value.trim();
         var consent = document.getElementById('consent').checked;
+        var formError = document.getElementById('form-error');
+        var formSuccess = document.getElementById('form-success');
         var ok = true;
 
-        setError('nama', !nama); if (!nama) ok = false;
-        setError('whatsapp', !wa); if (!wa) ok = false;
-        setError('consent', !consent); if (!consent) ok = false;
+        // Reset error states
+        setError('nama', false);
+        setError('whatsapp', false);
+        setError('whatsapp-format', false);
+        setError('email-format', false);
+        setError('consent', false);
+        if (formError) formError.classList.add('hidden');
 
-        if (!ok) return;
+        if (!nama) { setError('nama', true); ok = false; }
+        
+        var waClean = wa.replace(/[\s\-\+]/g, '');
+        if (!wa) {
+          setError('whatsapp', true);
+          ok = false;
+        } else if (!/^(\+?62|08|8)[0-9]{8,12}$/.test(waClean)) {
+          setError('whatsapp-format', true);
+          ok = false;
+        }
 
-        // Kirim via WhatsApp (tanpa menyimpan data ke server)
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          setError('email-format', true);
+          ok = false;
+        }
+
+        if (!consent) { setError('consent', true); ok = false; }
+
+        if (!ok) {
+          if (formError) formError.classList.remove('hidden');
+          return;
+        }
+
+        // Kirim via WhatsApp
         var pesan = document.getElementById('pesan').value.trim();
-        var email = document.getElementById('email').value.trim();
         var teks = 'Halo Admin H2C, saya ingin konsultasi paket umroh.%0A%0A'
           + 'Nama: ' + encodeURIComponent(nama) + '%0A'
           + 'WhatsApp: ' + encodeURIComponent(wa) + '%0A'
           + (email ? 'Email: ' + encodeURIComponent(email) + '%0A' : '')
           + (pesan ? 'Pertanyaan: ' + encodeURIComponent(pesan) : '');
 
-        document.getElementById('form-success').classList.remove('hidden');
+        if (formSuccess) formSuccess.classList.remove('hidden');
         form.reset();
         window.open('https://wa.me/6281316333001?text=' + teks, '_blank');
       });
