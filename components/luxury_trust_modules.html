@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Trust Modules & Comparison Matrix - H2C Wisata Mandiri</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Scheherazade New -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Amiri:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            arabic: ['Amiri', 'serif'],
+          },
+          colors: {
+            emerald: {
+              850: '#064024',
+              920: '#032616',
+              950: '#021a0f',
+            },
+            gold: {
+              100: '#fef9c3',
+              200: '#fef08a',
+              300: '#fde047',
+              400: '#facc15',
+              500: '#eab308',
+              600: '#ca8a04',
+              700: '#a16207',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       ISLAMIC GEOMETRIC LATTICE PATTERN & LUXURY STYLES
+       ========================================================================== */
+    .bg-islamic-pattern {
+      background-color: #032114;
+      background-image: radial-gradient(rgba(217, 119, 6, 0.12) 1px, transparent 0),
+                        radial-gradient(rgba(16, 185, 129, 0.15) 1px, #032114 1px);
+      background-size: 32px 32px;
+      background-position: 0 0, 16px 16px;
+    }
+
+    .bg-islamic-star-pattern {
+      background-color: #021a0f;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d97706' stroke-opacity='0.18' stroke-width='1.2'%3E%3Cpath d='M40 0 L51.7 28.3 L80 40 L51.7 51.7 L40 80 L28.3 51.7 L0 40 L28.3 28.3 Z'/%3E%3Cpath d='M40 11.7 L48.3 31.7 L68.3 40 L48.3 48.3 L40 68.3 L31.7 48.3 L11.7 40 L31.7 31.7 Z' stroke-opacity='0.12'/%3E%3Ccircle cx='40' cy='40' r='14' stroke='%2310b981' stroke-opacity='0.2'/%3E%3Ccircle cx='40' cy='40' r='5' fill='%23d97706' fill-opacity='0.25'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .bg-islamic-star-pattern-light {
+      background-color: #f8fafc;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23059669' stroke-opacity='0.08' stroke-width='1'%3E%3Cpath d='M40 0 L51.7 28.3 L80 40 L51.7 51.7 L40 80 L28.3 51.7 L0 40 L28.3 28.3 Z'/%3E%3Ccircle cx='40' cy='40' r='10' stroke='%23d97706' stroke-opacity='0.1'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Gold-Emerald Luxury Sheen Text & Gradients */
+    .text-gold-sheen {
+      background: linear-gradient(135deg, #fef08a 0%, #facc15 30%, #eab308 50%, #fef08a 70%, #ca8a04 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: goldSheen 6s ease infinite;
+    }
+
+    .text-emerald-gold-sheen {
+      background: linear-gradient(135deg, #a7f3d0 0%, #fde047 50%, #6ee7b7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bg-gold-metallic-gradient {
+      background: linear-gradient(135deg, #d97706 0%, #f59e0b 35%, #fef08a 50%, #f59e0b 65%, #b45309 100%);
+    }
+
+    .bg-luxury-emerald-dark {
+      background: radial-gradient(circle at 50% 0%, #064024 0%, #032616 60%, #01160a 100%);
+    }
+
+    @keyframes goldSheen {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Micro-Pill Pulse Status Animation */
+    @keyframes microPulse {
+      0% { transform: scale(0.95); opacity: 0.9; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+      70% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); opacity: 0.9; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .micro-pill-pulse {
+      animation: microPulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes goldMicroPulse {
+      0% { transform: scale(0.95); opacity: 0.9; box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+      70% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 8px rgba(245, 158, 11, 0); }
+      100% { transform: scale(0.95); opacity: 0.9; box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+    }
+
+    .micro-pill-pulse-gold {
+      animation: goldMicroPulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Subtle Glassmorphism Card */
+    .glass-luxury-card {
+      background: rgba(4, 38, 22, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(250, 204, 21, 0.22);
+    }
+
+    .glass-luxury-card-light {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 10px 30px -10px rgba(6, 64, 36, 0.08);
+    }
+
+    /* Comparison Table Scrollbar & Sticky */
+    .comparison-table-wrapper {
+      scrollbar-width: thin;
+      scrollbar-color: #d97706 #e2e8f0;
+    }
+    .comparison-table-wrapper::-webkit-scrollbar {
+      height: 8px;
+    }
+    .comparison-table-wrapper::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 9999px;
+    }
+    .comparison-table-wrapper::-webkit-scrollbar-thumb {
+      background: #d97706;
+      border-radius: 9999px;
+    }
+
+    /* Accordion Transitions */
+    .accordion-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      opacity: 0;
+    }
+    .accordion-item.active .accordion-content {
+      grid-template-rows: 1fr;
+      opacity: 1;
+    }
+    .accordion-inner {
+      overflow: hidden;
+    }
+    .accordion-icon {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .accordion-item.active .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    /* Shimmer effect for Luxury Buttons */
+    .btn-luxury-shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-luxury-shimmer::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(
+        60deg,
+        rgba(255, 255, 255, 0) 20%,
+        rgba(255, 255, 255, 0.35) 50%,
+        rgba(255, 255, 255, 0) 80%
+      );
+      transform: rotate(25deg);
+      animation: btnShine 4.5s infinite;
+    }
+    @keyframes btnShine {
+      0% { left: -60%; }
+      30%, 100% { left: 140%; }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-800 selection:text-amber-200">
+
+  <!-- ==========================================================================
+       SVG ICON ASSETS DEFINITION (Reusable Vector Library)
+       ========================================================================== -->
+  <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <path d="m9 12 2 2 4-4"/>
+    </symbol>
+    <symbol id="icon-plane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/>
+    </symbol>
+    <symbol id="icon-hotel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/>
+      <path d="m9 16 .348-.24c1.465-1.013 3.84-1.013 5.304 0L15 16"/>
+      <path d="M8 7h.01"/><path d="M16 7h.01"/><path d="M12 7h.01"/>
+      <path d="M12 11h.01"/><path d="M16 11h.01"/><path d="M8 11h.01"/>
+      <path d="M10 22v-4a2 2 0 0 1 4 0v4"/>
+    </symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+      <line x1="16" x2="16" y1="2" y2="6"/>
+      <line x1="8" x2="8" y1="2" y2="6"/>
+      <line x1="3" x2="21" y1="10" y2="10"/>
+      <path d="m9 16 2 2 4-4"/>
+    </symbol>
+    <symbol id="icon-ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/>
+      <path d="M13 5v2"/><path d="M13 11v2"/><path d="M13 17v2"/>
+    </symbol>
+    <symbol id="icon-passport" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="16" height="20" x="4" y="2" rx="2"/>
+      <circle cx="12" cy="10" r="3"/>
+      <path d="m8 18 8-8"/>
+      <path d="M16 18h-8"/>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </symbol>
+    <symbol id="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+    </symbol>
+    <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </symbol>
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.276-.1-.476-.15-.677.15-.2.302-.777.98-.953 1.18-.175.201-.35.226-.652.075-.301-.151-1.272-.469-2.423-1.496-.896-.799-1.501-1.786-1.677-2.088-.175-.302-.019-.465.132-.615.136-.135.301-.351.452-.527.15-.175.201-.301.301-.502.1-.2.05-.376-.025-.527-.075-.15-.677-1.633-.928-2.235-.245-.586-.494-.507-.678-.516-.176-.008-.377-.01-.578-.01-.2 0-.527.075-.803.376-.276.301-1.054 1.03-1.054 2.511 0 1.482 1.079 2.912 1.23 3.113.15.201 2.124 3.243 5.145 4.548.718.311 1.279.497 1.716.636.721.229 1.377.197 1.896.12.578-.087 1.78-.727 2.031-1.43.251-.703.251-1.306.176-1.43-.075-.126-.276-.201-.577-.352zM12.04 2C6.495 2 2 6.495 2 12.04c0 1.954.557 3.778 1.523 5.32L2 22l4.801-1.488A10.007 10.007 0 0 0 12.04 22c5.545 0 10.04-4.495 10.04-10.04C22.08 6.495 17.585 2 12.04 2z"/>
+    </symbol>
+    <symbol id="icon-sparkle" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 0l2.6 8.4L23 11l-8.4 2.6L12 22l-2.6-8.4L1 11l8.4-2.6z"/>
+    </symbol>
+  </svg>
+
+  <!-- ==========================================================================
+       TOP NAVIGATION BAR (Contextual Anchor)
+       ========================================================================== -->
+  <nav class="sticky top-0 z-50 bg-[#032616]/95 backdrop-blur-md border-b border-amber-500/20 px-4 py-3 text-white shadow-xl">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center shadow-md">
+          <span class="font-black text-emerald-950 text-xl tracking-tighter">H2C</span>
+        </div>
+        <div>
+          <span class="text-sm font-extrabold tracking-wide block leading-tight text-white">H2C WISATA MANDIRI</span>
+          <span class="text-[10px] text-amber-300 font-medium tracking-wider uppercase block">PT. HDUAC BERKAH MANDIRI • PPIU KEMENAG</span>
+        </div>
+      </div>
+      
+      <!-- Quick Navigation Anchors -->
+      <div class="hidden md:flex items-center gap-4 text-xs font-semibold text-emerald-100">
+        <a href="#section-hero-accent" class="hover:text-amber-300 transition px-2 py-3 min-h-[48px] inline-flex items-center">Kemurnian Ibadah</a>
+        <a href="#section-trust-5pasti" class="hover:text-amber-300 transition px-2 py-3 min-h-[48px] inline-flex items-center">5 Pasti Kemenag</a>
+        <a href="#section-comparison-matrix" class="hover:text-amber-300 transition px-2 py-3 min-h-[48px] inline-flex items-center">Perbandingan Paket</a>
+        <a href="#section-hotel-flight" class="hover:text-amber-300 transition px-2 py-3 min-h-[48px] inline-flex items-center">Hotel &amp; Maskapai</a>
+        <a href="#section-interactive-faq" class="hover:text-amber-300 transition px-2 py-3 min-h-[48px] inline-flex items-center">FAQ Terpadu</a>
+      </div>
+
+      <!-- Quick Action CTA -->
+      <a href="https://wa.me/6281316333001?text=Halo%20H2C%20Wisata%20Mandiri%2C%20saya%20ingin%20konsultasi%20paket%20umroh%20resmi" 
+         target="_blank" 
+         class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-emerald-950 font-bold px-4 py-3 rounded-xl text-xs transition shadow-lg hover:shadow-amber-500/20 btn-luxury-shimmer min-h-[48px]">
+        <svg class="w-4 h-4 fill-emerald-950"><use href="#icon-whatsapp"/></svg>
+        <span>Chat CS 24 Jam</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="w-full overflow-hidden">
+
+    <!-- ==========================================================================
+         MODULE 1: LUXURY ISLAMIC VISUAL ACCENT & HERO POLISH
+         ========================================================================== -->
+    <section id="section-hero-accent" class="relative py-20 lg:py-28 bg-islamic-star-pattern text-white overflow-hidden border-b border-amber-500/30">
+      <!-- Ambient Luxury Glow Orbs -->
+      <div class="absolute -top-32 -left-32 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/2 -right-32 w-[30rem] h-[30rem] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <!-- Islamic Corner Accents (Inline SVG Vector) -->
+      <div class="absolute top-4 left-4 w-16 h-16 pointer-events-none opacity-25">
+        <svg viewBox="0 0 100 100" class="w-full h-full stroke-amber-400 fill-none" stroke-width="2">
+          <path d="M0,0 L100,0 L100,10 L10,10 L10,100 L0,100 Z"/>
+          <circle cx="20" cy="20" r="6" fill="#f59e0b"/>
+        </svg>
+      </div>
+      <div class="absolute top-4 right-4 w-16 h-16 pointer-events-none opacity-25 rotate-90">
+        <svg viewBox="0 0 100 100" class="w-full h-full stroke-amber-400 fill-none" stroke-width="2">
+          <path d="M0,0 L100,0 L100,10 L10,10 L10,100 L0,100 Z"/>
+          <circle cx="20" cy="20" r="6" fill="#f59e0b"/>
+        </svg>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- MICRO-PILL GLOW STATUS ROW -->
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+          
+          <!-- Micro-Pill 1: Kemenag PPIU License -->
+          <div class="inline-flex items-center gap-2 bg-[#063b22]/90 border border-emerald-400/40 px-3.5 py-1.5 rounded-full shadow-lg backdrop-blur-md">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="micro-pill-pulse absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-300"></span>
+            </span>
+            <span class="text-xs font-semibold text-emerald-100 tracking-wide">
+              IZIN RESMI PPIU NO. <strong class="text-amber-300 font-mono">26032300175410003</strong>
+            </span>
+          </div>
+
+          <!-- Micro-Pill 2: Accreditation A -->
+          <div class="inline-flex items-center gap-1.5 bg-[#1b2f15]/90 border border-amber-400/50 px-3.5 py-1.5 rounded-full shadow-lg backdrop-blur-md">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="micro-pill-pulse-gold absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-300"></span>
+            </span>
+            <span class="text-xs font-bold text-amber-300 uppercase tracking-wide">
+              TERAKREDITASI "A" KEMENAG RI
+            </span>
+          </div>
+
+          <!-- Micro-Pill 3: Direct Flight Confirmation -->
+          <div class="inline-flex items-center gap-2 bg-emerald-950/80 border border-emerald-500/30 px-3.5 py-1.5 rounded-full text-xs font-medium text-emerald-200">
+            <svg class="w-3.5 h-3.5 text-amber-400"><use href="#icon-plane"/></svg>
+            <span>Direct Flight Jakarta ⇄ Jeddah/Madinah</span>
+          </div>
+        </div>
+
+        <!-- HERO POLISH HEADER -->
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-flex items-center gap-2 text-amber-400 text-xs sm:text-sm font-bold tracking-widest uppercase mb-3">
+            <svg class="w-4 h-4 fill-amber-400"><use href="#icon-sparkle"/></svg>
+            <span>STANDAR KEMEWAHAN &amp; KETENANGAN IBADAH SESUAI SUNNAH</span>
+            <svg class="w-4 h-4 fill-amber-400"><use href="#icon-sparkle"/></svg>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+            Ibadah Penuh Khidmat, <br class="hidden sm:inline">
+            <span class="text-gold-sheen drop-shadow-sm">Fasilitas Nyaman Bintang 4 &amp; 5</span>
+          </h1>
+
+          <p class="mt-6 text-sm sm:text-base lg:text-lg text-emerald-100/90 leading-relaxed max-w-3xl mx-auto font-normal">
+            H2C Wisata Mandiri (PT. HDUAC Berkah Mandiri) mempersembahkan pengalaman umroh premium dengan jaminan legalitas 
+            <strong class="text-white font-semibold">5 Pasti Umroh Kemenag</strong>, hotel ring 1 terdekat di pelataran Haramain, 
+            serta pembimbing ibadah alumni universitas Islam terkemuka Timur Tengah.
+          </p>
+
+          <!-- HIGHLIGHT BADGES GRID -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10 max-w-3xl mx-auto text-left">
+            <div class="glass-luxury-card p-4 rounded-2xl flex items-start gap-3">
+              <div class="p-2.5 rounded-xl bg-amber-400/20 text-amber-300 shrink-0">
+                <svg class="w-5 h-5"><use href="#icon-shield-check"/></svg>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-amber-200 uppercase tracking-wide">100% Legal &amp; Berangkat</h4>
+                <p class="text-[11px] text-emerald-200/80 mt-0.5">Tiket PP &amp; visa resmi KSA issued sebelum keberangkatan.</p>
+              </div>
+            </div>
+
+            <div class="glass-luxury-card p-4 rounded-2xl flex items-start gap-3">
+              <div class="p-2.5 rounded-xl bg-amber-400/20 text-amber-300 shrink-0">
+                <svg class="w-5 h-5"><use href="#icon-hotel"/></svg>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-amber-200 uppercase tracking-wide">Hotel Ring 1 Haramain</h4>
+                <p class="text-[11px] text-emerald-200/80 mt-0.5">Maysan Al Maqam (±350m) &amp; Mirage Salam (±200m) jalan kaki santai.</p>
+              </div>
+            </div>
+
+            <div class="glass-luxury-card p-4 rounded-2xl flex items-start gap-3">
+              <div class="p-2.5 rounded-xl bg-amber-400/20 text-amber-300 shrink-0">
+                <svg class="w-5 h-5"><use href="#icon-plane"/></svg>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-amber-200 uppercase tracking-wide">Armada Terbaik</h4>
+                <p class="text-[11px] text-emerald-200/80 mt-0.5">Garuda Indonesia &amp; Saudia Airlines direct tanpa ribet transit.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRIMARY ACTION BUTTONS -->
+          <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#section-comparison-matrix" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-emerald-950 font-black px-8 py-3.5 rounded-xl text-sm transition shadow-xl hover:shadow-amber-500/25 btn-luxury-shimmer min-h-[48px]">
+              <span>Bandingkan Paket Umroh</span>
+              <svg class="w-4 h-4 stroke-emerald-950 fill-none" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+            
+            <a href="https://wa.me/6281316333001?text=Bismillah%2C%20saya%20tertarik%20mendaftar%20umroh%20di%20H2C%20Wisata%20Mandiri.%20Mohon%20info%20jadwal%20dan%20kursi%20tersedia." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#063821]/80 hover:bg-[#084b2c] border border-amber-400/40 text-amber-200 font-bold px-7 py-3.5 rounded-xl text-sm transition shadow-md min-h-[48px]">
+              <svg class="w-4 h-4 fill-amber-300"><use href="#icon-whatsapp"/></svg>
+              <span>Konsultasi Seat WhatsApp</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MODULE 5: TRUST & KEMENAG "5 PASTI UMROH" ASSURANCE GRID
+         ========================================================================== -->
+    <section id="section-trust-5pasti" class="py-20 bg-gradient-to-b from-slate-900 via-[#032616] to-[#021a0f] text-white relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- SECTION TITLE -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-800/60 border border-emerald-400/30 text-emerald-300 text-xs font-bold tracking-widest uppercase mb-3">
+            <svg class="w-4 h-4"><use href="#icon-shield-check"/></svg>
+            <span>KEMENAG RI COMPLIANT GUARANTEE</span>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Standar Jaminan <span class="text-gold-sheen">5 Pasti Umroh</span>
+          </h2>
+          <p class="mt-3 text-xs sm:text-sm text-emerald-200/80 leading-relaxed">
+            H2C Wisata Mandiri (PT. HDUAC Berkah Mandiri) tunduk 100% pada pedoman perlindungan jamaah Kementerian Agama RI. 
+            Ibadah tenang, legalitas transparan, tanpa kekhawatiran gagal berangkat.
+          </p>
+        </div>
+
+        <!-- 5 PASTI BENTO GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- PASTI 1: Pasti Izin PPIU -->
+          <div class="lg:col-span-2 glass-luxury-card rounded-3xl p-6 sm:p-8 border border-amber-400/40 relative overflow-hidden group hover:border-amber-400 transition-all duration-300 shadow-2xl">
+            <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/20 transition"></div>
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+              <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center text-emerald-950 font-black text-lg shadow-md">
+                  1
+                </span>
+                <div>
+                  <span class="text-[11px] font-bold text-amber-400 uppercase tracking-widest block">PASTI 1 DARI KEMENAG</span>
+                  <h3 class="text-lg sm:text-xl font-extrabold text-white">Pasti Izin PPIU H2C Wisata Mandiri</h3>
+                </div>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-semibold">
+                Terakreditasi "A"
+              </span>
+            </div>
+
+            <p class="text-xs sm:text-sm text-emerald-100/90 leading-relaxed mb-5">
+              Diselenggarakan langsung oleh biro berizin resmi <strong class="text-white">PT. HDUAC Berkah Mandiri</strong> dengan SK Izin Operasional Kemenag RI PPIU No. <span class="font-mono text-amber-300 font-bold">26032300175410003</span>. Terdata resmi dan aktif di SISKOPATUH serta aplikasi Umrah Cerdas Kemenag RI.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-emerald-800/60 text-xs">
+              <div class="flex items-center gap-2 text-emerald-200">
+                <svg class="w-4 h-4 text-amber-400 shrink-0"><use href="#icon-check"/></svg>
+                <span>Akta Notaris Vonny Anastasia, SH No. 65</span>
+              </div>
+              <div class="flex items-center gap-2 text-emerald-200">
+                <svg class="w-4 h-4 text-amber-400 shrink-0"><use href="#icon-check"/></svg>
+                <span>KBLI 79122 (Aktivitas Biro Perjalanan Ibadah Umrah)</span>
+              </div>
+            </div>
+
+            <!-- Verification Action -->
+            <div class="mt-6 flex flex-wrap items-center gap-3">
+              <a href="https://simpu.kemenag.go.id/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-bold text-amber-300 hover:text-amber-200 underline decoration-amber-400/60 underline-offset-4 py-3 px-3 min-h-[48px] rounded-xl hover:bg-emerald-900/40 transition">
+                <span>Verifikasi Izin di Portal Resmi SISKOPATUH</span>
+                <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <button onclick="navigator.clipboard.writeText('26032300175410003'); alert('Nomor Izin PPIU 26032300175410003 berhasil disalin!');" class="text-xs font-bold bg-emerald-900/80 hover:bg-emerald-800 text-amber-300 px-4 py-3 rounded-xl border border-emerald-600/60 transition min-h-[48px] inline-flex items-center gap-1.5 cursor-pointer">
+                <svg class="w-4 h-4"><use href="#icon-shield"/></svg>
+                <span>Salin No. Izin</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- PASTI 2: Pasti Jadwal Keberangkatan -->
+          <div class="glass-luxury-card rounded-3xl p-6 sm:p-7 border border-emerald-500/30 hover:border-amber-400/60 transition-all duration-300 shadow-xl flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center text-emerald-950 font-black text-lg shadow-md">
+                  2
+                </span>
+                <div>
+                  <span class="text-[10px] font-bold text-amber-400 uppercase tracking-widest block">PASTI 2</span>
+                  <h3 class="text-base sm:text-lg font-bold text-white">Pasti Jadwal Keberangkatan</h3>
+                </div>
+              </div>
+              <p class="text-xs text-emerald-100/80 leading-relaxed">
+                Tanggal keberangkatan dan kloter penerbangan telah ditetapkan di awal akad pendaftaran. Tidak ada sistem tunggu tanpa batas atau pengunduran tanggal sepihak.
+              </p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-emerald-800/60 flex items-center gap-2 text-xs text-amber-300 font-semibold">
+              <svg class="w-4 h-4"><use href="#icon-calendar"/></svg>
+              <span>Jadwal Musim 2026/2027 Terkonfirmasi</span>
+            </div>
+          </div>
+
+          <!-- PASTI 3: Pasti Tiket Pesawat PP -->
+          <div class="glass-luxury-card rounded-3xl p-6 sm:p-7 border border-emerald-500/30 hover:border-amber-400/60 transition-all duration-300 shadow-xl flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center text-emerald-950 font-black text-lg shadow-md">
+                  3
+                </span>
+                <div>
+                  <span class="text-[10px] font-bold text-amber-400 uppercase tracking-widest block">PASTI 3</span>
+                  <h3 class="text-base sm:text-lg font-bold text-white">Pasti Tiket Pesawat PP</h3>
+                </div>
+              </div>
+              <p class="text-xs text-emerald-100/80 leading-relaxed">
+                Tiket Pulang-Pergi maskapai direct (Saudia Airlines &amp; Garuda Indonesia) sudah dipesan dengan nomor reservasi (PNR confirmed) sebelum jamaah bertolak ke bandara.
+              </p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-emerald-800/60 flex items-center gap-2 text-xs text-amber-300 font-semibold">
+              <svg class="w-4 h-4"><use href="#icon-ticket"/></svg>
+              <span>Kode Booking Issued &amp; Terverifikasi Maskapai</span>
+            </div>
+          </div>
+
+          <!-- PASTI 4: Pasti Hotel & Akomodasi -->
+          <div class="glass-luxury-card rounded-3xl p-6 sm:p-7 border border-emerald-500/30 hover:border-amber-400/60 transition-all duration-300 shadow-xl flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center text-emerald-950 font-black text-lg shadow-md">
+                  4
+                </span>
+                <div>
+                  <span class="text-[10px] font-bold text-amber-400 uppercase tracking-widest block">PASTI 4</span>
+                  <h3 class="text-base sm:text-lg font-bold text-white">Pasti Hotel &amp; Akomodasi</h3>
+                </div>
+              </div>
+              <p class="text-xs text-emerald-100/80 leading-relaxed">
+                Kamar hotel di Makkah (Maysan Al Maqam) dan Madinah (Mirage Salam / setaraf) telah terikat kontrak resmi Muassasah. Jarak dekat pelataran dijamin nyata, bukan fiktif.
+              </p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-emerald-800/60 flex items-center gap-2 text-xs text-amber-300 font-semibold">
+              <svg class="w-4 h-4"><use href="#icon-hotel"/></svg>
+              <span>Jarak Jalan Kaki 200m - 350m ke Pelataran</span>
+            </div>
+          </div>
+
+          <!-- PASTI 5: Pasti Visa Resmi -->
+          <div class="glass-luxury-card rounded-3xl p-6 sm:p-7 border border-emerald-500/30 hover:border-amber-400/60 transition-all duration-300 shadow-xl flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center text-emerald-950 font-black text-lg shadow-md">
+                  5
+                </span>
+                <div>
+                  <span class="text-[10px] font-bold text-amber-400 uppercase tracking-widest block">PASTI 5</span>
+                  <h3 class="text-base sm:text-lg font-bold text-white">Pasti Visa Resmi Kerajaan Saudi</h3>
+                </div>
+              </div>
+              <p class="text-xs text-emerald-100/80 leading-relaxed">
+                Visa Umroh elektronik resmi diterbitkan langsung melalui portal Muassasah Kementerian Haji &amp; Umrah Kerajaan Arab Saudi. Tercatat sah di sistem Nusuk KSA.
+              </p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-emerald-800/60 flex items-center gap-2 text-xs text-amber-300 font-semibold">
+              <svg class="w-4 h-4"><use href="#icon-passport"/></svg>
+              <span>E-Visa Terdaftar &amp; Barcode Aktif</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- STATS & KEMENAG ENDORSEMENT FOOTER -->
+        <div class="mt-12 bg-emerald-950/60 rounded-2xl p-4 sm:p-6 border border-emerald-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-4 text-left">
+            <div class="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-300 shrink-0">
+              <svg class="w-6 h-6"><use href="#icon-shield-check"/></svg>
+            </div>
+            <div>
+              <p class="text-xs sm:text-sm font-bold text-white">Pemberitahuan Resmi Hak Jamaah Umroh Kemenag RI</p>
+              <p class="text-[11px] text-emerald-200/70">Pastikan biro Anda berizin PPIU aktif sebelum mentransfer dana ke rekening resmi perusahaan.</p>
+            </div>
+          </div>
+          <div class="shrink-0">
+            <a href="https://wa.me/6281316333001?text=Saya%20ingin%20verifikasi%20dokumen%20legalitas%20dan%20izin%20PPIU%20H2C%20Wisata%20Mandiri" target="_blank" class="inline-flex items-center gap-2 bg-emerald-800 hover:bg-emerald-700 text-amber-300 font-bold px-4 py-2.5 rounded-xl text-xs border border-emerald-600 transition min-h-[48px]">
+              <span>Cek Dokumen Legalitas Kami</span>
+              <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MODULE 2: SIDE-BY-SIDE COMPARISON MATRIX (MATRIKS FASILITAS LENGKAP)
+         ========================================================================== -->
+    <section id="section-comparison-matrix" class="py-20 bg-slate-50 relative border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- SECTION HEADER -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-bold tracking-widest uppercase mb-3">
+            <span>🔍</span>
+            <span>TRANSPARANSI FASILITAS &amp; HARGA</span>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Matriks Perbandingan Fasilitas Paket Umroh
+          </h2>
+          <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pilih paket yang paling selaras dengan kenyamanan ibadah dan bujet keluarga Anda. Seluruh paket mendapatkan bimbingan ibadah intensif dan legalitas 5 Pasti Umroh resmi.
+          </p>
+          <div class="mt-4 inline-flex items-center gap-2 text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 px-3.5 py-1.5 rounded-full">
+            <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+            <span>Semua harga tercantum transparan tanpa pungutan liar tersembunyi</span>
+          </div>
+        </div>
+
+        <!-- HORIZONTAL SCROLL HELPER NOTICE (FOR MOBILE) -->
+        <div class="block lg:hidden text-center mb-3">
+          <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-500 font-medium bg-white px-3 py-1 rounded-full border border-slate-200 shadow-sm">
+            <svg class="w-3.5 h-3.5 text-emerald-600 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            Geser tabel ke samping untuk melihat seluruh paket
+          </span>
+        </div>
+
+        <!-- TABLE WRAPPER (RESPONSIVE NATIVE HTML/CSS TABLE) -->
+        <div class="comparison-table-wrapper overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-xl">
+          <table class="w-full text-left border-collapse min-w-[760px] lg:min-w-full table-fixed">
+            
+            <!-- TABLE HEAD / PACKAGE TIERS -->
+            <thead>
+              <tr class="border-b border-slate-200">
+                <!-- Feature Column Header -->
+                <th scope="col" class="w-[28%] p-5 sm:p-6 bg-slate-100/90 text-slate-700 align-bottom border-r border-slate-200">
+                  <span class="text-xs font-black uppercase tracking-wider text-slate-400 block mb-1">KOMPONEN FASILITAS</span>
+                  <span class="text-base sm:text-lg font-extrabold text-slate-900 block">Kebutuhan Ibadah Anda</span>
+                  <span class="text-xs text-slate-500 font-normal">Spesifikasi resmi musim 2026/2027</span>
+                </th>
+
+                <!-- Paket Hemat (Rp 29 Jt) -->
+                <th scope="col" class="w-[24%] p-5 sm:p-6 bg-white text-slate-900 align-top border-r border-slate-200">
+                  <div class="inline-block px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider mb-2">
+                    Favorit Hemat
+                  </div>
+                  <h3 class="text-lg sm:text-xl font-black text-slate-900 leading-tight">Paket Hemat</h3>
+                  <div class="mt-2 text-2xl sm:text-3xl font-black text-emerald-700">Rp 29 Jt</div>
+                  <p class="text-[11px] text-slate-500 font-medium mt-1">Solusi ekonomis syar'i tanpa mengurangi kekhusyukan ibadah.</p>
+                  
+                  <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20tertarik%20mendaftar%20Paket%20Hemat%20Rp%2029%20Juta" target="_blank" class="mt-4 w-full inline-flex items-center justify-center gap-1.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2.5 px-3 rounded-xl transition shadow-sm min-h-[48px]">
+                    <span>Pilih Hemat</span>
+                    <svg class="w-3.5 h-3.5 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                  </a>
+                </th>
+
+                <!-- Paket Reguler (Rp 31,5 Jt) - HIGHLIGHTED BEST VALUE -->
+                <th scope="col" class="w-[24%] p-5 sm:p-6 bg-gradient-to-b from-emerald-900 to-emerald-950 text-white align-top border-r border-emerald-700 relative shadow-2xl">
+                  <!-- Highlight Tag -->
+                  <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-400 to-yellow-500 text-emerald-950 font-black text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-md whitespace-nowrap">
+                    ⭐ PALING POPULER &amp; BEST VALUE
+                  </div>
+
+                  <div class="inline-block px-2.5 py-0.5 rounded-md bg-emerald-800 text-amber-300 text-[10px] font-bold uppercase tracking-wider mb-2 mt-1">
+                    Kenyamanan Prima
+                  </div>
+                  <h3 class="text-lg sm:text-xl font-black text-white leading-tight">Paket Reguler</h3>
+                  <div class="mt-2 text-2xl sm:text-3xl font-black text-amber-300">Rp 31,5 Jt</div>
+                  <p class="text-[11px] text-emerald-100/90 font-medium mt-1">Keseimbangan ideal: Hotel lebih dekat &amp; bimbingan ekstra.</p>
+                  
+                  <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20tertarik%20mendaftar%20Paket%20Reguler%20Rp%2031%2C5%20Juta" target="_blank" class="mt-4 w-full inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-emerald-950 text-xs font-black py-2.5 px-3 rounded-xl transition shadow-lg btn-luxury-shimmer min-h-[48px]">
+                    <span>Pilih Reguler ⭐</span>
+                    <svg class="w-3.5 h-3.5 stroke-emerald-950 fill-none" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                  </a>
+                </th>
+
+                <!-- Paket VIP Turkey (Rp 53 Jt) -->
+                <th scope="col" class="w-[24%] p-5 sm:p-6 bg-[#0f172a] text-white align-top">
+                  <div class="inline-block px-2.5 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-bold uppercase tracking-wider mb-2">
+                    Luxury Plus Turki
+                  </div>
+                  <h3 class="text-lg sm:text-xl font-black text-white leading-tight">Paket VIP Turkey</h3>
+                  <div class="mt-2 text-2xl sm:text-3xl font-black text-amber-400">Rp 53 Jt</div>
+                  <p class="text-[11px] text-slate-400 font-medium mt-1">Umroh Akbar + City Tour Bersejarah Istanbul &amp; Hotel Bintang 5.</p>
+                  
+                  <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20tertarik%20mendaftar%20Paket%20VIP%20Turkey%20Rp%2053%20Juta" target="_blank" class="mt-4 w-full inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white text-xs font-bold py-2.5 px-3 rounded-xl transition shadow-sm min-h-[48px]">
+                    <span>Pilih VIP Turkey</span>
+                    <svg class="w-3.5 h-3.5 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                  </a>
+                </th>
+              </tr>
+            </thead>
+
+            <!-- TABLE BODY (8 REQUIRED COMPARISON ROWS) -->
+            <tbody class="divide-y divide-slate-200 text-xs sm:text-sm">
+              
+              <!-- ROW 1: Hotel Makkah -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <th scope="row" class="p-4 sm:p-5 bg-slate-50 font-bold text-slate-800 border-r border-slate-200">
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-700 font-bold">🏨</span>
+                    <span>Hotel Makkah</span>
+                  </div>
+                  <span class="text-[11px] text-slate-500 font-normal block mt-0.5">Bintang &amp; Jarak ke Pelataran Haram</span>
+                </th>
+                
+                <!-- Hemat -->
+                <td class="p-4 sm:p-5 border-r border-slate-200 align-top">
+                  <div class="font-bold text-slate-900">Bintang 3 Setaraf</div>
+                  <div class="text-emerald-700 font-medium mt-0.5">Maysan Al Maqam / Setaraf</div>
+                  <div class="inline-block mt-2 px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-[11px] font-semibold">
+                    ±350 M (5-7 Menit Jalan Kaki)
+                  </div>
+                </td>
+
+                <!-- Reguler (Highlighted) -->
+                <td class="p-4 sm:p-5 border-r border-emerald-700 bg-emerald-900/10 align-top">
+                  <div class="font-bold text-emerald-950">Bintang 4 Terverifikasi</div>
+                  <div class="text-emerald-800 font-semibold mt-0.5">Grand Zamzam / Royal Dar Al Eiman</div>
+                  <div class="inline-block mt-2 px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 text-[11px] font-bold border border-emerald-300">
+                    ±150-200 M (2-3 Menit Jalan Kaki)
+                  </div>
+                </td>
+
+                <!-- VIP Turkey -->
+                <td class="p-4 sm:p-5 align-top bg-slate-900/5">
+                  <div class="font-bold text-slate-950">Bintang 5 Luxury Haram</div>
+                  <div class="text-slate-800 font-semibold mt-0.5">Fairmont Clock Tower / Hilton Makkah</div>
+                  <div class="inline-block mt-2 px-2 py-0.5 rounded bg-amber-100 text-amber-900 text-[11px] font-bold border border-amber-300">
+                    0 Meter (Depan Pelataran Ka'bah)
+                  </div>
+                </td>
+              </tr>
+
+              <!-- ROW 2: Hotel Madinah -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <th scope="row" class="p-4 sm:p-5 bg-slate-50 font-bold text-slate-800 border-r border-slate-200">
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-700 font-bold">🕌</span>
+                    <span>Hotel Madinah</span>
+                  </div>
+                  <span class="text-[11px] text-slate-500 font-normal block mt-0.5">Bintang &amp; Jarak ke Masjid Nabawi</span>
+                </th>
+
+                <!-- Hemat -->
+                <td class="p-4 sm:p-5 border-r border-slate-200 align-top">
+                  <div class="font-bold text-slate-900">Bintang 3 Setaraf</div>
+                  <div class="text-emerald-700 font-medium mt-0.5">Mirage Salam / Setaraf</div>
+                  <div class="inline-block mt-2 px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-[11px] font-semibold">
+                    ±200 M ke Pelataran Nabawi
+                  </div>
+                </td>
+
+                <!-- Reguler (Highlighted) -->
+                <td class="p-4 sm:p-5 border-r border-emerald-700 bg-emerald-900/10 align-top">
+                  <div class="font-bold text-emerald-950">Bintang 4 Terverifikasi</div>
+                  <div class="text-emerald-800 font-semibold mt-0.5">Rove Madinah / Front Taiba</div>
+                  <div class="inline-block mt-2 px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 text-[11px] font-bold border border-emerald-300">
+                    ±100 M ke Pintu Utama Nabawi
+                  </div>
+                </td>
+
+                <!-- VIP Turkey -->
+                <td class="p-4 sm:p-5 align-top bg-slate-900/5">
+                  <div class="font-bold text-slate-950">Bintang 5 Luxury Nabawi</div>
+                  <div class="text-slate-800 font-semibold mt-0.5">Dar Al Taqwa / Oberoi Madinah</div>
+                  <div class="text-[11px] text-amber-700 font-medium mt-1">+ Bintang 5 di Istanbul Turki</div>
+                  <div class="inline-block mt-2 px-2 py-0.5 rounded bg-amber-100 text-amber-900 text-[11px] font-bold border border-amber-300">
+                    0-50 M Depan Pintu Babussalam
+                  </div>
+                </td>
+              </tr>
+
+              <!-- ROW 3: Maskapai Penerbangan -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <th scope="row" class="p-4 sm:p-5 bg-slate-50 font-bold text-slate-800 border-r border-slate-200">
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-700 font-bold">✈️</span>
+                    <span>Maskapai Penerbangan</span>
+                  </div>
+                  <span class="text-[11px] text-slate-500 font-normal block mt-0.5">Rute, Penerbangan Direct / Transit</span>
+                </th>
+
+                <!-- Hemat -->
+                <td class="p-4 sm:p-5 border-r border-slate-200 align-top">
+                  <div class="font-bold text-slate-900">Direct Flight CGK - Saudi</div>
+                  <div class="text-slate-600 mt-0.5 text-xs">Saudia Airlines / Lion Batik Premium Direct</div>
+                  <div class="text-[11px] text-emerald-700 mt-1">Tanpa transit melelahkan</div>
+                </td>
+
+                <!-- Reguler (Highlighted) -->
+                <td class="p-4 sm:p-5 border-r border-emerald-700 bg-emerald-900/10 align-top">
+                  <div class="font-bold text-emerald-950">Direct Flight Bintang 5</div>
+                  <div class="text-emerald-900 font-semibold mt-0.5 text-xs">Garuda Indonesia / Saudia Airlines</div>
+                  <div class="text-[11px] text-emerald-700 font-medium mt-1">Langsung CGK ⇄ JED/MED (9 Jam)</div>
+                </td>
+
+                <!-- VIP Turkey -->
+                <td class="p-4 sm:p-5 align-top bg-slate-900/5">
+                  <div class="font-bold text-slate-950">Penerbangan Multi-Rute Internasional</div>
+                  <div class="text-slate-800 font-semibold mt-0.5 text-xs">Turkish Airlines / Saudia Airlines</div>
+                  <div class="text-[11px] text-slate-600 mt-1">CGK ➔ Istanbul ➔ Madinah ➔ Makkah ➔ CGK</div>
+                </td>
+              </tr>
+
+              <!-- ROW 4: Konsumsi (Fullboard Menu Nusantara) -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <th scope="row" class="p-4 sm:p-5 bg-slate-50 font-bold text-slate-800 border-r border-slate-200">
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-700 font-bold">🍽️</span>
+                    <span>Konsumsi Makanan</span>
+                  </div>
+                  <span class="text-[11px] text-slate-500 font-normal block mt-0.5">Fullboard Menu Nusantara 3x Sehari</span>
+                </th>
+
+                <!-- Hemat -->
+                <td class="p-4 sm:p-5 border-r border-slate-200 align-top">
+                  <div class="font-semibold text-slate-900">Fullboard 3x Sehari</div>
+                  <div class="text-slate-600 mt-0.5 text-xs">Catering khas masakan Indonesia (halal, higienis &amp; lezat)</div>
+                </td>
+
+                <!-- Reguler (Highlighted) -->
+                <td class="p-4 sm:p-5 border-r border-emerald-700 bg-emerald-900/10 align-top">
+                  <div class="font-bold text-emerald-950">Fullboard Buffet 3x Sehari</div>
+                  <div class="text-emerald-900 mt-0.5 text-xs">Prasmanan variatif masakan Indonesia + snack &amp; hot beverage corner</div>
+                </td>
+
+                <!-- VIP Turkey -->
+                <td class="p-4 sm:p-5 align-top bg-slate-900/5">
+                  <div class="font-bold text-slate-950">Luxury International Buffet</div>
+                  <div class="text-slate-800 mt-0.5 text-xs">Restoran Hotel Bintang 5 + Authentic Turkish Culinary &amp; Bosphorus Cruise Dinner</div>
+                </td>
+              </tr>
+
+              <!-- ROW 5: Pembimbing Muthowif -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <th scope="row" class="p-4 sm:p-5 bg-slate-50 font-bold text-slate-800 border-r border-slate-200">
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-700 font-bold">👳‍♂️</span>
+                    <span>Pembimbing Muthowif</span>
+                  </div>
+                  <span class="text-[11px] text-slate-500 font-normal block mt-0.5">Sertifikasi Resmi Kemenag RI</span>
+                </th>
+
+                <!-- Hemat -->
+                <td class="p-4 sm:p-5 border-r border-slate-200 align-top">
+                  <div class="font-semibold text-slate-900">Muthowif Berpengalaman</div>
+                  <div class="text-slate-600 mt-0.5 text-xs">Alumni Timur Tengah tersertifikasi Kemenag RI (Rasio 1:40)</div>
+                </td>
+
+                <!-- Reguler (Highlighted) -->
+                <td class="p-4 sm:p-5 border-r border-emerald-700 bg-emerald-900/10 align-top">
+                  <div class="font-bold text-emerald-950">Ustadz Senior Bersertifikat</div>
+                  <div class="text-emerald-900 mt-0.5 text-xs">Muthowif Senior Kemenag + 1 Tour Leader Nasional H2C (Rasio 1:30)</div>
+                </td>
+
+                <!-- VIP Turkey -->
+                <td class="p-4 sm:p-5 align-top bg-slate-900/5">
+                  <div class="font-bold text-slate-950">Dual Expert Mentorship</div>
+                  <div class="text-slate-800 mt-0.5 text-xs">Ustadz Pembimbing VIP Nasional + Professional Turkish Historian Guide Berlisensi (Rasio 1:20)</div>
+                </td>
+              </tr>
+
+              <!-- ROW 6: Zamzam & Bagasi -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <th scope="row" class="p-4 sm:p-5 bg-slate-50 font-bold text-slate-800 border-r border-slate-200">
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-700 font-bold">🧳</span>
+                    <span>Air Zamzam &amp; Bagasi</span>
+                  </div>
+                  <span class="text-[11px] text-slate-500 font-normal block mt-0.5">Jatah Resmi Maskapai &amp; Souvenir</span>
+                </th>
+
+                <!-- Hemat -->
+                <td class="p-4 sm:p-5 border-r border-slate-200 align-top">
+                  <div class="font-semibold text-slate-900">Free Zamzam 5 Liter*</div>
+                  <div class="text-slate-600 mt-0.5 text-xs">Bagasi tercatat 30 Kg + Kabin 7 Kg + Tas Selempang</div>
+                  <span class="text-[10px] text-slate-400 block mt-1">*Sesuai regulasi otoritas maskapai</span>
+                </td>
+
+                <!-- Reguler (Highlighted) -->
+                <td class="p-4 sm:p-5 border-r border-emerald-700 bg-emerald-900/10 align-top">
+                  <div class="font-bold text-emerald-950">Free Zamzam 5 Liter + Kit Lengkap</div>
+                  <div class="text-emerald-900 mt-0.5 text-xs">Bagasi 30 Kg + Kabin 7 Kg + Koper Fiber H2C, Seragam Batik &amp; Ihram Premium</div>
+                </td>
+
+                <!-- VIP Turkey -->
+                <td class="p-4 sm:p-5 align-top bg-slate-900/5">
+                  <div class="font-bold text-slate-950">Free Zamzam 5L + Extra Bagasi</div>
+                  <div class="text-slate-800 mt-0.5 text-xs">Bagasi hingga 35-40 Kg + Koper Hardcase VIP Rimowa Style + Jaket Musim Dingin Turki &amp; Perlengkapan Ekstra</div>
+                </td>
+              </tr>
+
+              <!-- ROW 7: Bimbingan Manasik -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <th scope="row" class="p-4 sm:p-5 bg-slate-50 font-bold text-slate-800 border-r border-slate-200">
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-700 font-bold">🕋</span>
+                    <span>Bimbingan Manasik</span>
+                  </div>
+                  <span class="text-[11px] text-slate-500 font-normal block mt-0.5">Teori Fiqih &amp; Praktik Fisik</span>
+                </th>
+
+                <!-- Hemat -->
+                <td class="p-4 sm:p-5 border-r border-slate-200 align-top">
+                  <div class="font-semibold text-slate-900">2x Sesi Manasik</div>
+                  <div class="text-slate-600 mt-0.5 text-xs">1x Teori Daring Hybrid + 1x Praktik Fisik Miniatur Ka'bah di Jakarta</div>
+                </td>
+
+                <!-- Reguler (Highlighted) -->
+                <td class="p-4 sm:p-5 border-r border-emerald-700 bg-emerald-900/10 align-top">
+                  <div class="font-bold text-emerald-950">3x Sesi Komprehensif</div>
+                  <div class="text-emerald-900 mt-0.5 text-xs">Teori &amp; Praktik Langsung di Hotel Berbintang + Audio Receiver Kit Nirkabel saat Tawaf/Sa'i</div>
+                </td>
+
+                <!-- VIP Turkey -->
+                <td class="p-4 sm:p-5 align-top bg-slate-900/5">
+                  <div class="font-bold text-slate-950">Privat &amp; Intensive Coaching</div>
+                  <div class="text-slate-800 mt-0.5 text-xs">Sesi Privat Keluarga + Audio Transmitter Hi-Fi + Buku Panduan Doa Hardcover Kulit Eksklusif</div>
+                </td>
+              </tr>
+
+              <!-- ROW 8: Asuransi & VIP Airport Handling -->
+              <tr class="hover:bg-slate-50/80 transition">
+                <th scope="row" class="p-4 sm:p-5 bg-slate-50 font-bold text-slate-800 border-r border-slate-200">
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-700 font-bold">🛡️</span>
+                    <span>Asuransi &amp; Handling VIP</span>
+                  </div>
+                  <span class="text-[11px] text-slate-500 font-normal block mt-0.5">Proteksi Medis &amp; Layanan Bandara</span>
+                </th>
+
+                <!-- Hemat -->
+                <td class="p-4 sm:p-5 border-r border-slate-200 align-top">
+                  <div class="font-semibold text-slate-900">Asuransi Standar Kemenag</div>
+                  <div class="text-slate-600 mt-0.5 text-xs">Handling Bagasi Bandara Soekarno-Hatta (CGK) &amp; Saudi Standard</div>
+                </td>
+
+                <!-- Reguler (Highlighted) -->
+                <td class="p-4 sm:p-5 border-r border-emerald-700 bg-emerald-900/10 align-top">
+                  <div class="font-bold text-emerald-950">Asuransi Ekstra + VIP Handling</div>
+                  <div class="text-emerald-900 mt-0.5 text-xs">Asuransi Perjalanan Umroh Komprehensif + Fast-Track Handling Dokumen &amp; Bagasi Bandara CGK &amp; Saudi</div>
+                </td>
+
+                <!-- VIP Turkey -->
+                <td class="p-4 sm:p-5 align-top bg-slate-900/5">
+                  <div class="font-bold text-slate-950">Full VIP Lounge &amp; Concierge</div>
+                  <div class="text-slate-800 mt-0.5 text-xs">Comprehensive International Travel Insurance + Akses Saphire VIP Lounge Soetta T3 &amp; Fast-Track Jalur Khusus Saudi</div>
+                </td>
+              </tr>
+
+            </tbody>
+
+            <!-- TABLE FOOTER ROW WITH CTAs -->
+            <tfoot>
+              <tr class="border-t-2 border-slate-300 bg-slate-50">
+                <td class="p-4 sm:p-6 border-r border-slate-200 text-xs text-slate-500 font-medium">
+                  Konsultasikan jadwal &amp; ketersediaan seat langsung via WhatsApp resmi.
+                </td>
+                <td class="p-4 sm:p-6 border-r border-slate-200 align-middle">
+                  <a href="https://wa.me/6281316333001?text=Halo%20H2C%2C%20mau%20tanya%20detail%20jadwal%20dan%20kursi%20Paket%20Hemat%20Rp%2029%20Juta" target="_blank" class="w-full inline-flex items-center justify-center gap-1.5 border-2 border-slate-800 text-slate-800 hover:bg-slate-900 hover:text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition min-h-[48px]">
+                    Daftar Hemat
+                  </a>
+                </td>
+                <td class="p-4 sm:p-6 border-r border-emerald-700 bg-emerald-900/10 align-middle">
+                  <a href="https://wa.me/6281316333001?text=Halo%20H2C%2C%20mau%20tanya%20detail%20jadwal%20dan%20kursi%20Paket%20Reguler%20Rp%2031%2C5%20Juta" target="_blank" class="w-full inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-emerald-800 to-emerald-900 hover:from-emerald-700 hover:to-emerald-800 text-amber-300 font-black py-3 rounded-xl text-xs uppercase tracking-wider transition shadow-md min-h-[48px]">
+                    Daftar Reguler ⭐
+                  </a>
+                </td>
+                <td class="p-4 sm:p-6 align-middle">
+                  <a href="https://wa.me/6281316333001?text=Halo%20H2C%2C%20mau%20tanya%20detail%20jadwal%20dan%20kursi%20Paket%20VIP%20Turkey%20Rp%2053%20Juta" target="_blank" class="w-full inline-flex items-center justify-center gap-1.5 border-2 border-emerald-800 text-emerald-800 hover:bg-emerald-800 hover:text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition min-h-[48px]">
+                    Daftar VIP Turkey
+                  </a>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MODULE 3: HOTEL & FLIGHT OFFICIAL TRUST SHOWCASE CARDS
+         ========================================================================== -->
+    <section id="section-hotel-flight" class="py-20 bg-white border-b border-slate-200 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- SECTION TITLE -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold tracking-widest uppercase mb-3">
+            <span>🏨 ✈️</span>
+            <span>MITRA RESMI HARAMAIN &amp; AIRLINES</span>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Hotel Terdekat &amp; Maskapai Resmi Tepercaya
+          </h2>
+          <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Tidak ada hotel fiktif atau transit yang melelahkan. Kami bekerjasama langsung dengan pengelola hotel ring 1 Haramain dan maskapai penerbangan nasional terbaik.
+          </p>
+        </div>
+
+        <!-- HOTEL SHOWCASE GRID (2 CARDS: MAKKAH & MADINAH) -->
+        <div class="mb-14">
+          <h3 class="text-xs font-black uppercase tracking-widest text-emerald-800 mb-6 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+            <span>HOTEL PILIHAN UTAMA: DEKAT PELATARAN MASJID</span>
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- CARD HOTEL 1: MAYSAN AL MAQAM (MAKKAH) -->
+            <div class="rounded-3xl border border-slate-200 bg-white overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 flex flex-col justify-between">
+              <div>
+                <!-- Visual Header Mockup / Badge -->
+                <div class="relative bg-gradient-to-tr from-[#022b17] via-[#044827] to-[#0a6639] p-6 text-white overflow-hidden">
+                  <div class="absolute -right-8 -bottom-8 w-36 h-36 bg-amber-400/10 rounded-full blur-xl pointer-events-none"></div>
+                  
+                  <div class="flex items-center justify-between gap-2 mb-3">
+                    <span class="px-3 py-1 rounded-full bg-amber-400 text-emerald-950 text-[10px] font-black uppercase tracking-wider shadow-sm">
+                      HOTEL MAKKAH
+                    </span>
+                    <div class="flex items-center gap-1 text-amber-400 text-xs">
+                      <svg class="w-4 h-4 fill-amber-400"><use href="#icon-star"/></svg>
+                      <svg class="w-4 h-4 fill-amber-400"><use href="#icon-star"/></svg>
+                      <svg class="w-4 h-4 fill-amber-400"><use href="#icon-star"/></svg>
+                      <svg class="w-4 h-4 fill-amber-400"><use href="#icon-star"/></svg>
+                      <span class="text-white text-xs font-bold ml-1">Setaraf Bintang 4</span>
+                    </div>
+                  </div>
+
+                  <h4 class="text-xl sm:text-2xl font-black text-white">Maysan Al Maqam Makkah</h4>
+                  <p class="text-xs text-emerald-200 mt-0.5">Kawasan Ajyad • Akses Mudah ke Pelataran Ka'bah</p>
+
+                  <!-- WALKING DISTANCE BADGE (HIGHLIGHT) -->
+                  <div class="mt-4 inline-flex items-center gap-2 bg-emerald-950/80 border border-emerald-400/40 px-3 py-1.5 rounded-xl text-xs font-bold text-amber-300 shadow-md">
+                    <span class="text-base">🚶‍♂️</span>
+                    <span>±350 Meter ke Pelataran Masjidil Haram (5 Menit Jalan Kaki)</span>
+                  </div>
+                </div>
+
+                <!-- Amenities & Details -->
+                <div class="p-6 space-y-4">
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Dirancang untuk kenyamanan maksimal jamaah Indonesia. Lokasi strategis memungkinkan jamaah sholat berjamaah 5 waktu di Masjidil Haram tanpa perlu transportasi shuttle.
+                  </p>
+
+                  <div class="grid grid-cols-2 gap-3 pt-2">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                      <span class="text-emerald-600">❄️</span>
+                      <span>AC Central Dingin</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                      <span class="text-emerald-600">📶</span>
+                      <span>Free Fast WiFi</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                      <span class="text-emerald-600">🛗</span>
+                      <span>6 Unit Lift Cepat</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                      <span class="text-emerald-600">🍲</span>
+                      <span>Resto Menu Nusantara</span>
+                    </div>
+                  </div>
+
+                  <div class="bg-amber-50 rounded-xl p-3 border border-amber-200/70 text-[11px] text-amber-900 flex items-start gap-2">
+                    <span class="text-amber-700 shrink-0">ℹ️</span>
+                    <span>Dilengkapi resepsionis berbahasa Indonesia &amp; room service harian terpercaya.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footer info -->
+              <div class="p-6 pt-0">
+                <a href="https://wa.me/6281316333001?text=Halo%20H2C%2C%20mau%20tanya%20ketersediaan%20kamar%20Hotel%20Maysan%20Al%20Maqam%20Makkah" target="_blank" class="w-full inline-flex items-center justify-center gap-2 border border-emerald-700 text-emerald-800 hover:bg-emerald-50 font-bold py-2.5 rounded-xl text-xs transition min-h-[48px]">
+                  <span>Lihat Foto &amp; Review Hotel</span>
+                  <svg class="w-3.5 h-3.5 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- CARD HOTEL 2: MIRAGE SALAM (MADINAH) -->
+            <div class="rounded-3xl border border-slate-200 bg-white overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 flex flex-col justify-between">
+              <div>
+                <!-- Visual Header Mockup / Badge -->
+                <div class="relative bg-gradient-to-tr from-[#0b2b1d] via-[#104a32] to-[#1b6b49] p-6 text-white overflow-hidden">
+                  <div class="absolute -right-8 -bottom-8 w-36 h-36 bg-amber-400/10 rounded-full blur-xl pointer-events-none"></div>
+                  
+                  <div class="flex items-center justify-between gap-2 mb-3">
+                    <span class="px-3 py-1 rounded-full bg-emerald-400 text-emerald-950 text-[10px] font-black uppercase tracking-wider shadow-sm">
+                      HOTEL MADINAH
+                    </span>
+                    <div class="flex items-center gap-1 text-amber-400 text-xs">
+                      <svg class="w-4 h-4 fill-amber-400"><use href="#icon-star"/></svg>
+                      <svg class="w-4 h-4 fill-amber-400"><use href="#icon-star"/></svg>
+                      <svg class="w-4 h-4 fill-amber-400"><use href="#icon-star"/></svg>
+                      <svg class="w-4 h-4 fill-amber-400"><use href="#icon-star"/></svg>
+                      <span class="text-white text-xs font-bold ml-1">Setaraf Bintang 4</span>
+                    </div>
+                  </div>
+
+                  <h4 class="text-xl sm:text-2xl font-black text-white">Mirage Salam / Setaraf</h4>
+                  <p class="text-xs text-emerald-200 mt-0.5">Central Area Utara • Dekat Gerbang Masuk Nabawi</p>
+
+                  <!-- WALKING DISTANCE BADGE (HIGHLIGHT) -->
+                  <div class="mt-4 inline-flex items-center gap-2 bg-emerald-950/80 border border-emerald-400/40 px-3 py-1.5 rounded-xl text-xs font-bold text-amber-300 shadow-md">
+                    <span class="text-base">🚶‍♂️</span>
+                    <span>±200 Meter ke Pelataran Masjid Nabawi (3 Menit Jalan Kaki)</span>
+                  </div>
+                </div>
+
+                <!-- Amenities & Details -->
+                <div class="p-6 space-y-4">
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Sangat dekat dengan pintu utama Raudhah Syarifah serta pintu akses sholat khusus jamaah wanita. Mempermudah ziarah makam Rasulullah SAW setiap saat.
+                  </p>
+
+                  <div class="grid grid-cols-2 gap-3 pt-2">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                      <span class="text-emerald-600">❄️</span>
+                      <span>AC Nyaman Sejuk</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                      <span class="text-emerald-600">📶</span>
+                      <span>High Speed WiFi</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                      <span class="text-emerald-600">🛗</span>
+                      <span>Lift Cepat Efisien</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                      <span class="text-emerald-600">🛍️</span>
+                      <span>Dekat Pertokoan &amp; Farmasi</span>
+                    </div>
+                  </div>
+
+                  <div class="bg-emerald-50 rounded-xl p-3 border border-emerald-200/70 text-[11px] text-emerald-900 flex items-start gap-2">
+                    <span class="text-emerald-700 shrink-0">ℹ️</span>
+                    <span>Kamar bersih higienis dengan sanitasi standar internasional dan air panas 24 jam.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footer info -->
+              <div class="p-6 pt-0">
+                <a href="https://wa.me/6281316333001?text=Halo%20H2C%2C%20mau%20tanya%20detail%20kamar%20Hotel%20Madinah%20Mirage%20Salam" target="_blank" class="w-full inline-flex items-center justify-center gap-2 border border-emerald-700 text-emerald-800 hover:bg-emerald-50 font-bold py-2.5 rounded-xl text-xs transition min-h-[48px]">
+                  <span>Lihat Foto &amp; Fasilitas Kamar</span>
+                  <svg class="w-3.5 h-3.5 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- AIRLINE OFFICIAL PARTNERS SHOWCASE (GARUDA INDONESIA & SAUDIA) -->
+        <div>
+          <h3 class="text-xs font-black uppercase tracking-widest text-emerald-800 mb-6 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+            <span>MASKAPAI PENERBANGAN RESMI: PENERBANGAN LANGSUNG (DIRECT FLIGHT)</span>
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- AIRLINE CARD 1: GARUDA INDONESIA -->
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 sm:p-7 shadow-lg hover:shadow-xl transition duration-300 relative overflow-hidden flex flex-col justify-between">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-bl-full pointer-events-none"></div>
+
+              <div>
+                <div class="flex items-start justify-between gap-4 mb-4">
+                  <div>
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-sky-100 text-sky-800 text-[10px] font-black uppercase tracking-wider mb-2">
+                      <span>🇮🇩</span> MASKAPAI NASIONAL INDONESIA
+                    </div>
+                    <h4 class="text-xl sm:text-2xl font-black text-slate-900">Garuda Indonesia</h4>
+                    <span class="text-xs text-slate-500 font-medium">SkyTeam Alliance • Skytrax 5-Star Airline</span>
+                  </div>
+                  
+                  <div class="w-14 h-14 rounded-2xl bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-700 shadow-sm shrink-0">
+                    <svg class="w-8 h-8"><use href="#icon-plane"/></svg>
+                  </div>
+                </div>
+
+                <!-- ROUTE & FLEET BADGES -->
+                <div class="space-y-2 mb-4">
+                  <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 text-amber-300 text-xs font-bold">
+                    <svg class="w-3.5 h-3.5 fill-amber-300"><use href="#icon-sparkle"/></svg>
+                    <span>Direct Flight Tanpa Transit (CGK ⇄ JED / MED)</span>
+                  </div>
+                  <p class="text-xs text-slate-600">Durasi penerbangan nyaman hanya ±9 Jam tanpa risiko bagasi tertinggal saat pindah pesawat.</p>
+                </div>
+
+                <!-- FLEET SPECS -->
+                <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 space-y-2 text-xs">
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-500 font-medium">Armada Pesawat:</span>
+                    <strong class="text-slate-800">Boeing 777-300ER / Airbus A330-900neo</strong>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-500 font-medium">Fasilitas Jamaah:</span>
+                    <span class="text-slate-800 font-semibold">In-flight Doa Safar &amp; Hiburan Religi</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-500 font-medium">Jatah Bagasi:</span>
+                    <span class="text-emerald-700 font-bold">30 Kg Bagasi + 7 Kg Kabin + 5L Zamzam</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                <span>Pramugari Berbahasa Indonesia</span>
+                <span class="text-emerald-700 font-bold">Ramah Lansia</span>
+              </div>
+            </div>
+
+            <!-- AIRLINE CARD 2: SAUDIA AIRLINES -->
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 sm:p-7 shadow-lg hover:shadow-xl transition duration-300 relative overflow-hidden flex flex-col justify-between">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-bl-full pointer-events-none"></div>
+
+              <div>
+                <div class="flex items-start justify-between gap-4 mb-4">
+                  <div>
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-900 text-[10px] font-black uppercase tracking-wider mb-2">
+                      <span>🇸🇦</span> MASKAPAI RESMI KERAJAAN SAUDI
+                    </div>
+                    <h4 class="text-xl sm:text-2xl font-black text-slate-900">Saudia Airlines</h4>
+                    <span class="text-xs text-slate-500 font-medium">SkyTeam Alliance • Flag Carrier of Saudi Arabia</span>
+                  </div>
+                  
+                  <div class="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-800 shadow-sm shrink-0">
+                    <svg class="w-8 h-8"><use href="#icon-plane"/></svg>
+                  </div>
+                </div>
+
+                <!-- ROUTE & FLEET BADGES -->
+                <div class="space-y-2 mb-4">
+                  <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-900 text-amber-300 text-xs font-bold">
+                    <svg class="w-3.5 h-3.5 fill-amber-300"><use href="#icon-sparkle"/></svg>
+                    <span>Direct Flight Khusus Terminal Haji Saudi</span>
+                  </div>
+                  <p class="text-xs text-slate-600">Mendarat langsung di Terminal Khusus Haji &amp; Umrah dengan proses imigrasi cepat dan teratur.</p>
+                </div>
+
+                <!-- FLEET SPECS -->
+                <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 space-y-2 text-xs">
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-500 font-medium">Armada Pesawat:</span>
+                    <strong class="text-slate-800">Boeing 777-300ER / Boeing 787 Dreamliner</strong>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-500 font-medium">Fasilitas Khusus:</span>
+                    <span class="text-slate-800 font-semibold">Musala Sholat &amp; Pengingat Miqat Udara</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-slate-500 font-medium">Jatah Bagasi:</span>
+                    <span class="text-emerald-700 font-bold">30 Kg Bagasi + 7 Kg Kabin + 5L Zamzam</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                <span>Fasilitas Pengingat Miqat Udara</span>
+                <span class="text-emerald-700 font-bold">Terminal Khusus Haji</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MODULE 4: FAQ INTERAKTIF CANGGIH DENGAN KATEGORI & INSTANT SEARCH
+         ========================================================================== -->
+    <section id="section-interactive-faq" class="py-20 bg-slate-100/70 relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- SECTION TITLE -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-bold tracking-widest uppercase mb-3">
+            <span>❓</span>
+            <span>PUSAT BANTUAN &amp; TANYA JAWAB RESMI</span>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Pertanyaan Yang Sering Diajukan (FAQ)
+          </h2>
+          <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Dapatkan jawaban cepat dan transparan seputar paspor, teknis pembayaran, fasilitas hotel, serta pendampingan lansia dan keluarga.
+          </p>
+        </div>
+
+        <!-- SEARCH BOX COMPONENT (LIVE INSTANT SEARCH) -->
+        <div class="mb-8">
+          <div class="relative max-w-2xl mx-auto">
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+              <svg class="w-5 h-5"><use href="#icon-search"/></svg>
+            </div>
+            <input 
+              type="text" 
+              id="faqSearchInput" 
+              placeholder="Cari pertanyaan... (contoh: paspor, DP, lansia, hotel, cicilan, kursi roda)" 
+              class="w-full pl-12 pr-12 py-3.5 rounded-2xl bg-white border border-slate-300 text-slate-800 placeholder-slate-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 shadow-sm min-h-[48px] transition"
+              autocomplete="off"
+            >
+            <button 
+              id="faqClearSearch" 
+              class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600 transition" 
+              aria-label="Bersihkan pencarian"
+            >
+              <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            </button>
+          </div>
+          
+          <!-- Live Result Counter Indicator -->
+          <div class="flex items-center justify-between max-w-2xl mx-auto mt-2.5 px-2 text-[11px] text-slate-500">
+            <span id="faqCounterText">Menampilkan 8 pertanyaan</span>
+            <span class="text-slate-400">Tekan tab di bawah untuk memfilter topik</span>
+          </div>
+        </div>
+
+        <!-- CATEGORY FILTER TABS -->
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-10" id="faqCategoryFilterGroup">
+          <button 
+            data-category="all" 
+            class="faq-category-btn active px-4 py-2.5 rounded-xl text-xs font-bold transition shadow-sm min-h-[48px] bg-emerald-800 text-amber-300 ring-2 ring-emerald-700"
+          >
+            Semua Topik
+          </button>
+          <button 
+            data-category="persyaratan" 
+            class="faq-category-btn px-4 py-2.5 rounded-xl text-xs font-bold transition shadow-sm min-h-[48px] bg-white text-slate-700 hover:bg-slate-50 border border-slate-200"
+          >
+            📋 Persyaratan &amp; Paspor
+          </button>
+          <button 
+            data-category="biaya" 
+            class="faq-category-btn px-4 py-2.5 rounded-xl text-xs font-bold transition shadow-sm min-h-[48px] bg-white text-slate-700 hover:bg-slate-50 border border-slate-200"
+          >
+            💳 Biaya, DP &amp; Tabungan
+          </button>
+          <button 
+            data-category="fasilitas" 
+            class="faq-category-btn px-4 py-2.5 rounded-xl text-xs font-bold transition shadow-sm min-h-[48px] bg-white text-slate-700 hover:bg-slate-50 border border-slate-200"
+          >
+            🏨 Fasilitas &amp; Hotel
+          </button>
+          <button 
+            data-category="lansia" 
+            class="faq-category-btn px-4 py-2.5 rounded-xl text-xs font-bold transition shadow-sm min-h-[48px] bg-white text-slate-700 hover:bg-slate-50 border border-slate-200"
+          >
+            🧓 Lansia &amp; Keluarga
+          </button>
+        </div>
+
+        <!-- ACCORDION CONTAINER -->
+        <div class="space-y-3.5" id="faqAccordionContainer">
+
+          <!-- FAQ 1 (Persyaratan & Paspor) -->
+          <div class="faq-item accordion-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition" data-category="persyaratan" data-keywords="syarat dokumen paspor ktp kk buku meningitis foto">
+            <button class="faq-toggle w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-slate-800 hover:text-emerald-800 focus:outline-none min-h-[52px]" aria-expanded="false">
+              <span class="text-xs sm:text-sm flex items-center gap-2.5">
+                <span class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-[10px] font-black shrink-0 border border-emerald-200">1</span>
+                <span>Apa saja syarat dokumen wajib untuk mendaftar umroh di H2C Wisata Mandiri?</span>
+              </span>
+              <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 accordion-icon shrink-0">
+                <svg class="w-4 h-4"><use href="#icon-chevron-down"/></svg>
+              </div>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-inner px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                <p>Dokumen yang dibutuhkan cukup sederhana:</p>
+                <ul class="list-disc list-inside space-y-1 mt-2 text-slate-700">
+                  <li><strong>Paspor asli</strong> yang masih berlaku minimal 7 bulan sebelum tanggal keberangkatan dengan susunan nama minimal 2 kata.</li>
+                  <li>Fotokopi <strong>KTP &amp; Kartu Keluarga (KK)</strong> terbaru.</li>
+                  <li>Fotokopi <strong>Buku Nikah</strong> (bagi suami istri) atau Akta Kelahiran (bagi anak-anak).</li>
+                  <li>Pasfoto berwarna terbaru ukuran 4x6 latar belakang putih, fokus wajah 80% (2 lembar).</li>
+                  <li>Buku kuning sertifikat vaksin meningitis (apabila disyaratkan oleh otoritas imigrasi kesehatan).</li>
+                </ul>
+                <p class="mt-2 text-emerald-800 font-medium">Catatan: Seluruh proses upload dan verifikasi dokumen dibantu secara tuntas oleh tim operasional H2C.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 (Persyaratan & Paspor) -->
+          <div class="faq-item accordion-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition" data-category="persyaratan" data-keywords="belum punya paspor perpanjangan rekomendasi kemenag imigrasi">
+            <button class="faq-toggle w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-slate-800 hover:text-emerald-800 focus:outline-none min-h-[52px]" aria-expanded="false">
+              <span class="text-xs sm:text-sm flex items-center gap-2.5">
+                <span class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-[10px] font-black shrink-0 border border-emerald-200">2</span>
+                <span>Bagaimana jika saya belum memiliki paspor atau masa berlakunya hampir habis?</span>
+              </span>
+              <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 accordion-icon shrink-0">
+                <svg class="w-4 h-4"><use href="#icon-chevron-down"/></svg>
+              </div>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-inner px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                <p>
+                  Anda tidak perlu khawatir. Anda dapat melakukan pendaftaran awal terlebih dahulu dengan KTP dan KK untuk mengamankan seat dan harga promo. Tim legal H2C akan menerbitkan <strong class="text-slate-800">Surat Rekomendasi Resmi PPIU Kemenag</strong> dan mendampingi Anda dalam pembuatan paspor baru maupun perpanjangan paspor di Kantor Imigrasi terdekat.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 (Biaya, DP & Tabungan) -->
+          <div class="faq-item accordion-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition" data-category="biaya" data-keywords="dp down payment uang muka pelunasan pembayaran biaya transfer rekening resmi bank bsi">
+            <button class="faq-toggle w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-slate-800 hover:text-emerald-800 focus:outline-none min-h-[52px]" aria-expanded="false">
+              <span class="text-xs sm:text-sm flex items-center gap-2.5">
+                <span class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-[10px] font-black shrink-0 border border-emerald-200">3</span>
+                <span>Berapa Down Payment (DP) awal dan bagaimana sistem pelunasannya?</span>
+              </span>
+              <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 accordion-icon shrink-0">
+                <svg class="w-4 h-4"><use href="#icon-chevron-down"/></svg>
+              </div>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-inner px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                <p>
+                  Down Payment (DP) untuk mengunci tiket pesawat dan kamar hotel adalah sebesar <strong class="text-emerald-800 font-bold">Rp 5.000.000 per jamaah</strong>.
+                </p>
+                <p class="mt-2">
+                  Sisa pembayaran dapat diangsur secara fleksibel dan wajib lunas maksimal <strong class="text-slate-800">35-40 hari sebelum tanggal keberangkatan</strong> saat proses visa dan issued tiket final. Seluruh transaksi pembayaran ditransfer langsung ke rekening resmi perusahaan <strong class="text-slate-800">PT HDUAC Berkah Mandiri</strong>, bukan rekening pribadi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 (Biaya, DP & Tabungan) -->
+          <div class="faq-item accordion-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition" data-category="biaya" data-keywords="cicilan tabungan umroh bsi syariah tanpa riba tanpa bunga kpr bank">
+            <button class="faq-toggle w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-slate-800 hover:text-emerald-800 focus:outline-none min-h-[52px]" aria-expanded="false">
+              <span class="text-xs sm:text-sm flex items-center gap-2.5">
+                <span class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-[10px] font-black shrink-0 border border-emerald-200">4</span>
+                <span>Apakah H2C menyediakan program Tabungan Umroh Syariah tanpa riba?</span>
+              </span>
+              <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 accordion-icon shrink-0">
+                <svg class="w-4 h-4"><use href="#icon-chevron-down"/></svg>
+              </div>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-inner px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                <p>
+                  Ya! H2C bekerjasama dengan perbankan syariah terpercaya (Bank Syariah Indonesia - BSI) menghadirkan <strong>Program Tabungan Umroh Rencana</strong> berbasis akad syariah murni (Wadi'ah / Mudharabah) tanpa bunga, tanpa riba, dan tanpa denda. Rekening dibuka atas nama jamaah sendiri, dana aman dijamin LPS, dan keberangkatan dapat dijadwalkan secara otomatis setelah saldo target tercapai.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 (Fasilitas & Hotel) -->
+          <div class="faq-item accordion-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition" data-category="fasilitas" data-keywords="jarak hotel jalan kaki maysan al maqam mirage salam pelataran haram nabawi shuttle">
+            <button class="faq-toggle w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-slate-800 hover:text-emerald-800 focus:outline-none min-h-[52px]" aria-expanded="false">
+              <span class="text-xs sm:text-sm flex items-center gap-2.5">
+                <span class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-[10px] font-black shrink-0 border border-emerald-200">5</span>
+                <span>Seberapa dekat jarak hotel ke pelataran Masjidil Haram dan Masjid Nabawi?</span>
+              </span>
+              <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 accordion-icon shrink-0">
+                <svg class="w-4 h-4"><use href="#icon-chevron-down"/></svg>
+              </div>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-inner px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                <p>
+                  Semua hotel yang digunakan H2C berada di Ring 1 terdekat:
+                </p>
+                <ul class="list-disc list-inside space-y-1 mt-2 text-slate-700">
+                  <li><strong>Di Makkah:</strong> Hotel setaraf <strong>Maysan Al Maqam</strong> hanya berjarak ±350 meter (sekitar 5 menit jalan kaki santai).</li>
+                  <li><strong>Di Madinah:</strong> Hotel setaraf <strong>Mirage Salam</strong> berjarak ±200 meter (sekitar 3 menit jalan kaki ke gerbang pelataran).</li>
+                </ul>
+                <p class="mt-2">
+                  Jamaah tidak perlu naik bus shuttle, sehingga sangat leluasa kembali ke kamar hotel kapan saja untuk beristirahat atau berwudhu di sela-sela sholat fardhu.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 6 (Fasilitas & Hotel) -->
+          <div class="faq-item accordion-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition" data-category="fasilitas" data-keywords="makanan menu konsumsi katering prasmanan masakan indonesia nusantara chef">
+            <button class="faq-toggle w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-slate-800 hover:text-emerald-800 focus:outline-none min-h-[52px]" aria-expanded="false">
+              <span class="text-xs sm:text-sm flex items-center gap-2.5">
+                <span class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-[10px] font-black shrink-0 border border-emerald-200">6</span>
+                <span>Bagaimana menu makanan selama di Makkah dan Madinah? Apakah cocok untuk lidah Indonesia?</span>
+              </span>
+              <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 accordion-icon shrink-0">
+                <svg class="w-4 h-4"><use href="#icon-chevron-down"/></svg>
+              </div>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-inner px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                <p>
+                  Sangat cocok! Kami menyajikan <strong class="text-slate-800">Fullboard Catering 3x sehari masakan khas Nusantara</strong> yang diolah langsung oleh chef profesional berpengalaman dari Indonesia.
+                </p>
+                <p class="mt-1">
+                  Menu berganti setiap hari (sop buntut, rendang sapi, ayam goreng rempah, sayur lodeh/asem, ikan bumbu kuning, sambal, kerupuk, serta buah segar). Tersedia pula dispenser air panas, kopi, dan teh manis 24 jam untuk kenyamanan jamaah.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 7 (Lansia & Keluarga) -->
+          <div class="faq-item accordion-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition" data-category="lansia" data-keywords="lansia orang tua kursi roda pendamping muthowif disabilitas dorong tawaf sai">
+            <button class="faq-toggle w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-slate-800 hover:text-emerald-800 focus:outline-none min-h-[52px]" aria-expanded="false">
+              <span class="text-xs sm:text-sm flex items-center gap-2.5">
+                <span class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-[10px] font-black shrink-0 border border-emerald-200">7</span>
+                <span>Apakah program ini ramah jamaah lansia (di atas 60 tahun) dan pengguna kursi roda?</span>
+              </span>
+              <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 accordion-icon shrink-0">
+                <svg class="w-4 h-4"><use href="#icon-chevron-down"/></svg>
+              </div>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-inner px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                <p>
+                  Sangat ramah. Keselamatan dan kenyamanan jamaah sepuh merupakan prioritas utama H2C:
+                </p>
+                <ul class="list-disc list-inside space-y-1 mt-2 text-slate-700">
+                  <li>Hotel dipilih yang memiliki akses landai dan jarak dekat untuk meminimalkan keletihan fisik.</li>
+                  <li>Tim H2C menyediakan fasilitas <strong class="text-slate-800">layanan sewa kursi roda resmi</strong> dan tenaga pendorong berlisensi khusus untuk prosesi Tawaf dan Sa'i.</li>
+                  <li>Penerbangan langsung (direct flight) tanpa transit sangat menghemat tenaga jamaah lansia.</li>
+                  <li>Didampingi dokter atau tenaga medis rujukan travel selama di Haramain.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 8 (Lansia & Keluarga) -->
+          <div class="faq-item accordion-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition" data-category="lansia" data-keywords="anak balita bayi infant potongan diskon bed tempat tidur keluarga">
+            <button class="faq-toggle w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-slate-800 hover:text-emerald-800 focus:outline-none min-h-[52px]" aria-expanded="false">
+              <span class="text-xs sm:text-sm flex items-center gap-2.5">
+                <span class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-[10px] font-black shrink-0 border border-emerald-200">8</span>
+                <span>Bisakah membawa anak-anak atau balita, dan bagaimana ketentuan biayanya?</span>
+              </span>
+              <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 accordion-icon shrink-0">
+                <svg class="w-4 h-4"><use href="#icon-chevron-down"/></svg>
+              </div>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-inner px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                <p>
+                  Tentu bisa dan sangat dianjurkan untuk mengenalkan Baitullah sejak dini. Ketentuan biaya anak-anak:
+                </p>
+                <ul class="list-disc list-inside space-y-1 mt-2 text-slate-700">
+                  <li><strong>Infant (usia 0-23 bulan):</strong> Hanya dikenakan biaya tiket pesawat infant maskapai, visa, dan asuransi tanpa tempat tidur terpisah.</li>
+                  <li><strong>Anak (usia 2-6 tahun No Bed):</strong> Mendapatkan potongan biaya signifikan karena tidur bersama orang tua (sharing bed).</li>
+                  <li><strong>Anak dengan Ekstra Bed:</strong> Dikenakan tarif paket anak dengan fasilitas ranjang sendiri.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- EMPTY STATE IF SEARCH YIELDS NO RESULTS -->
+        <div id="faqEmptyState" class="hidden text-center py-12 bg-white rounded-3xl border border-slate-200 p-8 shadow-sm">
+          <div class="w-16 h-16 rounded-full bg-amber-50 border border-amber-200 text-amber-600 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8"><use href="#icon-search"/></svg>
+          </div>
+          <h3 class="text-base font-bold text-slate-900">Pertanyaan tidak ditemukan</h3>
+          <p class="text-xs text-slate-500 mt-1 max-w-md mx-auto">
+            Kata kunci yang Anda cari belum ada di daftar FAQ. Jangan ragu untuk langsung berkonsultasi dengan Konsultan Ibadah H2C kami.
+          </p>
+          <a href="https://wa.me/6281316333001?text=Halo%20Admin%20H2C%2C%20saya%20punya%20pertanyaan%20khusus%20yang%20belum%20ada%20di%20FAQ" target="_blank" class="mt-5 inline-flex items-center gap-2 bg-emerald-800 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-xl text-xs transition shadow min-h-[48px]">
+            <svg class="w-4 h-4 fill-white"><use href="#icon-whatsapp"/></svg>
+            <span>Tanyakan Langsung via WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- LIVE CONCIERGE HELP CARD -->
+        <div class="mt-12 bg-gradient-to-r from-emerald-900 to-[#04331d] rounded-3xl p-6 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl border border-emerald-700/50">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-amber-400/20 border border-amber-400/40 flex items-center justify-center text-amber-300 shrink-0">
+              <svg class="w-7 h-7"><use href="#icon-whatsapp"/></svg>
+            </div>
+            <div>
+              <h3 class="text-base sm:text-lg font-bold text-white">Butuh Penjelasan Rinci atau Jadwal Khusus?</h3>
+              <p class="text-xs text-emerald-200 mt-1">Konsultan Ibadah H2C Wisata Mandiri siap melayani Anda 24 jam dengan penuh keramahan.</p>
+            </div>
+          </div>
+          <a href="https://wa.me/6281316333001?text=Bismillah%2C%20saya%20ingin%20konsultasi%20layanan%20umroh%20H2C%20Wisata%20Mandiri" target="_blank" class="shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-emerald-950 font-black px-6 py-3 rounded-xl text-xs transition shadow-lg btn-luxury-shimmer min-h-[48px]">
+            <span>Hubungi WhatsApp: 0813-1633-3001</span>
+            <svg class="w-4 h-4 stroke-emerald-950 fill-none" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER BRAND ATTRIBUTION
+       ========================================================================== -->
+  <footer class="bg-[#02170d] border-t border-emerald-900/60 py-8 px-4 text-center text-slate-400 text-xs">
+    <div class="max-w-6xl mx-auto space-y-2">
+      <div class="flex items-center justify-center gap-2 text-amber-400 font-bold">
+        <span>H2C WISATA MANDIRI</span>
+        <span>•</span>
+        <span>PT. HDUAC BERKAH MANDIRI</span>
+      </div>
+      <p class="text-slate-500 text-[11px]">
+        SK Izin PPIU Kemenag RI No. 26032300175410003 | Akreditasi "A" | Akta Notaris No. 65 Tanggal 16 Maret 2023.
+      </p>
+      <p class="text-slate-600 text-[10px]">
+        Luxury Visual Modules, Comparison Matrix &amp; Trust Assurance System. Hak Cipta Dilindungi Undang-Undang.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       VANILLA JAVASCRIPT: ACCORDION, CATEGORY FILTER & INSTANT SEARCH
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Accordion Toggle Logic
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const toggleBtn = item.querySelector('.faq-toggle');
+        if (!toggleBtn) return;
+
+        toggleBtn.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          // Optional: close other open accordions in the same category
+          faqItems.forEach(other => {
+            if (other !== item) {
+              other.classList.remove('active');
+              const otherBtn = other.querySelector('.faq-toggle');
+              if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          if (isActive) {
+            item.classList.remove('active');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+          } else {
+            item.classList.add('active');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // 2. Category Filter & Search Synchronization
+      const categoryBtns = document.querySelectorAll('.faq-category-btn');
+      const searchInput = document.getElementById('faqSearchInput');
+      const clearSearchBtn = document.getElementById('faqClearSearch');
+      const counterText = document.getElementById('faqCounterText');
+      const emptyState = document.getElementById('faqEmptyState');
+      const accordionContainer = document.getElementById('faqAccordionContainer');
+
+      let currentCategory = 'all';
+      let currentQuery = '';
+
+      function filterFAQ() {
+        let visibleCount = 0;
+        const normalizedQuery = currentQuery.trim().toLowerCase();
+
+        faqItems.forEach(item => {
+          const itemCategory = item.getAttribute('data-category') || '';
+          const itemKeywords = (item.getAttribute('data-keywords') || '').toLowerCase();
+          const itemText = item.textContent.toLowerCase();
+
+          const matchesCategory = (currentCategory === 'all' || itemCategory === currentCategory);
+          const matchesQuery = !normalizedQuery || itemText.includes(normalizedQuery) || itemKeywords.includes(normalizedQuery);
+
+          if (matchesCategory && matchesQuery) {
+            item.style.display = 'block';
+            visibleCount++;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        // Update Counter
+        if (counterText) {
+          counterText.textContent = `Menampilkan ${visibleCount} dari ${faqItems.length} pertanyaan`;
+        }
+
+        // Empty State Handle
+        if (emptyState && accordionContainer) {
+          if (visibleCount === 0) {
+            emptyState.classList.remove('hidden');
+            accordionContainer.classList.add('hidden');
+          } else {
+            emptyState.classList.add('hidden');
+            accordionContainer.classList.remove('hidden');
+          }
+        }
+      }
+
+      // Category Button Click Listener
+      categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          categoryBtns.forEach(b => {
+            b.classList.remove('active', 'bg-emerald-800', 'text-amber-300', 'ring-2', 'ring-emerald-700');
+            b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+          });
+
+          btn.classList.add('active', 'bg-emerald-800', 'text-amber-300', 'ring-2', 'ring-emerald-700');
+          btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+
+          currentCategory = btn.getAttribute('data-category') || 'all';
+          filterFAQ();
+        });
+      });
+
+      // Search Input Listener with Debounce
+      let searchTimeout = null;
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          clearTimeout(searchTimeout);
+          const val = e.target.value;
+          
+          if (clearSearchBtn) {
+            if (val.length > 0) {
+              clearSearchBtn.classList.remove('hidden');
+            } else {
+              clearSearchBtn.classList.add('hidden');
+            }
+          }
+
+          searchTimeout = setTimeout(() => {
+            currentQuery = val;
+            filterFAQ();
+          }, 150);
+        });
+      }
+
+      // Clear Search Button Listener
+      if (clearSearchBtn && searchInput) {
+        clearSearchBtn.addEventListener('click', () => {
+          searchInput.value = '';
+          currentQuery = '';
+          clearSearchBtn.classList.add('hidden');
+          filterFAQ();
+          searchInput.focus();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
