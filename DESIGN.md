@@ -343,3 +343,31 @@ Berdasarkan analisis visual feed Instagram resmi `@h2c_wisata_mandiri`:
    - 12 aset riil (`feed_1.jpg` hingga `feed_12.jpg`) dengan badge Reels, jumlah tayang/like saat hover, serta lightbox modal interaktif.
    - File komponen rujukan mandiri: `ig_theme_components.html`.
 
+---
+
+## 10. Deep Emerald & Radiant Gold Visual System
+
+Berdasarkan umpan balik pengguna (*"perbanyak color pallet kaya gini dong aku suka, terus buat jangan kebanyakan tulisan web nya, pengunjung jadi overstimulate"*) dan screenshot rujukan estetika visual:
+
+### 10.1. Color Palette Tokens & Rationale
+- **Bedrock / Obsidian Emerald:** `#022c22` / `#04241d` / `#021f18`
+  - Digunakan sebagai kanvas latar belakang terdalam (`bg-[#021f18]` / `bg-[#04241d]`) untuk menciptakan nuansa malam haramain yang khusyuk, mewah, dan menenangkan mata.
+- **Deep Forest Emerald:** `#072D24` hingga `#0A382C`
+  - Digunakan sebagai warna kartu (`bg-[#072D24]`), container modular, dan card-based architecture. Menghasilkan kontras berlapis tanpa glare putih yang memicu kelelahan visual (overstimulation).
+- **Radiant Gold Accents:** `#F2BD35`, `#FFC72C`, `#d4af37`
+  - Digunakan untuk highlight nilai kunci: headline harga (`text-transparent bg-clip-text bg-gradient-to-r from-[#F2BD35] to-[#FFC72C]`), bintang 5 ulasan, penegas diskon Saudia Fair, dan badge keunggulan.
+- **Subtle Gold Hairline Border:** `#8A733B` / 40% opacity (`border-[#8A733B]/40` atau `border-[#d4af37]/40`)
+  - Garis batas 1px ultra-halus berkilau redup untuk memisahkan kartu secara tegas tanpa menambah beban kognitif.
+- **Vibrant Mint CTA:** `#10B981` (hover `#059669`)
+  - Tombol aksi primer dengan sinyal visual live status (`animate-ping` dot mint) untuk tingkat konversi tinggi yang terarah.
+- **Typography & Reading Hierarchy:**
+  - Teks Utama / Headline: Putih bersih (`#FFFFFF`, `font-bold tracking-tight`).
+  - Teks Penjelas / Body: Sage Green redup (`#A7B9B4` / `text-emerald-100/70`) agar nyaman dibaca dan tidak silau.
+  - Highlight Kunci: Emas berkilau (`#F2BD35`).
+
+### 10.2. Anti-Overstimulation Design Principles
+1. **Zero Text Clutter:** Pangkas paragraf panjang menjadi bullet point atau chip scannable 3–5 kata.
+2. **Card-Based Spacing:** Tiap penawaran dan fitur dibungkus kartu mandiri berkontur `rounded-2xl` dengan padding lega (`p-6 sm:p-8`).
+3. **Scannable Microcopy:** Ikon centang emas/mint berpasangan langsung dengan benefit konkret (contoh: *"Kereta Cepat Haramain Termasuk"*, *"Hotel < 50m Pelataran"*).
+
+
