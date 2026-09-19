@@ -2,7 +2,7 @@
   "brand": {
     "name": "H2C WISATA MANDIRI",
     "legal_name": "PT. HDUAC Berkah Mandiri",
-    "slogan": "Ibadah Khusyuk Sesuai Sunnah, Langkah Tenang Menuju Baitullah",
+    "slogan": "Niat ke Baitullah, Kami Siapkan Jalannya",
     "ppiu": "26032300175410003",
     "akreditasi": "A",
     "whatsapp_1": "6281316333001",
@@ -11,7 +11,9 @@
     "email": "info@h2cwisatamandiri.com",
     "address": "Ruko Telaga Pesona Blok L3 No. 3 & 5, Telagamurni, Cikarang Barat, Bekasi 17530",
     "bank": "Bank BSI a.n. PT HDUAC Berkah Mandiri",
-    "bank_account": "723 456 7890"
+    "bank_account": "723 456 7890",
+    "instagram": "@h2c_wisata_mandiri",
+    "instagram_url": "https://www.instagram.com/h2c_wisata_mandiri/"
   },
   "hero": {
     "promo_badge": "Izin PPIU Kemenag No. 26032300175410003 • Akreditasi A",
@@ -21,43 +23,67 @@
   },
   "packages": [
     {
-      "name": "Umroh Akbar September",
-      "badge": "Paling Favorit • Awal Musim",
+      "id": "pkg-1",
+      "name": "Paket Bintang 4 (Umroh Akbar September)",
+      "category": "Bintang 4",
+      "badge": "Kloter Akbar September",
+      "educational_tag": "5 Alasan Umroh September: Layak Dipertimbangkan",
+      "original_price": "31.500.000",
       "price": "29.000.000",
       "display_price": "Rp 29.000.000",
+      "normal_price": "Rp 31.500.000",
+      "discount": "Rp 2.500.000",
+      "promo_tag": "Saudia Fair Diskon Rp 2,5 Jt",
       "dp": "Rp 5.000.000",
       "dp_note": "Cukup DP Rp 5 Juta kunci kursi & harga flat. Pelunasan tenang H-30.",
       "duration": "9 Hari",
-      "airline": "Qatar Airways / Saudia Airlines",
-      "hotel_makkah": "Maysan Al Maqam / Setaraf (±150m Pelataran)",
-      "hotel_madinah": "Mirage Al Salam / Jawharat Al Rasheed (±100m Nabawi)",
-      "status": "Ready Seat (18 Tersisa)"
+      "airline": "Saudia Airlines Direct CGK - JED / MED",
+      "hotel_makkah": "Anjum Hotel Makkah / Setaraf (*4 - ±150m Pelataran)",
+      "hotel_madinah": "Rove Al Madinah / Setaraf (*4 - Depan Pintu 332)",
+      "status": "Promo Saudia Fair • Sisa 6 Kursi",
+      "popular": false
     },
     {
-      "name": "Umroh Paket Hemat Januari",
+      "id": "pkg-2",
+      "name": "Paket Reguler / Hemat",
+      "category": "Reguler / Hemat",
       "badge": "Pilihan Utama Keluarga & Lansia",
-      "price": "30.000.000",
-      "display_price": "Rp 30.000.000",
+      "educational_tag": "Akses Rata & Ramah Lansia",
+      "original_price": "30.000.000",
+      "price": "27.500.000",
+      "display_price": "Rp 27.500.000",
+      "normal_price": "Rp 30.000.000",
+      "discount": "Rp 2.500.000",
+      "promo_tag": "Saudia Fair Diskon Rp 2,5 Jt",
       "dp": "Rp 5.000.000",
       "dp_note": "Cukup DP Rp 5 Juta kunci kursi & harga flat. Pelunasan tenang H-30.",
       "duration": "10 Hari",
-      "airline": "Saudia Airlines / IndiGo (Jadwal Efisien)",
-      "hotel_makkah": "Nada Ajyad / Maysan (Akses Rata Ramah Lansia)",
-      "hotel_madinah": "Mirage Al Salam / Setaraf (Dekat Pelataran)",
-      "status": "Pendaftaran Dibuka"
+      "airline": "Saudia Airlines / Garuda Indonesia Direct",
+      "hotel_makkah": "Rayyana Hotel Makkah / Setaraf (*3/*4 - Shuttle Ready)",
+      "hotel_madinah": "Concorde Dar Al Khair / Setaraf (*3 - ±150m)",
+      "status": "Promo Saudia Fair • Sisa 12 Kursi",
+      "popular": true
     },
     {
-      "name": "Umroh Plus Turkey Desember",
-      "badge": "Spesial Musim Dingin & Sejarah",
-      "price": "53.000.000",
-      "display_price": "Rp 53.000.000",
+      "id": "pkg-3",
+      "name": "Paket Bintang 5 / VIP",
+      "category": "Bintang 5 / VIP",
+      "badge": "Akses Eksklusif Pelataran Haram",
+      "educational_tag": "Hotel Ring 1 Pelataran",
+      "original_price": "33.500.000",
+      "price": "31.000.000",
+      "display_price": "Rp 31.000.000",
+      "normal_price": "Rp 33.500.000",
+      "discount": "Rp 2.500.000",
+      "promo_tag": "Saudia Fair Diskon Rp 2,5 Jt",
       "dp": "Rp 5.000.000",
-      "dp_note": "Cukup DP Rp 5 Juta kunci liburan akhir tahun. Pelunasan H-30.",
-      "duration": "16 Hari",
-      "airline": "Turkish Airlines / Saudia (Direct Flight)",
-      "hotel_makkah": "Anjum Makkah Bintang 5 (Depan Pelataran)",
-      "hotel_madinah": "Hotel Bintang 5 Madinah & Bosphorus Istanbul",
-      "status": "Seat Terbatas"
+      "dp_note": "Cukup DP Rp 5 Juta kunci kamar eksklusif. Pelunasan H-30.",
+      "duration": "12 Hari",
+      "airline": "Saudia Airlines Direct CGK - MED (In Madinah Out Jeddah)",
+      "hotel_makkah": "Pullman Zamzam Tower (*5 - Depan Pelataran Masjidil Haram)",
+      "hotel_madinah": "Dar Al Taqwa (*5 - Depan Pintu Masuk Raudhah)",
+      "status": "Promo Saudia Fair • Sisa 8 Kursi",
+      "popular": false
     }
   ],
   "schedules": [
@@ -68,7 +94,7 @@
       "duration": "9 Hari",
       "airline": "Qatar Airways / Saudia",
       "hotel": "Maysan Al Maqam / Jawharat Al Rasheed",
-      "price": "Rp 29.000.000",
+      "price": "Rp 29.000.000 (Promo Saudia Fair)",
       "status": "Ready Seat (18 Tersisa)",
       "status_class": "emerald"
     },
@@ -112,7 +138,7 @@
       "duration": "10 Hari",
       "airline": "Saudia Airlines / IndiGo",
       "hotel": "Nada Ajyad / Mirage Al Salam",
-      "price": "Rp 30.000.000",
+      "price": "Rp 27.500.000 (Promo Saudia Fair)",
       "status": "Pilihan Keluarga",
       "status_class": "emerald"
     },
@@ -193,5 +219,95 @@
       "status": "Pendaftaran Dibuka",
       "status_class": "emerald"
     }
-  ]
+  ],
+  "promo_banner": {
+    "badge": "SAUDIA FAIR 2026",
+    "title": "Saudia Fair 2026: Diskon Rp 2,5 Juta Semua Paket Umroh",
+    "discount_amount": "Rp 2.500.000",
+    "discount_value": 2500000,
+    "description": "Potongan langsung Rp 2.500.000 untuk seluruh paket umroh resmi H2C Wisata Mandiri. Kuota promo terbatas untuk musim 2026/2027.",
+    "cta_text": "Klaim Diskon Rp 2,5 Jt",
+    "cta_link": "https://wa.me/6281316333001?text=Bismillah,%20saya%20ingin%20klaim%20Diskon%20Promo%20Saudia%20Fair%202026%20(Potongan%20Rp%202,5%20Juta)."
+  },
+  "testimonials": {
+    "section_badge": "Bukan Kami yang Bilang",
+    "section_title": "INI KATA JAMAAH",
+    "section_subtitle": "Ulasan jujur dan pengalaman otentik para jamaah yang telah menunaikan ibadah umroh ke Tanah Suci bersama H2C Wisata Mandiri.",
+    "items": [
+      {
+        "name": "Pak Rizki",
+        "city": "Cilacap",
+        "role": "Alumni Umroh H2C",
+        "rating": 5,
+        "highlight": "Pelayanan ramah, hotel dekat, makan enak",
+        "quote": "Alhamdulillah pelayanan staf dan muthowif H2C sangat ramah dan sigap. Hotel benar-benar dekat dengan pelataran masjid sehingga tidak lelah jalan kaki, dan masakan katering nusantara selalu cocok di lidah kami sekeluarga."
+      },
+      {
+        "name": "Pak Wildan",
+        "city": "Purbalingga",
+        "role": "Alumni Umroh H2C",
+        "rating": 5,
+        "highlight": "Pendampingan ibadah sabar & tuntas",
+        "quote": "Bimbingan manasik dari Tanah Air sampai pelaksanaan rukun umroh di Masjidil Haram sangat sabar dan tuntas. Ustadz muthowif membimbing langkah demi langkah sesuai sunnah tanpa tergesa-gesa."
+      },
+      {
+        "name": "Pak Eko Budi",
+        "city": "Jakarta",
+        "role": "Alumni Umroh H2C",
+        "rating": 5,
+        "highlight": "Kepastian jadwal & fasilitas sesuai janji",
+        "quote": "Jadwal keberangkatan pasti, tiket PP langsung terbit tanpa drama undur tanggal. Fasilitas hotel dan transportasi bus eksekutif real sesuai yang dijanjikan di awal tanpa ada biaya tersembunyi."
+      },
+      {
+        "name": "Mbah Safari",
+        "city": "Banyumas",
+        "role": "Jamaah Lansia H2C",
+        "rating": 5,
+        "highlight": "Sangat terbantu pendampingan lansia & kursi roda",
+        "quote": "Sebagai jamaah sepuh, saya sangat bersyukur dan terbantu dengan tim handling H2C yang siap mendampingi kursi roda selama thawaf, sa'i, dan ziarah. Ibadah berjalan aman, lancar, dan khusyuk."
+      }
+    ]
+  },
+  "documentation": {
+    "title": "Dokumentasi Kloter & Perjalanan",
+    "subtitle": "Momen nyata ibadah dan kebersamaan jamaah H2C Wisata Mandiri",
+    "instagram_account": "@h2c_wisata_mandiri",
+    "instagram_url": "https://www.instagram.com/h2c_wisata_mandiri/",
+    "items": [
+      {
+        "title": "Kloter 35",
+        "caption": "Perjalanan Umroh Telah Usai ❤️",
+        "description": "Kepulangan jamaah Kloter 35 dengan selamat dan penuh haru berkumpul kembali bersama keluarga tercinta.",
+        "image": "./assets/vid_keberangkatan.jpg"
+      },
+      {
+        "title": "City Tour Masjid Quba",
+        "caption": "Shalat Sunnah Berpahala Umroh",
+        "description": "Ziarah napak tilas sejarah hijrah Rasulullah SAW dan memperbanyak shalat sunnah di Masjid Quba.",
+        "image": "./assets/vid_raudhah.jpg"
+      },
+      {
+        "title": "City Tour Masjid Nabawi",
+        "caption": "Ziarah Raudhah & Makam Rasulullah",
+        "description": "Bimbingan masuk Raudhah Syarifah dan ziarah salam kepada Baginda Rasulullah SAW serta sahabat.",
+        "image": "./assets/feed_2.jpg"
+      },
+      {
+        "title": "Prosesi Umroh & Kepulangan",
+        "caption": "Thawaf, Sa'i, Tahallul & Handling Bandara",
+        "description": "Pendampingan intensif pelaksanaan rukun umroh sesuai sunnah hingga pengantaran kepulangan di bandara.",
+        "image": "./assets/vid_testimoni.jpg"
+      }
+    ]
+  },
+  "education": {
+    "title": "5 Alasan Umroh September: Layak Dipertimbangkan",
+    "reasons": [
+      "Awal musim 1448 H suasana Masjidil Haram & Masjid Nabawi lebih lengang dan khusyuk.",
+      "Cuaca transisi di Makkah dan Madinah lebih bersahabat untuk aktivitas ibadah jamaah.",
+      "Akses slot Raudhah via aplikasi Nusuk lebih tertib dan mudah terjadwal.",
+      "Pelayanan maskapai dan fasilitas hotel masih dalam kondisi prima awal musim.",
+      "Tersedia diskon spesial Saudia Fair 2026 hemat Rp 2,5 Juta per jamaah."
+    ]
+  }
 }

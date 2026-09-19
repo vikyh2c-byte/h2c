@@ -46,9 +46,21 @@
               50: '#ecfdf5',
               100: '#d1fae5',
               200: '#a7f3d0',
+              400: '#34d399',
               500: '#10b981',
               600: '#059669',
               700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22',
+            },
+            amber: {
+              300: '#fde047',
+              400: '#facc15',
+              500: '#fbbf24',
+              600: '#d97706',
+            },
+            forest: {
               800: '#065f46',
               900: '#064e3b',
               950: '#022c22',
@@ -57,8 +69,8 @@
               canvas: '#ffffff',
               subtle: '#f8fafc',
               card: '#ffffff',
-              dark: '#090d16',
-              darkcard: '#101726',
+              dark: '#022c22',
+              darkcard: '#064e3b',
             }
           }
         }
@@ -85,6 +97,27 @@
     }
     details[open] summary .faq-chevron {
       transform: rotate(180deg);
+    }
+    .ig-story-ring {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      padding: 2.5px;
+    }
+    .ig-brand-ring {
+      background: linear-gradient(135deg, #fbbf24 0%, #10b981 50%, #047857 100%);
+      padding: 2.5px;
+    }
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
   </style>
 
@@ -129,41 +162,57 @@
 </head>
 
 <body class="bg-[#ffffff] text-slate-700 antialiased selection:bg-emerald-100 selection:text-emerald-900">
+  <!-- TOP PROMO BANNER: SAUDIA FAIR 2026 -->
+  <aside id="promo-banner" aria-label="Promo Saudia Fair 2026" class="bg-[#022c22] text-white text-xs py-2.5 px-4 text-center font-medium relative z-50 border-b border-emerald-600/40 shadow-sm">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5">
+      <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 font-black text-[10px] uppercase tracking-wide shadow-xs">
+        ✈️ SAUDIA FAIR 2026
+      </span>
+      <span class="font-extrabold text-amber-300 tracking-tight uppercase">
+        DISKON RP 2,5 JUTA! SEMUA PAKET UMROH
+      </span>
+      <span class="hidden md:inline text-emerald-200 text-xs">
+        • Kuota Terbatas 10 Pendaftar Pertama • Hotel Ring 1 Depan Pelataran
+      </span>
+      <a href="https://wa.me/6281316333001?text=Bismillah,%20Assalamu'alaikum%20Admin%20H2C.%20Saya%20ingin%20klaim%20Diskon%20Rp%202,5%20Juta%20Saudia%20Fair%202026." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold ml-1 transition shadow-xs">
+        <span>Klaim Diskon</span>
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </aside>
 
   <!-- 1. STUDIO HEADER NAVIGATION -->
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 sm:h-20">
+      <div class="flex items-center justify-between min-h-[4.25rem] py-2">
         
         <!-- Brand / Identity -->
-        <a href="#hero" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-emerald-600 rounded-lg p-1">
-          <img src="./assets/logo-circle.png" alt="Logo H2C" width="40" height="40" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 shadow-sm object-cover">
-          <div>
-            <span class="font-extrabold text-base sm:text-lg text-slate-900 tracking-tight block leading-none">H2C WISATA MANDIRI</span>
-            <span id="brand-slogan-text" class="text-[11px] sm:text-xs font-semibold text-emerald-700 block mt-1 tracking-normal">Niat ke Baitullah, Kami Siapkan Jalannya</span>
+        <a href="#hero" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus:ring-2 focus:ring-emerald-600 rounded-lg p-1 shrink-0">
+          <img src="./assets/logo-circle.png" alt="Logo H2C" width="40" height="40" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 shadow-sm object-cover shrink-0">
+          <div class="leading-tight">
+            <span class="font-extrabold text-base sm:text-lg text-slate-900 tracking-tight block">H2C WISATA MANDIRI</span>
+            <span id="brand-slogan-text" class="text-[11px] sm:text-xs font-semibold text-emerald-700 block tracking-normal truncate max-w-[210px] sm:max-w-none">Niat ke Baitullah, Kami Siapkan Jalannya</span>
           </div>
         </a>
 
         <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+        <nav class="hidden lg:flex items-center gap-5 xl:gap-6 text-xs xl:text-sm font-medium text-slate-600">
           <a href="#paket" class="hover:text-slate-900 transition-colors">Paket &amp; Biaya</a>
-          <a href="#komparasi" class="hover:text-slate-900 transition-colors">Transparansi Layanan</a>
           <a href="#jadwal" class="hover:text-slate-900 transition-colors">Jadwal Keberangkatan</a>
           <a href="#galeri" class="hover:text-slate-900 transition-colors">Dokumentasi</a>
           <a href="#testimoni" class="hover:text-slate-900 transition-colors">Testimoni</a>
-          <a href="#pembimbing" class="hover:text-slate-900 transition-colors">Pembimbing</a>
           <a href="#kontak" class="hover:text-slate-900 transition-colors">Legalitas &amp; Kontak</a>
         </nav>
 
         <!-- Right Trust Badge & Direct Action -->
-        <div class="hidden lg:flex items-center gap-3">
-          <a href="https://simpu.kemenag.go.id/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 border border-emerald-200 rounded-full text-xs font-semibold text-emerald-800 hover:bg-emerald-100 transition">
+        <div class="hidden md:flex items-center gap-2.5 xl:gap-3 shrink-0">
+          <a href="https://simpu.kemenag.go.id/" target="_blank" rel="noopener noreferrer" class="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 border border-emerald-200 rounded-full text-xs font-semibold text-emerald-800 hover:bg-emerald-100 transition">
             <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
             PPIU No. 26032300175410003
           </a>
-          <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20ingin%20konsultasi%20paket%20umroh%20resmi%20H2C%20Wisata%20Mandiri." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl transition shadow-sm">
+          <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20ingin%20konsultasi%20paket%20umroh%20resmi%20H2C%20Wisata%20Mandiri." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs sm:text-sm font-semibold px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl transition shadow-sm shrink-0">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.079-1.892-.442-1.615-.668-2.651-2.316-2.732-2.423-.081-.107-.655-.872-.655-1.66 0-.788.411-1.176.556-1.336.145-.16.316-.2.422-.2.106 0 .211 0 .304.006.103.005.239-.039.373.285.14.339.479 1.168.522 1.254.043.086.072.187.014.302-.058.115-.088.187-.175.289-.087.102-.183.228-.261.306-.09.088-.184.184-.079.364.105.18.468.772.998 1.246.685.611 1.26.8 1.44.887.18.087.286.074.391-.047.105-.121.452-.526.572-.707.12-.181.24-.151.405-.09.165.06 1.054.497 1.235.587.18.09.3.136.345.213.045.077.045.447-.099.852z"/></svg>
-            Konsultasi WhatsApp
+            <span>Konsultasi WhatsApp</span>
           </a>
         </div>
 
@@ -203,10 +252,12 @@
   </header>
 
   <!-- 2. HIGH-TRUST EDITORIAL HERO SECTION -->
-  <section id="hero" class="relative bg-slate-950 text-white pt-14 pb-20 sm:pt-20 sm:pb-28 overflow-hidden">
-    <!-- Subtle Background Accent (Pure Hairline Studio Grid, No Slop) -->
-    <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px]"></div>
-    <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
+  <section id="hero" class="relative bg-gradient-to-b from-[#022c22] via-[#043427] to-[#022c22] text-white pt-14 pb-20 sm:pt-20 sm:pb-28 overflow-hidden border-b border-emerald-950 scroll-mt-24">
+    <!-- Ambient glowing gradients matching Instagram Feed visual style -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-0 right-0 w-[32rem] h-[32rem] bg-emerald-600/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 left-1/3 w-80 h-80 bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -214,16 +265,21 @@
         <!-- Left Editorial Copy (7 Cols) -->
         <div class="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
           
-          <!-- Kicker Pill -->
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-emerald-400 text-xs font-semibold tracking-wide">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span id="hero-promo-badge-text">PPIU KEMENAG RI NO. 26032300175410003 • AKREDITASI A</span>
+          <!-- Kicker Pills (Official PPIU + Saudia Fair Promo Hook) -->
+          <div class="flex flex-wrap items-center gap-2.5">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#064e3b]/90 border border-emerald-500/40 text-emerald-300 text-xs font-semibold tracking-wide shadow-xs">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span id="hero-promo-badge-text">PPIU KEMENAG RI NO. 26032300175410003 • AKREDITASI A</span>
+            </div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-400 text-slate-950 text-xs font-black tracking-wide shadow-xs">
+              <span>✈️ SAUDIA FAIR 2026: DISKON RP 2,5 JUTA!</span>
+            </div>
           </div>
 
           <!-- Main H1 Headline -->
           <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
             <span id="hero-h1-line1" class="block">Sujud Tenang di Depan Ka’bah,</span>
-            <span id="hero-h1-line2" class="block text-slate-300">Kenyamanan Ibadah Anda &amp; Orang Tua.</span>
+            <span id="hero-h1-line2" class="block text-emerald-200">Kenyamanan Ibadah Anda &amp; Orang Tua.</span>
           </h1>
 
           <!-- Body / Description -->
@@ -356,7 +412,7 @@
   </section>
 
   <!-- 4. KOMITMEN 5 PASTI UMROH KEMENAG RI (HIGH-TRUST STUDIO EDITORIAL) -->
-  <section id="lima-pasti" class="py-16 sm:py-20 bg-white border-b border-slate-200">
+  <section id="lima-pasti" class="py-16 sm:py-20 bg-white border-b border-slate-200 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       
       <!-- Section Header with Trust Guarantee Pill -->
@@ -476,17 +532,17 @@
   </section>
 
   <!-- 5. PAKET & PRICING (WISE RADICAL TRANSPARENCY MODEL) -->
-  <section id="paket" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+  <section id="paket" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div class="max-w-2xl">
-          <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block mb-2">Transparansi Biaya &amp; Fasilitas</span>
+          <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block mb-2">Transparansi Biaya &amp; Fasilitas Resmi</span>
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900">
             Pilihan Paket Umroh Musim 2026 - 2027
           </h2>
           <p class="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
-            Semua rincian biaya disajikan secara terbuka. Termasuk tiket pesawat direct, hotel dekat pelataran, visa, handling, dan bimbingan ibadah penuh.
+            Semua rincian biaya disajikan secara terbuka tanpa biaya terselubung. Termasuk tiket direct penerbangan Saudia/Garuda, hotel dekat pelataran, visa resmi Nusuk, handling VIP, dan bimbingan ibadah tuntas.
           </p>
         </div>
         <div class="shrink-0">
@@ -497,27 +553,65 @@
         </div>
       </div>
 
+      <!-- PROMO FAIR BANNER CALLOUT -->
+      <div class="bg-gradient-to-r from-emerald-900 via-emerald-800 to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-lg border border-emerald-700/50 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="space-y-2 max-w-2xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider">
+            ✈️ PROMO RESMI SAUDIA FAIR 2026
+          </div>
+          <h3 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
+            Diskon Rp 2.500.000 untuk Semua Paket Umroh!
+          </h3>
+          <p class="text-xs sm:text-sm text-emerald-100 leading-relaxed">
+            Dapatkan potongan langsung Rp 2,5 Juta per jamaah untuk seluruh paket umroh resmi H2C. Manfaatkan kesempatan emas ibadah khusyuk dengan fasilitas terbaik dan harga hemat. Kuota seat promo terbatas!
+          </p>
+          <div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
+            <span class="bg-emerald-950/70 border border-emerald-600/70 text-emerald-200 px-2.5 py-1 rounded-lg">✓ Reguler/Hemat: <strong class="text-amber-300">Rp 27,5 Jt</strong> <span class="line-through text-slate-400 text-[11px]">(30 Jt)</span></span>
+            <span class="bg-emerald-950/70 border border-emerald-600/70 text-emerald-200 px-2.5 py-1 rounded-lg">✓ Bintang 4: <strong class="text-amber-300">Rp 29 Jt</strong> <span class="line-through text-slate-400 text-[11px]">(31,5 Jt)</span></span>
+            <span class="bg-emerald-950/70 border border-emerald-600/70 text-emerald-200 px-2.5 py-1 rounded-lg">✓ Bintang 5 / VIP: <strong class="text-amber-300">Rp 31 Jt</strong> <span class="line-through text-slate-400 text-[11px]">(33,5 Jt)</span></span>
+          </div>
+        </div>
+        <div class="shrink-0 w-full md:w-auto">
+          <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20ingin%20klaim%20Diskon%20Promo%20Saudia%20Fair%202026%20(Potongan%20Rp%202,5%20Juta)." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-6 py-3.5 rounded-xl text-xs sm:text-sm transition shadow-md">
+            Klaim Diskon Rp 2,5 Jt &rarr;
+          </a>
+        </div>
+      </div>
+
       <!-- 3 Package Cards Grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
         
-        <!-- Package 1: Umroh Akbar September -->
+        <!-- Package 1: Paket Bintang 4 (Umroh Akbar September) -->
         <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 flex flex-col justify-between hover:border-slate-300 transition shadow-sm">
           <div class="space-y-6">
             <div class="flex items-center justify-between">
-              <span id="pkg-1-badge" class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold">Paling Favorit • Awal Musim</span>
+              <span id="pkg-1-badge" class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold">Kloter Akbar Terdekat • 9 Hari</span>
               <span class="text-xs text-slate-500 font-medium">Quad Seat</span>
             </div>
             
             <div>
-              <h3 id="pkg-1-title" class="text-xl font-bold text-slate-900 tracking-tight">Umroh Akbar September</h3>
-              <p class="text-xs text-slate-500 mt-1">Momen syahdu awal musim 1448 H dengan cuaca ideal &amp; fasilitas prima</p>
+              <h3 id="pkg-1-title" class="text-xl font-bold text-slate-900 tracking-tight">Paket Bintang 4 (Akbar September)</h3>
+              <p class="text-xs text-slate-500 mt-1">Bimbingan intensif Ustadz berpengalaman, hotel Bintang 4 dekat pelataran</p>
+              
+              <!-- Edukasi Callout -->
+              <div class="mt-2.5 p-2.5 rounded-lg bg-amber-50/80 border border-amber-200/80 text-[11px] text-amber-900 leading-snug">
+                <strong>💡 Edukasi: 5 Alasan Umroh September</strong>
+                <p class="text-slate-600 mt-0.5">Awal musim 1448 H lebih kondusif, cuaca bersahabat, slot Raudhah mudah dijadwalkan, &amp; promo Saudia Fair.</p>
+              </div>
             </div>
 
             <div class="pt-4 border-t border-slate-100">
-              <span class="text-xs text-slate-500 block">Biaya All-in Jamaah:</span>
-              <div class="flex items-baseline gap-1 mt-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-slate-500 block">Biaya Promo Saudia Fair:</span>
+                <span class="text-[10px] font-extrabold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-full">Hemat Rp 2,5 Jt</span>
+              </div>
+              <div class="flex items-center gap-2 mt-1">
+                <span class="text-xs line-through text-slate-400 font-medium">Rp 31.500.000</span>
+                <span class="text-[10px] text-slate-500">Harga Normal</span>
+              </div>
+              <div class="flex items-baseline gap-1 mt-0.5">
                 <span class="text-xs font-semibold text-slate-600">Rp</span>
-                <span id="pkg-1-price" class="text-3xl font-extrabold text-slate-900 tracking-tight tabular-nums">29.000.000</span>
+                <span id="pkg-1-price" class="text-3xl font-extrabold text-emerald-700 tracking-tight tabular-nums">29.000.000</span>
                 <span class="text-xs text-slate-500">/pax</span>
               </div>
               <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-200/80 text-[11px] font-semibold text-emerald-800">
@@ -525,22 +619,22 @@
                 <span class="text-emerald-500">•</span>
                 <span>Pelunasan H-30</span>
               </div>
-              <span class="text-[11px] text-slate-500 font-medium block mt-1.5">✓ Akad pasti mengikat flat — bebas biaya siluman</span>
+              <span class="text-[11px] text-slate-500 font-medium block mt-1.5">✓ Akad pasti flat — bebas biaya tersembunyi</span>
             </div>
 
             <!-- Specs List -->
             <ul id="pkg-1-features" class="space-y-3 text-xs text-slate-600 pt-4 border-t border-slate-100">
               <li class="flex items-start gap-2.5">
                 <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span><strong>Maskapai:</strong> <span id="pkg-1-airline">Qatar Airways / Saudia Airlines</span></span>
+                <span><strong>Maskapai:</strong> <span id="pkg-1-airline">Saudia Airlines Direct CGK - JED / MED</span></span>
               </li>
               <li class="flex items-start gap-2.5">
                 <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span><strong>Hotel Makkah:</strong> <span id="pkg-1-hotel-makkah">Maysan Al Maqam / Setaraf (±150m Pelataran)</span></span>
+                <span><strong>Hotel Makkah:</strong> <span id="pkg-1-hotel-makkah">Anjum Hotel Makkah / Setaraf (*4 - ±150m Pelataran)</span></span>
               </li>
               <li class="flex items-start gap-2.5">
                 <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span><strong>Hotel Madinah:</strong> <span id="pkg-1-hotel-madinah">Mirage Al Salam / Jawharat (±100m Nabawi)</span></span>
+                <span><strong>Hotel Madinah:</strong> <span id="pkg-1-hotel-madinah">Rove Al Madinah / Setaraf (*4 - Depan Pintu 332)</span></span>
               </li>
               <li class="flex items-start gap-2.5">
                 <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -554,13 +648,13 @@
           </div>
 
           <div class="pt-6 mt-6 border-t border-slate-100">
-            <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20tertarik%20dengan%20Paket%20Umroh%20Akbar%20September%20(Rp%2029%20Juta,%20DP%205%20Juta).%20Mohon%20info%20ketersediaan%20seat." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 rounded-xl text-xs sm:text-sm transition">
-              Kunci Seat Akbar Sep (DP Rp 5 Jt) &rarr;
+            <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20tertarik%20dengan%20Paket%20Bintang%204%20(Umroh%20Akbar%20September)%20Promo%20Saudia%20Fair%20Rp%2029%20Juta%20(Normal%2031,5%20Jt).%20Mohon%20info%20ketersediaan%20seat." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 rounded-xl text-xs sm:text-sm transition">
+              Kunci Seat Bintang 4 (DP Rp 5 Jt) &rarr;
             </a>
           </div>
         </div>
 
-        <!-- Package 2: Umroh Paket Hemat Januari -->
+        <!-- Package 2: Paket Reguler / Hemat -->
         <div class="bg-white rounded-2xl border-2 border-emerald-600 p-6 sm:p-8 flex flex-col justify-between relative shadow-md">
           <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-700 text-white text-[11px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
             Pilihan Utama Keluarga &amp; Lansia
@@ -568,20 +662,27 @@
 
           <div class="space-y-6">
             <div class="flex items-center justify-between pt-1">
-              <span id="pkg-2-badge" class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold">10 Hari Khusyuk Awal Tahun</span>
+              <span id="pkg-2-badge" class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold">10 Hari Khusyuk • Pilihan Keluarga</span>
               <span class="text-xs text-slate-500 font-medium">Triple / Quad</span>
             </div>
             
             <div>
-              <h3 id="pkg-2-title" class="text-xl font-bold text-slate-900 tracking-tight">Umroh Paket Hemat Januari</h3>
+              <h3 id="pkg-2-title" class="text-xl font-bold text-slate-900 tracking-tight">Paket Reguler / Hemat</h3>
               <p class="text-xs text-slate-500 mt-1">Akses hotel rata ramah orang tua, cuaca Madinah sejuk &amp; nyaman</p>
             </div>
 
             <div class="pt-4 border-t border-slate-100">
-              <span class="text-xs text-slate-500 block">Biaya All-in Jamaah:</span>
-              <div class="flex items-baseline gap-1 mt-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-slate-500 block">Biaya Promo Saudia Fair:</span>
+                <span class="text-[10px] font-extrabold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-full">Hemat Rp 2,5 Jt</span>
+              </div>
+              <div class="flex items-center gap-2 mt-1">
+                <span class="text-xs line-through text-slate-400 font-medium">Rp 30.000.000</span>
+                <span class="text-[10px] text-slate-500">Harga Normal</span>
+              </div>
+              <div class="flex items-baseline gap-1 mt-0.5">
                 <span class="text-xs font-semibold text-slate-600">Rp</span>
-                <span id="pkg-2-price" class="text-3xl font-extrabold text-slate-900 tracking-tight tabular-nums">30.000.000</span>
+                <span id="pkg-2-price" class="text-3xl font-extrabold text-emerald-700 tracking-tight tabular-nums">27.500.000</span>
                 <span class="text-xs text-slate-500">/pax</span>
               </div>
               <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-200/80 text-[11px] font-semibold text-emerald-800">
@@ -596,19 +697,19 @@
             <ul id="pkg-2-features" class="space-y-3 text-xs text-slate-600 pt-4 border-t border-slate-100">
               <li class="flex items-start gap-2.5">
                 <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span><strong>Maskapai:</strong> <span id="pkg-2-airline">Saudia Airlines / IndiGo Direct-Connect</span></span>
+                <span><strong>Maskapai:</strong> <span id="pkg-2-airline">Saudia Airlines / Garuda Indonesia Direct</span></span>
               </li>
               <li class="flex items-start gap-2.5">
                 <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span><strong>Hotel Makkah:</strong> <span id="pkg-2-hotel-makkah">Nada Ajyad / Maysan (Akses Rata Ramah Lansia)</span></span>
+                <span><strong>Hotel Makkah:</strong> <span id="pkg-2-hotel-makkah">Rayyana Hotel Makkah / Setaraf (*3 - 300m Shuttle Ready)</span></span>
               </li>
               <li class="flex items-start gap-2.5">
                 <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span><strong>Hotel Madinah:</strong> <span id="pkg-2-hotel-madinah">Mirage Al Salam / Setaraf (±120m Nabawi)</span></span>
+                <span><strong>Hotel Madinah:</strong> <span id="pkg-2-hotel-madinah">Concorde Dar Al Khair / Setaraf (*3 - ±150m)</span></span>
               </li>
               <li class="flex items-start gap-2.5">
                 <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>Pendamping khusus lansia &amp; fasilitas kursi roda ready</span>
+                <span>Fasilitas kursi roda &amp; pendampingan khusus lansia</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -618,68 +719,75 @@
           </div>
 
           <div class="pt-6 mt-6 border-t border-slate-100">
-            <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20tertarik%20dengan%20Paket%20Umroh%20Hemat%20Januari%20(Rp%2030%20Juta,%20DP%205%20Juta).%20Mohon%20info%20ketersediaan%20seat." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-3.5 rounded-xl text-xs sm:text-sm transition shadow-sm">
-              Pilih Hemat Jan &amp; Kunci Kursi (DP 5 Jt) &rarr;
+            <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20tertarik%20dengan%20Paket%20Reguler%20/%20Hemat%20Promo%20Saudia%20Fair%20Rp%2027,5%20Juta%20(Normal%2030%20Jt).%20Mohon%20info%20ketersediaan%20seat." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-xs sm:text-sm shadow-md transition">
+              Pilih Paket Hemat &amp; Kunci Kursi (DP 5 Jt) &rarr;
             </a>
           </div>
         </div>
 
-        <!-- Package 3: Umroh Plus Turkey Desember -->
+        <!-- Package 3: Paket Bintang 5 / VIP -->
         <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 flex flex-col justify-between hover:border-slate-300 transition shadow-sm">
           <div class="space-y-6">
             <div class="flex items-center justify-between">
-              <span id="pkg-3-badge" class="px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-semibold">16 Hari • Spesial Musim Dingin</span>
-              <span class="text-xs text-slate-500 font-medium">Bintang 5</span>
+              <span id="pkg-3-badge" class="px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-semibold">Akses Eksklusif Pelataran Haram • 12 Hari</span>
+              <span class="text-xs text-slate-500 font-medium">Double / Quad</span>
             </div>
             
             <div>
-              <h3 id="pkg-3-title" class="text-xl font-bold text-slate-900 tracking-tight">Umroh Plus Turkey Desember</h3>
-              <p class="text-xs text-slate-500 mt-1">Wisata religi Istanbul &amp; Bosphorus Cruise + Ibadah Umroh Bintang 5</p>
+              <h3 id="pkg-3-title" class="text-xl font-bold text-slate-900 tracking-tight">Paket Bintang 5 / VIP</h3>
+              <p class="text-xs text-slate-500 mt-1">Hotel ring 1 pelataran Masjidil Haram &amp; Nabawi, mobilitas maksimal</p>
             </div>
 
             <div class="pt-4 border-t border-slate-100">
-              <span class="text-xs text-slate-500 block">Biaya All-in Jamaah:</span>
-              <div class="flex items-baseline gap-1 mt-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-slate-500 block">Biaya Promo Saudia Fair:</span>
+                <span class="text-[10px] font-extrabold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-full">Hemat Rp 2,5 Jt</span>
+              </div>
+              <div class="flex items-center gap-2 mt-1">
+                <span class="text-xs line-through text-slate-400 font-medium">Rp 33.500.000</span>
+                <span class="text-[10px] text-slate-500">Harga Normal</span>
+              </div>
+              <div class="flex items-baseline gap-1 mt-0.5">
                 <span class="text-xs font-semibold text-slate-600">Rp</span>
-                <span id="pkg-3-price" class="text-3xl font-extrabold text-slate-900 tracking-tight tabular-nums">53.000.000</span>
+                <span id="pkg-3-price" class="text-3xl font-extrabold text-emerald-700 tracking-tight tabular-nums">31.000.000</span>
                 <span class="text-xs text-slate-500">/pax</span>
               </div>
-              <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-200/80 text-[11px] font-semibold text-emerald-800">
+              <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-[11px] font-semibold text-slate-700">
                 <span>Cukup DP Rp 5 Juta untuk Kunci Kursi</span>
-                <span class="text-emerald-500">•</span>
+                <span class="text-slate-400">•</span>
                 <span>Pelunasan H-30</span>
               </div>
-              <span class="text-[11px] text-slate-500 font-medium block mt-1.5">✓ View Ka'bah &amp; Bosphorus Cruise Eksklusif</span>
+              <span class="text-[11px] text-slate-500 font-medium block mt-1.5">✓ Kamar eksklusif ring 1 tanpa perlu jalan jauh</span>
             </div>
 
             <!-- Specs List -->
             <ul id="pkg-3-features" class="space-y-3 text-xs text-slate-600 pt-4 border-t border-slate-100">
               <li class="flex items-start gap-2.5">
                 <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span><strong>Maskapai:</strong> <span id="pkg-3-airline">Turkish Airlines / Saudia PP</span></span>
+                <span><strong>Maskapai:</strong> <span id="pkg-3-airline">Saudia Airlines Direct CGK - MED (In Madinah Out Jeddah)</span></span>
               </li>
               <li class="flex items-start gap-2.5">
                 <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span><strong>Hotel Makkah:</strong> <span id="pkg-3-hotel-makkah">Anjum Bintang 5 (Tepat di Depan Pelataran)</span></span>
+                <span><strong>Hotel Makkah:</strong> <span id="pkg-3-hotel-makkah">Pullman Zamzam Tower (*5 - Depan Pelataran Haram)</span></span>
               </li>
               <li class="flex items-start gap-2.5">
                 <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span><strong>Hotel Madinah &amp; Turki:</strong> <span id="pkg-3-hotel-madinah">Bintang 5 Madinah &amp; Bosphorus Istanbul</span></span>
+                <span><strong>Hotel Madinah:</strong> <span id="pkg-3-hotel-madinah">Dar Al Taqwa (*5 - Depan Pintu Masuk Raudhah)</span></span>
               </li>
               <li class="flex items-start gap-2.5">
                 <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>City Tour: Blue Mosque, Hagia Sophia, Topkapi Palace</span>
+                <span>Fullboard buffet hotel bintang 5 &amp; Fast Track Handling</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span>Pemandu Sejarah Turki Berlisensi &amp; Muthowwif Sunnah</span>
+                <span>Akses pintu utama Masjidil Haram tanpa shuttle</span>
               </li>
             </ul>
           </div>
 
           <div class="pt-6 mt-6 border-t border-slate-100">
-            <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20tertarik%20dengan%20Paket%20Umroh%20Plus%20Turkey%20Desember%20(Rp%2053%20Juta,%20DP%205%20Juta).%20Mohon%20info%20ketersediaan%20seat." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 rounded-xl text-xs sm:text-sm transition">
-              Kunci Seat Turkey Des (DP Rp 5 Jt) &rarr;
+            <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20tertarik%20dengan%20Paket%20Bintang%205%20/%20VIP%20Promo%20Saudia%20Fair%20Rp%2031%20Juta%20(Normal%2033,5%20Jt).%20Mohon%20info%20ketersediaan%20seat." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 rounded-xl text-xs sm:text-sm transition">
+              Kunci Seat VIP Bintang 5 (DP Rp 5 Jt) &rarr;
             </a>
           </div>
         </div>
@@ -688,9 +796,9 @@
 
     </div>
   </section>
-
+  
   <!-- 6. WISE STYLE HEAD-TO-HEAD COMPARISON MATRIX -->
-  <section id="komparasi" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+  <section id="komparasi" class="py-16 sm:py-24 bg-white border-b border-slate-200 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       
       <div class="max-w-3xl">
@@ -773,7 +881,7 @@
   </section>
 
   <!-- 7. TABEL JADWAL KEBERANGKATAN INTERAKTIF -->
-  <section id="jadwal" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
+  <section id="jadwal" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -979,7 +1087,7 @@
   </section>
 
   <!-- 8. AUTHENTIC LEADERSHIP & ASATIDZAH SHOWCASE (NO FAKE INITIAL BADGES) -->
-  <section id="pembimbing" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+  <section id="pembimbing" class="py-16 sm:py-24 bg-white border-b border-slate-200 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
       <div class="max-w-3xl">
@@ -1082,12 +1190,14 @@
   </section>
 
   <!-- 9. CLEAN GALLERY & REAL FOOTAGE (MOBBIN MEDIA SECTION) -->
-  <section id="galeri" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+  <section id="galeri" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block mb-2">Dokumentasi Riil Keberangkatan</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-2">
+            <span>📷 Dokumentasi Riil &amp; Feed Instagram</span>
+          </div>
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900">
             Kekhusyukan &amp; Kebersamaan Jamaah H2C
           </h2>
@@ -1095,35 +1205,46 @@
             Dokumentasi otentik kegiatan jamaah kami di Tanah Air dan Dua Tanah Suci:
           </p>
         </div>
-        <a href="https://www.youtube.com/@h2cwisatamandiri" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 hover:text-emerald-800 transition">
-          Lihat Kanal YouTube H2C
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-        </a>
+        <div class="flex flex-wrap items-center gap-2.5">
+          <a href="https://www.instagram.com/h2c_wisata_mandiri?stkn=dGd4MW41cjE0YjNp" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-pink-700 hover:text-pink-800 transition bg-pink-50 border border-pink-200 px-3.5 py-2 rounded-xl shadow-sm">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span>Instagram @h2c_wisata_mandiri</span>
+          </a>
+          <a href="https://www.youtube.com/@h2cwisatamandiri" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 hover:text-emerald-800 transition bg-white border border-slate-200 px-3.5 py-2 rounded-xl shadow-sm">
+            <span>YouTube H2C</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
       </div>
 
-      <!-- Video & Photo Bento Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+      <!-- Featured Video Player Container -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         
-        <!-- Featured Video Embed (7 cols) -->
-        <div class="md:col-span-7 bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
-          <div id="featured-video-container" class="aspect-video bg-slate-950 relative">
-            <img src="./assets/vid_keberangkatan.jpg" alt="Video Dokumentasi Umroh H2C" width="700" height="394" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <button onclick="playFeaturedVideo('RR9o00v7FHI')" aria-label="Putar Video Dokumentasi Resmi H2C" class="w-16 h-16 rounded-full bg-emerald-700 hover:bg-emerald-600 text-white flex items-center justify-center shadow-lg transition transform hover:scale-105">
-                <svg class="w-6 h-6 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              </button>
-            </div>
-          </div>
-          <div class="p-5 text-left">
-            <h3 class="font-bold text-slate-900 text-base">Suasana Keberangkatan &amp; Pelepasan Jamaah Kloter Akbar</h3>
-            <p class="text-xs text-slate-500 mt-1">Dokumentasi resmi manasik intensif dan handling lounge Bandara Soekarno-Hatta.</p>
-          </div>
+        <!-- Main Video Screen (7 cols) -->
+        <div class="lg:col-span-7 bg-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-200 relative aspect-video flex items-center justify-center">
+          <iframe id="featured-video-frame" class="w-full h-full" src="https://www.youtube-nocookie.com/embed/Pj152wZ_0b0?rel=0&amp;modestbranding=1" title="Dokumentasi Perjalanan Umroh H2C" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
-        <!-- 3 Side Video Thumbnails (5 cols) -->
-        <div class="md:col-span-5 space-y-4">
+        <!-- Playlist Selector (5 cols) -->
+        <div class="lg:col-span-5 space-y-3">
           
-          <button onclick="playFeaturedVideo('xWyGuNIUgP8')" class="w-full bg-white rounded-xl border border-slate-200 p-3 flex items-center gap-4 hover:border-emerald-500 hover:shadow-md transition text-left group">
+          <button onclick="playFeaturedVideo('Pj152wZ_0b0')" class="w-full bg-white rounded-xl border-2 border-emerald-500 p-3 flex items-center gap-4 text-left group shadow-sm">
+            <div class="relative w-24 h-18 rounded-lg overflow-hidden shrink-0 bg-slate-900">
+              <img src="./assets/vid_keberangkatan.jpg" alt="Video Dokumentasi Umroh H2C" width="100" height="75" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center shadow-sm">
+                  <svg class="w-3 h-3 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="text-left flex-1 min-w-0">
+              <span class="text-[10px] font-bold text-emerald-700 uppercase tracking-wider block">Sedang Diputar</span>
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 leading-snug mt-0.5">Keberangkatan &amp; Bimbingan Jamaah</h4>
+              <p class="text-[11px] text-slate-500 mt-0.5">Pendampingan airport lounge CGK &amp; perjalanan nyaman.</p>
+            </div>
+          </button>
+
+          <button onclick="playFeaturedVideo('c_c-jF5_63A')" class="w-full bg-white rounded-xl border border-slate-200 p-3 flex items-center gap-4 hover:border-emerald-500 hover:shadow-md transition text-left group">
             <div class="relative w-24 h-18 rounded-lg overflow-hidden shrink-0 bg-slate-900">
               <img src="./assets/vid_kereta.jpg" alt="Kereta Cepat Haramain H2C" width="100" height="75" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
               <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
@@ -1133,9 +1254,9 @@
               </div>
             </div>
             <div class="text-left flex-1 min-w-0">
-              <span class="text-[10px] font-bold text-emerald-700 uppercase tracking-wider block">Fasilitas Utama</span>
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-emerald-800 leading-snug mt-0.5">Kereta Cepat Haramain</h4>
-              <p class="text-[11px] text-slate-500 mt-0.5">Makkah ke Madinah hanya 2 jam 20 menit tanpa macet.</p>
+              <span class="text-[10px] font-bold text-emerald-700 uppercase tracking-wider block">Fasilitas Eksekutif</span>
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-emerald-800 leading-snug mt-0.5">Kereta Cepat Haramain Express</h4>
+              <p class="text-[11px] text-slate-500 mt-0.5">Makkah ke Madinah 2 jam 15 menit, nyaman tanpa lelah.</p>
             </div>
           </button>
 
@@ -1175,193 +1296,527 @@
 
       </div>
 
+      <!-- Feed & Kloter Documentation Highlights (Ground Truth Instagram) -->
+      <div id="instagram-showcase" class="pt-8 border-t border-slate-200 space-y-8">
+        
+        <!-- Instagram Profile Mockup Header -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-7 shadow-xs">
+          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            
+            <!-- Avatar & Profile Info -->
+            <div class="flex items-center sm:items-start gap-4 sm:gap-6">
+              <!-- Avatar with Instagram Story Ring -->
+              <div class="relative shrink-0">
+                <div class="ig-story-ring rounded-full p-[2.5px]">
+                  <img src="./assets/logo-circle.png" alt="@h2c_wisata_mandiri profile" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-white object-cover bg-white">
+                </div>
+                <div class="absolute -bottom-1 -right-1 bg-emerald-600 text-white p-1 rounded-full border-2 border-white shadow-xs">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </div>
+              </div>
+
+              <!-- Names & Bio -->
+              <div class="space-y-1.5">
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="text-base sm:text-xl font-extrabold text-slate-900 tracking-tight flex items-center gap-1.5">
+                    h2c_wisata_mandiri
+                    <svg class="w-4 h-4 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  </h3>
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                    Akun Resmi PPIU
+                  </span>
+                </div>
+                <p class="text-xs sm:text-sm font-semibold text-slate-800">H2C Wisata Mandiri</p>
+                <div class="text-xs text-slate-600 max-w-xl space-y-0.5 leading-relaxed mt-1">
+                  <p>🕋 Niat ke Baitullah, kami siapkan jalannya</p>
+                  <p>📅 Ready seat Jan–Des 2026</p>
+                  <p>💸 Umrah Murah &amp; VIP</p>
+                  <p>🤍 InsyaAllah aman &amp; amanah • PPIU No. 26032300175410003</p>
+                </div>
+                <div class="pt-1.5 flex items-center gap-1 text-xs text-emerald-700 font-bold">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                  <a href="https://www.instagram.com/h2c_wisata_mandiri?stkn=dGd4MW41cjE0YjNp" target="_blank" rel="noopener noreferrer" class="hover:underline">instagram.com/h2c_wisata_mandiri</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stats & External CTA -->
+            <div class="w-full md:w-auto flex flex-col sm:flex-row md:flex-col items-stretch sm:items-center md:items-end justify-between gap-4 border-t md:border-t-0 pt-4 md:pt-0 border-slate-100">
+              <!-- Counter Pills -->
+              <div class="flex items-center justify-around sm:justify-start gap-5 sm:gap-6 text-center">
+                <div>
+                  <span class="block text-sm sm:text-base font-extrabold text-slate-900">278</span>
+                  <span class="block text-[11px] text-slate-500">Postingan</span>
+                </div>
+                <div class="w-px h-6 bg-slate-200"></div>
+                <div>
+                  <span class="block text-sm sm:text-base font-extrabold text-slate-900">778</span>
+                  <span class="block text-[11px] text-slate-500">Pengikut</span>
+                </div>
+                <div class="w-px h-6 bg-slate-200"></div>
+                <div>
+                  <span class="block text-sm sm:text-base font-extrabold text-slate-900">19</span>
+                  <span class="block text-[11px] text-slate-500">Mengikuti</span>
+                </div>
+              </div>
+
+              <!-- Buttons -->
+              <div class="flex items-center gap-2">
+                <a href="https://www.instagram.com/h2c_wisata_mandiri?stkn=dGd4MW41cjE0YjNp" target="_blank" rel="noopener noreferrer" 
+                   class="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-pink-600 via-rose-600 to-amber-500 hover:from-pink-700 hover:to-amber-600 text-white font-bold text-xs shadow-xs transition transform active:scale-95">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  <span>Ikuti di IG</span>
+                </a>
+                <a href="https://wa.me/6281316333001?text=Bismillah,%20Assalamu'alaikum%20Admin%20H2C.%20Saya%20melihat%20feed%20dokumentasi%20Instagram%20dan%20ingin%20tanya%20paket%20umroh." target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition">
+                  <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  <span>Tanya Admin</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Profile Nav Tabs (Instagram Style) -->
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-around sm:justify-center sm:gap-12 text-xs font-bold uppercase tracking-wider">
+            <button type="button" class="ig-tab flex items-center gap-2 py-1 text-slate-400 hover:text-slate-700 transition" onclick="filterIgGrid('all')">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+              <span>Semua</span>
+            </button>
+            <button type="button" class="ig-tab active flex items-center gap-2 py-1 text-emerald-700 border-b-2 border-emerald-700 transition" onclick="filterIgGrid('all')">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+              <span>Reels &amp; Feed</span>
+            </button>
+            <button type="button" class="ig-tab flex items-center gap-2 py-1 text-slate-400 hover:text-slate-700 transition" onclick="filterIgGrid('kloter')">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+              <span>Kloter 35</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Pills Bar (Horizontal Scroll Rail on Mobile) -->
+        <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto no-scrollbar pb-1 px-1 -mx-1">
+          <button type="button" onclick="filterIgGrid('all')" class="ig-filter-btn active shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#022c22] text-amber-300 border border-emerald-600/40 shadow-xs transition">
+            Semua Feed (12)
+          </button>
+          <button type="button" onclick="filterIgGrid('promo')" class="ig-filter-btn shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-emerald-500 hover:text-emerald-700 shadow-xs transition">
+            ✈️ Promo Saudia Fair (4)
+          </button>
+          <button type="button" onclick="filterIgGrid('testimoni')" class="ig-filter-btn shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-emerald-500 hover:text-emerald-700 shadow-xs transition">
+            💬 Reels Testimoni (3)
+          </button>
+          <button type="button" onclick="filterIgGrid('kloter')" class="ig-filter-btn shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-emerald-500 hover:text-emerald-700 shadow-xs transition">
+            🕋 Kloter 35 Makkah &amp; Madinah (5)
+          </button>
+        </div>
+
+        <!-- Dedicated 3-Column Instagram Feed Grid -->
+        <div id="ig-grid" class="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6">
+          
+          <!-- Item 1: Promo Saudia Fair 2026 -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="promo" onclick="openIgModal(0)">
+            <img src="./assets/feed_1.jpg" alt="Promo Saudia Fair 2026 Diskon Rp 2,5 Juta H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <!-- Reels Badge -->
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <!-- Views Pill -->
+            <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-amber-300 flex items-center gap-1">
+              <span>▶ 48.2K</span>
+            </div>
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-amber-300 mb-1">⚡ SAUDIA FAIR 2026</span>
+              <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Diskon Rp 2,5 Juta 10 Pendaftar Pertama Semua Paket Umroh</p>
+              <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
+                <span class="flex items-center gap-1">❤️ 2.1K</span>
+                <span class="flex items-center gap-1">💬 142</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Pak Wildan Testimoni -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="testimoni" onclick="openIgModal(1)">
+            <img src="./assets/feed_2.jpg" alt="Testimoni Pak Wildan Purbalingga Jamaah H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
+              <span>▶ 34.5K</span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-emerald-400 mb-1">💬 KATA JAMAAH</span>
+              <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Pak Wildan (Purbalingga): "Bukan Kami yang Bilang, Ini Kata Jamaah!"</p>
+              <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
+                <span class="flex items-center gap-1">❤️ 1.4K</span>
+                <span class="flex items-center gap-1">💬 89</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Promo Hook Diskon Rp 2,5 Juta -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="promo" onclick="openIgModal(2)">
+            <img src="./assets/feed_3.jpg" alt="Diskon Rp 2,5 Juta Semua Paket Umroh H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-amber-300 flex items-center gap-1">
+              <span>▶ 52.8K</span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-amber-300 mb-1">🔥 DISKON SPESIAL</span>
+              <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">DISKON RP 2,5 JUTA! Semua Paket Umroh Musim 1447H-1448H</p>
+              <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
+                <span class="flex items-center gap-1">❤️ 3.2K</span>
+                <span class="flex items-center gap-1">💬 210</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Pak Eko Budi Testimoni -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="testimoni" onclick="openIgModal(3)">
+            <img src="./assets/feed_4.jpg" alt="Testimoni Pak Eko Budi Jamaah H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
+              <span>▶ 29.7K</span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-emerald-400 mb-1">💬 KATA JAMAAH</span>
+              <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Pak Eko Budi: Fasilitas Airport Lounge &amp; Hotel Dekat Bikin Tenang</p>
+              <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
+                <span class="flex items-center gap-1">❤️ 1.8K</span>
+                <span class="flex items-center gap-1">💬 95</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Kloter 35 Perjalanan Selesai -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="kloter" onclick="openIgModal(4)">
+            <img src="./assets/feed_5.jpg" alt="Kloter 35 Perjalanan Umroh Telah Usai H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
+              <span>▶ 41.6K</span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-rose-300 mb-1">🤍 KLOTER 35</span>
+              <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Perjalanan Umroh Telah Usai 🤍 Momen Tahallul Jamaah Ihram Makkah</p>
+              <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
+                <span class="flex items-center gap-1">❤️ 2.5K</span>
+                <span class="flex items-center gap-1">💬 178</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Saudia Fair Event -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="promo" onclick="openIgModal(5)">
+            <img src="./assets/feed_6.jpg" alt="Liputan Booth Saudia Fair 2026 H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-amber-300 flex items-center gap-1">
+              <span>▶ 63.4K</span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-amber-300 mb-1">✈️ SAUDIA FAIR 2026</span>
+              <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Liputan Langsung Booth H2C di Saudia Fair: Konsultasi &amp; Booking Promo</p>
+              <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
+                <span class="flex items-center gap-1">❤️ 4.1K</span>
+                <span class="flex items-center gap-1">💬 312</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7: Mbah Satari Testimoni -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="testimoni" onclick="openIgModal(6)">
+            <img src="./assets/feed_7.jpg" alt="Testimoni Jamaah Lansia Mbah Satari H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
+              <span>▶ 38.9K</span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-emerald-400 mb-1">👴 RAMAH LANSIA</span>
+              <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Mbah Satari: Bimbingan Ibadah Sabar &amp; Pendampingan Kursi Roda Thawaf</p>
+              <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
+                <span class="flex items-center gap-1">❤️ 2.8K</span>
+                <span class="flex items-center gap-1">💬 164</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 8: City Tour Masjid Quba -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="kloter" onclick="openIgModal(7)">
+            <img src="./assets/feed_8.jpg" alt="City Tour Masjid Quba Madinah Kloter 35 H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
+              <span>▶ 31.2K</span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-teal-300 mb-1">🕌 ZIARAH SUNNAH</span>
+              <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Kloter 35: City Tour Masjid Quba Madinah &amp; Shalat Sunnah Bernilai Umroh</p>
+              <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
+                <span class="flex items-center gap-1">❤️ 1.9K</span>
+                <span class="flex items-center gap-1">💬 82</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 9: 5 Alasan Umroh September -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="promo" onclick="openIgModal(8)">
+            <img src="./assets/feed_9.jpg" alt="5 Alasan Umroh September Layak Dipertimbangkan H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-amber-300 flex items-center gap-1">
+              <span>▶ 45.3K</span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-amber-300 mb-1">💡 TIPS IBADAH</span>
+              <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">5 Alasan Umroh September Layak Dipertimbangkan: Nyaman &amp; Lebih Lengang</p>
+              <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
+                <span class="flex items-center gap-1">❤️ 2.2K</span>
+                <span class="flex items-center gap-1">💬 119</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 10: City Tour Masjid Nabawi -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="kloter" onclick="openIgModal(9)">
+            <img src="./assets/feed_10.jpg" alt="City Tour Masjid Nabawi Madinah Kloter 35 H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
+              <span>▶ 58.7K</span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-emerald-400 mb-1">🌿 MASJID NABAWI</span>
+              <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Kloter 35: Suasana Syahdu Sholat Berjamaah &amp; Ziarah Raudhah Syarifah</p>
+              <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
+                <span class="flex items-center gap-1">❤️ 3.6K</span>
+                <span class="flex items-center gap-1">💬 245</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 11: Prosesi Umroh & Tahallul -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="kloter" onclick="openIgModal(10)">
+            <img src="./assets/feed_11.jpg" alt="Prosesi Umroh dan Tahallul Cukur Kloter 35 H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
+              <span>▶ 36.4K</span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-emerald-400 mb-1">🕋 TAHALLUL SUNNAH</span>
+              <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Kloter 35: Momen Kebahagiaan Pasca Selesai Rukun Umroh di Bukit Marwah</p>
+              <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
+                <span class="flex items-center gap-1">❤️ 2.0K</span>
+                <span class="flex items-center gap-1">💬 130</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 12: Momen Kepulangan -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="kloter" onclick="openIgModal(11)">
+            <img src="./assets/feed_12.jpg" alt="Momen Kepulangan Haru Jamaah Kloter 35 H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
+              <span>▶ 49.1K</span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+              <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-rose-300 mb-1">❤️ UKHUWAH ISLAMIYAH</span>
+              <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Kloter 35: Momen Pelukan Haru &amp; Kepulangan Sehat Selamat di Tanah Air</p>
+              <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
+                <span class="flex items-center gap-1">❤️ 3.3K</span>
+                <span class="flex items-center gap-1">💬 228</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Callout Banner Below Feed -->
+        <div class="bg-gradient-to-r from-[#022c22] via-[#064e3b] to-[#022c22] rounded-2xl p-6 sm:p-8 text-white text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 border border-emerald-500/30 shadow-md">
+          <div class="space-y-1.5 max-w-xl">
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 font-black text-[10px] uppercase tracking-wider">
+              REAL-TIME UPDATE
+            </span>
+            <h4 class="text-lg sm:text-xl font-extrabold tracking-tight text-white">
+              Ingin Lihat Dokumentasi Harian &amp; Siaran Langsung dari Baitullah?
+            </h4>
+            <p class="text-xs sm:text-sm text-emerald-100/90 leading-relaxed">
+              Ikuti akun resmi kami di Instagram <strong>@h2c_wisata_mandiri</strong> untuk memantau keberangkatan setiap kloter, review hotel, dan tips manasik terkini.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
+            <a href="https://www.instagram.com/h2c_wisata_mandiri?stkn=dGd4MW41cjE0YjNp" target="_blank" rel="noopener noreferrer" 
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-pink-600 via-rose-600 to-amber-500 hover:from-pink-700 hover:to-amber-600 text-white font-extrabold text-sm shadow-lg transition">
+              <span>Buka Instagram @h2c_wisata_mandiri</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
-  <!-- 9.5 TESTIMONI JAMAAH & KELUARGA (HIGH-TRUST SOCIAL PROOF) -->
-  <section id="testimoni" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+  <!-- 9.5 TESTIMONI JAMAAH & KELUARGA (BUKAN KAMI YANG BILANG, INI KATA JAMAAH) -->
+  <section id="testimoni" class="py-16 sm:py-24 bg-white border-b border-slate-200 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
-      <!-- Section Header with Trust Metrics -->
+      <!-- Section Header with Authentic Instagram Branding -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2 border-b border-slate-100">
         <div class="max-w-2xl">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">
             <span class="text-amber-500">★★★★★</span>
-            <span>Ulasan Nyata Jemaah &amp; Keluarga</span>
+            <span>Bukan Kami yang Bilang</span>
           </div>
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
-            Kisah Nyata: Berangkat Tenang, Pulang Membawa Berkah
+            INI KATA JAMAAH
           </h2>
           <p class="text-sm sm:text-base text-slate-600 mt-2 leading-relaxed">
-            Dengarkan pengalaman otentik jemaah yang telah beribadah bersama H2C Wisata Mandiri. Dari bimbingan ramah lansia, kedekatan hotel, hingga menu masakan khas nusantara:
+            Dengarkan pengalaman otentik jemaah yang telah beribadah bersama H2C Wisata Mandiri. Dari bimbingan ramah lansia, kedekatan hotel, hingga kepastian fasilitas:
           </p>
         </div>
 
-        <!-- Google Reviews Trust Badge -->
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 flex items-center gap-4 shrink-0 shadow-xs">
-          <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center font-bold text-xl text-slate-900 shadow-xs">
-            4.9
+        <div class="shrink-0 flex items-center gap-3">
+          <div class="flex -space-x-2 overflow-hidden">
+            <div class="inline-block h-9 w-9 rounded-full ring-2 ring-white bg-emerald-700 text-white font-bold flex items-center justify-center text-xs">PR</div>
+            <div class="inline-block h-9 w-9 rounded-full ring-2 ring-white bg-slate-800 text-white font-bold flex items-center justify-center text-xs">PW</div>
+            <div class="inline-block h-9 w-9 rounded-full ring-2 ring-white bg-emerald-800 text-white font-bold flex items-center justify-center text-xs">PE</div>
+            <div class="inline-block h-9 w-9 rounded-full ring-2 ring-white bg-amber-700 text-white font-bold flex items-center justify-center text-xs">MS</div>
           </div>
-          <div class="text-left">
-            <div class="flex items-center gap-1 text-amber-400 text-sm">
-              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              <span class="text-xs font-bold text-slate-700 ml-1">4.9 / 5.0</span>
-            </div>
-            <p class="text-xs text-slate-500 mt-0.5">1.420+ Ulasan Jamaah &amp; Alumni</p>
-            <span class="text-[10px] font-bold text-emerald-700 block uppercase tracking-wide">Terverifikasi Siskopatuh</span>
+          <div>
+            <div class="text-xs font-bold text-slate-900">4.9 / 5.0 Rating Jamaah</div>
+            <div class="text-[11px] text-slate-500">Berdasarkan testimoni nyata feed Instagram</div>
           </div>
         </div>
       </div>
 
-      <!-- Testimonial Cards Grid (6 High-Trust Pillars) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- 4 Testimonial Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Card 1: Bawa Orang Tua & Fasilitas Ramah Lansia -->
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 hover:shadow-md transition">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-50 text-amber-800 border border-amber-200">
-                Ramah Lansia &amp; Kursi Roda
-              </span>
-              <span class="text-amber-400 text-xs font-bold">★★★★★</span>
-            </div>
-            <blockquote class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
-              "Khawatir sekali bawa ibu usia 74 tahun yang harus pakai kursi roda. MasyaAllah tim muthowif H2C (Ust. Ammikus) bener-bener telaten dampingi. Tawaf didorongkan pelan, sa'i dibimbing doa tanpa buru-buru. Ibu saya sampai menangis haru di depan Ka'bah karena ibadah begitu tenang tanpa merasa merepotkan."
-            </blockquote>
-          </div>
-          <div class="pt-4 mt-4 border-t border-slate-200/80 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 font-bold flex items-center justify-center text-xs shrink-0">
-              RJ
-            </div>
-            <div class="min-w-0">
-              <h4 class="text-xs font-bold text-slate-900 truncate">Hj. Ratna Juwita &amp; Ibunda</h4>
-              <p class="text-[11px] text-slate-500 truncate">Kloter Nov 2025 • Jakarta Timur</p>
-              <span class="text-[10px] text-emerald-700 font-semibold block">✓ Verifikasi SISKOPATUH</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2: Hotel Beneran Dekat Tanpa Tanjakan -->
+        <!-- Card 1: Pak Rizki (Cilacap) -->
         <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 hover:shadow-md transition">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
-                Hotel 3 Mnt Pelataran
+                Hotel Dekat &amp; Makan Enak
               </span>
               <span class="text-amber-400 text-xs font-bold">★★★★★</span>
             </div>
-            <blockquote class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
-              "Banyak travel klaim 'dekat', pas datang ternyata harus naik shuttle atau nanjak tanjakan curam bikin betis pegal. Di H2C, hotel Maysan Al Maqam beneran cuma 3 menit jalan santai ke pelataran Masjidil Haram. Bisa kejar shalat berjamaah 5 waktu di saf depan, mau balik ke kamar buat istirahat siang sangat dekat."
-            </blockquote>
+            <div>
+              <span class="text-xs font-bold text-emerald-700 block uppercase tracking-wider mb-1.5">Pelayanan Ramah, Hotel Dekat, Makan Enak</span>
+              <blockquote class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
+                &ldquo;Alhamdulillah pelayanan staf dan muthowif H2C sangat ramah dan sigap. Hotel benar-benar dekat dengan masjid sehingga tidak lelah jalan kaki, dan masakan katering nusantara selalu cocok di lidah.&rdquo;
+              </blockquote>
+            </div>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-200/80 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 font-bold flex items-center justify-center text-xs shrink-0">
-              BH
+            <div class="w-10 h-10 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-sm">
+              PR
             </div>
             <div class="min-w-0">
-              <h4 class="text-xs font-bold text-slate-900 truncate">Bpk. Bambang Hernawan &amp; Istri</h4>
-              <p class="text-[11px] text-slate-500 truncate">Umroh Reguler 9 Hari • Harapan Indah Bekasi</p>
-              <span class="text-[10px] text-emerald-700 font-semibold block">✓ Verifikasi SISKOPATUH</span>
+              <h4 class="text-xs font-bold text-slate-900 truncate">Pak Rizki</h4>
+              <p class="text-[11px] text-slate-500 truncate">Cilacap, Jawa Tengah</p>
+              <span class="text-[10px] text-emerald-700 font-semibold block">✓ Alumni Umroh H2C</span>
             </div>
           </div>
         </div>
 
-        <!-- Card 3: Katering Prasmanan Selera Nusantara -->
+        <!-- Card 2: Pak Wildan (Purbalingga) -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 hover:shadow-md transition">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                Bimbingan Sunnah
+              </span>
+              <span class="text-amber-400 text-xs font-bold">★★★★★</span>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-emerald-700 block uppercase tracking-wider mb-1.5">Pendampingan Ibadah Sabar &amp; Tuntas</span>
+              <blockquote class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
+                &ldquo;Bimbingan manasik dari Tanah Air sampai pelaksanaan rukun umroh di Makkah sangat sabar dan tuntas. Ustadz muthowif membimbing langkah demi langkah sesuai sunnah tanpa tergesa-gesa.&rdquo;
+              </blockquote>
+            </div>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-200/80 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-800 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-sm">
+              PW
+            </div>
+            <div class="min-w-0">
+              <h4 class="text-xs font-bold text-slate-900 truncate">Pak Wildan</h4>
+              <p class="text-[11px] text-slate-500 truncate">Purbalingga, Jawa Tengah</p>
+              <span class="text-[10px] text-emerald-700 font-semibold block">✓ Alumni Umroh H2C</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Pak Eko Budi -->
         <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 hover:shadow-md transition">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-50 text-blue-800 border border-blue-200">
-                Katering Nusantara Full
+                Kepastian Jadwal
               </span>
               <span class="text-amber-400 text-xs font-bold">★★★★★</span>
             </div>
-            <blockquote class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
-              "Sebagai dokter, saya sangat perhatikan asupan gizi jemaah agar tidak maag atau drop. Luar biasa katering H2C: masakan nusantara 3x sehari selalu hangat dan higienis. Ada rendang empuk, soto ayam, sayur lodeh, dan sambal terasi. Keluarga makan dengan lahap, stamina prima untuk tawaf &amp; sa'i setiap hari."
-            </blockquote>
+            <div>
+              <span class="text-xs font-bold text-emerald-700 block uppercase tracking-wider mb-1.5">Kepastian Jadwal &amp; Fasilitas Sesuai Janji</span>
+              <blockquote class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
+                &ldquo;Jadwal keberangkatan terjamin pasti tanpa undur atau drama delay. Fasilitas hotel dan transportasi bus eksekutif real sesuai yang dijanjikan di awal, tidak ada pungutan biaya tambahan terselubung.&rdquo;
+              </blockquote>
+            </div>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-200/80 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 font-bold flex items-center justify-center text-xs shrink-0">
-              HK
+            <div class="w-10 h-10 rounded-full bg-emerald-800 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-sm">
+              PE
             </div>
             <div class="min-w-0">
-              <h4 class="text-xs font-bold text-slate-900 truncate">dr. Hendra Kurniawan &amp; Keluarga (5 Org)</h4>
-              <p class="text-[11px] text-slate-500 truncate">Kloter Syaban 1446H • Cikarang Selatan</p>
-              <span class="text-[10px] text-emerald-700 font-semibold block">✓ Verifikasi SISKOPATUH</span>
+              <h4 class="text-xs font-bold text-slate-900 truncate">Pak Eko Budi</h4>
+              <p class="text-[11px] text-slate-500 truncate">Jakarta</p>
+              <span class="text-[10px] text-emerald-700 font-semibold block">✓ Alumni Umroh H2C</span>
             </div>
           </div>
         </div>
 
-        <!-- Card 4: Nol Biaya Siluman & Akad Transparan -->
+        <!-- Card 4: Mbah Safari -->
         <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 hover:shadow-md transition">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
-              <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-purple-50 text-purple-800 border border-purple-200">
-                Nol Biaya Siluman
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-50 text-amber-800 border border-amber-200">
+                Ramah Lansia
               </span>
               <span class="text-amber-400 text-xs font-bold">★★★★★</span>
             </div>
-            <blockquote class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
-              "Paling trauma dengar cerita travel yang minta uang tambahan mendadak saat di airport atau di tanah suci. Di H2C, sejak setor DP 5 juta sampai pelunasan, nominalnya fixed hitam di atas putih. Airport lounge, handling koper sampai depan kamar hotel, dan air zam-zam 5L resmi sudah tercover semua tanpa biaya siluman."
-            </blockquote>
+            <div>
+              <span class="text-xs font-bold text-emerald-700 block uppercase tracking-wider mb-1.5">Sangat Terbantu Pendampingan Lansia &amp; Kursi Roda</span>
+              <blockquote class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
+                &ldquo;Sebagai jamaah sepuh, saya sangat bersyukur dan terbantu dengan tim handling H2C yang siap mendampingi kursi roda saat thawaf dan sa'i. Ibadah berjalan aman, khusyuk, dan tenang.&rdquo;
+              </blockquote>
+            </div>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-200/80 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 font-bold flex items-center justify-center text-xs shrink-0">
-              RH
-            </div>
-            <div class="min-w-0">
-              <h4 class="text-xs font-bold text-slate-900 truncate">Bpk. H. Rahmat Hidayat</h4>
-              <p class="text-[11px] text-slate-500 truncate">Umroh Awal Musim • Wiraswasta Karawang</p>
-              <span class="text-[10px] text-emerald-700 font-semibold block">✓ Verifikasi SISKOPATUH</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 5: Kereta Cepat Haramain Cepat & Nyaman -->
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 hover:shadow-md transition">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-teal-50 text-teal-800 border border-teal-200">
-                Kereta Cepat Haramain
-              </span>
-              <span class="text-amber-400 text-xs font-bold">★★★★★</span>
-            </div>
-            <blockquote class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
-              "Perjalanan Makkah ke Madinah cuma 2 jam 15 menit dengan Haramain High Speed Rail! Sangat sejuk, senyap, pemandangan gurun indah, bebas mabuk darat naik bus 6 jam. Begitu mendarat di Madinah kondisi fisik masih sangat fit untuk ziarah ke Raudhah. Koper besar sudah diangkut tim logistik terpisah."
-            </blockquote>
-          </div>
-          <div class="pt-4 mt-4 border-t border-slate-200/80 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 font-bold flex items-center justify-center text-xs shrink-0">
+            <div class="w-10 h-10 rounded-full bg-amber-700 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-sm">
               MS
             </div>
             <div class="min-w-0">
-              <h4 class="text-xs font-bold text-slate-900 truncate">Ibu drg. Maya Safira &amp; Suami</h4>
-              <p class="text-[11px] text-slate-500 truncate">Umroh Plus Kereta Cepat • Tangerang Selatan</p>
-              <span class="text-[10px] text-emerald-700 font-semibold block">✓ Verifikasi SISKOPATUH</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 6: Muthowif Lulusan Madinah & Bimbingan Sunnah -->
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 hover:shadow-md transition">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
-                Bimbingan Sesuai Sunnah
-              </span>
-              <span class="text-amber-400 text-xs font-bold">★★★★★</span>
-            </div>
-            <blockquote class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
-              "Bimbingan Ustadz Imam Santoso Lc MA sangat mendalam dan ilmiah. Tidak ada ritual aneh-aneh yang memberatkan, semua tata cara ibadah dituntun sesuai dalil shahih Rasulullah ﷺ. Sebelum terbang ada manasik 2 kali teori &amp; praktek simulasi miniatur Ka'bah sampai jemaah benar-benar mantap."
-            </blockquote>
-          </div>
-          <div class="pt-4 mt-4 border-t border-slate-200/80 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 font-bold flex items-center justify-center text-xs shrink-0">
-              AF
-            </div>
-            <div class="min-w-0">
-              <h4 class="text-xs font-bold text-slate-900 truncate">Bpk. Achmad Fauzan, S.T.</h4>
-              <p class="text-[11px] text-slate-500 truncate">Kloter Awal Musim • Jakarta Selatan</p>
-              <span class="text-[10px] text-emerald-700 font-semibold block">✓ Verifikasi SISKOPATUH</span>
+              <h4 class="text-xs font-bold text-slate-900 truncate">Mbah Safari</h4>
+              <p class="text-[11px] text-slate-500 truncate">Banyumas, Jawa Tengah</p>
+              <span class="text-[10px] text-emerald-700 font-semibold block">✓ Jamaah Lansia H2C</span>
             </div>
           </div>
         </div>
@@ -1372,9 +1827,9 @@
       <div class="p-6 rounded-2xl bg-emerald-900 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           <h4 class="font-bold text-base text-white">Ingin Bergabung Bersama Ratusan Jamaah H2C Musim Ini?</h4>
-          <p class="text-xs text-emerald-200 mt-0.5">Kunci kursi sekarang dengan DP Rp 5 Juta. Sisa pelunasan H-30 sebelum keberangkatan.</p>
+          <p class="text-xs text-emerald-200 mt-0.5">Kunci kursi sekarang dengan DP Rp 5 Juta. Manfaatkan Promo Saudia Fair diskon Rp 2,5 Juta.</p>
         </div>
-        <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20sudah%20membaca%20testimoni%20jemaah%20H2C.%20Saya%20tertarik%20konsultasi%20paket%20umroh%20untuk%20keluarga." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white hover:bg-emerald-50 text-emerald-900 font-bold text-xs px-5 py-3 rounded-xl shadow-md transition shrink-0">
+        <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20sudah%20membaca%20testimoni%20jemaah%20H2C%20(Pak%20Rizki,%20Pak%20Wildan,%20Pak%20Eko%20Budi,%20Mbah%20Safari).%20Saya%20tertarik%20konsultasi%20paket%20umroh%20untuk%20keluarga." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white hover:bg-emerald-50 text-emerald-900 font-bold text-xs px-5 py-3 rounded-xl shadow-md transition shrink-0">
           <svg class="w-4 h-4 fill-emerald-700" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.079-1.892-.442-1.615-.668-2.651-2.316-2.732-2.423-.081-.107-.655-.872-.655-1.66 0-.788.411-1.176.556-1.336.145-.16.316-.2.422-.2.106 0 .211 0 .304.006.103.005.239-.039.373.285.14.339.479 1.168.522 1.254.043.086.072.187.014.302-.058.115-.088.187-.175.289-.087.102-.183.228-.261.306-.09.088-.184.184-.079.364.105.18.468.772.998 1.246.685.611 1.26.8 1.44.887.18.087.286.074.391-.047.105-.121.452-.526.572-.707.12-.181.24-.151.405-.09.165.06 1.054.497 1.235.587.18.09.3.136.345.213.045.077.045.447-.099.852z"/></svg>
           Konsultasi Pengalaman Jemaah
         </a>
@@ -1455,7 +1910,7 @@
   </section>
 
   <!-- 11. FORM KONSULTASI & KANTOR RESMI -->
-  <section id="kontak" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
+  <section id="kontak" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
         
@@ -1631,7 +2086,7 @@
           <span id="sticky-status-label" class="text-[10px] font-bold text-emerald-400 uppercase tracking-wide">CS Online • Balas &lt; 5 Mnt</span>
         </div>
         <span id="sticky-title-label" class="text-xs font-bold text-slate-100 block truncate">Kunci Seat DP Rp 5 Juta</span>
-        <span id="sticky-sub-label" class="text-[10px] text-slate-400 block truncate">Mulai Rp 29 Jt • PPIU Akreditasi A</span>
+        <span id="sticky-sub-label" class="text-[10px] text-slate-400 block truncate">Mulai Rp 27,5 Jt (Saudia Fair) • PPIU Akreditasi A</span>
       </div>
       <a id="sticky-wa-btn" href="https://wa.me/6281316333001?text=Bismillah,%20Assalamu'alaikum%20H2C.%20Saya%20ingin%20cek%20ketersediaan%20seat%20paket%20Umroh%202026/2027." target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-md flex items-center gap-1.5 shrink-0 transition">
         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.079-1.892-.442-1.615-.668-2.651-2.316-2.732-2.423-.081-.107-.655-.872-.655-1.66 0-.788.411-1.176.556-1.336.145-.16.316-.2.422-.2.106 0 .211 0 .304.006.103.005.239-.039.373.285.14.339.479 1.168.522 1.254.043.086.072.187.014.302-.058.115-.088.187-.175.289-.087.102-.183.228-.261.306-.09.088-.184.184-.079.364.105.18.468.772.998 1.246.685.611 1.26.8 1.44.887.18.087.286.074.391-.047.105-.121.452-.526.572-.707.12-.181.24-.151.405-.09.165.06 1.054.497 1.235.587.18.09.3.136.345.213.045.077.045.447-.099.852z"/></svg>
@@ -2004,6 +2459,263 @@
         console.warn('Hydration notice:', err);
       }
     })();
+  </script>
+
+  <!-- INSTAGRAM POST LIGHTBOX MODAL -->
+  <div id="ig-modal" class="fixed inset-0 z-[100] bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 transition-opacity" role="dialog" aria-modal="true" aria-labelledby="ig-modal-title">
+    <div class="relative w-full max-w-3xl bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-200 flex flex-col md:flex-row max-h-[92vh]">
+      <!-- Modal Close Button -->
+      <button type="button" onclick="closeIgModal()" class="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-slate-950/70 text-white flex items-center justify-center hover:bg-slate-900 transition focus:outline-none" aria-label="Tutup modal">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <!-- Media Column -->
+      <div class="md:w-1/2 bg-slate-950 flex items-center justify-center relative min-h-[260px] md:min-h-0">
+        <img id="ig-modal-img" src="" alt="Detail Feed Instagram H2C" class="max-h-[60vh] md:max-h-[80vh] w-full object-contain">
+        <div id="ig-modal-badge" class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-amber-400 text-slate-950 shadow-xs">
+          SAUDIA FAIR 2026
+        </div>
+      </div>
+
+      <!-- Info Column -->
+      <div class="md:w-1/2 p-5 sm:p-7 flex flex-col justify-between overflow-y-auto bg-white">
+        <div class="space-y-4">
+          <!-- Profile Header In Modal -->
+          <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
+            <div class="ig-story-ring rounded-full p-[2px] shrink-0">
+              <img src="./assets/logo-circle.png" alt="Logo" class="w-10 h-10 rounded-full object-cover border border-white">
+            </div>
+            <div>
+              <div class="flex items-center gap-1">
+                <span class="font-extrabold text-sm text-slate-900">h2c_wisata_mandiri</span>
+                <svg class="w-3.5 h-3.5 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </div>
+              <span id="ig-modal-location" class="text-[11px] text-slate-500">Makkah Al-Mukarramah</span>
+            </div>
+          </div>
+
+          <!-- Stats / Category Pill -->
+          <div class="flex items-center gap-2 text-xs font-semibold">
+            <span id="ig-modal-views" class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">▶ 48.2K Ditonton</span>
+            <span id="ig-modal-likes" class="px-2.5 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200">❤️ 2.1K Disukai</span>
+          </div>
+
+          <!-- Title & Caption -->
+          <div>
+            <h4 id="ig-modal-title" class="font-extrabold text-base text-slate-900 leading-snug mb-2"></h4>
+            <p id="ig-modal-caption" class="text-xs sm:text-sm text-slate-600 leading-relaxed"></p>
+          </div>
+        </div>
+
+        <!-- Action CTAs In Modal -->
+        <div class="pt-5 mt-4 border-t border-slate-100 flex flex-col gap-2">
+          <a id="ig-modal-cta" href="https://www.instagram.com/h2c_wisata_mandiri?stkn=dGd4MW41cjE0YjNp" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-pink-600 via-rose-600 to-amber-500 hover:from-pink-700 hover:to-amber-600 text-white font-bold text-xs shadow-xs transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span>Buka di Instagram Official</span>
+          </a>
+          <a id="ig-modal-wa" href="https://wa.me/6281316333001?text=Bismillah,%20Assalamu'alaikum%20Admin%20H2C.%20Saya%20ingin%20tanya%20program%20umroh." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition">
+            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            <span>Tanya Paket Lewat WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instagram Feed & Saudia Fair Interactivity Script -->
+  <script>
+    var igFeedData = [
+      {
+        img: './assets/feed_1.jpg',
+        badge: 'SAUDIA FAIR 2026',
+        category: 'promo',
+        title: 'Promo Umroh Akbar & Jadwal Musim 1447H-1448H',
+        views: '48.2K',
+        likes: '2.1K',
+        location: 'Bandara Soekarno-Hatta (CGK)',
+        caption: 'Bismillah, Promo Saudia Fair 2026! Dapatkan potongan langsung Rp 2.500.000 untuk 10 pendaftar pertama semua paket umroh H2C Wisata Mandiri. Tersedia program 9 hari, 10 hari hemat, dan 16 hari plus Turkey bersama Saudia Airlines, Qatar Airways, dan Garuda Indonesia.'
+      },
+      {
+        img: './assets/feed_2.jpg',
+        badge: 'KATA JAMAAH',
+        category: 'testimoni',
+        title: 'Ini Kata Jamaah: Pak Wildan (Purbalingga)',
+        views: '34.5K',
+        likes: '1.4K',
+        location: 'Terminal 3 Soekarno-Hatta',
+        caption: '\'Bukan kami yang bilang, ini kata jamaah!\' Kesan mendalam dan kepuasan Pak Wildan dari Purbalingga atas pelayanan muthowif mukim H2C yang ramah, pendampingan ibadah dari awal manasik hingga tiba kembali di Tanah Air.'
+      },
+      {
+        img: './assets/feed_3.jpg',
+        badge: 'DISKON RP 2,5 JUTA',
+        category: 'promo',
+        title: 'DISKON RP 2,5 JUTA! Semua Paket Umroh',
+        views: '52.8K',
+        likes: '3.2K',
+        location: 'Kantor H2C Wisata Mandiri',
+        caption: 'Promo hook eksklusif Saudia Fair 2026! Diskon langsung Rp 2,5 Juta untuk seluruh paket reguler, VIP, maupun keluarga. Kepastian seat, tiket PP ber-PNR di awal, dan jaminan 5 Pasti Umroh Kemenag RI.'
+      },
+      {
+        img: './assets/feed_4.jpg',
+        badge: 'KATA JAMAAH',
+        category: 'testimoni',
+        title: 'Ini Kata Jamaah: Pak Eko Budi',
+        views: '29.7K',
+        likes: '1.8K',
+        location: 'King Abdulaziz Airport, Jeddah',
+        caption: 'Alhamdulillah kepuasan Pak Eko Budi menikmati fasilitas airport lounge VIP sebelum terbang serta hotel yang sangat dekat dengan pintu gerbang Masjidil Haram.'
+      },
+      {
+        img: './assets/feed_5.jpg',
+        badge: 'KLOTER 35',
+        category: 'kloter',
+        title: 'Perjalanan Umroh Telah Usai 🤍 (Momen Tahallul)',
+        views: '41.6K',
+        likes: '2.5K',
+        location: 'Pelataran Masjidil Haram, Makkah',
+        caption: '\'Perjalanan Umroh Telah Usai 🤍\'. Potret penuh rasa syukur jamaah Kloter 35 mengenakan pakaian ihram setelah menuntaskan tawaf, sa\'i dan tahallul sunnah di Makkah.'
+      },
+      {
+        img: './assets/feed_6.jpg',
+        badge: 'SAUDIA FAIR 2026',
+        category: 'promo',
+        title: 'Liputan Booth Resmi Saudia Fair 2026',
+        views: '63.4K',
+        likes: '4.1K',
+        location: 'Saudia Fair 2026, Jakarta',
+        caption: 'Suasana kemeriahan dan antusiasme pengunjung di booth resmi H2C Wisata Mandiri pada ajang Saudia Fair 2026. Konsultasi langsung jadwal keberangkatan dan booking seat promo.'
+      },
+      {
+        img: './assets/feed_7.jpg',
+        badge: 'RAMAH LANSIA',
+        category: 'testimoni',
+        title: 'Ini Kata Jamaah: Mbah Satari',
+        views: '38.9K',
+        likes: '2.8K',
+        location: 'Makkah Al-Mukarramah',
+        caption: 'Bimbingan ibadah sabar dan penuh kasih sayang untuk jamaah senior. Mbah Satari menceritakan kemudahan tawaf dan sa\'i dengan pendampingan kursi roda khusus dari muthowif H2C.'
+      },
+      {
+        img: './assets/feed_8.jpg',
+        badge: 'KLOTER 35',
+        category: 'kloter',
+        title: 'City Tour Masjid Quba Madinah - Kloter 35',
+        views: '31.2K',
+        likes: '1.9K',
+        location: 'Masjid Quba, Madinah',
+        caption: 'Ziarah sunnah Kloter 35 ke Masjid Quba Madinah. Menunaikan sholat 2 rakaat yang pahalanya setara satu kali ibadah umroh, dibimbing muthowif mukim berilmu.'
+      },
+      {
+        img: './assets/feed_9.jpg',
+        badge: 'TIPS IBADAH',
+        category: 'promo',
+        title: '5 Alasan Umroh September Layak Dipertimbangkan',
+        views: '45.3K',
+        likes: '2.2K',
+        location: 'Studio H2C Wisata',
+        caption: '5 alasan mengapa bulan September adalah waktu terbaik untuk menunaikan umroh: suasana tawaf lebih longgar, cuaca mulai bersahabat, dan seat promo Saudia Airlines masih tersedia.'
+      },
+      {
+        img: './assets/feed_10.jpg',
+        badge: 'KLOTER 35',
+        category: 'kloter',
+        title: 'City Tour & Sholat di Masjid Nabawi Madinah',
+        views: '58.7K',
+        likes: '3.6K',
+        location: 'Masjid Nabawi, Madinah',
+        caption: 'Alhamdulillah jamaah Kloter 35 berkumpul di pelataran Masjid Nabawi Madinah. Hotel selangkah ke pintu utama, memudahkan ibadah fardhu berjamaah dan ziarah Raudhah Syarifah.'
+      },
+      {
+        img: './assets/feed_11.jpg',
+        badge: 'KLOTER 35',
+        category: 'kloter',
+        title: 'Prosesi Umroh & Tahallul Cukur Sunnah',
+        views: '36.4K',
+        likes: '2.0K',
+        location: 'Bukit Marwah, Makkah',
+        caption: 'Kebahagiaan dan kelegaan jamaah Kloter 35 saat tahallul cukur gundul di Bukit Marwah setelah tuntas melaksanakan rukun umroh dengan bimbingan sesuai sunnah.'
+      },
+      {
+        img: './assets/feed_12.jpg',
+        badge: 'KLOTER 35',
+        category: 'kloter',
+        title: 'Momen Kepulangan Haru Jamaah Umroh',
+        views: '49.1K',
+        likes: '3.3K',
+        location: 'Terminal Kedatangan Bandara',
+        caption: 'Momen haru ukhuwah islamiyah dan pelukan hangat kepulangan jamaah Kloter 35 tiba di Tanah Air dengan selamat dan membawa kenangan ibadah yang mabrur.'
+      }
+    ];
+
+    function openIgModal(idx) {
+      var data = igFeedData[idx];
+      if (!data) return;
+      var modal = document.getElementById('ig-modal');
+      var img = document.getElementById('ig-modal-img');
+      var badge = document.getElementById('ig-modal-badge');
+      var location = document.getElementById('ig-modal-location');
+      var views = document.getElementById('ig-modal-views');
+      var likes = document.getElementById('ig-modal-likes');
+      var title = document.getElementById('ig-modal-title');
+      var caption = document.getElementById('ig-modal-caption');
+      var waLink = document.getElementById('ig-modal-wa');
+
+      img.src = data.img;
+      img.alt = data.title;
+      badge.textContent = data.badge;
+      location.textContent = data.location;
+      views.textContent = '▶ ' + data.views + ' Ditonton';
+      likes.textContent = '❤️ ' + data.likes + ' Disukai';
+      title.textContent = data.title;
+      caption.textContent = data.caption;
+      waLink.href = 'https://wa.me/6281316333001?text=Bismillah,%20Assalamu\'alaikum%20Admin%20H2C.%20Saya%20tertarik%20dengan%20dokumentasi%20' + encodeURIComponent(data.title) + '%20di%20Instagram%20H2C.';
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeIgModal() {
+      var modal = document.getElementById('ig-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function filterIgGrid(category) {
+      var cards = document.querySelectorAll('.ig-card');
+      var buttons = document.querySelectorAll('.ig-filter-btn');
+
+      buttons.forEach(function(btn) {
+        btn.classList.remove('bg-[#022c22]', 'text-amber-300', 'border-emerald-600/40');
+        btn.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
+      });
+
+      if (window.event && window.event.currentTarget && window.event.currentTarget.classList && window.event.currentTarget.classList.contains('ig-filter-btn')) {
+        window.event.currentTarget.classList.remove('bg-white', 'text-slate-700', 'border-slate-200');
+        window.event.currentTarget.classList.add('bg-[#022c22]', 'text-amber-300', 'border-emerald-600/40');
+      }
+
+      cards.forEach(function(card) {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeIgModal();
+    });
+    var igModal = document.getElementById('ig-modal');
+    if (igModal) {
+      igModal.addEventListener('click', function(e) {
+        if (e.target === igModal) closeIgModal();
+      });
+    }
   </script>
 
 </body>

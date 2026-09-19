@@ -324,3 +324,22 @@ Gunakan checklist ini untuk mengaudit setiap komponen sebelum perilisan:
 - [ ] **Wise-Style Transparency:** Tersedia tabel perbandingan transparan head-to-head H2C vs Travel Umum.
 - [ ] **Real Proof of Entity:** SK PPIU No. 26032300175410003, tautan verifikasi SIMPU Kemenag, Rekening BSI a.n. PT HDUAC Berkah Mandiri, dan alamat kantor Semarang & Bekasi tercantum akurat.
 - [ ] **Performance & Accessibility:** Tidak ada aset SVG berat atau animasi berlebih, mobile tap-target minimal 44x44px, kontras WCAG AA/AAA terpenuhi.
+
+---
+
+## 9. Instagram Feed Visual Characteristics & Saudia Fair 2026 Integration
+
+Berdasarkan analisis visual feed Instagram resmi `@h2c_wisata_mandiri`:
+1. **Palet Warna Identitas Feed:**
+   - Deep Forest Green (`#064e3b`, `#022c22`): Latar suasana Hero dan banner promo.
+   - Rich Emerald (`#047857`, `#10b981`): Aksen tombol, verifikasi status, dan pendaran atmosfer.
+   - Warm Golden Amber (`#facc15`, `#fbbf24`): Penegas diskon dan promo hook (*"DISKON RP 2,5 JUTA!"*).
+   - Deep Slate/Navy (`#0f172a`): Latar pill badges dan teks kontras tinggi.
+2. **Promo Hook Sentral:**
+   - *"SAUDIA FAIR 2026 - DISKON RP 2,5 JUTA! SEMUA PAKET UMROH"*
+   - Hadir pada sticky top announcement bar dan kicker badge section Hero.
+3. **Instagram Feed Showcase Layout:**
+   - Grid 3 kolom (`grid-cols-3`) responsif desktop & mobile, merefleksikan feed resmi Instagram.
+   - 12 aset riil (`feed_1.jpg` hingga `feed_12.jpg`) dengan badge Reels, jumlah tayang/like saat hover, serta lightbox modal interaktif.
+   - File komponen rujukan mandiri: `ig_theme_components.html`.
+

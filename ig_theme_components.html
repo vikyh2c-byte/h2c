@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Komponen UI Instagram Theme & Saudia Fair 2026 | H2C Wisata Mandiri</title>
+  <meta name="description" content="Koleksi komponen UI desain visual bertema feed Instagram @h2c_wisata_mandiri: palet warna Forest Green & Emerald, banner Saudia Fair 2026 Diskon Rp2,5 Juta, dan 3-column interactive feed grid.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22',
+            },
+            amber: {
+              300: '#fde047',
+              400: '#facc15',
+              500: '#fbbf24',
+              600: '#d97706',
+            },
+            navy: {
+              900: '#0f172a',
+              950: '#020617',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+    .ig-story-gradient {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+    .ig-badge-glow {
+      box-shadow: 0 0 20px -2px rgba(250, 204, 21, 0.4);
+    }
+    .forest-glow {
+      background: radial-gradient(circle at 50% 20%, rgba(16, 185, 129, 0.15), transparent 70%);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-100 text-slate-800 antialiased selection:bg-amber-400 selection:text-slate-950">
+
+  <!-- TOP BAR KETERANGAN DOKUMEN -->
+  <aside class="bg-slate-900 text-slate-300 py-3 border-b border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-bold text-white uppercase tracking-wider">H2C Design System</span>
+        <span class="text-slate-500">•</span>
+        <span class="text-slate-300">Tema Feed Instagram @h2c_wisata_mandiri & Saudia Fair 2026</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <a href="#palette" class="hover:text-amber-400 transition">1. Palet Warna</a>
+        <a href="#promo-banner" class="hover:text-amber-400 transition">2. Saudia Fair Banner</a>
+        <a href="#hero-preview" class="hover:text-amber-400 transition">3. Hero Atmosphere</a>
+        <a href="#ig-showcase" class="hover:text-amber-400 transition">4. 3-Column Instagram Grid</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================================================================= -->
+  <!-- 1. COLOR PALETTE SPECIFICATION -->
+  <!-- ================================================================= -->
+  <section id="palette" class="py-12 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div class="border-b border-slate-100 pb-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
+          Color Architecture
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">Palet Warna Sesuai Feed Instagram @h2c_wisata_mandiri</h2>
+        <p class="text-sm text-slate-600 mt-1 max-w-3xl">
+          Diekstrak langsung dari aset grafis promosi &amp; reels resmi Instagram H2C. Mengombinasikan nuansa Deep Forest Green sebagai pondasi syar'i &amp; tenang, Rich Emerald untuk kesegaran, serta Warm Golden Amber untuk highlight promo diskon Saudia Fair 2026.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        <!-- Forest 950 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-xs">
+          <div class="h-20 rounded-lg bg-[#022c22] border border-black/10 flex items-end p-2 text-white font-mono text-xs font-bold">#022c22</div>
+          <h3 class="font-bold text-slate-900 text-sm mt-2.5">Deep Forest Dark</h3>
+          <p class="text-xs text-slate-500">Hero background, dark surfaces, header strip</p>
+        </div>
+        <!-- Forest 900 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-xs">
+          <div class="h-20 rounded-lg bg-[#064e3b] border border-black/10 flex items-end p-2 text-white font-mono text-xs font-bold">#064e3b</div>
+          <h3 class="font-bold text-slate-900 text-sm mt-2.5">Forest Green</h3>
+          <p class="text-xs text-slate-500">Card headers, brand accents, primary buttons</p>
+        </div>
+        <!-- Emerald 700 / 500 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-xs">
+          <div class="h-20 rounded-lg bg-[#047857] border border-black/10 flex items-end p-2 text-white font-mono text-xs font-bold">#047857</div>
+          <h3 class="font-bold text-slate-900 text-sm mt-2.5">Rich Emerald</h3>
+          <p class="text-xs text-slate-500">Trust badges, icon rings, active navigation</p>
+        </div>
+        <!-- Golden Amber 400 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-xs">
+          <div class="h-20 rounded-lg bg-[#facc15] border border-black/10 flex items-end p-2 text-slate-950 font-mono text-xs font-black">#facc15</div>
+          <h3 class="font-bold text-slate-900 text-sm mt-2.5">Golden Amber</h3>
+          <p class="text-xs text-slate-500">Badge "DISKON RP2,5 JUTA!", callouts, stars</p>
+        </div>
+        <!-- Navy Slate 900 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-xs">
+          <div class="h-20 rounded-lg bg-[#0f172a] border border-black/10 flex items-end p-2 text-white font-mono text-xs font-bold">#0f172a</div>
+          <h3 class="font-bold text-slate-900 text-sm mt-2.5">Deep Slate Pill</h3>
+          <p class="text-xs text-slate-500">Pill badges, high-contrast kicker backgrounds</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 2. SAUDIA FAIR 2026 PROMO BANNER -->
+  <!-- ================================================================= -->
+  <section id="promo-banner" class="py-12 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2.5 py-1 rounded border border-amber-300">
+          Component 1
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">Saudia Fair 2026 Promo Banner (Top Bar &amp; Kicker)</h2>
+        <p class="text-sm text-slate-600 mt-1">Hook promosi utama dari feed Instagram: Diskon Rp2,5 Juta untuk semua paket umroh dengan batas kuota pendaftar pertama.</p>
+      </div>
+
+      <!-- Preview 1: Top Announcement Bar -->
+      <div class="rounded-2xl overflow-hidden border border-emerald-900/40 shadow-md">
+        <div class="bg-[#022c22] text-white py-2.5 px-4 sm:px-6 border-b border-emerald-600/30">
+          <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 text-xs sm:text-sm">
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 font-black text-[11px] uppercase tracking-wider shadow-xs">
+                ✈️ SAUDIA FAIR 2026
+              </span>
+              <span class="font-extrabold text-amber-300 tracking-wide uppercase">DISKON RP 2,5 JUTA!</span>
+              <span class="text-slate-300 text-xs hidden md:inline">Semua Paket Umroh 1447–1448H • Kuota Terbatas 10 Pendaftar Pertama</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <a href="https://wa.me/6281234567890?text=Bismillah%20Saya%20ingin%20klaim%20Voucher%20Saudia%20Fair%202026%20Diskon%20Rp2,5%20Juta" 
+                 target="_blank" rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs transition shadow-xs">
+                <span>Klaim Promo</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preview 2: Hero Section Kicker Badge -->
+      <div class="p-6 rounded-2xl bg-[#022c22] border border-emerald-800/60 shadow-lg">
+        <p class="text-xs text-emerald-300 mb-3 font-semibold">Tampilan Kicker Badge di Dalam Hero Section:</p>
+        <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-2 rounded-xl bg-[#064e3b]/80 border border-emerald-400/40 text-xs shadow-md">
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-amber-400 text-slate-950 font-black text-[11px] uppercase tracking-wider">
+            SAUDIA FAIR 2026
+          </span>
+          <span class="font-extrabold text-amber-300 tracking-tight text-xs sm:text-sm">DISKON RP 2,5 JUTA!</span>
+          <span class="text-slate-200 text-xs hidden sm:inline">• Semua Paket Umroh • Pesawat Saudia Direct Madinah</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 3. HERO SECTION ATMOSPHERE PREVIEW -->
+  <!-- ================================================================= -->
+  <section id="hero-preview" class="py-12 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
+          Component 2
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">Hero Atmosphere (Deep Forest &amp; Rich Emerald)</h2>
+        <p class="text-sm text-slate-600 mt-1">Transformasi dari latar belakang slate gelap biasa ke nuansa identitas visual feed Instagram: Deep Forest Green (#022c22, #064e3b) dengan aksen emas hangat.</p>
+      </div>
+
+      <!-- Hero Demo Box -->
+      <div class="relative rounded-3xl overflow-hidden bg-gradient-to-b from-[#022c22] via-[#043427] to-[#022c22] border border-emerald-900/60 p-6 sm:p-12 text-white shadow-2xl">
+        <!-- Radial Glow -->
+        <div class="absolute inset-0 forest-glow pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-3xl space-y-5">
+          <!-- Saudia Fair Badge -->
+          <div class="inline-flex flex-wrap items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0f172a]/90 border border-amber-400/50 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+            <span class="font-bold text-amber-300 text-xs tracking-wide uppercase">SAUDIA FAIR 2026</span>
+            <span class="text-slate-400 text-xs">•</span>
+            <span class="text-white font-extrabold text-xs">DISKON RP 2,5 JUTA! SEMUA PAKET UMROH</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            Ibadah Umroh Tenang &amp; Khusyuk Sesuai Sunnah Bersama <span class="text-amber-300">H2C Wisata Mandiri</span>
+          </h1>
+
+          <p class="text-base text-slate-300 leading-relaxed max-w-2xl">
+            Biro perjalanan umroh resmi berizin PPIU Kemenag No. 26032300175410003 (Akreditasi A). Pasti jadwalnya, hotel bintang 5 ring 1 depan pelataran, bimbingan muthowif bersanad, dan transparansi rincian biaya tanpa biaya tersembunyi.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="#paket" class="px-6 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-sm transition shadow-lg ig-badge-glow">
+              Klaim Diskon Saudia Fair (Rp2,5 Juta)
+            </a>
+            <a href="#galeri" class="px-6 py-3.5 rounded-xl bg-[#064e3b] hover:bg-[#047857] text-white border border-emerald-500/30 font-bold text-sm transition">
+              Lihat Feed &amp; Dokumentasi Asli
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 4. INSTAGRAM FEED SHOWCASE SECTION (3-COLUMN INTERACTIVE GRID) -->
+  <!-- ================================================================= -->
+  <section id="ig-showcase" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <!-- Section Intro Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-slate-200">
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-bold uppercase tracking-wider mb-3">
+            <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+            <span>Dokumentasi Nyata di Lapangan</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            Feed Instagram Resmi <span class="text-emerald-800">@h2c_wisata_mandiri</span>
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 mt-2 leading-relaxed">
+            Bukan sekadar foto brosur pemanis. Simak dokumentasi riil ribuan jamaah kami di Tanah Suci: dari keberangkatan Bandara Soekarno-Hatta, bimbingan manasik sunnah, ziarah Raudhah, hingga testimoni haru kepulangan.
+          </p>
+        </div>
+
+        <!-- Follow on IG Button -->
+        <a href="https://www.instagram.com/h2c_wisata_mandiri?stkn=dGd4MW41cjE0YjNp" 
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-800 to-[#022c22] hover:from-emerald-700 hover:to-[#064e3b] text-white font-bold text-sm shadow-md transition shrink-0 group">
+          <svg class="w-5 h-5 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>Follow @h2c_wisata_mandiri</span>
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Instagram Profile Mockup Card -->
+      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-5 sm:p-8 max-w-4xl mx-auto">
+        <!-- Profile Header Area -->
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 pb-6 border-b border-slate-100">
+          <!-- Avatar with Instagram Story Ring -->
+          <div class="relative shrink-0">
+            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full p-[3px] bg-gradient-to-tr from-amber-400 via-emerald-600 to-[#022c22]">
+              <div class="w-full h-full rounded-full bg-white p-1">
+                <img src="./assets/logo-circle.png" alt="Profile @h2c_wisata_mandiri" class="w-full h-full object-cover rounded-full">
+              </div>
+            </div>
+            <!-- Story Reel Badge -->
+            <span class="absolute bottom-0 right-1 px-1.5 py-0.5 rounded-full bg-[#022c22] border border-amber-400 text-[10px] font-bold text-amber-300 shadow-xs">
+              LIVE
+            </span>
+          </div>
+
+          <!-- Profile Details -->
+          <div class="flex-1 text-center sm:text-left space-y-3">
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3">
+              <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight">h2c_wisata_mandiri</h3>
+              <!-- Blue Verified Badge -->
+              <span class="inline-flex items-center text-blue-500" title="Akun Resmi Terverifikasi">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              </span>
+              <!-- Follow / Message Buttons -->
+              <div class="flex items-center gap-2 mt-1 sm:mt-0">
+                <a href="https://www.instagram.com/h2c_wisata_mandiri?stkn=dGd4MW41cjE0YjNp" target="_blank" rel="noopener noreferrer" 
+                   class="px-3.5 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold transition">
+                  Ikuti
+                </a>
+                <a href="https://wa.me/6281234567890?text=Assalamu%27alaikum%20H2C,%20saya%20melihat%20feed%20Instagram%20dan%20ingin%20tanya%20paket%20umroh" target="_blank" rel="noopener noreferrer" 
+                   class="px-3.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold border border-slate-200 transition">
+                  Kirim Pesan
+                </a>
+              </div>
+            </div>
+
+            <!-- Profile Stats -->
+            <div class="flex items-center justify-center sm:justify-start gap-6 text-xs sm:text-sm text-slate-700">
+              <div><span class="font-extrabold text-slate-900">340+</span> postingan</div>
+              <div><span class="font-extrabold text-slate-900">15.4rb</span> pengikut</div>
+              <div><span class="font-extrabold text-slate-900">100%</span> dokumentasi asli</div>
+            </div>
+
+            <!-- Bio Text -->
+            <div class="text-xs sm:text-sm text-slate-600 leading-relaxed text-left">
+              <p class="font-bold text-slate-900">PT HDUAC Berkah Mandiri (H2C Wisata Mandiri)</p>
+              <p>🕋 Izin Resmi PPIU Kemenag RI No. 26032300175410003 (Akreditasi A)</p>
+              <p>✈️ Saudia Airlines Direct Madinah | Hotel Bintang 5 Ring 1 | Kereta Cepat Haramain</p>
+              <p class="text-emerald-700 font-semibold mt-0.5">⚡ Saudia Fair 2026: DISKON RP 2,5 JUTA SEMUA PAKET</p>
+              <a href="https://www.instagram.com/h2c_wisata_mandiri?stkn=dGd4MW41cjE0YjNp" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold block mt-1 text-xs">
+                🔗 instagram.com/h2c_wisata_mandiri
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instagram Tab Navigation -->
+        <div class="flex items-center justify-around border-b border-slate-200 text-xs font-bold uppercase tracking-wider text-slate-400 mt-2">
+          <button type="button" class="py-3 px-4 border-b-2 border-emerald-700 text-emerald-800 flex items-center gap-2">
+            <!-- Reels Icon -->
+            <svg class="w-4 h-4 text-emerald-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="m9 8 7 4-7 4V8z"/></svg>
+            <span>REELS &amp; FEED (12)</span>
+          </button>
+          <button type="button" class="py-3 px-4 hover:text-slate-700 flex items-center gap-2 transition" onclick="alert('Kunjungi Instagram @h2c_wisata_mandiri untuk melihat 340+ konten lengkap kami!')">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span class="hidden sm:inline">Semua Postingan</span>
+          </button>
+          <button type="button" class="py-3 px-4 hover:text-slate-700 flex items-center gap-2 transition" onclick="alert('Tag @h2c_wisata_mandiri di Instagram saat keberangkatan umroh Anda!')">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span class="hidden sm:inline">Ditandai Jamaah</span>
+          </button>
+        </div>
+
+        <!-- Category Quick Filter Pills -->
+        <div class="flex items-center gap-2 overflow-x-auto py-4 text-xs font-semibold no-scrollbar">
+          <button type="button" class="ig-filter-btn px-3 py-1.5 rounded-full bg-[#022c22] text-amber-300 shrink-0" data-category="all">
+            Semua (12 Post)
+          </button>
+          <button type="button" class="ig-filter-btn px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 shrink-0" data-category="promo">
+            Promo Saudia Fair (Rp2,5Jt)
+          </button>
+          <button type="button" class="ig-filter-btn px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 shrink-0" data-category="testimoni">
+            Kata Jamaah (Review)
+          </button>
+          <button type="button" class="ig-filter-btn px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 shrink-0" data-category="kloter35">
+            Dokumentasi Kloter 35
+          </button>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- THE 3-COLUMN INSTAGRAM GRID (12 REAL POSTS) -->
+        <!-- ============================================================= -->
+        <div id="instagram-grid" class="grid grid-cols-3 gap-1.5 sm:gap-3 md:gap-4 pt-2">
+          
+          <!-- ITEM 1: feed_1.jpg (Promo Umroh Akbar Musim Baru) -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] bg-slate-200 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer shadow-xs hover:shadow-md transition"
+               data-category="promo"
+               data-title="Brosur Promo Umroh Akbar & Jadwal Musim 1447H"
+               data-tag="SAUDIA FAIR PROMO"
+               data-views="48.2K"
+               data-likes="1.9K"
+               data-desc="Promo Umroh Akbar Musim Baru: Diskon Rp2,5 Juta untuk 10 pendaftar pertama! Pilihan maskapai Saudia Direct, Qatar Airways, dan Garuda Indonesia dengan hotel bintang 5 ring 1."
+               data-img="./assets/feed_1.jpg">
+            <img src="./assets/feed_1.jpg" alt="Promo Umroh Akbar Diskon 2,5 Juta H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <!-- Top Right Reel Icon -->
+            <div class="absolute top-2 right-2 p-1 rounded-md bg-black/50 text-white backdrop-blur-xs">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <!-- Bottom Left Discount Callout Badge -->
+            <div class="absolute bottom-2 left-2">
+              <span class="px-1.5 py-0.5 rounded bg-amber-400 text-slate-950 font-black text-[9px] sm:text-[11px] shadow-xs">
+                DISKON 2,5JT
+              </span>
+            </div>
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3 text-white text-center">
+              <span class="text-[10px] font-bold text-amber-300 uppercase tracking-wider text-left">PROMO AKBAR</span>
+              <div class="flex items-center justify-center gap-4 text-xs font-bold">
+                <span class="flex items-center gap-1">▶ 48.2K</span>
+                <span class="flex items-center gap-1">❤️ 1.9K</span>
+              </div>
+              <p class="text-[11px] text-slate-200 line-clamp-2 leading-tight">Brosur resmi jadwal & diskon Rp2,5 Juta 10 pendaftar pertama.</p>
+            </div>
+          </div>
+
+          <!-- ITEM 2: feed_2.jpg (Kata Jamaah - Pak Wildan Purbalingga) -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] bg-slate-200 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer shadow-xs hover:shadow-md transition"
+               data-category="testimoni"
+               data-title="Ini Kata Jamaah: Pak Wildan (Purbalingga)"
+               data-tag="TESTIMONI JAMAAH"
+               data-views="34.5K"
+               data-likes="1.4K"
+               data-desc="Bukan kami yang bilang, ini kata jamaah langsung di Bandara: 'Alhamdulillah pelayanan H2C sangat memuaskan, hotel benar-benar dekat dan muthowif sangat sabar membimbing.'"
+               data-img="./assets/feed_2.jpg">
+            <img src="./assets/feed_2.jpg" alt="Testimoni Pak Wildan Jamaah Umroh H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="absolute top-2 right-2 p-1 rounded-md bg-black/50 text-white backdrop-blur-xs">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2">
+              <span class="px-1.5 py-0.5 rounded bg-emerald-600 text-white font-bold text-[9px] sm:text-[11px] shadow-xs">
+                KATA JAMAAH
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3 text-white text-center">
+              <span class="text-[10px] font-bold text-emerald-300 uppercase tracking-wider text-left">PAK WILDAN</span>
+              <div class="flex items-center justify-center gap-4 text-xs font-bold">
+                <span class="flex items-center gap-1">▶ 34.5K</span>
+                <span class="flex items-center gap-1">❤️ 1.4K</span>
+              </div>
+              <p class="text-[11px] text-slate-200 line-clamp-2 leading-tight">Pengalaman nyata jamaah Purbalingga di Tanah Suci.</p>
+            </div>
+          </div>
+
+          <!-- ITEM 3: feed_3.jpg (DISKON RP2,5 JUTA! SEMUA PAKET UMROH) -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] bg-slate-200 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer shadow-xs hover:shadow-md transition"
+               data-category="promo"
+               data-title="DISKON RP2,5 JUTA! SEMUA PAKET UMROH"
+               data-tag="SPECIAL PROMO HOOK"
+               data-views="62.1K"
+               data-likes="3.2K"
+               data-desc="Potongan langsung Rp2.500.000 untuk semua paket umroh H2C Wisata Mandiri periode Saudia Fair 2026. Bawa keluarga beribadah ke Baitullah makin berkah & hemat."
+               data-img="./assets/feed_3.jpg">
+            <img src="./assets/feed_3.jpg" alt="Diskon Rp 2,5 Juta Semua Paket Umroh H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="absolute top-2 right-2 p-1 rounded-md bg-black/50 text-white backdrop-blur-xs">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2">
+              <span class="px-1.5 py-0.5 rounded bg-amber-400 text-slate-950 font-black text-[9px] sm:text-[11px] shadow-xs">
+                DISKON RP2,5JT!
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3 text-white text-center">
+              <span class="text-[10px] font-bold text-amber-300 uppercase tracking-wider text-left">SEMUA PAKET</span>
+              <div class="flex items-center justify-center gap-4 text-xs font-bold">
+                <span class="flex items-center gap-1">▶ 62.1K</span>
+                <span class="flex items-center gap-1">❤️ 3.2K</span>
+              </div>
+              <p class="text-[11px] text-slate-200 line-clamp-2 leading-tight">Promo potongan Rp2,5 Juta berlaku untuk semua varian paket.</p>
+            </div>
+          </div>
+
+          <!-- ITEM 4: feed_4.jpg (Ini Kata Jamaah: Pak Eko Budi) -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] bg-slate-200 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer shadow-xs hover:shadow-md transition"
+               data-category="testimoni"
+               data-title="Ini Kata Jamaah: Pak Eko Budi"
+               data-tag="TESTIMONI JAMAAH"
+               data-views="28.7K"
+               data-likes="1.1K"
+               data-desc="Testimoni jujur Pak Eko Budi setelah menyelesaikan rangkaian ibadah umroh: 'Dari lounge keberangkatan, handling koper, sampai muthowif di Mekkah semua terkoordinasi rapi.'"
+               data-img="./assets/feed_4.jpg">
+            <img src="./assets/feed_4.jpg" alt="Review Jamaah Pak Eko Budi H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="absolute top-2 right-2 p-1 rounded-md bg-black/50 text-white backdrop-blur-xs">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2">
+              <span class="px-1.5 py-0.5 rounded bg-emerald-600 text-white font-bold text-[9px] sm:text-[11px] shadow-xs">
+                PAK EKO BUDI
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3 text-white text-center">
+              <span class="text-[10px] font-bold text-emerald-300 uppercase tracking-wider text-left">REVIEW JUJUR</span>
+              <div class="flex items-center justify-center gap-4 text-xs font-bold">
+                <span class="flex items-center gap-1">▶ 28.7K</span>
+                <span class="flex items-center gap-1">❤️ 1.1K</span>
+              </div>
+              <p class="text-[11px] text-slate-200 line-clamp-2 leading-tight">Pengalaman tanpa repot bawa orang tua dan handling koper.</p>
+            </div>
+          </div>
+
+          <!-- ITEM 5: feed_5.jpg (Kloter 35: Perjalanan Umroh Telah Usai) -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] bg-slate-200 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer shadow-xs hover:shadow-md transition"
+               data-category="kloter35"
+               data-title="Dokumentasi Kloter 35: Perjalanan Umroh Telah Usai 🤍"
+               data-tag="KLOTER 35 RESMI"
+               data-views="41.9K"
+               data-likes="2.5K"
+               data-desc="Alhamdulillah, perjalanan ibadah umroh Kloter 35 H2C Wisata Mandiri telah tuntas. 14 jamaah pria setelah tahallul bercukur gundul dengan penuh rasa syukur di Makkah."
+               data-img="./assets/feed_5.jpg">
+            <img src="./assets/feed_5.jpg" alt="Kloter 35 Perjalanan Umroh Usai Tahallul H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="absolute top-2 right-2 p-1 rounded-md bg-black/50 text-white backdrop-blur-xs">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2">
+              <span class="px-1.5 py-0.5 rounded bg-emerald-800 text-white font-bold text-[9px] sm:text-[11px] shadow-xs">
+                KLOTER 35
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3 text-white text-center">
+              <span class="text-[10px] font-bold text-emerald-300 uppercase tracking-wider text-left">TAHALLUL AKBAR</span>
+              <div class="flex items-center justify-center gap-4 text-xs font-bold">
+                <span class="flex items-center gap-1">▶ 41.9K</span>
+                <span class="flex items-center gap-1">❤️ 2.5K</span>
+              </div>
+              <p class="text-[11px] text-slate-200 line-clamp-2 leading-tight">Momen haru & kebersamaan jamaah setelah menyelesaikan rukun umroh.</p>
+            </div>
+          </div>
+
+          <!-- ITEM 6: feed_6.jpg (SAUDIA FAIR 2026 Booth Event) -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] bg-slate-200 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer shadow-xs hover:shadow-md transition"
+               data-category="promo"
+               data-title="Suasana Booth Event SAUDIA FAIR 2026"
+               data-tag="SAUDIA FAIR 2026"
+               data-views="55.8K"
+               data-likes="2.8K"
+               data-desc="Kemeriahan booth H2C Wisata Mandiri di Saudia Fair 2026! Konsultasikan jadwal terbaik, pilih hotel bintang 5 favorit, dan dapatkan diskon langsung Rp2,5 Juta per orang."
+               data-img="./assets/feed_6.jpg">
+            <img src="./assets/feed_6.jpg" alt="Booth H2C di Saudia Fair 2026 Diskon 2.5 Juta" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="absolute top-2 right-2 p-1 rounded-md bg-black/50 text-white backdrop-blur-xs">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2">
+              <span class="px-1.5 py-0.5 rounded bg-teal-600 text-white font-bold text-[9px] sm:text-[11px] shadow-xs">
+                SAUDIA FAIR 2026
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3 text-white text-center">
+              <span class="text-[10px] font-bold text-amber-300 uppercase tracking-wider text-left">EVENT OFFICIAL</span>
+              <div class="flex items-center justify-center gap-4 text-xs font-bold">
+                <span class="flex items-center gap-1">▶ 55.8K</span>
+                <span class="flex items-center gap-1">❤️ 2.8K</span>
+              </div>
+              <p class="text-[11px] text-slate-200 line-clamp-2 leading-tight">Suasana pendaftaran dan voucher diskon tiket umroh Saudia.</p>
+            </div>
+          </div>
+
+          <!-- ITEM 7: feed_7.jpg (Ini Kata Jamaah: Mbah Satari - Lansia) -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] bg-slate-200 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer shadow-xs hover:shadow-md transition"
+               data-category="testimoni"
+               data-title="Ini Kata Jamaah: Mbah Satari (Layanan Ramah Lansia)"
+               data-tag="TESTIMONI LANSIA"
+               data-views="38.4K"
+               data-likes="1.8K"
+               data-desc="Kisah Mbah Satari yang sempat khawatir berangkat di usia senja. Berkat pendampingan muthowif sabar, kursi roda khusus, dan hotel nol meter, ibadah berjalan khusyuk & lancar."
+               data-img="./assets/feed_7.jpg">
+            <img src="./assets/feed_7.jpg" alt="Testimoni Jamaah Lansia Mbah Satari H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="absolute top-2 right-2 p-1 rounded-md bg-black/50 text-white backdrop-blur-xs">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2">
+              <span class="px-1.5 py-0.5 rounded bg-emerald-600 text-white font-bold text-[9px] sm:text-[11px] shadow-xs">
+                MBAH SATARI
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3 text-white text-center">
+              <span class="text-[10px] font-bold text-emerald-300 uppercase tracking-wider text-left">RAMAH LANSIA</span>
+              <div class="flex items-center justify-center gap-4 text-xs font-bold">
+                <span class="flex items-center gap-1">▶ 38.4K</span>
+                <span class="flex items-center gap-1">❤️ 1.8K</span>
+              </div>
+              <p class="text-[11px] text-slate-200 line-clamp-2 leading-tight">Bukti komitmen H2C mendampingi orang tua tercinta dengan sabar.</p>
+            </div>
+          </div>
+
+          <!-- ITEM 8: feed_8.jpg (Kloter 35: City Tour Masjid Quba) -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] bg-slate-200 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer shadow-xs hover:shadow-md transition"
+               data-category="kloter35"
+               data-title="Dokumentasi Kloter 35: City Tour Masjid Quba Madinah"
+               data-tag="CITY TOUR MADINAH"
+               data-views="31.2K"
+               data-likes="1.6K"
+               data-desc="Rombongan jamaah Kloter 35 berziarah dan melaksanakan sholat sunnah di Masjid Quba, masjid pertama yang dibangun Rasulullah SAW dengan pahala senilai ibadah umroh."
+               data-img="./assets/feed_8.jpg">
+            <img src="./assets/feed_8.jpg" alt="City Tour Masjid Quba Madinah Kloter 35 H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="absolute top-2 right-2 p-1 rounded-md bg-black/50 text-white backdrop-blur-xs">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2">
+              <span class="px-1.5 py-0.5 rounded bg-teal-700 text-white font-bold text-[9px] sm:text-[11px] shadow-xs">
+                MASJID QUBA
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3 text-white text-center">
+              <span class="text-[10px] font-bold text-teal-300 uppercase tracking-wider text-left">ZIARAH NABAWI</span>
+              <div class="flex items-center justify-center gap-4 text-xs font-bold">
+                <span class="flex items-center gap-1">▶ 31.2K</span>
+                <span class="flex items-center gap-1">❤️ 1.6K</span>
+              </div>
+              <p class="text-[11px] text-slate-200 line-clamp-2 leading-tight">Kunjungan napak tilas sejarah Islam dipandu muthowif berilmu.</p>
+            </div>
+          </div>
+
+          <!-- ITEM 9: feed_9.jpg (5 Alasan Umroh September Layak Dipertimbangkan) -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] bg-slate-200 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer shadow-xs hover:shadow-md transition"
+               data-category="promo"
+               data-title="5 Alasan Umroh September Layak Dipertimbangkan"
+               data-tag="TIPS & EDUKASI"
+               data-views="46.0K"
+               data-likes="2.1K"
+               data-desc="Kenapa memilih keberangkatan September? Cuaca mulai bersahabat, suasana tawaf lebih longgar dari puncak musim, harga paket lebih hemat, dan hotel ring 1 lebih mudah diakses."
+               data-img="./assets/feed_9.jpg">
+            <img src="./assets/feed_9.jpg" alt="5 Alasan Umroh September Layak Dipertimbangkan H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="absolute top-2 right-2 p-1 rounded-md bg-black/50 text-white backdrop-blur-xs">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2">
+              <span class="px-1.5 py-0.5 rounded bg-emerald-700 text-white font-bold text-[9px] sm:text-[11px] shadow-xs">
+                5 ALASAN UMROH
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3 text-white text-center">
+              <span class="text-[10px] font-bold text-amber-300 uppercase tracking-wider text-left">EDUKASI UMROH</span>
+              <div class="flex items-center justify-center gap-4 text-xs font-bold">
+                <span class="flex items-center gap-1">▶ 46.0K</span>
+                <span class="flex items-center gap-1">❤️ 2.1K</span>
+              </div>
+              <p class="text-[11px] text-slate-200 line-clamp-2 leading-tight">Insight memilih musim terbaik untuk ibadah lebih tenang.</p>
+            </div>
+          </div>
+
+          <!-- ITEM 10: feed_10.jpg (Kloter 35: City Tour Masjid Nabawi) -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] bg-slate-200 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer shadow-xs hover:shadow-md transition"
+               data-category="kloter35"
+               data-title="Dokumentasi Kloter 35: City Tour Masjid Nabawi Madinah"
+               data-tag="MASJID NABAWI"
+               data-views="52.3K"
+               data-likes="3.4K"
+               data-desc="Kebersamaan jamaah Kloter 35 di dalam kemegahan Masjid Nabawi. Didampingi ustadz muthowif untuk adab berziarah ke makam Rasulullah SAW dan sholat di Raudhah Syarifah."
+               data-img="./assets/feed_10.jpg">
+            <img src="./assets/feed_10.jpg" alt="City Tour Masjid Nabawi Madinah Kloter 35 H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="absolute top-2 right-2 p-1 rounded-md bg-black/50 text-white backdrop-blur-xs">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2">
+              <span class="px-1.5 py-0.5 rounded bg-emerald-800 text-white font-bold text-[9px] sm:text-[11px] shadow-xs">
+                MASJID NABAWI
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3 text-white text-center">
+              <span class="text-[10px] font-bold text-emerald-300 uppercase tracking-wider text-left">MADINAH SYARIFAH</span>
+              <div class="flex items-center justify-center gap-4 text-xs font-bold">
+                <span class="flex items-center gap-1">▶ 52.3K</span>
+                <span class="flex items-center gap-1">❤️ 3.4K</span>
+              </div>
+              <p class="text-[11px] text-slate-200 line-clamp-2 leading-tight">Sholat 40 waktu dan ziarah Raudhah dengan tasrih resmi.</p>
+            </div>
+          </div>
+
+          <!-- ITEM 11: feed_11.jpg (Kloter 35: Prosesi Umroh & Tahallul) -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] bg-slate-200 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer shadow-xs hover:shadow-md transition"
+               data-category="kloter35"
+               data-title="Dokumentasi Kloter 35: Prosesi Umroh &amp; Tahallul"
+               data-tag="PROSESI UMROH"
+               data-views="37.8K"
+               data-likes="2.0K"
+               data-desc="Senyum bahagia jamaah Kloter 35 mengenakan kain ihram pasca menyelesaikan rukun tawaf, sa'i, dan tahallul. Dibimbing langsung sesuai sunnah Rasulullah SAW."
+               data-img="./assets/feed_11.jpg">
+            <img src="./assets/feed_11.jpg" alt="Prosesi Umroh dan Tahallul Kloter 35 H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="absolute top-2 right-2 p-1 rounded-md bg-black/50 text-white backdrop-blur-xs">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2">
+              <span class="px-1.5 py-0.5 rounded bg-teal-800 text-white font-bold text-[9px] sm:text-[11px] shadow-xs">
+                PROSESI UMROH
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3 text-white text-center">
+              <span class="text-[10px] font-bold text-teal-300 uppercase tracking-wider text-left">TAWAF &amp; SA'I</span>
+              <div class="flex items-center justify-center gap-4 text-xs font-bold">
+                <span class="flex items-center gap-1">▶ 37.8K</span>
+                <span class="flex items-center gap-1">❤️ 2.0K</span>
+              </div>
+              <p class="text-[11px] text-slate-200 line-clamp-2 leading-tight">Rangkaian ibadah umroh dipandu langkah demi langkah.</p>
+            </div>
+          </div>
+
+          <!-- ITEM 12: feed_12.jpg (Kloter 35: Momen Kepulangan Haru & Bahagia) -->
+          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] bg-slate-200 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer shadow-xs hover:shadow-md transition"
+               data-category="kloter35"
+               data-title="Dokumentasi Kloter 35: Momen Kepulangan Jamaah"
+               data-tag="MOMEN KEPULANGAN"
+               data-views="44.6K"
+               data-likes="2.7K"
+               data-desc="Pelukan haru dan rasa persaudaraan antar jamaah Kloter 35 saat tiba kembali di tanah air dengan selamat membawa predikat umroh yang mabrur, insyaAllah."
+               data-img="./assets/feed_12.jpg">
+            <img src="./assets/feed_12.jpg" alt="Momen Kepulangan Kloter 35 Umroh H2C Mandiri" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="absolute top-2 right-2 p-1 rounded-md bg-black/50 text-white backdrop-blur-xs">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div class="absolute bottom-2 left-2">
+              <span class="px-1.5 py-0.5 rounded bg-teal-800 text-white font-bold text-[9px] sm:text-[11px] shadow-xs">
+                MOMEN KEPULANGAN
+              </span>
+            </div>
+            <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3 text-white text-center">
+              <span class="text-[10px] font-bold text-amber-300 uppercase tracking-wider text-left">KEPULANGAN</span>
+              <div class="flex items-center justify-center gap-4 text-xs font-bold">
+                <span class="flex items-center gap-1">▶ 44.6K</span>
+                <span class="flex items-center gap-1">❤️ 2.7K</span>
+              </div>
+              <p class="text-[11px] text-slate-200 line-clamp-2 leading-tight">Pulang membawa kenangan ibadah yang mabrur dan berkah.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer Action Inside Instagram Card -->
+        <div class="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div class="text-xs text-slate-500">
+            <span class="font-bold text-slate-700">Dokumentasi Asli:</span> Menggunakan foto/video riil jamaah H2C Wisata Mandiri tanpa rekayasa.
+          </div>
+          <a href="https://www.instagram.com/h2c_wisata_mandiri?stkn=dGd4MW41cjE0YjNp" 
+             target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center gap-2 text-xs font-bold text-emerald-800 hover:text-emerald-950 transition group">
+            <span>Buka Profil Lengkap di Instagram</span>
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- LIGHTBOX / MODAL PREVIEW UNTUK INTERACTIVE FEED -->
+  <!-- ================================================================= -->
+  <div id="ig-lightbox" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl border border-slate-200 animate-in fade-in zoom-in duration-200">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between px-5 py-4 border-b border-slate-100 bg-slate-50">
+        <div class="flex items-center gap-3">
+          <img src="./assets/logo-circle.png" alt="H2C Logo" class="w-8 h-8 rounded-full border border-slate-200">
+          <div>
+            <h4 class="font-extrabold text-sm text-slate-900 leading-none">@h2c_wisata_mandiri</h4>
+            <span id="modal-tag" class="text-[11px] font-bold text-emerald-700">DOKUMENTASI RIIL</span>
+          </div>
+        </div>
+        <button id="close-lightbox" type="button" class="w-8 h-8 rounded-full bg-slate-200 hover:bg-slate-300 flex items-center justify-center text-slate-700 font-bold transition">
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="grid grid-cols-1 sm:grid-cols-2">
+        <!-- Thumbnail Preview -->
+        <div class="bg-slate-900 flex items-center justify-center overflow-hidden aspect-[4/5] sm:aspect-auto">
+          <img id="modal-img" src="" alt="Detail Feed Instagram H2C" class="max-h-[380px] w-auto object-contain">
+        </div>
+
+        <!-- Meta Details -->
+        <div class="p-5 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="flex items-center gap-4 text-xs font-bold text-slate-500 border-b border-slate-100 pb-2">
+              <span id="modal-views" class="flex items-center gap-1 text-slate-900 font-extrabold">▶ 0</span>
+              <span id="modal-likes" class="flex items-center gap-1 text-rose-600 font-extrabold">❤️ 0</span>
+              <span class="text-emerald-700 font-bold ml-auto">Reel Terverifikasi</span>
+            </div>
+
+            <h3 id="modal-title" class="text-base font-extrabold text-slate-900 leading-snug">Judul Konten</h3>
+            <p id="modal-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">Deskripsi konten dokumentasi.</p>
+          </div>
+
+          <!-- Actions -->
+          <div class="space-y-2 pt-3 border-t border-slate-100">
+            <a id="modal-wa-btn" href="#" target="_blank" rel="noopener noreferrer" 
+               class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs transition shadow-sm">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.983.538 1.834.786 2.791.786 3.182 0 5.768-2.587 5.768-5.768 0-3.18-2.586-5.772-5.768-5.772zm3.392 8.232c-.144.405-.837.774-1.17.824-.312.045-.694.075-2.001-.466-1.558-.646-2.551-2.223-2.629-2.327-.077-.104-.633-.843-.633-1.608 0-.765.399-1.141.541-1.297.142-.156.312-.195.416-.195.104 0 .208.001.298.006.095.005.222-.036.347.264.129.31.442 1.077.481 1.155.039.078.065.169.013.273-.052.104-.078.169-.156.26-.078.091-.163.204-.233.274-.078.078-.16.163-.069.319.091.156.404.667.867 1.08 1.026.914 1.34 1.196 1.547 1.282.208.086.329.078.452-.065.123-.143.528-.616.671-.827.143-.211.286-.176.48-.104.195.071 1.235.582 1.447.688.212.106.353.159.405.249.052.091.052.529-.092.934z"/></svg>
+              <span>Konsultasi Paket Terkait Post Ini</span>
+            </a>
+            <a href="https://www.instagram.com/h2c_wisata_mandiri?stkn=dGd4MW41cjE0YjNp" target="_blank" rel="noopener noreferrer" 
+               class="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs transition border border-slate-200">
+              <span>Buka di Aplikasi Instagram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC INTERACTIVE -->
+  <script>
+    // Lightbox Modal Logic
+    const lightbox = document.getElementById('ig-lightbox');
+    const closeBtn = document.getElementById('close-lightbox');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalTag = document.getElementById('modal-tag');
+    const modalViews = document.getElementById('modal-views');
+    const modalLikes = document.getElementById('modal-likes');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalWaBtn = document.getElementById('modal-wa-btn');
+
+    document.querySelectorAll('.ig-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const title = card.getAttribute('data-title');
+        const tag = card.getAttribute('data-tag');
+        const views = card.getAttribute('data-views');
+        const likes = card.getAttribute('data-likes');
+        const desc = card.getAttribute('data-desc');
+        const img = card.getAttribute('data-img');
+
+        modalImg.src = img;
+        modalTitle.textContent = title;
+        modalTag.textContent = tag;
+        modalViews.textContent = `▶ ${views}`;
+        modalLikes.textContent = `❤️ ${likes}`;
+        modalDesc.textContent = desc;
+
+        const waText = encodeURIComponent(`Bismillah H2C Wisata Mandiri, saya tertarik dengan informasi di feed Instagram: "${title}". Mohon info kuota dan jadwal keberangkatannya.`);
+        modalWaBtn.href = `https://wa.me/6281234567890?text=${waText}`;
+
+        lightbox.classList.remove('hidden');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+        lightbox.classList.add('hidden');
+      }
+    });
+
+    // Quick Filter Logic
+    const filterButtons = document.querySelectorAll('.ig-filter-btn');
+    const cards = document.querySelectorAll('.ig-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // active state
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-[#022c22]', 'text-amber-300');
+          b.classList.add('bg-slate-100', 'text-slate-700');
+        });
+        btn.classList.add('bg-[#022c22]', 'text-amber-300');
+        btn.classList.remove('bg-slate-100', 'text-slate-700');
+
+        const cat = btn.getAttribute('data-category');
+        cards.forEach(card => {
+          if (cat === 'all' || card.getAttribute('data-category') === cat) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
