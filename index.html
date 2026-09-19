@@ -60,6 +60,16 @@
               500: '#fbbf24',
               600: '#d97706',
             },
+            gold: {
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#f59e0b',
+              500: '#d97706',
+              royal: '#d4af37',
+              metallic: '#c59b27',
+              dark: '#92400e',
+            },
             forest: {
               800: '#065f46',
               900: '#064e3b',
@@ -105,6 +115,34 @@
     .ig-brand-ring {
       background: linear-gradient(135deg, #fbbf24 0%, #10b981 50%, #047857 100%);
       padding: 2.5px;
+    }
+    /* Luxury Gold Palette & Metallic Accents */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #fef08a 0%, #facc15 40%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .border-gold-subtle {
+      border: 1px solid rgba(245, 158, 11, 0.35);
+    }
+    .border-gold-metallic {
+      border: 1.5px solid rgba(251, 191, 36, 0.7);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
+    }
+    .bg-gold-gradient {
+      background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%);
+    }
+    .badge-gold-luxury {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(251, 191, 36, 0.3) 100%);
+      border: 1px solid rgba(251, 191, 36, 0.5);
+      color: #fef08a;
+    }
+    .gold-divider {
+      height: 3px;
+      width: 56px;
+      margin: 12px auto;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, transparent, #f59e0b, #fef08a, #f59e0b, transparent);
     }
     .line-clamp-2 {
       display: -webkit-box;
@@ -356,11 +394,11 @@
           
           <!-- Kicker Pills (Official PPIU + Saudia Fair Promo Hook) -->
           <div class="flex flex-wrap items-center gap-2.5">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#064e3b]/90 border border-emerald-500/40 text-emerald-300 text-xs font-semibold tracking-wide shadow-xs">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#064e3b]/90 border border-amber-400/40 text-amber-200 text-xs font-semibold tracking-wide shadow-xs">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
               <span id="hero-promo-badge-text">PPIU KEMENAG RI NO. 26032300175410003 • AKREDITASI A</span>
             </div>
-            <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-400 text-slate-950 text-xs font-black tracking-wide shadow-xs">
+            <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 text-slate-950 text-xs font-black tracking-wide shadow-md shadow-amber-950/30 animate-shimmer">
               <span>✈️ SAUDIA FAIR 2026: DISKON RP 2,5 JUTA!</span>
             </div>
           </div>
@@ -368,7 +406,7 @@
           <!-- Main H1 Headline -->
           <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
             <span id="hero-h1-line1" class="block">Sujud Tenang di Depan Ka’bah,</span>
-            <span id="hero-h1-line2" class="block text-emerald-200">Kenyamanan Ibadah Anda &amp; Orang Tua.</span>
+            <span id="hero-h1-line2" class="block text-gold-gradient font-extrabold drop-shadow-sm">Kenyamanan Ibadah Anda &amp; Orang Tua.</span>
           </h1>
 
           <!-- Body / Description -->
@@ -420,27 +458,29 @@
 
         <!-- Right Visual Showcase (5 Cols Mobbin Frame) -->
         <div class="lg:col-span-5">
-          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-3 shadow-2xl space-y-3">
-            <div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-950">
-              <img src="./assets/manasik_h2c_hd.jpg" alt="Dokumentasi Manasik & Keberangkatan Umroh H2C" width="600" height="450" class="w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+          <div class="bg-gradient-to-b from-slate-900 to-[#022c22] border border-[#d4af37]/60 rounded-2xl p-3 shadow-[0_0_35px_rgba(212,175,55,0.18)] ring-1 ring-[#d4af37]/30 space-y-3">
+            <div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-950 border border-emerald-900/50">
+              <img src="./assets/tentang_baitullah.jpg" alt="Kemegahan Ka'bah &amp; Masjidil Haram - Layanan Umroh H2C" width="600" height="450" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-black/20 to-transparent"></div>
               <div class="absolute bottom-3 left-3 right-3 text-left">
-                <span class="inline-block px-2.5 py-0.5 rounded-full bg-emerald-500/90 text-white text-[11px] font-bold uppercase tracking-wider mb-1">Dokumentasi Jamaah</span>
-                <p class="text-xs text-slate-200 font-medium leading-snug">Manasik Intensif &amp; Pelepasan Jamaah di Bandara Internasional Soekarno-Hatta</p>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-gradient-to-r from-[#d4af37] via-[#f3e5ab] to-[#d4af37] text-slate-950 text-[11px] font-black uppercase tracking-wider mb-1 shadow-sm">
+                  <span>🕋</span> Pelataran Ka’bah Ring 1
+                </span>
+                <p class="text-xs text-slate-200 font-medium leading-snug">Akses Eksklusif Selangkah ke Pintu Masjidil Haram &amp; Raudhah Syarifah</p>
               </div>
             </div>
 
             <!-- Live Stat Cards -->
             <div class="grid grid-cols-2 gap-2 text-left">
-              <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-3">
+              <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3">
                 <span class="text-[11px] text-slate-400 block font-medium">Musim Aktif</span>
-                <span class="text-lg font-bold text-white tracking-tight tabular-nums block mt-0.5">1447 - 1448 H</span>
+                <span class="text-lg font-bold text-amber-300 tracking-tight tabular-nums block mt-0.5">1447 - 1448 H</span>
                 <span class="text-[11px] text-emerald-400 font-medium">Jadwal 2026 - 2027</span>
               </div>
-              <div class="bg-slate-950/70 border border-slate-800/80 rounded-xl p-3">
+              <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3">
                 <span class="text-[11px] text-slate-400 block font-medium">Legalitas Resmi</span>
                 <span class="text-lg font-bold text-white tracking-tight block mt-0.5">PPIU Kemenag</span>
-                <span class="text-[11px] text-slate-400">Akreditasi A Resmi</span>
+                <span class="text-[11px] text-amber-300/90 font-medium">Akreditasi A Resmi</span>
               </div>
             </div>
 
@@ -626,7 +666,7 @@
       
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div class="max-w-2xl">
-          <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block mb-2">Transparansi Biaya &amp; Fasilitas Resmi</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-300/80 text-amber-900 text-xs font-bold uppercase tracking-wider mb-2">✦ Transparansi Biaya &amp; Fasilitas Resmi ✦</span><div class="gold-divider !mx-0"></div>
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900">
             Pilihan Paket Umroh Musim 2026 - 2027
           </h2>
@@ -816,67 +856,69 @@
         </div>
 
         <!-- Package 3: Paket Bintang 5 / VIP -->
-        <div class="reveal-on-scroll stagger-3 bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between hover:border-emerald-500/60 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
+        <div class="reveal-on-scroll stagger-3 bg-gradient-to-b from-[#022c22] via-[#043427] to-[#011d16] text-white rounded-2xl border-2 border-amber-400/80 p-6 sm:p-8 flex flex-col justify-between shadow-[0_15px_40px_-10px_rgba(212,175,55,0.22)] hover:-translate-y-2 hover:shadow-[0_20px_50px_-10px_rgba(212,175,55,0.35)] transition-all duration-300 ease-out relative">
           <div class="space-y-6">
             <div class="flex items-center justify-between">
-              <span id="pkg-3-badge" class="px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-semibold">Akses Eksklusif Pelataran Haram • 12 Hari</span>
-              <span class="text-xs text-slate-500 font-medium">Double / Quad</span>
+              <span id="pkg-3-badge" class="px-3 py-1 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 text-xs font-black uppercase tracking-wider shadow-sm flex items-center gap-1">
+                <span>👑</span> VIP Pelataran Haram • 12 Hari
+              </span>
+              <div class="flex text-amber-400 text-sm tracking-tight select-none">★★★★★</div>
             </div>
             
             <div>
-              <h3 id="pkg-3-title" class="text-xl font-bold text-slate-900 tracking-tight">Paket Bintang 5 / VIP</h3>
-              <p class="text-xs text-slate-500 mt-1">Hotel ring 1 pelataran Masjidil Haram &amp; Nabawi, mobilitas maksimal</p>
+              <h3 id="pkg-3-title" class="text-xl sm:text-2xl font-extrabold text-gold-gradient tracking-tight">Paket VIP Royal Bintang 5</h3>
+              <p class="text-xs text-amber-100/80 mt-1">Hotel ring 1 pelataran Masjidil Haram &amp; Nabawi, kenyamanan mutlak tanpa jalan jauh</p>
             </div>
 
-            <div class="pt-4 border-t border-slate-100">
+            <div class="pt-4 border-t border-emerald-800/80">
               <div class="flex items-center justify-between">
-                <span class="text-xs text-slate-500 block">Biaya Promo Saudia Fair:</span>
-                <span class="text-[10px] font-extrabold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-full">Hemat Rp 2,5 Jt</span>
+                <span class="text-xs text-slate-300 block">Biaya Promo Saudia Fair:</span>
+                <span class="text-[10px] font-extrabold text-slate-950 bg-amber-300 px-2 py-0.5 rounded-full uppercase tracking-wide">Hemat Rp 2,5 Jt</span>
               </div>
               <div class="flex items-center gap-2 mt-1">
-                <span class="text-xs line-through text-slate-400 font-medium">Rp 33.500.000</span>
-                <span class="text-[10px] text-slate-500">Harga Normal</span>
+                <span class="text-xs line-through text-emerald-300/60 font-medium">Rp 33.500.000</span>
+                <span class="text-[10px] text-emerald-200/80">Harga Normal</span>
               </div>
               <div class="flex items-baseline gap-1 mt-0.5">
-                <span class="text-xs font-semibold text-slate-600">Rp</span>
-                <span id="pkg-3-price" class="text-3xl font-extrabold text-emerald-700 tracking-tight tabular-nums">31.000.000</span>
-                <span class="text-xs text-slate-500">/pax</span>
+                <span class="text-xs font-semibold text-amber-300">Rp</span>
+                <span id="pkg-3-price" class="text-3xl font-black text-amber-300 tracking-tight tabular-nums">31.000.000</span>
+                <span class="text-xs text-amber-200/80">/pax</span>
               </div>
-              <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-[11px] font-semibold text-slate-700">
+              <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-amber-950/70 border border-amber-500/50 text-[11px] font-semibold text-amber-200">
                 <span>Cukup DP Rp 5 Juta untuk Kunci Kursi</span>
-                <span class="text-slate-400">•</span>
+                <span class="text-amber-400">•</span>
                 <span>Pelunasan H-30</span>
               </div>
-              <span class="text-[11px] text-slate-500 font-medium block mt-1.5">✓ Kamar eksklusif ring 1 tanpa perlu jalan jauh</span>
+              <span class="text-[11px] text-emerald-200/90 font-medium block mt-1.5">✓ Kamar eksklusif ring 1 tanpa perlu jalan jauh</span>
             </div>
 
             <!-- Specs List -->
-            <ul id="pkg-3-features" class="space-y-3 text-xs text-slate-600 pt-4 border-t border-slate-100">
+            <ul id="pkg-3-features" class="space-y-3 text-xs text-slate-200 pt-4 border-t border-emerald-800/80">
               <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <svg class="w-4 h-4 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 <span><strong>Maskapai:</strong> <span id="pkg-3-airline">Saudia Airlines Direct CGK - MED (In Madinah Out Jeddah)</span></span>
               </li>
               <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <svg class="w-4 h-4 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 <span><strong>Hotel Makkah:</strong> <span id="pkg-3-hotel-makkah">Pullman Zamzam Tower (*5 - Depan Pelataran Haram)</span></span>
               </li>
               <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <svg class="w-4 h-4 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 <span><strong>Hotel Madinah:</strong> <span id="pkg-3-hotel-madinah">Dar Al Taqwa (*5 - Depan Pintu Masuk Raudhah)</span></span>
               </li>
               <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <svg class="w-4 h-4 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 <span>Fullboard buffet hotel bintang 5 &amp; Fast Track Handling</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <svg class="w-4 h-4 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 <span>Akses pintu utama Masjidil Haram tanpa shuttle</span>
               </li>
             </ul>
           </div>
 
-          <div class="pt-6 mt-6 border-t border-slate-100">
-            <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20tertarik%20dengan%20Paket%20Bintang%205%20/%20VIP%20Promo%20Saudia%20Fair%20Rp%2031%20Juta%20(Normal%2033,5%20Jt).%20Mohon%20info%20ketersediaan%20seat." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 rounded-xl text-xs sm:text-sm transition">
+          <div class="pt-6 mt-6 border-t border-emerald-800/80">
+            <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20tertarik%20dengan%20Paket%20VIP%20Royal%20Bintang%205%20Promo%20Saudia%20Fair%20Rp%2031%20Juta%20(Normal%2033,5%20Jt).%20Mohon%20info%20ketersediaan%20seat." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black py-3.5 rounded-xl text-xs sm:text-sm shadow-xl shadow-amber-950/40 active:scale-[0.98] transition-all animate-shimmer">
               Kunci Seat VIP Bintang 5 (DP Rp 5 Jt) &rarr;
             </a>
           </div>
@@ -892,7 +934,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       
       <div class="max-w-3xl">
-        <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block mb-2">Transparansi Standar Kualitas</span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-300/80 text-amber-900 text-xs font-bold uppercase tracking-wider mb-2">✦ Transparansi Standar Kualitas ✦</span><div class="gold-divider !mx-0"></div>
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900">
           Perbandingan Terbuka: Standar H2C vs Travel Umum
         </h2>
@@ -976,7 +1018,7 @@
       
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block mb-2">Jadwal Keberangkatan Terencana</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-300/80 text-amber-900 text-xs font-bold uppercase tracking-wider mb-2">✦ Kepastian Jadwal &amp; Seat ✦</span><div class="gold-divider !mx-0"></div>
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900">
             Jadwal Musim Umroh 2026 - 2027
           </h2>
@@ -1181,7 +1223,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
       <div class="max-w-3xl">
-        <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block mb-2">Bimbingan Fiqih Sunnah &amp; Tim Lapangan</span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-300/80 text-amber-900 text-xs font-bold uppercase tracking-wider mb-2">✦ Bimbingan Fiqih Sunnah &amp; Asatidzah ✦</span><div class="gold-divider !mx-0"></div>
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900">
           Dipimpin &amp; Didampingi Langsung oleh Asatidzah Berkompeten
         </h2>
@@ -2179,13 +2221,14 @@
 
   <!-- DESKTOP FLOATING WHATSAPP CTA (ENGAGING MICRO-INTERACTION) -->
   <div class="fixed bottom-6 right-6 z-40 hidden md:flex items-center group">
-    <a href="https://wa.me/6281316333001?text=Bismillah,%20Assalamu'alaikum%20Admin%20H2C.%20Saya%20ingin%20konsultasi%20paket%20Umroh%20Promo%20Saudia%20Fair%20dan%20cek%20ketersediaan%20seat." target="_blank" rel="noopener noreferrer" class="animate-float flex items-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs pl-3.5 pr-4 py-2.5 rounded-full shadow-xl shadow-emerald-950/25 hover:shadow-2xl hover:shadow-emerald-900/40 border border-emerald-400/30 transition-all transform hover:-translate-y-1 active:scale-95">
+    <a href="https://wa.me/6281316333001?text=Bismillah,%20Assalamu'alaikum%20Admin%20H2C.%20Saya%20ingin%20konsultasi%20paket%20Umroh%20Promo%20Saudia%20Fair%20dan%20cek%20ketersediaan%20seat." target="_blank" rel="noopener noreferrer" class="animate-float flex items-center gap-2.5 bg-gradient-to-r from-emerald-900 to-[#022c22] text-white font-bold text-xs pl-3.5 pr-4 py-2.5 rounded-full shadow-2xl border border-amber-400/80 ring-2 ring-amber-400/25 hover:border-amber-300 transition-all transform hover:-translate-y-1 active:scale-95">
       <span class="relative flex h-2.5 w-2.5">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-300"></span>
       </span>
-      <span class="tracking-wide">Konsultasi Seat 2026</span>
-      <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.079-1.892-.442-1.615-.668-2.651-2.316-2.732-2.423-.081-.107-.655-.872-.655-1.66 0-.788.411-1.176.556-1.336.145-.16.316-.2.422-.2.106 0 .211 0 .304.006.103.005.239-.039.373.285.14.339.479 1.168.522 1.254.043.086.072.187.014.302-.058.115-.088.187-.175.289-.087.102-.183.228-.261.306-.09.088-.184.184-.079.364.105.18.468.772.998 1.246.685.611 1.26.8 1.44.887.18.087.286.074.391-.047.105-.121.452-.526.572-.707.12-.181.24-.151.405-.09.165.06 1.054.497 1.235.587.18.09.3.136.345.213.045.077.045.447-.099.852z"/></svg>
+      <span class="tracking-wide text-amber-100">Konsultasi Seat 2026</span>
+      <span class="px-1.5 py-0.5 rounded-md bg-amber-400 text-slate-950 text-[10px] font-black">VIP</span>
+      <svg class="w-4 h-4 fill-amber-300 ml-0.5" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.079-1.892-.442-1.615-.668-2.651-2.316-2.732-2.423-.081-.107-.655-.872-.655-1.66 0-.788.411-1.176.556-1.336.145-.16.316-.2.422-.2.106 0 .211 0 .304.006.103.005.239-.039.373.285.14.339.479 1.168.522 1.254.043.086.072.187.014.302-.058.115-.088.187-.175.289-.087.102-.183.228-.261.306-.09.088-.184.184-.079.364.105.18.468.772.998 1.246.685.611 1.26.8 1.44.887.18.087.286.074.391-.047.105-.121.452-.526.572-.707.12-.181.24-.151.405-.09.165.06 1.054.497 1.235.587.18.09.3.136.345.213.045.077.045.447-.099.852z"/></svg>
     </a>
   </div>
 
