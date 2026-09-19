@@ -1,0 +1,286 @@
+{
+  "_meta": {
+    "title": "H2C Wisata Mandiri - Sales Copywriting & Value Proposition Blueprint",
+    "version": "2.0.0",
+    "framework": "High-Trust Studio Editorial (Linear + Mobbin + Wise)",
+    "target_audience": "Calon jamaah mandiri, keluarga, dan anak yang mengumrohkan orang tua",
+    "core_emotional_hook": "Ketenangan ibadah, kenyamanan orang tua (hotel dekat pelataran), kepastian izin & tiket, bebas biaya siluman, dan skema DP ringan Rp 5 Juta"
+  },
+  "brand": {
+    "name": "H2C WISATA MANDIRI",
+    "legal_name": "PT. HDUAC Berkah Mandiri",
+    "slogan": "Ibadah Tenang, Langkah Ringan Menuju Baitullah",
+    "slogan_alt": "Kenyamanan Ibadah untuk Anda & Orang Tua Tercinta",
+    "ppiu": "26032300175410003",
+    "akreditasi": "A",
+    "whatsapp_1": "6281316333001",
+    "whatsapp_2": "6281286820512",
+    "phone": "+62 813-1633-3001",
+    "email": "info@h2cwisatamandiri.com",
+    "address": "Ruko Telaga Pesona Blok L3 No. 3 & 5, Desa Telagamurni, Kec. Cikarang Barat, Kabupaten Bekasi, Jawa Barat 17530",
+    "bank": "Bank Syariah Indonesia (BSI) No. 723 456 7890 a.n. PT HDUAC BERKAH MANDIRI"
+  },
+  "hero": {
+    "promo_badge": "KLOTER 2026/2027 DIBUKA • KUNCI KURSI CUKUP DP RP 5 JUTA",
+    "h1_line1": "Sujud Tenang di Depan Ka’bah,",
+    "h1_line2": "Kenyamanan Ibadah untuk Anda & Orang Tua Tercinta.",
+    "subtitle": "Wujudkan rindu Baitullah dengan hotel selangkah ke pelataran Masjidil Haram, bimbingan asatidzah sesuai sunnah, dan kepastian berangkat berizin resmi Kemenag Akreditasi A. Tanpa biaya siluman, pelunasan tenang H-30.",
+    "cta_primary": {
+      "label": "Pilih Jadwal & Amankan Kursi",
+      "href": "#paket",
+      "subtext": "Cukup DP Rp 5 Juta, Harga Flat Mengikat"
+    },
+    "cta_secondary": {
+      "label": "Tanya Seat via WhatsApp",
+      "href": "https://wa.me/6281316333001?text=Bismillah,%20saya%20ingin%20konsultasi%20paket%20umroh%20resmi%20H2C%20dan%20info%20kunci%20seat%20DP%205%20Juta."
+    },
+    "trust_strip": [
+      {
+        "icon": "shield-check",
+        "title": "Izin Resmi PPIU Kemenag",
+        "desc": "No. 26032300175410003 (Akreditasi A)"
+      },
+      {
+        "icon": "map-pin",
+        "title": "Hotel Ring 1 Pelataran",
+        "desc": "Dekat pintu masjid, nyaman untuk orang tua & lansia"
+      },
+      {
+        "icon": "book-open",
+        "title": "Bimbingan Sesuai Sunnah",
+        "desc": "Didampingi asatidzah & muthowwif bersertifikat"
+      },
+      {
+        "icon": "banknote",
+        "title": "Akad Bersih & Flat",
+        "desc": "DP Rp 5 Juta, bebas biaya siluman & fluktuasi kurs"
+      }
+    ]
+  },
+  "packages": [
+    {
+      "id": "akbar-sept",
+      "name": "Umroh Akbar September",
+      "subtitle": "Kloter Perdana Awal Musim — Suasana Masjid Lebih Lapang & Khusyuk",
+      "badge": "Pilihan Terfavorit Jamaah",
+      "badge_class": "emerald",
+      "price_normal": "Rp 31.500.000",
+      "price_promo": "Rp 29.000.000",
+      "payment_terms": "Cukup DP Rp 5 Juta untuk kunci kursi & harga flat. Pelunasan tenang H-30.",
+      "duration": "9 Hari",
+      "airline": "Qatar Airways / Saudia Airlines (Direct / One-Stop Nyaman)",
+      "hotel_makkah": "Setaraf Maysan Al Maqam (±150m ke Pelataran Masjidil Haram)",
+      "hotel_madinah": "Setaraf Mirage Al Salam / Jawharat Al Rasheed (±100m ke Nabawi)",
+      "room_type": "Quad (4 Orang / Kamar) — Tersedia Upgrade Triple & Double",
+      "seat_status": "Segera Berangkat (Sisa 8 Kursi)",
+      "value_stack": [
+        "Tiket Pesawat Internasional PP Maskapai Bintang 5",
+        "Hotel Ring 1 Dekat Pelataran: Jalan kaki singkat, ramah lansia",
+        "Bimbingan Manasik Intensif Teori & Praktik di Hotel Berbintang",
+        "Didampingi Muthowwif & Asatidzah Berpengalaman Sesuai Sunnah",
+        "Makan 3x Sehari Menu Indonesia (Fullboard Hotel)",
+        "Ziarah Kota Makkah & Madinah dengan Bus AC Eksekutif Terbaru",
+        "Handling Bandara VIP Soekarno-Hatta & Jeddah/Madinah",
+        "Free Koper Bagasi Eksklusif, Tas Paspor, Kain Ihram/Mukena, & Buku Doa",
+        "Air Zamzam 5 Liter (Sesuai Regulasi Otoritas Penerbangan)"
+      ],
+      "suitable_for": "Cocok untuk jamaah perdana dan keluarga yang mendambakan ibadah awal musim dengan harga terbaik."
+    },
+    {
+      "id": "hemat-jan",
+      "name": "Umroh Paket Hemat Januari",
+      "subtitle": "Awal Tahun Penuh Berkah — Cuaca Madinah Sejuk & Menyejukkan Hati",
+      "badge": "Paling Ideal untuk Keluarga & Orang Tua",
+      "badge_class": "amber",
+      "price_normal": "Rp 32.500.000",
+      "price_promo": "Rp 30.000.000",
+      "payment_terms": "Cukup DP Rp 5 Juta untuk kunci kursi & harga flat. Pelunasan tenang H-30.",
+      "duration": "9 Hari / 10 Hari",
+      "airline": "Saudia / Garuda Indonesia (Setaraf)",
+      "hotel_makkah": "Setaraf Nada Ajyad / Maysan Al Maqam (Akses Rata Tanpa Tanjakan)",
+      "hotel_madinah": "Setaraf Mirage Al Salam (Dekat Pelataran Pintu Masuk Utama)",
+      "room_type": "Quad (4 Orang / Kamar) — Tersedia Upgrade Triple & Double",
+      "seat_status": "Sisa 12 Kursi Tersedia",
+      "value_stack": [
+        "Tiket Pesawat PP Tanpa Khawatir Tiket Bodong (Issued Resmi)",
+        "Hotel Akses Rata & Lift Lancar: Sangat ramah untuk orang tua",
+        "Layanan Kursi Roda & Pendamping Khusus bagi Jamaah Lansia (On Request)",
+        "Bimbingan Muthowwifah Khusus untuk Jamaah Wanita Masuk ke Raudhah",
+        "Kajian Rutin & Pemantapan Makna Ibadah di Tanah Suci",
+        "Ziarah Ziarah Bersejarah: Jabal Uhud, Masjid Quba, Kebun Kurma",
+        "Handling Lengkap & Bebas Pungutan Liar di Bandara",
+        "Paket Perlengkapan Umroh Standar Premium H2C",
+        "Asuransi Perjalanan Syariah Resmi Mencakup Risiko Medis"
+      ],
+      "suitable_for": "Rekomendasi utama bagi anak yang ingin menghadiahkan umroh nyaman tanpa lelah untuk kedua orang tua tercinta."
+    },
+    {
+      "id": "turkey-des",
+      "name": "Umroh Plus Turkey Musim Dingin",
+      "subtitle": "Kombinasi Sempurna: Napak Tilas Khilafah Utsmaniyyah & Kemuliaan Dua Tanah Suci",
+      "badge": "Wisata Religi & Sejarah Islam",
+      "badge_class": "slate",
+      "price_normal": "Rp 55.500.000",
+      "price_promo": "Rp 53.000.000",
+      "payment_terms": "Cukup DP Rp 5 Juta untuk kunci kursi liburan akhir tahun. Pelunasan tenang H-30.",
+      "duration": "12 Hari / 16 Hari",
+      "airline": "Turkish Airlines / Saudia Airlines (Penerbangan Nyaman)",
+      "hotel_makkah": "Hotel Bintang 5 Makkah (Anjum / Concorde Setaraf Pelataran)",
+      "hotel_madinah": "Hotel Bintang 4/5 Madinah (Dekat Pintu Masjid Nabawi)",
+      "hotel_turkey": "Hotel Bintang 4/5 Istanbul (Pusat Kota & Akses Wisata)",
+      "room_type": "Quad / Triple / Double",
+      "seat_status": "Kloter Liburan Akhir Tahun (Seat Terbatas)",
+      "value_stack": [
+        "Tiket Pesawat PP Internasional Kelas Dunia",
+        "Bosphorus Private Cruise Menyusuri Selat Pemisah Asia & Eropa",
+        "Kunjungan Wisata Bersejarah: Masjid Hagia Sophia, Blue Mosque, Topkapi Palace",
+        "Hotel Bintang 5 Dekat Pelataran di Makkah: Tinggal melangkah ke Ka'bah",
+        "Bimbingan Ibadah Umroh Tuntas Didampingi Asatidzah Berpengalaman",
+        "Makan 3x Sehari Halal Food & Kuliner Khas Turki Otentik",
+        "Transportasi Bus Mewah Berpenghangat & Full AC di Turki & Arab Saudi",
+        "Handling Airport VIP & Perlengkapan Koper Eksklusif",
+        "Visa Turki & Visa Umroh Resmi Terjamin Legalitasnya"
+      ],
+      "suitable_for": "Sangat pas untuk keluarga yang ingin memanfaatkan libur sekolah & akhir tahun dengan perjalanan spiritual bersejarah."
+    }
+  ],
+  "schedules": [
+    {
+      "program": "Umroh Akbar September",
+      "departure": "September 2026",
+      "year": "2026",
+      "duration": "9 Hari",
+      "airline": "Qatar Airways",
+      "hotel": "Maysan Al Maqam (Makkah) / Mirage Al Salam (Madinah)",
+      "price": "Rp 29 Juta",
+      "dp": "Rp 5 Juta",
+      "status": "Sisa 8 Kursi",
+      "status_class": "red"
+    },
+    {
+      "program": "Umroh Plus Turkey Desember",
+      "departure": "Desember 2026",
+      "year": "2026",
+      "duration": "16 Hari",
+      "airline": "Turkish Airlines / Saudia",
+      "hotel": "Anjum Bintang 5 (Makkah) / Istanbul City Hotel",
+      "price": "Rp 53 Juta",
+      "dp": "Rp 5 Juta",
+      "status": "Seat Terbatas",
+      "status_class": "purple"
+    },
+    {
+      "program": "Umroh Paket Hemat Januari",
+      "departure": "Januari 2027",
+      "year": "2027",
+      "duration": "10 Hari",
+      "airline": "Saudia / IndiGo",
+      "hotel": "Nada Ajyad (Makkah) / Mirage Al Salam (Madinah)",
+      "price": "Rp 30 Juta",
+      "dp": "Rp 5 Juta",
+      "status": "Sisa 12 Kursi",
+      "status_class": "amber"
+    },
+    {
+      "program": "Umroh Awal Musim Mei",
+      "departure": "Mei 2027",
+      "year": "2027",
+      "duration": "9 Hari",
+      "airline": "Garuda Indonesia",
+      "hotel": "Maysan Al Maqam / Mirage Al Salam",
+      "price": "Rp 30 Juta",
+      "dp": "Rp 5 Juta",
+      "status": "Promo 20 Pendaftar Pertama",
+      "status_class": "emerald"
+    },
+    {
+      "program": "Umroh Liburan Sekolah Juni",
+      "departure": "Juni 2027",
+      "year": "2027",
+      "duration": "9 Hari",
+      "airline": "Saudia Airlines",
+      "hotel": "Anjum Bintang 5 / Golden Tulip",
+      "price": "Rp 33,5 Juta",
+      "dp": "Rp 5 Juta",
+      "status": "Pendaftaran Dibuka",
+      "status_class": "blue"
+    },
+    {
+      "program": "Umroh Syawal / Ekonomis Juli",
+      "departure": "Juli 2027",
+      "year": "2027",
+      "duration": "10 Hari",
+      "airline": "Saudia / Setaraf",
+      "hotel": "Maysan Al Maqam / Mirage Al Salam",
+      "price": "Rp 31,5 Juta",
+      "dp": "Rp 5 Juta",
+      "status": "Pendaftaran Dibuka",
+      "status_class": "emerald"
+    }
+  ],
+  "reassurance_microcopy": {
+    "bank_security": {
+      "headline": "Keamanan Finansial 100% Terjamin",
+      "body": "Seluruh transaksi setoran DP dan pelunasan hanya ditransfer ke Rekening Giro Resmi Bank Syariah Indonesia (BSI) No. 723 456 7890 a.n. PT HDUAC BERKAH MANDIRI. Demi keamanan dana ibadah Anda, kami secara tegas melarang transfer ke nomor rekening atas nama pribadi perorangan.",
+      "badge": "Verifikasi Rekening Giro PT Resmi"
+    },
+    "zero_hidden_fees": {
+      "headline": "Akad Jelas & Transparan: Bebas Biaya Siluman",
+      "body": "Biaya yang Anda bayarkan sudah mencakup seluruh kebutuhan pokok: Tiket PP, Visa Umroh Resmi, Hotel, Makan 3x Sehari, Bus Ziarah, Perlengkapan Koper, Manasik, hingga Handling Bandara. Tidak ada pungutan mendadak saat keberangkatan.",
+      "badge": "Jaminan Tanpa Biaya Tambahan Tersembunyi"
+    },
+    "elderly_friendly": {
+      "headline": "Nyaman untuk Orang Tua & Lansia",
+      "body": "Pemilihan hotel ring 1 dengan jarak jalan kaki singkat ke pelataran masjid memastikan orang tua dapat melaksanakan sholat 5 waktu di masjid tanpa kepayahan fisik. Tersedia bantuan kursi roda dan muthowwif pendamping yang sabar.",
+      "badge": "Prioritas Kenyamanan Lansia"
+    },
+    "sunnah_guidance": {
+      "headline": "Bimbingan Ibadah Sesuai Tuntunan Sunnah",
+      "body": "Ibadah umroh adalah perjalanan hati. Asatidzah kompeten membimbing langsung setiap rukun mulai dari miqat, thawaf, sa'i, hingga tahallul sesuai tuntunan Rasulullah ﷺ, dilengkapi pemahaman tauhid dan akhlak yang menentramkan jiwa.",
+      "badge": "Kepatuhan Manhaj Sunnah"
+    },
+    "dp_scheme": {
+      "headline": "Kunci Kursi & Harga Flat Cukup DP Rp 5 Juta",
+      "body": "Cukup bayar DP Rp 5.000.000 per orang untuk mengamankan slot keberangkatan dan mengunci harga dari risiko kenaikan kurs valuta asing. Sisa pembayaran pelunasan dapat diselesaikan dengan tenang hingga 30 hari (H-30) sebelum jadwal keberangkatan.",
+      "badge": "Skema Pembayaran Fleksibel"
+    }
+  },
+  "comparison_matrix_copy": {
+    "section_title": "Bandingkan Ketenangan Anda",
+    "section_subtitle": "Mengapa ratusan jamaah mempercayakan perjalanan sucinya kepada H2C Wisata Mandiri?",
+    "points": [
+      {
+        "aspect": "Legalitas & Izin PPIU",
+        "h2c": "Izin PPIU Kemenag Resmi No. 26032300175410003 dengan Akreditasi A. Terdaftar resmi di sistem SIMPU Kemenag RI.",
+        "common_market": "Seringkali hanya bertindak sebagai sub-agen/calo tanpa izin PPIU resmi atas nama sendiri."
+      },
+      {
+        "aspect": "Jarak Hotel ke Masjid",
+        "h2c": "Hotel Ring 1 selangkah ke pelataran (100–150m), akses jalan rata, sangat nyaman untuk orang tua dan lansia.",
+        "common_market": "Hotel berjarak 800m–1.5km atau mengandalkan shuttle bus yang sering antre panjang dan melelahkan."
+      },
+      {
+        "aspect": "Kepastian Tiket & Jadwal",
+        "h2c": "Tiket pesawat PP langsung dibooking berjadwal pasti dengan maskapai ternama (Saudia, Garuda, Qatar, Turkish).",
+        "common_market": "Sistem kloter tunggu yang sering mundur berbulan-bulan, risiko tiket transit rumit tanpa kepastian."
+      },
+      {
+        "aspect": "Kepastian Biaya & Pembayaran",
+        "h2c": "Harga flat mengikat sejak DP Rp 5 Juta. Seluruh dana disetor ke Giro BSI PT HDUAC Berkah Mandiri.",
+        "common_market": "Sering muncul tagihan tambahan untuk visa/handling mendadak menjelang berangkat; transfer ke rekening pribadi staf."
+      },
+      {
+        "aspect": "Bimbingan Ibadah",
+        "h2c": "Dibimbing asatidzah kompeten sesuai sunnah dari manasik hingga pelaksanaan ibadah di Tanah Suci.",
+        "common_market": "Hanya sekadar tour guide umum tanpa penguasaan fiqih dan bimbingan manasik intensif."
+      }
+    ]
+  },
+  "whatsapp_consultation_templates": {
+    "cta_hero": "Bismillah, saya membaca paket umroh resmi H2C. Saya ingin info ketersediaan seat dan rincian skema DP Rp 5 Juta untuk keberangkatan terdekat.",
+    "cta_package_akbar": "Bismillah, saya berminat dengan Paket Umroh Akbar September Rp 29 Juta. Mohon info sisa kursi dan hotel yang tersedia.",
+    "cta_package_hemat": "Bismillah, saya ingin mendaftar Umroh Paket Hemat Januari Rp 30 Juta untuk keluarga/orang tua. Mohon brosur lengkap dan cara booking DP 5 Juta.",
+    "cta_package_turkey": "Bismillah, saya tertarik dengan Umroh Plus Turkey Desember Rp 53 Juta. Mohon jadwal detail itinerary dan seat yang masih kosong.",
+    "cta_general": "Bismillah, saya ingin konsultasi umroh resmi H2C Wisata Mandiri dengan Customer Care."
+  }
+}
