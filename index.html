@@ -119,6 +119,95 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
+    /* High-End Motion & Atmosphere System (Linear / Apple / Instagram Vibe) */
+    @keyframes shimmer {
+      0% { transform: skewX(-20deg) translateX(-180%); }
+      100% { transform: skewX(-20deg) translateX(250%); }
+    }
+    .animate-shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+    .animate-shimmer::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.26), transparent);
+      transform: skewX(-20deg) translateX(-180%);
+      animation: shimmer 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      pointer-events: none;
+    }
+    @keyframes float-gentle {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+    .animate-float {
+      animation: float-gentle 4.5s ease-in-out infinite;
+    }
+    @keyframes pulse-aura {
+      0%, 100% { transform: scale(1); opacity: 0.16; }
+      50% { transform: scale(1.1); opacity: 0.30; }
+    }
+    .animate-aura {
+      animation: pulse-aura 7s ease-in-out infinite;
+    }
+    @keyframes story-rotate {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+    .ig-story-animated {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      padding: 2.5px;
+      animation: story-rotate 10s linear infinite;
+    }
+    @keyframes heart-pop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+    .hover-heart-pop:hover svg {
+      animation: heart-pop 0.35s ease-out;
+    }
+    
+    /* Scroll Entrance Reveals */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Stagger delays for grid items */
+    .stagger-1 { transition-delay: 0.04s; }
+    .stagger-2 { transition-delay: 0.10s; }
+    .stagger-3 { transition-delay: 0.16s; }
+    .stagger-4 { transition-delay: 0.22s; }
+    .stagger-5 { transition-delay: 0.28s; }
+    .stagger-6 { transition-delay: 0.34s; }
+
+    /* Accessibility: Respect Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .animate-shimmer::after,
+      .animate-float,
+      .animate-aura,
+      .ig-story-animated,
+      .hover-heart-pop:hover svg {
+        animation: none !important;
+      }
+    }
   </style>
 
   <!-- Structured Data / JSON-LD -->
@@ -442,7 +531,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
         
         <!-- 01 Pasti Travelnya -->
-        <div class="group border border-slate-200 hover:border-emerald-500/60 rounded-2xl p-5 bg-white hover:shadow-md transition duration-200 flex flex-col justify-between">
+        <div class="reveal-on-scroll stagger-1 group border border-slate-200/90 hover:border-emerald-500/70 rounded-2xl p-5 bg-white hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">01 • Travel</span>
@@ -459,7 +548,7 @@
         </div>
 
         <!-- 02 Pasti Jadwalnya -->
-        <div class="group border border-slate-200 hover:border-emerald-500/60 rounded-2xl p-5 bg-white hover:shadow-md transition duration-200 flex flex-col justify-between">
+        <div class="reveal-on-scroll stagger-2 group border border-slate-200/90 hover:border-emerald-500/70 rounded-2xl p-5 bg-white hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">02 • Jadwal</span>
@@ -476,7 +565,7 @@
         </div>
 
         <!-- 03 Pasti Terbangnya -->
-        <div class="group border border-slate-200 hover:border-emerald-500/60 rounded-2xl p-5 bg-white hover:shadow-md transition duration-200 flex flex-col justify-between">
+        <div class="reveal-on-scroll stagger-3 group border border-slate-200/90 hover:border-emerald-500/70 rounded-2xl p-5 bg-white hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">03 • Tiket</span>
@@ -493,7 +582,7 @@
         </div>
 
         <!-- 04 Pasti Hotelnya -->
-        <div class="group border border-slate-200 hover:border-emerald-500/60 rounded-2xl p-5 bg-white hover:shadow-md transition duration-200 flex flex-col justify-between">
+        <div class="reveal-on-scroll stagger-4 group border border-slate-200/90 hover:border-emerald-500/70 rounded-2xl p-5 bg-white hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">04 • Hotel</span>
@@ -510,7 +599,7 @@
         </div>
 
         <!-- 05 Pasti Visanya -->
-        <div class="group border border-slate-200 hover:border-emerald-500/60 rounded-2xl p-5 bg-white hover:shadow-md transition duration-200 flex flex-col justify-between">
+        <div class="reveal-on-scroll stagger-5 group border border-slate-200/90 hover:border-emerald-500/70 rounded-2xl p-5 bg-white hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">05 • Visa</span>
@@ -582,7 +671,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
         
         <!-- Package 1: Paket Bintang 4 (Umroh Akbar September) -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 flex flex-col justify-between hover:border-slate-300 transition shadow-sm">
+        <div class="reveal-on-scroll stagger-1 bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between hover:border-emerald-500/60 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
           <div class="space-y-6">
             <div class="flex items-center justify-between">
               <span id="pkg-1-badge" class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold">Kloter Akbar Terdekat • 9 Hari</span>
@@ -655,9 +744,10 @@
         </div>
 
         <!-- Package 2: Paket Reguler / Hemat -->
-        <div class="bg-white rounded-2xl border-2 border-emerald-600 p-6 sm:p-8 flex flex-col justify-between relative shadow-md">
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-700 text-white text-[11px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
-            Pilihan Utama Keluarga &amp; Lansia
+        <div class="reveal-on-scroll stagger-2 bg-white rounded-2xl border-2 border-emerald-600 p-6 sm:p-8 flex flex-col justify-between relative shadow-xl shadow-emerald-950/5 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-900/15 transition-all duration-300 ease-out">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-700 to-emerald-600 text-white text-[11px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+            <span>Pilihan Utama Keluarga &amp; Lansia</span>
           </div>
 
           <div class="space-y-6">
@@ -719,14 +809,14 @@
           </div>
 
           <div class="pt-6 mt-6 border-t border-slate-100">
-            <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20tertarik%20dengan%20Paket%20Reguler%20/%20Hemat%20Promo%20Saudia%20Fair%20Rp%2027,5%20Juta%20(Normal%2030%20Jt).%20Mohon%20info%20ketersediaan%20seat." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-xs sm:text-sm shadow-md transition">
+            <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20tertarik%20dengan%20Paket%20Reguler%20/%20Hemat%20Promo%20Saudia%20Fair%20Rp%2027,5%20Juta%20(Normal%2030%20Jt).%20Mohon%20info%20ketersediaan%20seat." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl text-xs sm:text-sm shadow-md shadow-emerald-700/20 active:scale-[0.98] transition-all animate-shimmer">
               Pilih Paket Hemat &amp; Kunci Kursi (DP 5 Jt) &rarr;
             </a>
           </div>
         </div>
 
         <!-- Package 3: Paket Bintang 5 / VIP -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 flex flex-col justify-between hover:border-slate-300 transition shadow-sm">
+        <div class="reveal-on-scroll stagger-3 bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between hover:border-emerald-500/60 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
           <div class="space-y-6">
             <div class="flex items-center justify-between">
               <span id="pkg-3-badge" class="px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-semibold">Akses Eksklusif Pelataran Haram • 12 Hari</span>
@@ -1307,7 +1397,7 @@
             <div class="flex items-center sm:items-start gap-4 sm:gap-6">
               <!-- Avatar with Instagram Story Ring -->
               <div class="relative shrink-0">
-                <div class="ig-story-ring rounded-full p-[2.5px]">
+                <div class="ig-story-animated rounded-full">
                   <img src="./assets/logo-circle.png" alt="@h2c_wisata_mandiri profile" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-white object-cover bg-white">
                 </div>
                 <div class="absolute -bottom-1 -right-1 bg-emerald-600 text-white p-1 rounded-full border-2 border-white shadow-xs">
@@ -1414,10 +1504,10 @@
         <div id="ig-grid" class="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6">
           
           <!-- Item 1: Promo Saudia Fair 2026 -->
-          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="promo" onclick="openIgModal(0)">
+          <div class="ig-card reveal-on-scroll stagger-1 group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-xs cursor-pointer hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-500/60 transition-all duration-300 ease-out" data-category="promo" onclick="openIgModal(0)">
             <img src="./assets/feed_1.jpg" alt="Promo Saudia Fair 2026 Diskon Rp 2,5 Juta H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
             <!-- Reels Badge -->
-            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/75 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none group-hover:scale-110 group-hover:bg-emerald-600 transition-all duration-300">
               <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
             </div>
             <!-- Views Pill -->
@@ -1425,7 +1515,7 @@
               <span>▶ 48.2K</span>
             </div>
             <!-- Hover Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-all duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
               <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-amber-300 mb-1">⚡ SAUDIA FAIR 2026</span>
               <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Diskon Rp 2,5 Juta 10 Pendaftar Pertama Semua Paket Umroh</p>
               <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
@@ -1436,15 +1526,15 @@
           </div>
 
           <!-- Item 2: Pak Wildan Testimoni -->
-          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="testimoni" onclick="openIgModal(1)">
+          <div class="ig-card reveal-on-scroll stagger-2 group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-xs cursor-pointer hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-500/60 transition-all duration-300 ease-out" data-category="testimoni" onclick="openIgModal(1)">
             <img src="./assets/feed_2.jpg" alt="Testimoni Pak Wildan Purbalingga Jamaah H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/75 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none group-hover:scale-110 group-hover:bg-emerald-600 transition-all duration-300">
               <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
             </div>
             <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
               <span>▶ 34.5K</span>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-all duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
               <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-emerald-400 mb-1">💬 KATA JAMAAH</span>
               <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Pak Wildan (Purbalingga): "Bukan Kami yang Bilang, Ini Kata Jamaah!"</p>
               <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
@@ -1455,15 +1545,15 @@
           </div>
 
           <!-- Item 3: Promo Hook Diskon Rp 2,5 Juta -->
-          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="promo" onclick="openIgModal(2)">
+          <div class="ig-card reveal-on-scroll stagger-3 group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-xs cursor-pointer hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-500/60 transition-all duration-300 ease-out" data-category="promo" onclick="openIgModal(2)">
             <img src="./assets/feed_3.jpg" alt="Diskon Rp 2,5 Juta Semua Paket Umroh H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/75 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none group-hover:scale-110 group-hover:bg-emerald-600 transition-all duration-300">
               <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
             </div>
             <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-amber-300 flex items-center gap-1">
               <span>▶ 52.8K</span>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-all duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
               <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-amber-300 mb-1">🔥 DISKON SPESIAL</span>
               <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">DISKON RP 2,5 JUTA! Semua Paket Umroh Musim 1447H-1448H</p>
               <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
@@ -1474,15 +1564,15 @@
           </div>
 
           <!-- Item 4: Pak Eko Budi Testimoni -->
-          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="testimoni" onclick="openIgModal(3)">
+          <div class="ig-card reveal-on-scroll stagger-1 group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-xs cursor-pointer hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-500/60 transition-all duration-300 ease-out" data-category="testimoni" onclick="openIgModal(3)">
             <img src="./assets/feed_4.jpg" alt="Testimoni Pak Eko Budi Jamaah H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/75 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none group-hover:scale-110 group-hover:bg-emerald-600 transition-all duration-300">
               <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
             </div>
             <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
               <span>▶ 29.7K</span>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-all duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
               <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-emerald-400 mb-1">💬 KATA JAMAAH</span>
               <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Pak Eko Budi: Fasilitas Airport Lounge &amp; Hotel Dekat Bikin Tenang</p>
               <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
@@ -1493,15 +1583,15 @@
           </div>
 
           <!-- Item 5: Kloter 35 Perjalanan Selesai -->
-          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="kloter" onclick="openIgModal(4)">
+          <div class="ig-card reveal-on-scroll stagger-2 group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-xs cursor-pointer hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-500/60 transition-all duration-300 ease-out" data-category="kloter" onclick="openIgModal(4)">
             <img src="./assets/feed_5.jpg" alt="Kloter 35 Perjalanan Umroh Telah Usai H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/75 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none group-hover:scale-110 group-hover:bg-emerald-600 transition-all duration-300">
               <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
             </div>
             <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
               <span>▶ 41.6K</span>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-all duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
               <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-rose-300 mb-1">🤍 KLOTER 35</span>
               <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Perjalanan Umroh Telah Usai 🤍 Momen Tahallul Jamaah Ihram Makkah</p>
               <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
@@ -1512,15 +1602,15 @@
           </div>
 
           <!-- Item 6: Saudia Fair Event -->
-          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="promo" onclick="openIgModal(5)">
+          <div class="ig-card reveal-on-scroll stagger-3 group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-xs cursor-pointer hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-500/60 transition-all duration-300 ease-out" data-category="promo" onclick="openIgModal(5)">
             <img src="./assets/feed_6.jpg" alt="Liputan Booth Saudia Fair 2026 H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/75 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none group-hover:scale-110 group-hover:bg-emerald-600 transition-all duration-300">
               <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
             </div>
             <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-amber-300 flex items-center gap-1">
               <span>▶ 63.4K</span>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-all duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
               <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-amber-300 mb-1">✈️ SAUDIA FAIR 2026</span>
               <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Liputan Langsung Booth H2C di Saudia Fair: Konsultasi &amp; Booking Promo</p>
               <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
@@ -1531,15 +1621,15 @@
           </div>
 
           <!-- Item 7: Mbah Satari Testimoni -->
-          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="testimoni" onclick="openIgModal(6)">
+          <div class="ig-card reveal-on-scroll stagger-1 group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-xs cursor-pointer hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-500/60 transition-all duration-300 ease-out" data-category="testimoni" onclick="openIgModal(6)">
             <img src="./assets/feed_7.jpg" alt="Testimoni Jamaah Lansia Mbah Satari H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/75 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none group-hover:scale-110 group-hover:bg-emerald-600 transition-all duration-300">
               <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
             </div>
             <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
               <span>▶ 38.9K</span>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-all duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
               <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-emerald-400 mb-1">👴 RAMAH LANSIA</span>
               <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Mbah Satari: Bimbingan Ibadah Sabar &amp; Pendampingan Kursi Roda Thawaf</p>
               <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
@@ -1550,15 +1640,15 @@
           </div>
 
           <!-- Item 8: City Tour Masjid Quba -->
-          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="kloter" onclick="openIgModal(7)">
+          <div class="ig-card reveal-on-scroll stagger-2 group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-xs cursor-pointer hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-500/60 transition-all duration-300 ease-out" data-category="kloter" onclick="openIgModal(7)">
             <img src="./assets/feed_8.jpg" alt="City Tour Masjid Quba Madinah Kloter 35 H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/75 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none group-hover:scale-110 group-hover:bg-emerald-600 transition-all duration-300">
               <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
             </div>
             <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
               <span>▶ 31.2K</span>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-all duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
               <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-teal-300 mb-1">🕌 ZIARAH SUNNAH</span>
               <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Kloter 35: City Tour Masjid Quba Madinah &amp; Shalat Sunnah Bernilai Umroh</p>
               <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
@@ -1569,15 +1659,15 @@
           </div>
 
           <!-- Item 9: 5 Alasan Umroh September -->
-          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="promo" onclick="openIgModal(8)">
+          <div class="ig-card reveal-on-scroll stagger-3 group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-xs cursor-pointer hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-500/60 transition-all duration-300 ease-out" data-category="promo" onclick="openIgModal(8)">
             <img src="./assets/feed_9.jpg" alt="5 Alasan Umroh September Layak Dipertimbangkan H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/75 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none group-hover:scale-110 group-hover:bg-emerald-600 transition-all duration-300">
               <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
             </div>
             <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-amber-300 flex items-center gap-1">
               <span>▶ 45.3K</span>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-all duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
               <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-amber-300 mb-1">💡 TIPS IBADAH</span>
               <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">5 Alasan Umroh September Layak Dipertimbangkan: Nyaman &amp; Lebih Lengang</p>
               <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
@@ -1588,15 +1678,15 @@
           </div>
 
           <!-- Item 10: City Tour Masjid Nabawi -->
-          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="kloter" onclick="openIgModal(9)">
+          <div class="ig-card reveal-on-scroll stagger-1 group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-xs cursor-pointer hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-500/60 transition-all duration-300 ease-out" data-category="kloter" onclick="openIgModal(9)">
             <img src="./assets/feed_10.jpg" alt="City Tour Masjid Nabawi Madinah Kloter 35 H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/75 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none group-hover:scale-110 group-hover:bg-emerald-600 transition-all duration-300">
               <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
             </div>
             <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
               <span>▶ 58.7K</span>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-all duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
               <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-emerald-400 mb-1">🌿 MASJID NABAWI</span>
               <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Kloter 35: Suasana Syahdu Sholat Berjamaah &amp; Ziarah Raudhah Syarifah</p>
               <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
@@ -1607,15 +1697,15 @@
           </div>
 
           <!-- Item 11: Prosesi Umroh & Tahallul -->
-          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="kloter" onclick="openIgModal(10)">
+          <div class="ig-card reveal-on-scroll stagger-2 group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-xs cursor-pointer hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-500/60 transition-all duration-300 ease-out" data-category="kloter" onclick="openIgModal(10)">
             <img src="./assets/feed_11.jpg" alt="Prosesi Umroh dan Tahallul Cukur Kloter 35 H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/75 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none group-hover:scale-110 group-hover:bg-emerald-600 transition-all duration-300">
               <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
             </div>
             <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
               <span>▶ 36.4K</span>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-all duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
               <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-emerald-400 mb-1">🕋 TAHALLUL SUNNAH</span>
               <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Kloter 35: Momen Kebahagiaan Pasca Selesai Rukun Umroh di Bukit Marwah</p>
               <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
@@ -1626,15 +1716,15 @@
           </div>
 
           <!-- Item 12: Momen Kepulangan -->
-          <div class="ig-card group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xs cursor-pointer" data-category="kloter" onclick="openIgModal(11)">
+          <div class="ig-card reveal-on-scroll stagger-3 group relative aspect-[3/4] sm:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-xs cursor-pointer hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-500/60 transition-all duration-300 ease-out" data-category="kloter" onclick="openIgModal(11)">
             <img src="./assets/feed_12.jpg" alt="Momen Kepulangan Haru Jamaah Kloter 35 H2C" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none">
+            <div class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-950/75 backdrop-blur-md flex items-center justify-center text-white shadow-xs pointer-events-none group-hover:scale-110 group-hover:bg-emerald-600 transition-all duration-300">
               <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
             </div>
             <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-2 py-0.5 rounded-md bg-slate-950/75 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white flex items-center gap-1">
               <span>▶ 49.1K</span>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-all duration-300 flex flex-col justify-end p-3 sm:p-5 text-white">
               <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-rose-300 mb-1">❤️ UKHUWAH ISLAMIYAH</span>
               <p class="text-xs sm:text-sm font-bold line-clamp-2 leading-snug">Kloter 35: Momen Pelukan Haru &amp; Kepulangan Sehat Selamat di Tanah Air</p>
               <div class="flex items-center gap-4 mt-2 text-[11px] text-slate-300">
@@ -1694,10 +1784,10 @@
 
         <div class="shrink-0 flex items-center gap-3">
           <div class="flex -space-x-2 overflow-hidden">
-            <div class="inline-block h-9 w-9 rounded-full ring-2 ring-white bg-emerald-700 text-white font-bold flex items-center justify-center text-xs">PR</div>
-            <div class="inline-block h-9 w-9 rounded-full ring-2 ring-white bg-slate-800 text-white font-bold flex items-center justify-center text-xs">PW</div>
-            <div class="inline-block h-9 w-9 rounded-full ring-2 ring-white bg-emerald-800 text-white font-bold flex items-center justify-center text-xs">PE</div>
-            <div class="inline-block h-9 w-9 rounded-full ring-2 ring-white bg-amber-700 text-white font-bold flex items-center justify-center text-xs">MS</div>
+            <img src="./assets/feed_2.jpg" alt="Pak Wildan Jamaah H2C" class="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-xs">
+            <img src="./assets/feed_4.jpg" alt="Pak Eko Budi Jamaah H2C" class="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-xs">
+            <img src="./assets/feed_7.jpg" alt="Mbah Satari Jamaah H2C" class="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-xs">
+            <img src="./assets/vid_keberangkatan.jpg" alt="Jamaah H2C" class="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-xs">
           </div>
           <div>
             <div class="text-xs font-bold text-slate-900">4.9 / 5.0 Rating Jamaah</div>
@@ -1710,13 +1800,13 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <!-- Card 1: Pak Rizki (Cilacap) -->
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 hover:shadow-md transition">
+        <div class="reveal-on-scroll stagger-1 bg-white border border-slate-200/90 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/60 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
                 Hotel Dekat &amp; Makan Enak
               </span>
-              <span class="text-amber-400 text-xs font-bold">★★★★★</span>
+              <span class="text-amber-400 text-xs font-bold tracking-wider">★★★★★</span>
             </div>
             <div>
               <span class="text-xs font-bold text-emerald-700 block uppercase tracking-wider mb-1.5">Pelayanan Ramah, Hotel Dekat, Makan Enak</span>
@@ -1726,9 +1816,7 @@
             </div>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-200/80 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-sm">
-              PR
-            </div>
+            <img src="./assets/vid_keberangkatan.jpg" alt="Pak Rizki Jamaah H2C" class="w-10 h-10 rounded-full object-cover shrink-0 border-2 border-emerald-500/30 shadow-xs">
             <div class="min-w-0">
               <h4 class="text-xs font-bold text-slate-900 truncate">Pak Rizki</h4>
               <p class="text-[11px] text-slate-500 truncate">Cilacap, Jawa Tengah</p>
@@ -1738,13 +1826,13 @@
         </div>
 
         <!-- Card 2: Pak Wildan (Purbalingga) -->
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 hover:shadow-md transition">
+        <div class="reveal-on-scroll stagger-2 bg-white border border-slate-200/90 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/60 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
                 Bimbingan Sunnah
               </span>
-              <span class="text-amber-400 text-xs font-bold">★★★★★</span>
+              <span class="text-amber-400 text-xs font-bold tracking-wider">★★★★★</span>
             </div>
             <div>
               <span class="text-xs font-bold text-emerald-700 block uppercase tracking-wider mb-1.5">Pendampingan Ibadah Sabar &amp; Tuntas</span>
@@ -1754,9 +1842,7 @@
             </div>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-200/80 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-slate-800 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-sm">
-              PW
-            </div>
+            <img src="./assets/feed_2.jpg" alt="Pak Wildan Jamaah H2C" class="w-10 h-10 rounded-full object-cover shrink-0 border-2 border-emerald-500/30 shadow-xs">
             <div class="min-w-0">
               <h4 class="text-xs font-bold text-slate-900 truncate">Pak Wildan</h4>
               <p class="text-[11px] text-slate-500 truncate">Purbalingga, Jawa Tengah</p>
@@ -1766,13 +1852,13 @@
         </div>
 
         <!-- Card 3: Pak Eko Budi -->
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 hover:shadow-md transition">
+        <div class="reveal-on-scroll stagger-3 bg-white border border-slate-200/90 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/60 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-50 text-blue-800 border border-blue-200">
                 Kepastian Jadwal
               </span>
-              <span class="text-amber-400 text-xs font-bold">★★★★★</span>
+              <span class="text-amber-400 text-xs font-bold tracking-wider">★★★★★</span>
             </div>
             <div>
               <span class="text-xs font-bold text-emerald-700 block uppercase tracking-wider mb-1.5">Kepastian Jadwal &amp; Fasilitas Sesuai Janji</span>
@@ -1782,9 +1868,7 @@
             </div>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-200/80 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-emerald-800 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-sm">
-              PE
-            </div>
+            <img src="./assets/feed_4.jpg" alt="Pak Eko Budi Jamaah H2C" class="w-10 h-10 rounded-full object-cover shrink-0 border-2 border-emerald-500/30 shadow-xs">
             <div class="min-w-0">
               <h4 class="text-xs font-bold text-slate-900 truncate">Pak Eko Budi</h4>
               <p class="text-[11px] text-slate-500 truncate">Jakarta</p>
@@ -1793,14 +1877,14 @@
           </div>
         </div>
 
-        <!-- Card 4: Mbah Safari -->
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 hover:shadow-md transition">
+        <!-- Card 4: Mbah Satari -->
+        <div class="reveal-on-scroll stagger-4 bg-white border border-slate-200/90 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/60 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-50 text-amber-800 border border-amber-200">
                 Ramah Lansia
               </span>
-              <span class="text-amber-400 text-xs font-bold">★★★★★</span>
+              <span class="text-amber-400 text-xs font-bold tracking-wider">★★★★★</span>
             </div>
             <div>
               <span class="text-xs font-bold text-emerald-700 block uppercase tracking-wider mb-1.5">Sangat Terbantu Pendampingan Lansia &amp; Kursi Roda</span>
@@ -1810,11 +1894,9 @@
             </div>
           </div>
           <div class="pt-4 mt-4 border-t border-slate-200/80 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-amber-700 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-sm">
-              MS
-            </div>
+            <img src="./assets/feed_7.jpg" alt="Mbah Satari Jamaah H2C" class="w-10 h-10 rounded-full object-cover shrink-0 border-2 border-emerald-500/30 shadow-xs">
             <div class="min-w-0">
-              <h4 class="text-xs font-bold text-slate-900 truncate">Mbah Safari</h4>
+              <h4 class="text-xs font-bold text-slate-900 truncate">Mbah Satari</h4>
               <p class="text-[11px] text-slate-500 truncate">Banyumas, Jawa Tengah</p>
               <span class="text-[10px] text-emerald-700 font-semibold block">✓ Jamaah Lansia H2C</span>
             </div>
@@ -2095,8 +2177,20 @@
     </div>
   </div>
 
+  <!-- DESKTOP FLOATING WHATSAPP CTA (ENGAGING MICRO-INTERACTION) -->
+  <div class="fixed bottom-6 right-6 z-40 hidden md:flex items-center group">
+    <a href="https://wa.me/6281316333001?text=Bismillah,%20Assalamu'alaikum%20Admin%20H2C.%20Saya%20ingin%20konsultasi%20paket%20Umroh%20Promo%20Saudia%20Fair%20dan%20cek%20ketersediaan%20seat." target="_blank" rel="noopener noreferrer" class="animate-float flex items-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs pl-3.5 pr-4 py-2.5 rounded-full shadow-xl shadow-emerald-950/25 hover:shadow-2xl hover:shadow-emerald-900/40 border border-emerald-400/30 transition-all transform hover:-translate-y-1 active:scale-95">
+      <span class="relative flex h-2.5 w-2.5">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+      </span>
+      <span class="tracking-wide">Konsultasi Seat 2026</span>
+      <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.079-1.892-.442-1.615-.668-2.651-2.316-2.732-2.423-.081-.107-.655-.872-.655-1.66 0-.788.411-1.176.556-1.336.145-.16.316-.2.422-.2.106 0 .211 0 .304.006.103.005.239-.039.373.285.14.339.479 1.168.522 1.254.043.086.072.187.014.302-.058.115-.088.187-.175.289-.087.102-.183.228-.261.306-.09.088-.184.184-.079.364.105.18.468.772.998 1.246.685.611 1.26.8 1.44.887.18.087.286.074.391-.047.105-.121.452-.526.572-.707.12-.181.24-.151.405-.09.165.06 1.054.497 1.235.587.18.09.3.136.345.213.045.077.045.447-.099.852z"/></svg>
+    </a>
+  </div>
+
   <!-- COOKIE BANNER -->
-  <div id="cookie-banner" class="hidden fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md bg-slate-900/95 backdrop-blur-md text-white border border-slate-800 p-4 rounded-2xl shadow-2xl z-50">
+  <div id="cookie-banner" class="hidden fixed bottom-4 left-4 right-4 sm:right-auto sm:left-6 sm:max-w-md bg-slate-900/95 backdrop-blur-md text-white border border-slate-800 p-4 rounded-2xl shadow-2xl z-50">
     <div class="space-y-3 text-left">
       <p class="text-xs text-slate-300 leading-relaxed">
         Kami menggunakan cookie untuk memastikan pengalaman terbaik di situs kami. Silakan baca <a href="./cookie-policy.html" class="text-emerald-400 underline font-semibold">Kebijakan Cookie</a> kami.
@@ -2716,6 +2810,32 @@
         if (e.target === igModal) closeIgModal();
       });
     }
+
+    // High-Performance Scroll Reveal Intersection Observer
+    (function() {
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries, obs) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, {
+          root: null,
+          rootMargin: '0px 0px -40px 0px',
+          threshold: 0.08
+        });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(function(el) {
+          observer.observe(el);
+        });
+      } else {
+        document.querySelectorAll('.reveal-on-scroll').forEach(function(el) {
+          el.classList.add('is-visible');
+        });
+      }
+    })();
   </script>
 
 </body>
