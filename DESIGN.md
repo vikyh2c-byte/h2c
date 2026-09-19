@@ -1,296 +1,326 @@
-# DESIGN.md — H2C Wisata Mandiri Design System
-**Version:** 1.0.0  
-**Legal Entity:** PT. HDUAC Berkah Mandiri (PPIU Kemenag RI No. 26032300175410003, Akreditasi A)  
-**Philosophy:** Luxury Hospitality & Spiritual Elegance (Sintesis Starbucks + Airbnb + Apple)  
-**Target:** Web Landing Page H2C Wisata Mandiri (`/home/ubuntu/h2c-landing`)
+# DESIGN SYSTEM SPECIFICATION: H2C WISATA MANDIRI
+**Archetype:** High-Trust Studio Editorial & Functional Clarity  
+**Synthesis:** Linear (Craft & Precision) + Mobbin (Editorial White & Content-First) + Wise (Fintech Trust & Radical Transparency)  
+**Target:** Anti-AI Slop UI/UX Redesign  
+**Entity:** PT. HDUAC Berkah Mandiri (Izin Resmi Kemenag PPIU No. 26032300175410003)
 
 ---
 
-## 1. Filosofi & Karakter Desain
+## 1. Executive Summary & Design Manifesto
 
-Desain landing page H2C Wisata Mandiri dibangun di atas konvergensi 3 sistem desain kelas dunia yang disesuaikan dengan sakralitas ibadah Umroh dan Haji:
+### 1.1 Problem Statement: AI Slop vs. High-Trust Editorial
+Antarmuka agen perjalanan umroh daring saat ini kerap terjebak dalam perangkap klise "AI Slop Luxury":
+- Tipografi serif berlebihan (*Playfair Display*, *Cormorant Garamond*) yang tampak dipaksakan dan sulit dibaca pada layar seluler.
+- Gradasi warna emas murahan (`#c5a059`, `#dfba73`) dengan *text-shadow* dan *glow effect* yang mengaburkan legitimasi institusional.
+- Avatar lingkaran dengan inisial dua huruf generik (AK, MM, TL) alih-alih menampilkan pembimbing ibadah riil.
+- Ornamen dekoratif tidak fungsional (pola kisi-kisi SVG Arabesque, kubah palsu, divider floral, pita mengilap).
+- Spam badge tidak berdasar (*"Kepemimpinan Amanah"*, *"Layanan No. 1 Se-Indonesia"*).
+- Penjajaran teks tengah (*center-aligned text*) di mana-mana yang merusak keterbacaan paragraf panjang.
 
-| Sumber Inspirasi | Elemen yang Diadopsi | Manifestasi pada H2C Wisata Mandiri |
-| :--- | :--- | :--- |
-| **Starbucks Design System** | Sistem fungsional 4-tier green, warm canvas cream, full-pill geometry (`rounded-full`) | Nuansa teduh Raudhah/Masjid Nabawi, CTA full-pill bersahabat, fondasi warna hijau bertingkat dari *Sanctuary* hingga *Mint Wash*. |
-| **Airbnb Travel System** | Rasio kartu travel jernih, metadata perjalanan terstruktur, rounded geometry (`rounded-2xl`), visual hotel & maskapai terpercaya | Kartu paket umroh berorientasi eksplorasi visual, hotel distance chips, kepastian maskapai penerbangan, pembagian kuota kursi. |
-| **Apple Typographic Minimalism** | Tipografi editorial serif dipadu geometric sans, negative letter-spacing (`tracking-tight`), ruang napas lapang, zero visual clutter | Headline editorial berwibawa, ketenangan ruang baca tanpa banner berkedip, hierarki harga transparan dan meyakinkan. |
-
-### Prinsip Utama:
-1. **Sacred Serenity (Ketenangan Ibadah):** Tidak ada elemen visual agresif. Warna hijau sanctuary dipadukan dengan kanvas porselen hangat menciptakan rasa aman, damai, dan khusyuk.
-2. **High-Trust Assurance (Kepastian PPIU Kemenag):** Penempatan legalitas PT. HDUAC Berkah Mandiri, nomor SK PPIU, dan rekening resmi BSI terintegrasi natural sebagai bukti amanah.
-3. **Radical Transparency (Keterbukaan Fasilitas):** Jarak hotel, nama maskapai, rincian biaya DP, dan tanggal keberangkatan disajikan gamblang tanpa jebakan teks halus (*fine print*).
+### 1.2 The New Paradigm: Linear + Mobbin + Wise
+H2C Wisata Mandiri mengadopsi standar desain produk digital kelas dunia untuk membangun otoritas, legitimasi hukum, dan rasa tenang bagi calon jamaah:
+1. **Linear (Precision Craftsmanship):**
+   - Garis batas setipis rambut (*hairline borders* 1px `slate-200`).
+   - Kontras mikro tajam antara latar belakang kanvas dan permukaan kartu.
+   - Tipografi sans-serif teknis dengan *letter-spacing* rapat (*tight tracking*).
+   - Indikator status presisi (dot hijau live/verified, metadata tabular).
+2. **Mobbin (Gallery-White & Content-First Hierarchy):**
+   - Kanvas monokrom putih bersih (`#ffffff` dan `#f8fafc`).
+   - Geometri kartu *squircle* presisi (`rounded-2xl` dan `rounded-xl`).
+   - Pill navigasi dan filter berbentuk stadium (`rounded-full`).
+   - Dokumentasi fotografi nyata dengan rasio aspek konsisten (16:10, 4:3, 1:1) berbingkai *hairline*.
+3. **Wise (Radical Transparency & Financial Trust):**
+   - Struktur perbandingan berdampingan (*head-to-head comparison matrix*).
+   - Pemisahan rincian biaya secara transparan: hotel, visa, tiket pesawat, bimbingan, asuransi (tanpa tanda bintang `*` atau biaya tersembunyi).
+   - Tanda legalitas PPIU Kemenag dan rekening giro bank resmi tervalidasi sebagai jangkar kepercayaan utama (*trust anchor*).
 
 ---
 
-## 2. Palet Warna & Token Semantik
+## 2. Color System & Surface Hierarchy
 
-### 2.1 Primary Palette (Sanctuary Greens)
-Mewakili keagungan kubah hijau Masjid Nabawi, kesegaran spiritual, dan identitas resmi H2C.
+Sistem warna dirancang strictly monokromatik fungsional. Warna aksen tunggal hanyalah **Emerald Fungsional** sebagai penanda verifikasi dan tombol konversi utama. **Dilarang keras memakai gradasi emas, efek kilau logam, atau aksen kuning.**
 
-| Token Name | Hex Code | Tailwind Arbitrary Class | Penggunaan Semantik |
+### 2.1 Color Palette Matrix
+
+| Peran Token | Nilai Hex | Tailwind Class | Penggunaan Utama |
 | :--- | :--- | :--- | :--- |
-| **Deep Sanctuary Emerald** | `#062319` | `bg-[#062319]`, `text-[#062319]` | Latar belakang hero, footer, teks headline kontras tinggi, border aksen gelap |
-| **House Forest Green** | `#0d3827` | `bg-[#0d3827]`, `text-[#0d3827]` | Kartu kontainer gelap, header bar, elemen identitas primer |
-| **Luminous Accent Green** | `#105e3f` | `bg-[#105e3f]`, `text-[#105e3f]` | Tombol CTA primer, link aktif, status sukses, hover state |
-| **Mint Wash** | `#e1efe9` | `bg-[#e1efe9]`, `text-[#0d3827]` | Background pill badge, header tabel jadwal, highlight box halus |
+| **Canvas Primary** | `#ffffff` | `bg-white` | Latar utama halaman, body, kartu elevated |
+| **Canvas Subtle / Secondary** | `#f8fafc` | `bg-slate-50` | Latar selang-seling section, table row alternate, background input |
+| **Surface Raised / Muted** | `#f1f5f9` | `bg-slate-100` | Badge background, chip inactive, skeleton loader |
+| **Hairline Border** | `#e2e8f0` | `border-slate-200` | Batas antar kartu, divider tabel, header bottom border |
+| **Hairline Border Hover** | `#94a3b8` | `hover:border-slate-400` | State interaktif kartu dan field formulir |
+| **Text Heading / Primary** | `#0f172a` | `text-slate-900` | H1, H2, H3, label harga, nama asatidz, metrik utama |
+| **Text Body / Secondary** | `#475569` | `text-slate-600` | Paragraf penjelasan, detail fasilitas, rincian itinerary |
+| **Text Muted / Tertiary** | `#64748b` | `text-slate-500` | Deskripsi tambahan, metadata tanggal, label form, catatan kaki |
+| **Text Subtle / Disabled** | `#94a3b8` | `text-slate-400` | Placeholder, breadcrumb non-aktif, disclaimer legal minor |
+| **Accent Emerald (Primary)** | `#047857` | `bg-emerald-700` / `text-emerald-700` | Tombol CTA utama, badge status resmi, icon checklist verifikasi |
+| **Accent Emerald Hover** | `#065f46` | `hover:bg-emerald-800` | State hover tombol aksi utama |
+| **Accent Emerald Soft** | `#ecfdf5` | `bg-emerald-50` | Latar badge "PPIU Kemenag Resmi", alert verified status |
+| **Accent Emerald Border** | `#a7f3d0` | `border-emerald-200` | Batas badge verified status |
 
-### 2.2 Accent Palette (Sacred Gold & Champagne)
-Memberikan aksen kemewahan bersahaja (*understated luxury*), terinspirasi dari ornamen kiswah dan arsitektur Haramain.
-
-| Token Name | Hex Code | Tailwind Arbitrary Class | Penggunaan Semantik |
-| :--- | :--- | :--- | :--- |
-| **Warm Champagne Gold** | `#c5a059` | `text-[#c5a059]`, `bg-[#c5a059]` | Icon rating bintang, badge VIP/Akbar, highlight teks kunci |
-| **Soft Gold Cream** | `#faf6ee` | `bg-[#faf6ee]` | Latar belakang kontainer emas muda, kartu promo khusus |
-| **Gold Border** | `#dfc49d` | `border-[#dfc49d]` | Border kartu premium, aksen garis pembatas ornamen |
-
-### 2.3 Canvas & Surface Neutrals
-Menghindari warna putih murni (#FFFFFF) yang menyilaukan mata pada latar belakang besar; menggunakan warm porcelain untuk keteduhan membaca.
-
-| Token Name | Hex Code | Tailwind Arbitrary Class | Penggunaan Semantik |
-| :--- | :--- | :--- | :--- |
-| **Warm Canvas Porcelain** | `#fcfbf9` | `bg-[#fcfbf9]` | Latar belakang utama seluruh halaman (*default canvas*) |
-| **Warm Cream** | `#f4f1ea` | `bg-[#f4f1ea]` | Latar belakang seksi selang-seling (Trust Bento, FAQ, Tabel) |
-| **Crisp Card White** | `#ffffff` | `bg-white` | Permukaan kartu paket, popover, formulir kontak |
-| **Pure Dark Hero** | `#051c14` | `bg-[#051c14]` | Latar belakang hero banner malam hari & backdrop visual Ka'bah |
-
-### 2.4 Functional & Text Neutrals
-
-| Token Name | Hex Code | Tailwind Arbitrary Class | Penggunaan Semantik |
-| :--- | :--- | :--- | :--- |
-| **Charcoal Primary Text** | `#24312b` | `text-[#24312b]` | Teks tubuh utama (*body text*), deskripsi paragraf |
-| **Muted Sage Slate** | `#5c7065` | `text-[#5c7065]` | Subtitle, metadata paket, tanggal, label fasilitas |
-| **Hairline Border** | `#e6e4dc` | `border-[#e6e4dc]` | Garis pemisah (*divider*), border kartu netral |
-| **Status Seat Terbatas** | `#b45309` / `#fef3c7` | `text-amber-800 bg-amber-100` | Badge sisa kursi tinggal sedikit |
-| **Status Segera Berangkat**| `#991b1b` / `#fee2e2` | `text-red-800 bg-red-100` | Badge kloter terdekat |
-| **Status Pendaftaran Buka**| `#065f46` / `#d1fae5` | `text-emerald-800 bg-emerald-100`| Badge jadwal kursi tersedia |
-
----
-
-## 3. Sistem Tipografi & Skala Hirarki
-
-### 3.1 Font Pairing
-- **Heading & Editorial Font:** `Cormorant Garamond` (alternatif: `Playfair Display`, `serif`). Digunakan untuk judul hero H1, judul seksi H2, dan quote spiritual. Menghadirkan wibawa, sentuhan sastra, dan nuansa klasik Tanah Suci.
-- **Body & Interface Font:** `Plus Jakarta Sans` (fallback: `Inter`, `system-ui`, `sans-serif`). Digunakan untuk navigasi, deskripsi paragraf, tabel jadwal, badge, dan angka harga. Memberikan kejelasan optimal pada perangkat seluler.
-
-### 3.2 Skala Tipografi & Token Tailwind
-
-| Elemen | Skala Font | Weight | Tracking & Leading | Kelas Tailwind |
-| :--- | :--- | :--- | :--- | :--- |
-| **Hero Display H1** | 48px – 72px | Medium (500) | `tracking-tight leading-[1.1]` | `font-serif text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.1]` |
-| **Section Title H2** | 32px – 48px | Medium (500) | `tracking-tight leading-tight` | `font-serif text-3xl md:text-5xl font-medium tracking-tight text-[#062319]` |
-| **Card / Subtitle H3** | 20px – 24px | SemiBold (600) | `tracking-normal leading-snug` | `font-sans text-xl md:text-2xl font-semibold text-[#0d3827]` |
-| **Section Eyebrow** | 12px – 13px | Bold (700) | `tracking-widest uppercase` | `font-sans text-xs uppercase tracking-widest text-[#c5a059] font-bold` |
-| **Body Large (Lead)** | 18px – 20px | Normal (400) | `leading-relaxed` | `font-sans text-lg md:text-xl text-[#24312b] font-normal leading-relaxed` |
-| **Body Regular** | 15px – 16px | Normal (400) | `leading-relaxed` | `font-sans text-base text-[#24312b] leading-relaxed` |
-| **Caption & Meta** | 13px – 14px | Medium (500) | `tracking-normal` | `font-sans text-sm text-[#5c7065]` |
-| **Price Hero Number** | 28px – 36px | Bold (700) | `tracking-tight` | `font-sans text-2xl md:text-3xl font-bold tracking-tight text-[#062319]` |
-
----
-
-## 4. Geometri, Radius & Elevasi
-
-### 4.1 Sudut Lengkung (Border Radii)
-- **Full-Pill Geometry (50px / `rounded-full`):** Seluruh tombol Call-to-Action utama, badge promo, tag kategori, dan input pill menggunakan radius penuh ala Starbucks. Mengurangi ketegangan visual dan mempermudah tap di layar sentuh.
-- **Card Geometry (16px – 20px / `rounded-2xl`):** Kartu paket, kartu video testimoni, dan kartu fasilitas menggunakan radius melengkung lembut ala Airbnb.
-- **Bento & Feature Container (24px / `rounded-3xl`):** Kontainer besar pada seksi Trust Bento dan Banner Rekening Resmi menggunakan radius lapang.
-
-### 4.2 Sistem Elevasi & Bayangan (Whisper-Soft Shadows)
-Menghindari drop-shadow hitam tebal standar browser (`rgba(0,0,0,0.25)`). Menggunakan bayangan dengan rona hijau sanctuary organik beropasitas sangat rendah (4% hingga 10%):
-
-```css
-/* Token Shadow H2C */
---shadow-ambient: 0 4px 20px -4px rgba(6, 35, 25, 0.05);
---shadow-card: 0 10px 30px -6px rgba(6, 35, 25, 0.08);
---shadow-hover: 0 20px 40px -10px rgba(6, 35, 25, 0.12);
---shadow-modal: 0 25px 50px -12px rgba(6, 35, 25, 0.20);
-```
-
-**Tailwind Mapping:**
-- Ambient: `shadow-[0_4px_20px_-4px_rgba(6,35,25,0.05)]`
-- Card: `shadow-[0_10px_30px_-6px_rgba(6,35,25,0.08)]`
-- Hover Card: `hover:shadow-[0_20px_40px_-10px_rgba(6,35,25,0.12)] hover:-translate-y-1 transition-all duration-300 ease-out`
-
----
-
-## 5. Blueprint Spesifikasi Komponen
-
-### 5.1 Header & Navigasi
-- **Struktur:** Sticky header dengan efek frosted glass Apple (`backdrop-blur-md bg-white/85 border-b border-[#e6e4dc]/75`).
-- **Logo Lockup:** Logo resmi H2C Wisata Mandiri dengan badge PPIU Kemenag di sebelahnya:
-  ```html
-  <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/85 border-b border-[#e6e4dc]/75 transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <img src="./assets/h2c-logo.png" alt="H2C Wisata Mandiri" class="h-11 w-auto">
-        <div class="hidden sm:block border-l border-[#e6e4dc] pl-3">
-          <span class="block text-[11px] uppercase tracking-wider font-semibold text-[#0d3827]">PPIU Kemenag RI</span>
-          <span class="block text-[10px] text-[#5c7065] font-mono">No. 26032300175410003</span>
-        </div>
-      </a>
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-[#24312b]">
-        <a href="#paket" class="hover:text-[#105e3f] transition-colors">Paket Umroh</a>
-        <a href="#jadwal" class="hover:text-[#105e3f] transition-colors">Jadwal Keberangkatan</a>
-        <a href="#keunggulan" class="hover:text-[#105e3f] transition-colors">Keunggulan 5 Pasti</a>
-        <a href="#galeri" class="hover:text-[#105e3f] transition-colors">Dokumentasi</a>
-        <a href="#faq" class="hover:text-[#105e3f] transition-colors">Tanya Jawab</a>
-      </nav>
-      <div class="flex items-center gap-3">
-        <a href="https://wa.me/6281316333001?text=Bismillah,%20saya%20ingin%20konsultasi%20paket%20umroh%20H2C" 
-           class="inline-flex items-center gap-2 bg-[#105e3f] hover:bg-[#0d3827] text-white text-sm font-semibold px-6 py-3 rounded-full shadow-[0_4px_16px_rgba(16,94,63,0.25)] hover:shadow-none transition-all duration-200">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><!-- WhatsApp Icon --></svg>
-          <span>Konsultasi Gratis</span>
-        </a>
-      </div>
-    </div>
-  </header>
+### 2.2 Aturan Kontras & Permukaan
+- **Rasio Kontras Minimum:** Seluruh teks memiliki rasio kontras terhadap latar belakang minimal 4.5:1 (WCAG AA) dan 7:1 untuk teks paragraf panjang (WCAG AAA).
+- **Elevasi Tanpa Drop Shadow Berat:** Hindari shadow berdimensi besar (`shadow-2xl` bergaya AI slop). Gunakan border 1px `border-slate-200` dikombinasikan dengan bayangan studio sangat halus:
+  ```css
+  /* Studio Subtle Base */
+  box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  /* Studio Hover Elevation */
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 10px -6px rgba(15, 23, 42, 0.02);
   ```
 
-### 5.2 Hero Banner (Sacred Editorial)
-- **Visual:** Backdrop atmosfer malam Masjidil Haram / Ka'bah dengan gradien vertikal tenang ke `#051c14`.
-- **Komponen Kunci:**
-  1. Eyebrow badge bersinar lembut: `bg-[#faf6ee]/10 text-[#c5a059] border border-[#c5a059]/30 rounded-full px-4 py-1.5`.
-  2. Headline editorial dua baris: *"Niat ke Baitullah, Kami Siapkan Jalannya."*
-  3. Lead text yang menenangkan: Menegaskan kepastian izin PPIU Kemenag dan bimbingan sunnah.
-  4. Dual Full-Pill CTA: Tombol utama emas/emerald + Tombol sekunder ghost pill (*"Lihat Jadwal & Estimasi Biaya"*).
-  5. Baris Trust Metric 3 pilar: Legalitas PPIU Resmi, Akreditasi A, dan Kepastian Hotel Bintang 4/5.
+---
 
-### 5.3 Trust Bento & 5 Pasti Umroh Kemenag
-- **Konsep:** Bento grid asimetris yang membuktikan komitmen legalitas tanpa membuat pengunjung merasa diintimidasi dokumen hukum:
-  - **Tile 1 (Legalitas & SK PPIU):** Sertifikat Kemenag RI, nomor izin usaha, dan akreditasi A.
-  - **Tile 2 (Kepastian Maskapai PP):** Saudia Airlines / Garuda Indonesia / Turkish Airlines langsung tanpa transit membingungkan.
-  - **Tile 3 (Hotel Dekat Pelataran):** Maysan Al Maqam / Mirage Salam (<350 meter dari Masjid).
-  - **Tile 4 (Bimbingan Sesuai Sunnah):** Muthowif mukim bersertifikat dan berilmu.
-  - **Tile 5 (Rekening Bank Resmi Penyelenggara):** Rekening Bank Syariah Indonesia (BSI) atas nama PT. HDUAC Berkah Mandiri untuk melindungi jamaah dari penipuan rekening pribadi.
+## 3. Typography Architecture
 
-### 5.4 Kartu Paket Umroh (Airbnb Geometry + Starbucks Clarity)
-- **Spesifikasi Kartu:**
-  - Container: `bg-white rounded-2xl border border-[#e6e4dc] overflow-hidden shadow-[0_10px_30px_-6px_rgba(6,35,25,0.06)] hover:shadow-[0_20px_40px_-10px_rgba(6,35,25,0.12)] transition-all duration-300`
-  - Gambar Header: Rasio `16:10` dengan badge status di sudut kiri atas:
-    - Pilihan Utama: `bg-[#062319] text-[#faf6ee]`
-    - Paling Diminati: `bg-[#faf6ee] text-[#c5a059] border border-[#dfc49d]`
-  - Baris Info Maskapai & Durasi: Chip ikonik dengan teks sans-serif teratur.
-  - Hierarki Harga Transparan:
-    - Harga coret (sebelum diskon): `text-sm text-stone-400 line-through font-normal`
-    - Harga promo aktual: `text-3xl font-bold font-sans text-[#062319]`
-    - Label DP bersahabat: `text-xs font-semibold text-[#105e3f] bg-[#e1efe9] px-2.5 py-1 rounded-full inline-block mt-1`
-  - Fasilitas Hotel: Ikon hotel bintang, nama hotel Makkah & Madinah dengan estimasi jarak ke masjid.
-  - Tombol Pesan Kursi: Full-pill button dengan warna hijau interaktif `#105e3f`.
+Strictly **Modern Sans-serif Presisi**. Nol toleransi untuk font serif ornamental (*Playfair Display*, *Cormorant Garamond*, *Georgia*).
 
-### 5.5 Tabel Jadwal Interaktif (Musim 2026 - 2027)
-- **Tujuan:** Memberikan kemudahan bagi calon jamaah memilih tanggal keberangkatan tanpa harus download brosur PDF berat.
-- **Filter Tabs:** Full-pill toggle: `Semua Keberangkatan`, `Tahun 2026`, `Tahun 2027`.
-- **Kolom Tabel:**
-  1. Program & Waktu Keberangkatan (Bulan & Tahun)
-  2. Durasi Hari (9 Hari / 12 Hari / 16 Hari)
-  3. Maskapai Penerbangan (Logo + Nama Maskapai)
-  4. Hotel Makkah & Madinah
-  5. Biaya Paket
-  6. Status Ketersediaan Seat (Pill Badge: *Sisa 12 Seat*, *Ready Seat*, *Promo Awal Musim*)
-  7. Aksi Konsultasi Cepat (Direct WhatsApp trigger dengan pre-filled text nama paket)
+### 3.1 Typefaces
+- **Primary:** `Plus Jakarta Sans` (Geometric, clean, modern Indonesian-friendly character set).
+- **Secondary Fallback:** `Inter` (UI technical standard), `-apple-system`, `system-ui`, `sans-serif`.
+- **Numeric Figures:** Wajib menggunakan kelas Tailwind `tabular-nums` untuk angka harga, nomor PPIU, kapasitas kursi, dan tanggal keberangkatan agar lebar karakter seragam dan mudah dipindai mata (*scannable*).
 
-### 5.6 Showcase Video & Dokumentasi Lapangan
-- Format grid video 16:9 yang menampilkan realitas perjalanan jamaah H2C:
-  - Bimbingan Manasik di Hotel Bintang
-  - Manasik & Fasilitas Executive Lounge Bandara Soekarno-Hatta
-  - Kenyamanan Kereta Cepat Haramain Makkah-Madinah
-  - Ziarah Raudhah & Masjidil Haram didampingi Muthowif
-  - Pengalaman Nyata Jamaah (Testimoni Tanpa Rekayasa)
+### 3.2 Typographic Hierarchy & Classes
 
-### 5.7 Muthowif & Tim Pelayanan
-- Menampilkan profil asatidz pembimbing bersertifikat dengan foto rapi, latar natural, gelar, serta rekam jejak bimbingan sunnah yang shahih.
-
-### 5.8 FAQ Accordion (Kejelasan Tanpa Keraguan)
-- Menggunakan accordion bordered minimalis (`border-b border-[#e6e4dc] py-4`):
-  - Pertanyaan 1: Apakah H2C Wisata Mandiri memiliki izin resmi Kemenag?
-  - Pertanyaan 2: Berapa DP minimal untuk mengunci seat paket?
-  - Pertanyaan 3: Bagaimana jika jamaah mendadak berhalangan berangkat? (Kebijakan Refund Transparan)
-  - Pertanyaan 4: Apakah jamaah lansia atau berkursi roda mendapatkan pendampingan khusus?
-  - Pertanyaan 5: Apakah ada biaya tersembunyi selain harga paket?
-
-### 5.9 Footer (Sacred Grounding & Akuntabilitas Hukum)
-- **Background:** `bg-[#062319] text-[#e1efe9] border-t border-[#0d3827]`
-- **Unsur Wajib:**
-  1. Identitas PT resmi: **PT. HDUAC Berkah Mandiri**
-  2. Nomor PPIU Kemenag RI: **26032300175410003**
-  3. Himbauan Anti-Penipuan: Penegasan pembayaran hanya sah bila ditransfer ke rekening resmi perusahaan di **Bank Syariah Indonesia (BSI) No. Rekening a.n. PT HDUAC Berkah Mandiri**.
-  4. Alamat Kantor Fisik & Google Maps Pin: Ruko Telaga Pesona Blok L3 No. 3 & 5, Cikarang Barat, Kab. Bekasi.
-  5. Tautan Kebijakan: Syarat & Ketentuan, Kebijakan Privasi, Kebijakan Pengembalian Dana (Refund).
+| Tingkat Hierarki | Ukuran / Leading | Weight | Tracking | Kelas Tailwind |
+| :--- | :--- | :--- | :--- | :--- |
+| **Display H1 (Hero)** | 48px – 64px (`leading-[1.1]`) | Bold (700) / Extrabold (800) | `-0.03em` | `text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900` |
+| **Section Title H2** | 28px – 36px (`leading-tight`) | Bold (700) | `-0.02em` | `text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900` |
+| **Card / Item H3** | 18px – 22px (`leading-snug`) | Semibold (600) | `-0.015em` | `text-lg sm:text-xl font-semibold tracking-tight text-slate-900` |
+| **Subhead / Lead Body**| 16px – 18px (`leading-relaxed`)| Regular (400) / Medium (500)| Normal | `text-base sm:text-lg text-slate-600 leading-relaxed` |
+| **Regular Body** | 14px – 16px (`leading-relaxed`)| Regular (400) | Normal | `text-sm sm:text-base text-slate-600 leading-relaxed` |
+| **Tabular Numbers / Pricing** | 24px – 36px (`leading-none`) | Bold (700) | `-0.02em` | `text-2xl sm:text-3xl font-bold tracking-tight tabular-nums text-slate-900` |
+| **Metadata / Microcopy** | 12px – 13px (`leading-normal`)| Medium (500) | `+0.01em` | `text-xs font-medium text-slate-500 tracking-normal` |
+| **Status Pill / Badge** | 11px – 12px (`leading-none`) | Semibold (600) | `+0.02em` | `text-xs font-semibold tracking-wide uppercase` |
 
 ---
 
-## 6. Aturan Anti-Gimmick (Anti-Cheap Tactics)
+## 4. Layout, Geometry & Spacing Rules
 
-Sebagai biro perjalanan ibadah bernilai spiritual tinggi, antarmuka landing page H2C **secara ketat dilarang** menerapkan trik psikologis murahan (*dark patterns*):
+Mengadaptasi presisi teknis **Linear** dan kejelasan galeri **Mobbin**.
 
-| Praktik Terlarang | Alasan Pelarangan | Solusi Beretika H2C |
-| :--- | :--- | :--- |
-| **Fake Countdown Timer** (cth: "Sisa 02:45 menit sebelum promo hangus!") | Tidak jujur secara syar'i dan merusak kredibilitas legalitas PPIU. | Tampilkan bulan keberangkatan riil dan tanggal penutupan pendaftaran visa. |
-| **Fake Notification Toasts** (cth: *"Bapak Budi dari Solo baru saja memesan 2 seat"* yang digenerate script acak) | Memanipulasi bukti sosial palsu (*false social proof*). | Tampilkan foto & video dokumentasi jamaah asli di Tanah Suci dan nomor SK PPIU. |
-| **Autoplay Audio/Video dengan Suara Mengagetkan** | Mengganggu kenyamanan membaca calon jamaah. | Seluruh video default `muted` dengan opsi klik putar jelas. |
-| **Tombol WhatsApp Mengambang Menutupi Konten** | Mengganggu akses navigasi di layar smartphone. | FAB WhatsApp diletakkan rapi di sudut kanan bawah dengan ukuran proporsional (54px), tidak menutupi teks CTA kartu. |
-| **Animasi Berlebihan (Bouncing, Blinking, Strobe)** | Mengaburkan ketenangan ibadah dan memperlambat rendering web. | Transisi halus durasi pendek (`duration-200 ease-out`) untuk feedback klik dan scroll. |
+### 4.1 Geometri Kontainer
+- **Pill Stadium:** `rounded-full` khusus untuk tombol filter, tag status sertifikasi, dan badge navigasi.
+- **Card Containers:** `rounded-2xl` (16px – 20px) atau `rounded-xl` (12px) dengan `border border-slate-200 bg-white`.
+- **Inner Elements / Media:** `rounded-xl` (12px) untuk thumbnail foto, video preview, dan input field.
+- **Button Radius:** `rounded-xl` untuk tombol aksi fungsional (bukan pill bulat tebal klise yang memakan ruang vertikal).
+
+### 4.2 Grid & Breakpoint System
+- **Max Width Container:** `max-w-7xl` (1280px) untuk layout studio terbuka dengan padding horizontal:
+  - Mobile: `px-4 sm:px-6`
+  - Desktop: `lg:px-8`
+- **Vertical Spacing:**
+  - Antar Section: `py-16 sm:py-24` (lapang, bersih, memberikan ruang bernapas editorial).
+  - Antar Elemen dalam Section: `gap-6` hingga `gap-8`.
 
 ---
 
-## 7. Tailwind Configuration Code
+## 5. Component Specifications (Anti-AI Slop Blueprint)
 
-Berikut konfigurasi ekstensi warna dan font untuk diterapkan pada `tailwind.config.js` atau inline CSS config:
+### 5.1 Top Navigation Bar (Header Studio)
+- **Struktur:** Sticky bar tipis dengan efek kaca presisi `bg-white/90 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-50`.
+- **Elemen:**
+  1. Logo H2C presisi (vektor jernih tanpa bayangan atau kilau gradasi).
+  2. Pill Status Legalitas Aktif: `inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold rounded-full`.
+  3. Navigasi Teks: Link horizontal warna `text-slate-600 hover:text-slate-900 text-sm font-medium transition-colors`.
+  4. CTA Kanan: Tombol solid `bg-emerald-700 text-white hover:bg-emerald-800 text-xs sm:text-sm font-semibold px-4 py-2 rounded-xl transition-all shadow-sm`.
+
+### 5.2 Hero Section (Mobbin Editorial Split)
+- **Komposisi:** Asimetris 2 kolom (Left: Editorial Title & Value Prop, Right: Live Status Frame / Clean Aspect Ratio Media).
+- **Left Column:**
+  - Kicker Pill: `RESMI TERDAFTAR KEMENAG RI PPIU NO. 26032300175410003` dengan dot hijau berkedip halus (`animate-pulse`).
+  - H1 Headline: *"Ibadah Umroh Presisi, Terbimbing Sunnah, Tanpa Biaya Tersembunyi."*
+  - Body: *"Biro perjalanan ibadah berizin resmi Kemenag RI dengan kepastian jadwal, hotel dekat pelataran masjid, bimbingan sunnah shahih, dan transparansi rincian biaya sejak awal pendaftaran."*
+  - Action Group:
+    - Primary CTA: Tombol Konsultasi WhatsApp / Cek Ketersediaan Seat (`bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl px-6 py-3 font-semibold`).
+    - Secondary Action: Tombol Unduh Itinerary Lengkap (PDF) atau Tautan Cek SIMPU Kemenag (`border border-slate-200 hover:border-slate-400 bg-white text-slate-700 rounded-xl px-6 py-3 font-medium`).
+- **Trust Strip Langsung (Inline Trust Bar):**
+  - 4 pilar ringkas dengan border hairline:
+    1. **Izin PPIU No. 26032300175410003** (Tervalidasi Kemenag RI)
+    2. **Akreditasi A Kemenag** (Standar Mutu Pelayanan Tertinggi)
+    3. **Rekening Giro Resmi PT** (Bank BSI a.n. PT HDUAC Berkah Mandiri)
+    4. **Kantor Fisik Riil** (Semarang & Bekasi)
+
+### 5.3 Paket & Pricing Cards (Wise Radical Transparency Model)
+- **Prinsip Anti-Slop:** Tidak ada kata "Harga Mulai Dari" yang menjebak tanpa rincian. Semua angka ditulis riil dengan `tabular-nums`.
+- **Struktur Kartu:**
+  - Container: `border border-slate-200 rounded-2xl bg-white p-6 sm:p-8 hover:border-slate-400 transition-all shadow-sm`.
+  - Header: Nama Paket (cth: "Paket Umroh Reguler 12 Hari Musim 2026/2027"), badge kategori ("Executive" / "Quad Seat").
+  - Price Tag: `Rp 33.500.000` (`text-3xl font-bold tracking-tight text-slate-900 tabular-nums`) + keterangan *"All-in tanpa biaya siluman"*.
+  - Rincian Transparan (Tabel / List Spesifikasi Bergaris):
+    - **Maskapai:** Saudia Airlines / Garuda Indonesia (Direct Flight CGK-JED / KNO-MED).
+    - **Hotel Makkah:** Bintang 5 (±50m pelataran Masjidil Haram).
+    - **Hotel Madinah:** Bintang 4/5 (±100m pelataran Masjid Nabawi).
+    - **Transportasi:** Kereta Cepat Haramain High-Speed Train Makkah-Madinah.
+    - **Termasuk:** Visa Umroh resmi, Asuransi Perjalanan Syariah, Muthowif Mukim Berpengalaman, Perlengkapan Eksklusif, Manasik Intensif.
+    - **Bebas Biaya Tak Terduga:** Handling airport domestik & Saudi sudah termasuk.
+  - CTA Card: Tombol booking berlabel jelas `Pilih Paket Ini & Kunci Kursi`.
+
+### 5.4 Matriks Perbandingan Terbuka (Wise Style Head-to-Head Table)
+Tabel perbandingan native HTML yang bersih dan jujur, memperlihatkan perbedaan standar H2C vs Travel Konvensional:
+
+```html
+<div class="overflow-x-auto border border-slate-200 rounded-2xl">
+  <table class="w-full text-left text-sm text-slate-600">
+    <thead class="bg-slate-50 text-slate-900 font-semibold border-b border-slate-200">
+      <tr>
+        <th class="py-4 px-6">Parameter Layanan</th>
+        <th class="py-4 px-6 text-emerald-700 bg-emerald-50/50">H2C Wisata Mandiri (PT HDUAC)</th>
+        <th class="py-4 px-6">Travel Konvensional / Umum</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-slate-200">
+      <tr class="hover:bg-slate-50/50">
+        <td class="py-4 px-6 font-medium text-slate-900">Legalitas PPIU</td>
+        <td class="py-4 px-6 text-emerald-800 font-medium bg-emerald-50/20">Resmi SK Kemenag No. 26032300175410003</td>
+        <td class="py-4 px-6 text-slate-500">Seringkali sub-konsorsium / pinjam bendera</td>
+      </tr>
+      <tr class="hover:bg-slate-50/50">
+        <td class="py-4 px-6 font-medium text-slate-900">Rekening Pembayaran</td>
+        <td class="py-4 px-6 text-emerald-800 font-medium bg-emerald-50/20">Giro Bank BSI a.n. PT HDUAC Berkah Mandiri</td>
+        <td class="py-4 px-6 text-slate-500">Sering transfer ke rekening pribadi/owner</td>
+      </tr>
+      <tr class="hover:bg-slate-50/50">
+        <td class="py-4 px-6 font-medium text-slate-900">Kepastian Jarak Hotel</td>
+        <td class="py-4 px-6 text-emerald-800 font-medium bg-emerald-50/20">Tertulis di kontrak (50–150m dari pelataran)</td>
+        <td class="py-4 px-6 text-slate-500">Klaim "bintang 5" tapi jarak 800m+ naik shuttle</td>
+      </tr>
+      <tr class="hover:bg-slate-50/50">
+        <td class="py-4 px-6 font-medium text-slate-900">Rute Perjalanan Darat</td>
+        <td class="py-4 px-6 text-emerald-800 font-medium bg-emerald-50/20">Kereta Cepat Haramain (2 jam 20 menit)</td>
+        <td class="py-4 px-6 text-slate-500">Bus umum antar kota (6–8 jam melelahkan)</td>
+      </tr>
+      <tr class="hover:bg-slate-50/50">
+        <td class="py-4 px-6 font-medium text-slate-900">Biaya Tambahan</td>
+        <td class="py-4 px-6 text-emerald-800 font-medium bg-emerald-50/20">All-in transparan, zero hidden fees</td>
+        <td class="py-4 px-6 text-slate-500">Handling, asuransi, dan tipping ditagih susulan</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
+### 5.5 Pembimbing & Manajemen (Authentic Editorial Showcase)
+- **Larangan Keras:** Dilarang keras menggunakan avatar inisial bulat kartun (AK, MM, TL) atau stock photo model luar negeri.
+- **Spesifikasi:**
+  - Kartu foto potret rasio 4:5 atau 1:1 tajam dengan sudut `rounded-xl`.
+  - Foto riil asatidz pembimbing dan pimpinan biro berpakaian rapi di Tanah Suci atau studio profesional.
+  - Keterangan kredibilitas: Nama lengkap dan gelar akademis/syariah, rekam jejak bimbingan manasik, sertifikasi pembimbing ibadah Kemenag/BNSP.
+
+### 5.6 Galeri & Dokumentasi Keberangkatan (Mobbin Clean Gallery)
+- **Komposisi:** Grid 3 atau 4 kolom dengan foto dokumentasi riil jamaah H2C.
+- **Rasio Aspek Media:** Rasio 16:10 atau 4:3 dengan `border border-slate-200 rounded-xl overflow-hidden`.
+- **Caption Fungsional:** Menampilkan bulan keberangkatan, lokasi riil (Pelataran Masjid Nabawi, Lounge Umroh Soekarno-Hatta, Stasiun Kereta Cepat Haramain).
+
+### 5.7 Trust Signals & Akuntabilitas Hukum (Wise Security Section)
+Blok akuntabilitas legalitas tingkat tinggi sebelum footer:
+1. **Verifikasi Kemenag Langsung:** Tautan outbound resmi ke portal SIMPU Kemenag RI dengan instruksi verifikasi mandiri nomor SK PPIU `26032300175410003`.
+2. **Akun Bank Terverifikasi:**
+   - Bank: Bank Syariah Indonesia (BSI)
+   - Atas Nama: **PT HDUAC Berkah Mandiri**
+   - Himbauan tegas: *"Kami tidak pernah memungut biaya melalui rekening perorangan atau dompet digital pribadi."*
+3. **Kantor Fisik Nyata:**
+   - **Kantor Operasional Cabang Semarang:** Semarang, Jawa Tengah (pusat layanan pendaftaran regional, konsultasi jamaah, dan penyerahan dokumen/paspor).
+   - **Kantor Pusat:** Ruko Telaga Pesona Blok L3 No. 3 & 5, Cikarang Barat, Kabupaten Bekasi, Jawa Barat.
+   - Peta interaktif atau tautan Google Maps yang terverifikasi.
+
+### 5.8 Footer (Linear Craftsmanship & Legal Foundations)
+- **Latar:** Monokrom pekat `bg-slate-900 text-slate-300 border-t border-slate-800 py-16`.
+- **Hierarki:**
+  - Brand & Legal Entity: **H2C Wisata Mandiri** — Unit Bisnis Perjalanan Ibadah PT. HDUAC Berkah Mandiri.
+  - Nomor PPIU: `Kemenag RI No. 26032300175410003`.
+  - Tautan Hukum Wajib: Syarat & Ketentuan Layanan, Kebijakan Privasi, Kebijakan Pembatalan & Pengembalian Dana (*Refund Policy*).
+  - Copyright: `© 2026 PT HDUAC Berkah Mandiri. Hak Cipta Dilindungi Undang-Undang.`
+
+---
+
+## 6. Strict Anti-Gimmick Rules (Zero Tolerance for AI Slop)
+
+| Trik AI Slop / Manipulatif | Status | Alasan | Implementasi Beretika H2C |
+| :--- | :--- | :--- | :--- |
+| **Fake Countdown Timer** (cth: "00:14:59 tersisa!") | **DILARANG** | Merusak integritas syar'i dan tampak seperti penipuan daring (*scam*). | Tampilkan jadwal bulan keberangkatan riil dan batas waktu administratif penutupan visa. |
+| **Fake Social Proof Toasts** (cth: *"Ibu Ratna dari Bandung baru saja mendaftar"*) | **DILARANG** | Pemalsuan data interaksi pengguna. | Tampilkan kuota sisa kursi riil yang diperbarui berkala via database/admin. |
+| **Gold Gradient & Metallic Shimmer Text** | **DILARANG** | Visual murahan yang menurunkan kredibilitas institusi resmi. | Warna teks monokrom pekat `text-slate-900` dengan tipografi sans-serif presisi. |
+| **Initial Avatar Badges** (AK, MM) | **DILARANG** | Tanda khas template bot/AI yang tidak memiliki aset riil. | Wajib foto riil pembimbing atau kartu informasi institusional. |
+| **Badge Spam & Slogan Klise** (10+ badge bintang emas bertumpuk) | **DILARANG** | Menimbulkan kecurigaan calon jamaah dan mengaburkan informasi penting. | Gunakan 4 pilar verifikasi legalitas faktual (PPIU, Akreditasi, BSI, Kantor Fisik). |
+| **Video Autoplay Bersuara** | **DILARANG** | Mengganggu calon jamaah yang mengakses dari ruang publik/kantor. | Seluruh video dokumentasi default `muted` dengan tombol kontrol jelas. |
+
+---
+
+## 7. Tailwind CSS Configuration Blueprint
+
+Konfigurasi ekstensi tema yang siap diintegrasikan pada project:
 
 ```javascript
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  content: [
+    "./index.html",
+    "./admin.html",
+    "./**/*.{html,js}"
+  ],
   theme: {
     extend: {
       colors: {
-        h2c: {
-          // Primary Greens
-          emerald: '#062319',
-          forest: '#0d3827',
-          luminous: '#105e3f',
-          mint: '#e1efe9',
-          
-          // Sacred Gold Accents
-          gold: '#c5a059',
-          goldcream: '#faf6ee',
-          goldborder: '#dfc49d',
-          
-          // Surfaces & Canvas
-          canvas: '#fcfbf9',
-          cream: '#f4f1ea',
-          dark: '#051c14',
-          
-          // Text Neutrals
-          charcoal: '#24312b',
-          sage: '#5c7065',
-          hairline: '#e6e4dc',
+        slate: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
+          950: '#020617',
+        },
+        emerald: {
+          50: '#ecfdf5',
+          100: '#d1fae5',
+          200: '#a7f3d0',
+          600: '#059669',
+          700: '#047857',
+          800: '#065f46',
+          900: '#064e3b',
         }
       },
       fontFamily: {
-        serif: ['Cormorant Garamond', 'Playfair Display', 'Georgia', 'serif'],
-        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+      },
+      letterSpacing: {
+        tighter: '-0.04em',
+        tight: '-0.02em',
+        normal: '0em',
+        wide: '0.02em',
       },
       borderRadius: {
-        'pill': '9999px',
-        '2xl': '18px',
+        'xl': '12px',
+        '2xl': '16px',
         '3xl': '24px',
+        'full': '9999px',
       },
       boxShadow: {
-        'h2c-ambient': '0 4px 20px -4px rgba(6, 35, 25, 0.05)',
-        'h2c-card': '0 10px 30px -6px rgba(6, 35, 25, 0.08)',
-        'h2c-hover': '0 20px 40px -10px rgba(6, 35, 25, 0.12)',
+        'studio-subtle': '0 1px 2px 0 rgba(15, 23, 42, 0.05)',
+        'studio-card': '0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.05)',
+        'studio-hover': '0 12px 24px -4px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.03)',
       }
     }
-  }
+  },
+  plugins: []
 }
 ```
 
 ---
 
-## 8. Verifikasi & Checklist Kualitas Desain
+## 8. Implementation & Quality Audit Checklist
 
-- [x] Sintesis 3 pilar terpenuhi: Starbucks (hijau fungsional + kanvas hangat + pill), Airbnb (geometri kartu perjalanan + metadata), Apple (tipografi headline editorial + negative letter-spacing).
-- [x] Seluruh token warna spesifik (Emerald `#062319`, Forest `#0d3827`, Luminous `#105e3f`, Gold `#c5a059`, Canvas `#fcfbf9`, Dark `#051c14`) terdefinisi gamblang dengan kelas Tailwind.
-- [x] Legalitas resmi PT. HDUAC Berkah Mandiri & PPIU Kemenag No. 26032300175410003 masuk ke blueprint komponen.
-- [x] Tidak ada komponen gimmick (countdown palsu, toast semu, slider tak berguna).
-- [x] Struktur responsif ramah seluler (*mobile-first*) dengan tap target minimal 44x44px.
+Gunakan checklist ini untuk mengaudit setiap komponen sebelum perilisan:
+
+- [ ] **Zero AI Slop:** Tidak ada font serif (*Playfair Display* / *Cormorant Garamond*), tidak ada gradasi emas, tidak ada avatar inisial (AK, MM).
+- [ ] **Typography Rigor:** Seluruh heading menggunakan `Plus Jakarta Sans` dengan `tracking-tight` dan kontras `text-slate-900`.
+- [ ] **Tabular Numerics:** Seluruh nominal harga, tanggal, nomor SK PPIU, dan kuota kursi menggunakan kelas `tabular-nums`.
+- [ ] **Functional Accent Only:** Warna hijau hanya digunakan pada status terverifikasi (`emerald-50`/`emerald-700`) dan tombol aksi utama.
+- [ ] **Hairline Borders:** Seluruh kartu dan sekat section menggunakan `border-slate-200` setipis 1px.
+- [ ] **Wise-Style Transparency:** Tersedia tabel perbandingan transparan head-to-head H2C vs Travel Umum.
+- [ ] **Real Proof of Entity:** SK PPIU No. 26032300175410003, tautan verifikasi SIMPU Kemenag, Rekening BSI a.n. PT HDUAC Berkah Mandiri, dan alamat kantor Semarang & Bekasi tercantum akurat.
+- [ ] **Performance & Accessibility:** Tidak ada aset SVG berat atau animasi berlebih, mobile tap-target minimal 44x44px, kontras WCAG AA/AAA terpenuhi.
